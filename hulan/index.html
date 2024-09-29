@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Essay Creator</title>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body align = "center">
+        
+        <h1>Essay Creator</h1>
+        <h3>A <span id = "devastating">devastating</span> tool for creating papers</h3>
+        Type in a keyword: <input type    = "text" id = "ipt"><button id = "submit">OK</button><br>
+        <div id = "mainText" align = "left"></div>
+
+        <script>
+            let iptGlobal = document.getElementById("ipt");
+            let mainText = document.getElementById("mainText");
+
+            if ( window.outerWidth > 700 ){
+                document.body.style.paddingLeft = (window.outerWidth - 700)/2 + "px";
+                document.body.style.paddingRight = (window.outerWidth - 700)/2 + "px";
+            } else {
+                iptGlobal.style.width = window.outerWidth - 120 + "px";
+                
+            }
+        </script>
+        <script src="sentenceLibrary.js"></script>
+        <script src="create.js"></script>
+        
+    </body>
+</html>

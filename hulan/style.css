@@ -1,0 +1,49 @@
+body {
+    font-family: monospace;
+    text-align: center;
+    padding: 30px;
+    padding-bottom: 100px;
+}
+input {
+    width: 200px;
+    height: 30px;
+    border: 2px solid rgb(50,150,200);
+	border-radius: 30px;
+	padding: 5px;
+	padding-left: 30px;
+    color: rgb(50,50,50);
+	font-size: 18px;
+	position: relative;
+	margin-top: 20px;
+	z-index: 200;
+}
+#mainText {
+    margin-top: 50px;
+    height: 500px;
+    padding: 10px;
+}
+span {
+    font-size: 17px;
+}
+button {
+    background-color: rgb(130,220,240);
+	border: 3px groove rgb(100,150,230);
+	border-radius: 40px;
+	width: 90px;
+	height: 40px;
+	font-size: 20px;
+    margin-left: 10px;
+	transition-duration: 0.2s;
+	cursor: pointer;
+}
+button:hover {
+	background-color: rgb(180,230,240);
+}
+button:active {
+	background-color: rgb(100,200,240);
+	transform: translateY(2px);				
+}
+#devastating {
+    color: rgb(100,200,240);
+    font-size: 100%;
+}
