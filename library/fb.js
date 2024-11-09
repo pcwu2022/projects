@@ -16,6 +16,7 @@ if (sender_el === null) {
 }
 
 let messages = [];
+let textList = [];
 class Message {
   constructor(sender, text) {
     this.sender = sender;
@@ -73,6 +74,10 @@ function scrape() {
     // }
 
     // output to class Message
+    if (localText in textList){
+      continue;
+    }
+    textList.push(localText);
     if (textArr[0].closest(".xuk3077")) {
       // me
       messages.unshift(new Message(my_name, localText));
