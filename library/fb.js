@@ -74,7 +74,7 @@ function scrape() {
     // }
 
     // output to class Message
-    if (localText in textList){
+    if (textList.indexOf(localText) !== -1){
       continue;
     }
     textList.push(localText);
@@ -126,4 +126,16 @@ function fitv() {
   } 
   scrape();
 }
-let itv = setInterval(fitv, interval_millis);
+let itv = 0;
+
+/** Commands **/
+itv = setInterval(fitv, interval_millis);
+const stop = () => {
+  clearInterval(itv);
+}
+console.log(`
+FB Messenger Scraper 2.0
+Usage:
+- output(): export messages into txt format
+- stop(): stop auto scraping
+`);
