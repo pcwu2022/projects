@@ -205,6 +205,10 @@ const point = function( x, y){
         target.style.position = "relative";
         el.style.position = "absolute";
     }
+
+    el.setFill = function(r, g, b){
+        el.style.backgroundColor = "rgb("+r+","+g+","+b+")";
+    }
     return el;
 };
 const rect = function( x, y ,width, height, radius = 0){
@@ -240,6 +244,10 @@ const rect = function( x, y ,width, height, radius = 0){
         target.appendChild(el);
         target.style.position = "relative";
         el.style.position = "absolute";
+    }
+
+    el.setFill = function(r, g, b){
+        el.style.backgroundColor = "rgb("+r+","+g+","+b+")";
     }
     return el;
 };
@@ -282,6 +290,10 @@ const ellipse = function( x, y ,width, height){
         target.appendChild(el);
         target.style.position = "relative";
         el.style.position = "absolute";
+    }
+
+    el.setFill = function(r, g, b){
+        el.style.backgroundColor = "rgb("+r+","+g+","+b+")";
     }
     return el;
 };
