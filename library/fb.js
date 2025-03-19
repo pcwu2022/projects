@@ -22,6 +22,9 @@ class Message {
     this.sender = sender;
     this.text = text;
   };
+  isSender(sender){
+    return this.sender === sender
+  }
 };
 
 function download(filename, text) {
@@ -107,6 +110,16 @@ function output(){
   console.log("Outputted file '" + my_name + "_" + sender_name + ".txt'");
 };
 
+function outputTheirs(){
+  let jsonObj = messages.filter(message => message.isSender(sender_name)).map(message => message.text);
+  download(sender_name + ".json", JSON.stringify(jsonObj, null, 4));
+}
+
+function outputJson(){
+  let jsonObj = messages.map(message => [message.sender, message.text]);
+  download(my_name + "_" + sender_name + ".json", JSON.stringify(jsonObj, null, 4));
+}
+
 function fitv() {
   i_++;
   chatbox.scrollTo(0, 0);
@@ -137,5 +150,7 @@ console.log(`
 FB Messenger Scraper 2.0
 Usage:
 - output(): export messages into txt format
+- outputTheirs(): export other peoples messages into json format
+- outputJson(): export all messages into json format
 - stop(): stop auto scraping
 `);
