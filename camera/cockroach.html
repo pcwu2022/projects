@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cockroach Detector</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; }
+        video, canvas { width: 100%; max-width: 400px; }
+        button { margin-top: 10px; padding: 10px; font-size: 16px; }
+    </style>
+</head>
+<body>
+
+    <h2>Cockroach Detector</h2>
+    <video id="video" autoplay playsinline></video>
+    <button onclick="captureImage()">Capture Image</button>
+    <canvas id="canvas"></canvas>
+    <p id="status">Waiting for image...</p>
+
+    <script>
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        let model;
+
+        // Start camera
+        async function startCamera() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
+                video.srcObject = stream;
+            } catch (error) {
+                alert('Error accessing camera: ' + error);
+            }
+        }
+
+        // Capture image
+        function captureImage() {
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+            detectCockroach();
+        }
+
+        // Load model and detect cockroaches
+        async function detectCockroach() {
+            if (!model) {
+                document.getElementById('status').innerText = 'Loading model...';
+                model = await cocoSsd.load();
+            }
+
+            document.getElementById('status').innerText = 'Detecting...';
+            const predictions = await model.detect(canvas);
+
+            let found = false;
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            predictions.forEach(pred => {
+                if (pred.class === 'insect' || pred.class === 'cockroach') {
+                    found = true;
+                    ctx.strokeStyle = 'red';
+                    ctx.lineWidth = 4;
+                    ctx.strokeRect(pred.bbox[0], pred.bbox[1], pred.bbox[2], pred.bbox[3]);
+                }
+            });
+
+            document.getElementById('status').innerText = found ? 'Cockroach detected!' : 'No cockroach found.';
+        }
+
+        startCamera();
+    </script>
+
+</body>
+</html>
