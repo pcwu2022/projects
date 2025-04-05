@@ -1,562 +1,1219 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TOEFL Vocab Master</title>
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-    <script>tailwind.config={theme:{extend:{colors:{primary:'#4F46E5',secondary:'#10B981'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
-    <style>
-        :where([class^="ri-"])::before { content: "\f3c2"; }
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0f172a;
-            color: #e2e8f0;
-        }
-        .flip-card {
-            perspective: 1000px;
-            height: 320px;
-        }
-        .flip-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.6s;
-            transform-style: preserve-3d;
-        }
-        .flip-card.flipped .flip-card-inner {
-            transform: rotateY(180deg);
-        }
-        .flip-card-front, .flip-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .flip-card-back {
-            transform: rotateY(180deg);
-        }
-        input[type="range"] {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 100%;
-            height: 8px;
-            background: #1e293b;
-            border-radius: 4px;
-            outline: none;
-        }
-        input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 18px;
-            height: 18px;
-            background: #4F46E5;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-        .custom-checkbox {
-            position: relative;
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            background: #1e293b;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .custom-checkbox.checked {
-            background: #4F46E5;
-        }
-        .custom-checkbox.checked::after {
-            content: '';
-            position: absolute;
-            left: 7px;
-            top: 3px;
-            width: 6px;
-            height: 12px;
-            border: solid white;
-            border-width: 0 2px 2px 0;
-            transform: rotate(45deg);
-        }
-        .custom-switch {
-            position: relative;
-            display: inline-block;
-            width: 48px;
-            height: 24px;
-        }
-        .custom-switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-        .switch-slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #1e293b;
-            transition: .4s;
-            border-radius: 34px;
-        }
-        .switch-slider:before {
-            position: absolute;
-            content: "";
-            height: 18px;
-            width: 18px;
-            left: 3px;
-            bottom: 3px;
-            background-color: white;
-            transition: .4s;
-            border-radius: 50%;
-        }
-        input:checked + .switch-slider {
-            background-color: #4F46E5;
-        }
-        input:checked + .switch-slider:before {
-            transform: translateX(24px);
-        }
-    </style>
-</head>
-<body>
-    <div class="min-h-screen flex flex-col">
-        <!-- Header -->
-        <header class="bg-slate-800 border-b border-slate-700">
-            <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-                <div class="flex items-center gap-2">
-                    <span class="font-['Pacifico'] text-2xl text-white">logo</span>
-                    <span class="text-xl font-semibold ml-2">TOEFL Vocab Master</span>
-                </div>
-                <div class="flex items-center gap-4">
-                    <div class="hidden md:flex items-center gap-6">
-                        <div class="flex items-center gap-2">
-                            <div class="w-8 h-8 flex items-center justify-center bg-slate-700 rounded-full">
-                                <i class="ri-fire-line text-orange-400"></i>
-                            </div>
-                            <div>
-                                <div class="text-sm text-slate-400">Streak</div>
-                                <div class="font-semibold">12 days</div>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <div class="w-8 h-8 flex items-center justify-center bg-slate-700 rounded-full">
-                                <i class="ri-book-2-line text-green-400"></i>
-                            </div>
-                            <div>
-                                <div class="text-sm text-slate-400">Mastered</div>
-                                <div class="font-semibold">247 words</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <button class="w-10 h-10 flex items-center justify-center bg-slate-700 rounded-full hover:bg-slate-600 transition !rounded-button">
-                            <i class="ri-settings-4-line"></i>
-                        </button>
-                        <button class="w-10 h-10 flex items-center justify-center bg-slate-700 rounded-full hover:bg-slate-600 transition !rounded-button">
-                            <i class="ri-user-line"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <!-- Main Content -->
-        <main class="flex-grow flex flex-col">
-            <!-- Stats Bar -->
-            <div class="bg-slate-800/50 border-b border-slate-700/50">
-                <div class="container mx-auto px-4 py-3">
-                    <div class="flex flex-wrap justify-between items-center gap-4">
-                        <div class="flex items-center gap-6">
-                            <div class="flex items-center gap-2">
-                                <div class="w-6 h-6 flex items-center justify-center">
-                                    <i class="ri-time-line text-slate-400"></i>
-                                </div>
-                                <span class="text-sm">Today: <span class="font-medium">45 words</span></span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <div class="w-6 h-6 flex items-center justify-center">
-                                    <i class="ri-calendar-line text-slate-400"></i>
-                                </div>
-                                <span class="text-sm">Next review: <span class="font-medium">Today, 8:00 PM</span></span>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-4">
-                            <label class="custom-switch">
-                                <input type="checkbox" id="darkModeToggle" checked>
-                                <span class="switch-slider"></span>
-                            </label>
-                            <span class="text-sm">Dark Mode</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Session Progress -->
-            <div class="container mx-auto px-4 py-4">
-                <div class="flex justify-between items-center">
-                    <h2 class="text-xl font-semibold">Current Session</h2>
-                    <div class="text-sm text-slate-400">
-                        <span class="font-medium text-white">12</span> / 20 words
-                    </div>
-                </div>
-                <div class="mt-2 bg-slate-700/30 h-2 rounded-full overflow-hidden">
-                    <div class="bg-primary h-full rounded-full" style="width: 60%;"></div>
-                </div>
-            </div>
-            <!-- Flashcard Section -->
-            <div class="container mx-auto px-4 py-6 flex-grow flex flex-col items-center justify-center">
-                <div class="w-full max-w-2xl">
-                    <!-- Flashcard -->
-                    <div class="flip-card" id="flashcard">
-                        <div class="flip-card-inner">
-                            <!-- Front Side -->
-                            <div class="flip-card-front bg-slate-800 rounded-lg shadow-lg border border-slate-700 p-8">
-                                <div class="absolute top-4 right-4 flex gap-2">
-                                    <button class="w-8 h-8 flex items-center justify-center bg-slate-700 rounded-full hover:bg-slate-600 transition !rounded-button">
-                                        <i class="ri-volume-up-line"></i>
-                                    </button>
-                                    <button class="w-8 h-8 flex items-center justify-center bg-slate-700 rounded-full hover:bg-slate-600 transition !rounded-button">
-                                        <i class="ri-bookmark-line"></i>
-                                    </button>
-                                </div>
-                                <div class="text-center">
-                                    <h3 class="text-4xl font-bold mb-4">Ubiquitous</h3>
-                                    <p class="text-slate-400 mb-6">Tap to reveal meaning</p>
-                                    <div class="text-xs text-slate-500 mt-4">
-                                        <span class="px-2 py-1 bg-slate-700 rounded-full">TOEFL</span>
-                                        <span class="px-2 py-1 bg-slate-700 rounded-full ml-2">Advanced</span>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Back Side -->
-                            <div class="flip-card-back bg-slate-800 rounded-lg shadow-lg border border-slate-700 p-8">
-                                <div class="absolute top-4 right-4">
-                                    <button class="w-8 h-8 flex items-center justify-center bg-slate-700 rounded-full hover:bg-slate-600 transition !rounded-button">
-                                        <i class="ri-volume-up-line"></i>
-                                    </button>
-                                </div>
-                                <div class="text-center">
-                                    <h3 class="text-3xl font-bold mb-2">Ubiquitous</h3>
-                                    <p class="text-primary italic mb-4">/juːˈbɪkwɪtəs/</p>
-                                    <div class="text-left mb-4">
-                                        <p class="font-medium mb-1">Definition:</p>
-                                        <p class="text-slate-300">Present, appearing, or found everywhere.</p>
-                                    </div>
-                                    <div class="text-left mb-4">
-                                        <p class="font-medium mb-1">Example:</p>
-                                        <p class="text-slate-300">"Mobile phones have become ubiquitous in modern society."</p>
-                                    </div>
-                                    <div class="text-left">
-                                        <p class="font-medium mb-1">Synonyms:</p>
-                                        <p class="text-slate-300">Omnipresent, universal, pervasive, widespread</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Feedback Buttons -->
-                    <div class="mt-8 flex justify-center gap-4">
-                        <button class="px-5 py-3 bg-red-500/20 text-red-400 rounded-full font-medium hover:bg-red-500/30 transition flex items-center gap-2 !rounded-button whitespace-nowrap">
-                            <i class="ri-close-circle-line"></i>
-                            Still Learning
-                        </button>
-                        <button class="px-5 py-3 bg-yellow-500/20 text-yellow-400 rounded-full font-medium hover:bg-yellow-500/30 transition flex items-center gap-2 !rounded-button whitespace-nowrap">
-                            <i class="ri-question-mark-circle-line"></i>
-                            Getting There
-                        </button>
-                        <button class="px-5 py-3 bg-green-500/20 text-green-400 rounded-full font-medium hover:bg-green-500/30 transition flex items-center gap-2 !rounded-button whitespace-nowrap">
-                            <i class="ri-check-line"></i>
-                            Mastered
-                        </button>
-                    </div>
-
-                    <!-- Navigation Buttons -->
-                    <div class="mt-8 flex justify-between">
-                        <button class="px-4 py-2 bg-slate-700 rounded-lg font-medium hover:bg-slate-600 transition flex items-center gap-2 !rounded-button whitespace-nowrap">
-                            <i class="ri-arrow-left-line"></i>
-                            Previous
-                        </button>
-                        <button class="px-4 py-2 bg-primary rounded-lg font-medium hover:bg-primary/90 transition flex items-center gap-2 !rounded-button whitespace-nowrap">
-                            Next
-                            <i class="ri-arrow-right-line"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </main>
-
-        <!-- Settings Modal (Hidden by default) -->
-        <div class="fixed inset-0 bg-black/70 flex items-center justify-center hidden" id="settingsModal">
-            <div class="bg-slate-800 rounded-lg shadow-xl max-w-md w-full mx-4">
-                <div class="p-4 border-b border-slate-700 flex justify-between items-center">
-                    <h3 class="text-xl font-semibold">Settings</h3>
-                    <button class="w-8 h-8 flex items-center justify-center hover:bg-slate-700 rounded-full transition !rounded-button">
-                        <i class="ri-close-line"></i>
-                    </button>
-                </div>
-                <div class="p-6">
-                    <div class="mb-6">
-                        <h4 class="font-medium mb-3">Study Session</h4>
-                        <div class="flex justify-between items-center mb-2">
-                            <span>Words per session</span>
-                            <span class="font-medium">20</span>
-                        </div>
-                        <input type="range" min="5" max="50" value="20" class="w-full">
-                    </div>
-                    
-                    <div class="mb-6">
-                        <h4 class="font-medium mb-3">Content</h4>
-                        <div class="flex items-center justify-between mb-3">
-                            <span>Show pronunciation</span>
-                            <label class="custom-switch">
-                                <input type="checkbox" checked>
-                                <span class="switch-slider"></span>
-                            </label>
-                        </div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span>Show examples</span>
-                            <label class="custom-switch">
-                                <input type="checkbox" checked>
-                                <span class="switch-slider"></span>
-                            </label>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <span>Show synonyms</span>
-                            <label class="custom-switch">
-                                <input type="checkbox" checked>
-                                <span class="switch-slider"></span>
-                            </label>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-6">
-                        <h4 class="font-medium mb-3">Word Lists</h4>
-                        <div class="flex items-center justify-between mb-3">
-                            <span>TOEFL Essential</span>
-                            <div class="custom-checkbox checked" data-checked="true"></div>
-                        </div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span>TOEFL Advanced</span>
-                            <div class="custom-checkbox checked" data-checked="true"></div>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <span>Academic Vocabulary</span>
-                            <div class="custom-checkbox" data-checked="false"></div>
-                        </div>
-                    </div>
-                    
-                    <button class="w-full py-3 bg-primary rounded-lg font-medium hover:bg-primary/90 transition !rounded-button whitespace-nowrap">
-                        Save Settings
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Statistics Panel -->
-        <div class="bg-slate-800 border-t border-slate-700">
-            <div class="container mx-auto px-4 py-6">
-                <h2 class="text-xl font-semibold mb-6">Your Progress</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="bg-slate-700/30 rounded-lg p-5">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="w-10 h-10 flex items-center justify-center bg-blue-500/20 rounded-full">
-                                <i class="ri-bar-chart-line text-blue-400"></i>
-                            </div>
-                            <h3 class="font-medium">Learning Status</h3>
-                        </div>
-                        <div class="grid grid-cols-3 gap-2 text-center">
-                            <div class="bg-slate-800/50 rounded p-3">
-                                <div class="text-2xl font-bold text-red-400">78</div>
-                                <div class="text-xs text-slate-400">Learning</div>
-                            </div>
-                            <div class="bg-slate-800/50 rounded p-3">
-                                <div class="text-2xl font-bold text-yellow-400">124</div>
-                                <div class="text-xs text-slate-400">Reviewing</div>
-                            </div>
-                            <div class="bg-slate-800/50 rounded p-3">
-                                <div class="text-2xl font-bold text-green-400">247</div>
-                                <div class="text-xs text-slate-400">Mastered</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-slate-700/30 rounded-lg p-5">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="w-10 h-10 flex items-center justify-center bg-purple-500/20 rounded-full">
-                                <i class="ri-calendar-check-line text-purple-400"></i>
-                            </div>
-                            <h3 class="font-medium">Study Streak</h3>
-                        </div>
-                        <div class="flex justify-between mb-2">
-                            <div class="text-xs text-slate-400">Apr 5, 2025</div>
-                            <div class="text-xs text-slate-400">12 day streak</div>
-                        </div>
-                        <div class="grid grid-cols-7 gap-1">
-                            <div class="h-10 bg-primary/80 rounded flex items-center justify-center text-xs">Mon</div>
-                            <div class="h-10 bg-primary/80 rounded flex items-center justify-center text-xs">Tue</div>
-                            <div class="h-10 bg-primary/80 rounded flex items-center justify-center text-xs">Wed</div>
-                            <div class="h-10 bg-primary/80 rounded flex items-center justify-center text-xs">Thu</div>
-                            <div class="h-10 bg-primary/80 rounded flex items-center justify-center text-xs">Fri</div>
-                            <div class="h-10 bg-primary/80 rounded flex items-center justify-center text-xs">Sat</div>
-                            <div class="h-10 bg-slate-600/50 rounded flex items-center justify-center text-xs">Sun</div>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-slate-700/30 rounded-lg p-5">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="w-10 h-10 flex items-center justify-center bg-green-500/20 rounded-full">
-                                <i class="ri-time-line text-green-400"></i>
-                            </div>
-                            <h3 class="font-medium">Upcoming Reviews</h3>
-                        </div>
-                        <div class="space-y-3">
-                            <div class="flex justify-between items-center p-2 bg-slate-800/50 rounded">
-                                <div>
-                                    <div class="font-medium">Today</div>
-                                    <div class="text-xs text-slate-400">8:00 PM</div>
-                                </div>
-                                <div class="text-right">
-                                    <div class="font-medium">45 words</div>
-                                    <div class="text-xs text-slate-400">~15 minutes</div>
-                                </div>
-                            </div>
-                            <div class="flex justify-between items-center p-2 bg-slate-800/50 rounded">
-                                <div>
-                                    <div class="font-medium">Tomorrow</div>
-                                    <div class="text-xs text-slate-400">10:00 AM</div>
-                                </div>
-                                <div class="text-right">
-                                    <div class="font-medium">32 words</div>
-                                    <div class="text-xs text-slate-400">~10 minutes</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <footer class="bg-slate-900 py-6">
-            <div class="container mx-auto px-4">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <div class="mb-4 md:mb-0">
-                        <div class="flex items-center gap-2">
-                            <span class="font-['Pacifico'] text-xl text-white">logo</span>
-                            <span class="text-lg font-semibold">TOEFL Vocab Master</span>
-                        </div>
-                        <p class="text-sm text-slate-400 mt-2">Master TOEFL vocabulary with adaptive learning</p>
-                    </div>
-                    <div class="flex gap-4">
-                        <a href="#" class="text-slate-400 hover:text-white transition">
-                            <div class="w-10 h-10 flex items-center justify-center bg-slate-800 rounded-full">
-                                <i class="ri-twitter-x-line"></i>
-                            </div>
-                        </a>
-                        <a href="#" class="text-slate-400 hover:text-white transition">
-                            <div class="w-10 h-10 flex items-center justify-center bg-slate-800 rounded-full">
-                                <i class="ri-instagram-line"></i>
-                            </div>
-                        </a>
-                        <a href="#" class="text-slate-400 hover:text-white transition">
-                            <div class="w-10 h-10 flex items-center justify-center bg-slate-800 rounded-full">
-                                <i class="ri-facebook-circle-line"></i>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="mt-6 pt-6 border-t border-slate-800 text-center text-sm text-slate-500">
-                    © 2025 TOEFL Vocab Master. All rights reserved.
-                </div>
-            </div>
-        </footer>
-    </div>
-
     <script>
-        // Flashcard flip functionality
-        const flashcard = document.getElementById('flashcard');
-        flashcard.addEventListener('click', function() {
-            this.classList.toggle('flipped');
-        });
-
-        // Custom checkbox functionality
-        document.querySelectorAll('.custom-checkbox').forEach(checkbox => {
-            checkbox.addEventListener('click', function() {
-                const isChecked = this.getAttribute('data-checked') === 'true';
-                this.setAttribute('data-checked', !isChecked);
-                if (isChecked) {
-                    this.classList.remove('checked');
-                } else {
-                    this.classList.add('checked');
-                }
-            });
-        });
-
-        // Sample vocabulary data
-        const vocabularyList = [
-            {
-                word: 'Ubiquitous',
-                pronunciation: '/juːˈbɪkwɪtəs/',
-                definition: 'Present, appearing, or found everywhere.',
-                example: 'Mobile phones have become ubiquitous in modern society.',
-                synonyms: 'Omnipresent, universal, pervasive, widespread',
-                difficulty: 'Advanced'
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#4F46E5", secondary: "#10B981" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
             },
-            {
-                word: 'Ambivalent',
-                pronunciation: '/æmˈbɪvələnt/',
-                definition: 'Having mixed feelings or contradictory ideas about something or someone.',
-                example: 'She felt ambivalent about moving to a new city.',
-                synonyms: 'Conflicted, uncertain, undecided, equivocal',
-                difficulty: 'Advanced'
-            },
-            {
-                word: 'Pragmatic',
-                pronunciation: '/præɡˈmætɪk/',
-                definition: 'Dealing with things sensibly and realistically in a way that is based on practical considerations.',
-                example: 'We need a pragmatic approach to solving this problem.',
-                synonyms: 'Practical, realistic, sensible, rational',
-                difficulty: 'Intermediate'
-            },
-            {
-                word: 'Ephemeral',
-                pronunciation: '/ɪˈfɛm(ə)rəl/',
-                definition: 'Lasting for a very short time.',
-                example: 'The ephemeral beauty of cherry blossoms lasts only a few days.',
-                synonyms: 'Fleeting, transitory, momentary, brief',
-                difficulty: 'Advanced'
-            },
-            {
-                word: 'Meticulous',
-                pronunciation: '/məˈtɪkjʊləs/',
-                definition: 'Showing great attention to detail; very careful and precise.',
-                example: 'He was meticulous in his preparation for the exam.',
-                synonyms: 'Thorough, careful, precise, scrupulous',
-                difficulty: 'Intermediate'
-            }
-        ];
-
-        // Initialize user progress data
-        let userProgress = {
-            learned: 247,
-            reviewing: 124,
-            learning: 78,
-            streak: 12,
-            todayWords: 45
-        };
-
-        // This would be expanded in a real application to handle SRS scheduling
-        // and persistent storage of user progress
+          },
+        },
+      };
     </script>
-</body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0f172a;
+      color: #e2e8f0;
+      }
+      .flip-card {
+      perspective: 1000px;
+      height: 320px;
+      }
+      .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      }
+      .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+      }
+      .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      }
+      .flip-card-back {
+      transform: rotateY(180deg);
+      }
+      input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 8px;
+      background: #1e293b;
+      border-radius: 4px;
+      outline: none;
+      }
+      input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      background: #4F46E5;
+      border-radius: 50%;
+      cursor: pointer;
+      }
+      .custom-checkbox {
+      position: relative;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: #1e293b;
+      border-radius: 4px;
+      cursor: pointer;
+      }
+      .custom-checkbox.checked {
+      background: #4F46E5;
+      }
+      .custom-checkbox.checked::after {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 3px;
+      width: 6px;
+      height: 12px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      }
+      .custom-switch {
+      position: relative;
+      display: inline-block;
+      width: 48px;
+      height: 24px;
+      }
+      .custom-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+      }
+      .switch-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #1e293b;
+      transition: .4s;
+      border-radius: 34px;
+      }
+      .switch-slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+      }
+      input:checked + .switch-slider {
+      background-color: #4F46E5;
+      }
+      input:checked + .switch-slider:before {
+      transform: translateX(24px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="min-h-screen flex flex-col">
+      <!-- Header -->
+      <header class="bg-slate-800 border-b border-slate-700">
+        <div
+          class="container mx-auto px-4 py-4 flex justify-between items-center"
+        >
+          <div class="flex items-center gap-2">
+            <span class="font-['Pacifico'] text-2xl text-white">logo</span>
+            <span class="text-xl font-semibold ml-2">TOEFL Vocab Master</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="hidden md:flex items-center gap-6">
+              <div class="flex items-center gap-2">
+                <div
+                  class="w-8 h-8 flex items-center justify-center bg-slate-700 rounded-full"
+                >
+                  <i class="ri-fire-line text-orange-400"></i>
+                </div>
+                <div>
+                  <div class="text-sm text-slate-400">Streak</div>
+                  <div class="font-semibold">12 days</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-2">
+                <div
+                  class="w-8 h-8 flex items-center justify-center bg-slate-700 rounded-full"
+                >
+                  <i class="ri-book-2-line text-green-400"></i>
+                </div>
+                <div>
+                  <div class="text-sm text-slate-400">Mastered</div>
+                  <div class="font-semibold">247 words</div>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <button
+                class="w-10 h-10 flex items-center justify-center bg-slate-700 rounded-full hover:bg-slate-600 transition !rounded-button"
+              >
+                <i class="ri-settings-4-line"></i>
+              </button>
+              <button
+                class="w-10 h-10 flex items-center justify-center bg-slate-700 rounded-full hover:bg-slate-600 transition !rounded-button"
+              >
+                <i class="ri-user-line"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- Main Content -->
+      <main class="flex-grow flex flex-col">
+        <!-- Stats Bar -->
+        <div class="bg-slate-800/50 border-b border-slate-700/50">
+          <div class="container mx-auto px-4 py-3">
+            <div class="flex flex-wrap justify-between items-center gap-4">
+              <div class="flex items-center gap-6">
+                <div class="flex items-center gap-2">
+                  <div class="w-6 h-6 flex items-center justify-center">
+                    <i class="ri-time-line text-slate-400"></i>
+                  </div>
+                  <span class="text-sm"
+                    >Today: <span class="font-medium">45 words</span></span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="w-6 h-6 flex items-center justify-center">
+                    <i class="ri-calendar-line text-slate-400"></i>
+                  </div>
+                  <span class="text-sm"
+                    >Next review:
+                    <span class="font-medium">Today, 8:00 PM</span></span
+                  >
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <label class="custom-switch">
+                  <input type="checkbox" id="darkModeToggle" checked />
+                  <span class="switch-slider"></span>
+                </label>
+                <span class="text-sm">Dark Mode</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Session Progress -->
+        <div class="container mx-auto px-4 py-4">
+          <div class="flex justify-between items-center">
+            <h2 class="text-xl font-semibold">Current Session</h2>
+            <div class="text-sm text-slate-400">
+              <span class="font-medium text-white">12</span> / 20 words
+            </div>
+          </div>
+          <div class="mt-2 bg-slate-700/30 h-2 rounded-full overflow-hidden">
+            <div
+              class="bg-primary h-full rounded-full"
+              style="width: 60%;"
+            ></div>
+          </div>
+        </div>
+        <!-- Flashcard Section -->
+        <div
+          class="container mx-auto px-4 py-6 flex-grow flex flex-col items-center justify-center"
+        >
+          <div class="w-full max-w-2xl">
+            <!-- Flashcard -->
+            <div class="flip-card" id="flashcard">
+              <div class="flip-card-inner">
+                <!-- Front Side -->
+                <div
+                  class="flip-card-front bg-slate-800 rounded-lg shadow-lg border border-slate-700 p-8"
+                >
+                  <div class="absolute top-4 right-4 flex gap-2">
+                    <button
+                      class="w-8 h-8 flex items-center justify-center bg-slate-700 rounded-full hover:bg-slate-600 transition !rounded-button"
+                    >
+                      <i class="ri-volume-up-line"></i>
+                    </button>
+                    <button
+                      class="w-8 h-8 flex items-center justify-center bg-slate-700 rounded-full hover:bg-slate-600 transition !rounded-button"
+                    >
+                      <i class="ri-bookmark-line"></i>
+                    </button>
+                  </div>
+                  <div class="text-center">
+                    <h3 class="text-4xl font-bold mb-4">Ubiquitous</h3>
+                    <p class="text-slate-400 mb-6">Tap to reveal meaning</p>
+                    <div class="text-xs text-slate-500 mt-4">
+                      <span class="px-2 py-1 bg-slate-700 rounded-full"
+                        >TOEFL</span
+                      >
+                      <span class="px-2 py-1 bg-slate-700 rounded-full ml-2"
+                        >Advanced</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <!-- Back Side -->
+                <div
+                  class="flip-card-back bg-slate-800 rounded-lg shadow-lg border border-slate-700 p-8"
+                >
+                  <div class="absolute top-4 right-4">
+                    <button
+                      class="w-8 h-8 flex items-center justify-center bg-slate-700 rounded-full hover:bg-slate-600 transition !rounded-button"
+                    >
+                      <i class="ri-volume-up-line"></i>
+                    </button>
+                  </div>
+                  <div class="text-center">
+                    <h3 class="text-3xl font-bold mb-2">Ubiquitous</h3>
+                    <p class="text-primary italic mb-4">/juːˈbɪkwɪtəs/</p>
+                    <div class="text-left mb-4">
+                      <p class="font-medium mb-1">Definition:</p>
+                      <p class="text-slate-300">
+                        Present, appearing, or found everywhere.
+                      </p>
+                    </div>
+                    <div class="text-left mb-4">
+                      <p class="font-medium mb-1">Example:</p>
+                      <p class="text-slate-300">
+                        "Mobile phones have become ubiquitous in modern
+                        society."
+                      </p>
+                    </div>
+                    <div class="text-left">
+                      <p class="font-medium mb-1">Synonyms:</p>
+                      <p class="text-slate-300">
+                        Omnipresent, universal, pervasive, widespread
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Feedback Buttons -->
+            <div class="mt-8 flex justify-center gap-4">
+              <button
+                class="px-5 py-3 bg-red-500/20 text-red-400 rounded-full font-medium hover:bg-red-500/30 transition flex items-center gap-2 !rounded-button whitespace-nowrap"
+              >
+                <i class="ri-close-circle-line"></i>
+                Still Learning
+              </button>
+              <button
+                class="px-5 py-3 bg-yellow-500/20 text-yellow-400 rounded-full font-medium hover:bg-yellow-500/30 transition flex items-center gap-2 !rounded-button whitespace-nowrap"
+              >
+                <i class="ri-question-mark-circle-line"></i>
+                Getting There
+              </button>
+              <button
+                class="px-5 py-3 bg-green-500/20 text-green-400 rounded-full font-medium hover:bg-green-500/30 transition flex items-center gap-2 !rounded-button whitespace-nowrap"
+              >
+                <i class="ri-check-line"></i>
+                Mastered
+              </button>
+            </div>
+            <!-- Navigation Buttons -->
+            <div class="mt-8 flex justify-between">
+              <button
+                class="px-4 py-2 bg-slate-700 rounded-lg font-medium hover:bg-slate-600 transition flex items-center gap-2 !rounded-button whitespace-nowrap"
+              >
+                <i class="ri-arrow-left-line"></i>
+                Previous
+              </button>
+              <button
+                class="px-4 py-2 bg-primary rounded-lg font-medium hover:bg-primary/90 transition flex items-center gap-2 !rounded-button whitespace-nowrap"
+              >
+                Next
+                <i class="ri-arrow-right-line"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- Settings Modal (Hidden by default) -->
+      <div
+        class="fixed inset-0 bg-black/70 flex items-center justify-center hidden"
+        id="settingsModal"
+      >
+        <div class="bg-slate-800 rounded-lg shadow-xl max-w-md w-full mx-4">
+          <div
+            class="p-4 border-b border-slate-700 flex justify-between items-center"
+          >
+            <h3 class="text-xl font-semibold">Settings</h3>
+            <button
+              class="w-8 h-8 flex items-center justify-center hover:bg-slate-700 rounded-full transition !rounded-button"
+            >
+              <i class="ri-close-line"></i>
+            </button>
+          </div>
+          <div class="p-6">
+            <div class="mb-6">
+              <h4 class="font-medium mb-3">Study Session</h4>
+              <div class="flex justify-between items-center mb-2">
+                <span>Words per session</span>
+                <span class="font-medium">20</span>
+              </div>
+              <input type="range" min="5" max="50" value="20" class="w-full" />
+            </div>
+            <div class="mb-6">
+              <h4 class="font-medium mb-3">Content</h4>
+              <div class="flex items-center justify-between mb-3">
+                <span>Show pronunciation</span>
+                <label class="custom-switch">
+                  <input type="checkbox" checked />
+                  <span class="switch-slider"></span>
+                </label>
+              </div>
+              <div class="flex items-center justify-between mb-3">
+                <span>Show examples</span>
+                <label class="custom-switch">
+                  <input type="checkbox" checked />
+                  <span class="switch-slider"></span>
+                </label>
+              </div>
+              <div class="flex items-center justify-between">
+                <span>Show synonyms</span>
+                <label class="custom-switch">
+                  <input type="checkbox" checked />
+                  <span class="switch-slider"></span>
+                </label>
+              </div>
+            </div>
+            <div class="mb-6">
+              <h4 class="font-medium mb-3">Word Lists</h4>
+              <div class="flex items-center justify-between mb-3">
+                <span>TOEFL Essential</span>
+                <div class="custom-checkbox checked" data-checked="true"></div>
+              </div>
+              <div class="flex items-center justify-between mb-3">
+                <span>TOEFL Advanced</span>
+                <div class="custom-checkbox checked" data-checked="true"></div>
+              </div>
+              <div class="flex items-center justify-between">
+                <span>Academic Vocabulary</span>
+                <div class="custom-checkbox" data-checked="false"></div>
+              </div>
+            </div>
+            <button
+              class="w-full py-3 bg-primary rounded-lg font-medium hover:bg-primary/90 transition !rounded-button whitespace-nowrap"
+            >
+              Save Settings
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Statistics Panel -->
+      <div class="bg-slate-800 border-t border-slate-700">
+        <div class="container mx-auto px-4 py-6">
+          <h2 class="text-xl font-semibold mb-6">Your Progress</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-slate-700/30 rounded-lg p-5">
+              <div class="flex items-center gap-3 mb-4">
+                <div
+                  class="w-10 h-10 flex items-center justify-center bg-blue-500/20 rounded-full"
+                >
+                  <i class="ri-bar-chart-line text-blue-400"></i>
+                </div>
+                <h3 class="font-medium">Learning Status</h3>
+              </div>
+              <div class="grid grid-cols-3 gap-2 text-center">
+                <div class="bg-slate-800/50 rounded p-3">
+                  <div class="text-2xl font-bold text-red-400">78</div>
+                  <div class="text-xs text-slate-400">Learning</div>
+                </div>
+                <div class="bg-slate-800/50 rounded p-3">
+                  <div class="text-2xl font-bold text-yellow-400">124</div>
+                  <div class="text-xs text-slate-400">Reviewing</div>
+                </div>
+                <div class="bg-slate-800/50 rounded p-3">
+                  <div class="text-2xl font-bold text-green-400">247</div>
+                  <div class="text-xs text-slate-400">Mastered</div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-slate-700/30 rounded-lg p-5">
+              <div class="flex items-center gap-3 mb-4">
+                <div
+                  class="w-10 h-10 flex items-center justify-center bg-purple-500/20 rounded-full"
+                >
+                  <i class="ri-calendar-check-line text-purple-400"></i>
+                </div>
+                <h3 class="font-medium">Study Streak</h3>
+              </div>
+              <div class="flex justify-between mb-2">
+                <div class="text-xs text-slate-400">Apr 5, 2025</div>
+                <div class="text-xs text-slate-400">12 day streak</div>
+              </div>
+              <div class="grid grid-cols-7 gap-1">
+                <div
+                  class="h-10 bg-primary/80 rounded flex items-center justify-center text-xs"
+                >
+                  Mon
+                </div>
+                <div
+                  class="h-10 bg-primary/80 rounded flex items-center justify-center text-xs"
+                >
+                  Tue
+                </div>
+                <div
+                  class="h-10 bg-primary/80 rounded flex items-center justify-center text-xs"
+                >
+                  Wed
+                </div>
+                <div
+                  class="h-10 bg-primary/80 rounded flex items-center justify-center text-xs"
+                >
+                  Thu
+                </div>
+                <div
+                  class="h-10 bg-primary/80 rounded flex items-center justify-center text-xs"
+                >
+                  Fri
+                </div>
+                <div
+                  class="h-10 bg-primary/80 rounded flex items-center justify-center text-xs"
+                >
+                  Sat
+                </div>
+                <div
+                  class="h-10 bg-slate-600/50 rounded flex items-center justify-center text-xs"
+                >
+                  Sun
+                </div>
+              </div>
+            </div>
+            <div class="bg-slate-700/30 rounded-lg p-5">
+              <div class="flex items-center gap-3 mb-4">
+                <div
+                  class="w-10 h-10 flex items-center justify-center bg-green-500/20 rounded-full"
+                >
+                  <i class="ri-time-line text-green-400"></i>
+                </div>
+                <h3 class="font-medium">Upcoming Reviews</h3>
+              </div>
+              <div class="space-y-3">
+                <div
+                  class="flex justify-between items-center p-2 bg-slate-800/50 rounded"
+                >
+                  <div>
+                    <div class="font-medium">Today</div>
+                    <div class="text-xs text-slate-400">8:00 PM</div>
+                  </div>
+                  <div class="text-right">
+                    <div class="font-medium">45 words</div>
+                    <div class="text-xs text-slate-400">~15 minutes</div>
+                  </div>
+                </div>
+                <div
+                  class="flex justify-between items-center p-2 bg-slate-800/50 rounded"
+                >
+                  <div>
+                    <div class="font-medium">Tomorrow</div>
+                    <div class="text-xs text-slate-400">10:00 AM</div>
+                  </div>
+                  <div class="text-right">
+                    <div class="font-medium">32 words</div>
+                    <div class="text-xs text-slate-400">~10 minutes</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer -->
+      <footer class="bg-slate-900 py-6">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+              <div class="flex items-center gap-2">
+                <span class="font-['Pacifico'] text-xl text-white">logo</span>
+                <span class="text-lg font-semibold">TOEFL Vocab Master</span>
+              </div>
+              <p class="text-sm text-slate-400 mt-2">
+                Master TOEFL vocabulary with adaptive learning
+              </p>
+            </div>
+            <div class="flex gap-4">
+              <a href="#" class="text-slate-400 hover:text-white transition">
+                <div
+                  class="w-10 h-10 flex items-center justify-center bg-slate-800 rounded-full"
+                >
+                  <i class="ri-twitter-x-line"></i>
+                </div>
+              </a>
+              <a href="#" class="text-slate-400 hover:text-white transition">
+                <div
+                  class="w-10 h-10 flex items-center justify-center bg-slate-800 rounded-full"
+                >
+                  <i class="ri-instagram-line"></i>
+                </div>
+              </a>
+              <a href="#" class="text-slate-400 hover:text-white transition">
+                <div
+                  class="w-10 h-10 flex items-center justify-center bg-slate-800 rounded-full"
+                >
+                  <i class="ri-facebook-circle-line"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div
+            class="mt-6 pt-6 border-t border-slate-800 text-center text-sm text-slate-500"
+          >
+            © 2025 TOEFL Vocab Master. All rights reserved.
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script>
+      // Sample vocabulary data
+      const vocabularyList = [
+        {
+          word: "Ubiquitous",
+          pronunciation: "/juːˈbɪkwɪtəs/",
+          definition: "Present, appearing, or found everywhere.",
+          example: "Mobile phones have become ubiquitous in modern society.",
+          synonyms: "Omnipresent, universal, pervasive, widespread",
+          difficulty: "Advanced",
+        },
+        {
+          word: "Ambivalent",
+          pronunciation: "/æmˈbɪvələnt/",
+          definition:
+            "Having mixed feelings or contradictory ideas about something or someone.",
+          example: "She felt ambivalent about moving to a new city.",
+          synonyms: "Conflicted, uncertain, undecided, equivocal",
+          difficulty: "Advanced",
+        },
+        {
+          word: "Pragmatic",
+          pronunciation: "/præɡˈmætɪk/",
+          definition:
+            "Dealing with things sensibly and realistically in a way that is based on practical considerations.",
+          example: "We need a pragmatic approach to solving this problem.",
+          synonyms: "Practical, realistic, sensible, rational",
+          difficulty: "Intermediate",
+        },
+        {
+          word: "Ephemeral",
+          pronunciation: "/ɪˈfɛm(ə)rəl/",
+          definition: "Lasting for a very short time.",
+          example: "The ephemeral beauty of cherry blossoms lasts only a few days.",
+          synonyms: "Fleeting, transitory, momentary, brief",
+          difficulty: "Advanced",
+        },
+        {
+          word: "Meticulous",
+          pronunciation: "/məˈtɪkjʊləs/",
+          definition: "Showing great attention to detail; very careful and precise.",
+          example: "He was meticulous in his preparation for the exam.",
+          synonyms: "Thorough, careful, precise, scrupulous",
+          difficulty: "Intermediate",
+        },
+        {
+          word: "Eloquent",
+          pronunciation: "/ˈɛləkwənt/",
+          definition: "Fluent or persuasive in speaking or writing.",
+          example: "She gave an eloquent speech that moved the entire audience.",
+          synonyms: "Articulate, expressive, fluent, well-spoken",
+          difficulty: "Intermediate",
+        },
+        {
+          word: "Tenacious",
+          pronunciation: "/təˈneɪʃəs/",
+          definition:
+            "Tending to keep a firm hold of something; clinging or adhering closely.",
+          example: "His tenacious pursuit of his goals eventually led to success.",
+          synonyms: "Persistent, determined, dogged, stubborn",
+          difficulty: "Advanced",
+        },
+        {
+          word: "Juxtapose",
+          pronunciation: "/ˈdʒʌkstəpəʊz/",
+          definition: "Place or deal with close together for contrasting effect.",
+          example: "The exhibition juxtaposes paintings from different periods.",
+          synonyms: "Contrast, compare, place side by side",
+          difficulty: "Advanced",
+        },
+        {
+          word: "Quintessential",
+          pronunciation: "/ˌkwɪntɪˈsɛnʃ(ə)l/",
+          definition:
+            "Representing the most perfect or typical example of a quality or class.",
+          example: "He is the quintessential New Yorker.",
+          synonyms: "Classic, archetypal, typical, perfect",
+          difficulty: "Advanced",
+        },
+        {
+          word: "Benevolent",
+          pronunciation: "/bəˈnɛvələnt/",
+          definition: "Well meaning and kindly.",
+          example:
+            "A benevolent smile crossed her face as she watched the children play.",
+          synonyms: "Kind, caring, compassionate, generous",
+          difficulty: "Intermediate",
+        },
+      ];
+      // Initialize user progress data
+      let userProgress = {
+        learned: 247,
+        reviewing: 124,
+        learning: 78,
+        streak: 12,
+        todayWords: 45,
+        currentWordIndex: 0,
+        sessionWords: 20,
+        completedWords: 12,
+        wordsStatus: {}, // Will store status for each word: 'learning', 'reviewing', 'mastered'
+      };
+      // Session management
+      let currentSession = {
+        words: [],
+        currentIndex: 0,
+        totalWords: 20,
+        completedWords: 12,
+      };
+      // Initialize the app
+      document.addEventListener("DOMContentLoaded", function () {
+        initializeApp();
+      });
+      function initializeApp() {
+        // Set up flashcard functionality
+        setupFlashcard();
+        // Set up settings modal
+        setupSettingsModal();
+        // Set up navigation buttons
+        setupNavigationButtons();
+        // Set up feedback buttons
+        setupFeedbackButtons();
+        // Set up audio buttons
+        setupAudioButtons();
+        // Set up dark mode toggle
+        setupDarkModeToggle();
+        // Set up range input
+        setupRangeInputs();
+        // Set up custom checkboxes
+        setupCustomCheckboxes();
+        // Initialize session
+        initializeSession();
+      }
+      function setupFlashcard() {
+        const flashcard = document.getElementById("flashcard");
+        flashcard.addEventListener("click", function () {
+          this.classList.toggle("flipped");
+        });
+      }
+      function setupSettingsModal() {
+        const settingsButton = document.querySelector(
+          "button i.ri-settings-4-line",
+        ).parentElement;
+        const settingsModal = document.getElementById("settingsModal");
+        const closeButton = settingsModal.querySelector(
+          "button i.ri-close-line",
+        ).parentElement;
+        const saveButton = settingsModal.querySelector("button.w-full");
+        settingsButton.addEventListener("click", function () {
+          settingsModal.classList.remove("hidden");
+        });
+        closeButton.addEventListener("click", function () {
+          settingsModal.classList.add("hidden");
+        });
+        saveButton.addEventListener("click", function () {
+          // Save settings logic
+          const wordsPerSession = parseInt(
+            document.querySelector('input[type="range"]').value,
+          );
+          userProgress.sessionWords = wordsPerSession;
+          // Update UI to reflect new settings
+          document.querySelector(
+            ".flex.justify-between.items-center.mb-2 span.font-medium",
+          ).textContent = wordsPerSession;
+          // Close modal
+          settingsModal.classList.add("hidden");
+          // Show notification
+          showNotification("Settings saved successfully!");
+        });
+        // Close modal when clicking outside
+        settingsModal.addEventListener("click", function (e) {
+          if (e.target === settingsModal) {
+            settingsModal.classList.add("hidden");
+          }
+        });
+      }
+      function setupNavigationButtons() {
+        const prevButton = document.querySelector("button:has(i.ri-arrow-left-line)");
+        const nextButton = document.querySelector(
+          "button:has(i.ri-arrow-right-line)",
+        );
+        prevButton.addEventListener("click", function () {
+          if (currentSession.currentIndex > 0) {
+            currentSession.currentIndex--;
+            updateFlashcard();
+          }
+        });
+        nextButton.addEventListener("click", function () {
+          if (currentSession.currentIndex < currentSession.words.length - 1) {
+            currentSession.currentIndex++;
+            updateFlashcard();
+          } else {
+            // If we're at the end of the session
+            if (currentSession.completedWords < currentSession.totalWords) {
+              // Add more words to the session
+              addMoreWordsToSession();
+            } else {
+              // End of session
+              showSessionCompleteDialog();
+            }
+          }
+        });
+      }
+      function setupFeedbackButtons() {
+        const stillLearningBtn = document.querySelector(
+          "button:has(i.ri-close-circle-line)",
+        );
+        const gettingThereBtn = document.querySelector(
+          "button:has(i.ri-question-mark-circle-line)",
+        );
+        const masteredBtn = document.querySelector("button:has(i.ri-check-line)");
+        stillLearningBtn.addEventListener("click", function () {
+          recordWordStatus("learning");
+          moveToNextWord();
+        });
+        gettingThereBtn.addEventListener("click", function () {
+          recordWordStatus("reviewing");
+          moveToNextWord();
+        });
+        masteredBtn.addEventListener("click", function () {
+          recordWordStatus("mastered");
+          moveToNextWord();
+        });
+      }
+      function setupAudioButtons() {
+        const audioButtons = document.querySelectorAll(
+          "button:has(i.ri-volume-up-line)",
+        );
+        audioButtons.forEach((button) => {
+          button.addEventListener("click", function (e) {
+            e.stopPropagation(); // Prevent card from flipping
+            playWordAudio();
+          });
+        });
+      }
+      function setupDarkModeToggle() {
+        const darkModeToggle = document.getElementById("darkModeToggle");
+        darkModeToggle.addEventListener("change", function () {
+          if (this.checked) {
+            document.body.classList.add("dark-mode");
+          } else {
+            document.body.classList.remove("dark-mode");
+          }
+        });
+      }
+      function setupRangeInputs() {
+        const rangeInput = document.querySelector('input[type="range"]');
+        rangeInput.addEventListener("input", function () {
+          const value = this.value;
+          this.previousElementSibling.querySelector("span.font-medium").textContent =
+            value;
+        });
+      }
+      function setupCustomCheckboxes() {
+        document.querySelectorAll(".custom-checkbox").forEach((checkbox) => {
+          checkbox.addEventListener("click", function () {
+            const isChecked = this.getAttribute("data-checked") === "true";
+            this.setAttribute("data-checked", !isChecked);
+            if (isChecked) {
+              this.classList.remove("checked");
+            } else {
+              this.classList.add("checked");
+            }
+          });
+        });
+      }
+      function initializeSession() {
+        // Create a shuffled copy of the vocabulary list
+        const shuffledWords = [...vocabularyList].sort(() => Math.random() - 0.5);
+        // Take the first 20 words (or less if there aren't enough)
+        currentSession.words = shuffledWords.slice(0, userProgress.sessionWords);
+        currentSession.totalWords = userProgress.sessionWords;
+        currentSession.currentIndex = 0;
+        currentSession.completedWords = userProgress.completedWords;
+        // Update progress bar
+        updateProgressBar();
+        // Load first word
+        updateFlashcard();
+      }
+      function updateFlashcard() {
+        const flashcard = document.getElementById("flashcard");
+        const currentWord = currentSession.words[currentSession.currentIndex];
+        // Reset card to front side
+        flashcard.classList.remove("flipped");
+        // Update front side
+        const frontSide = flashcard.querySelector(".flip-card-front");
+        frontSide.querySelector("h3").textContent = currentWord.word;
+        // Update back side
+        const backSide = flashcard.querySelector(".flip-card-back");
+        backSide.querySelector("h3").textContent = currentWord.word;
+        backSide.querySelector("p.text-primary").textContent =
+          currentWord.pronunciation;
+        backSide.querySelector(
+          "div.text-left.mb-4:nth-of-type(1) p.text-slate-300",
+        ).textContent = currentWord.definition;
+        backSide.querySelector(
+          "div.text-left.mb-4:nth-of-type(2) p.text-slate-300",
+        ).textContent = currentWord.example;
+        backSide.querySelector(
+          "div.text-left:nth-of-type(3) p.text-slate-300",
+        ).textContent = currentWord.synonyms;
+        // Update difficulty tag
+        const difficultyTag = frontSide.querySelector(
+          ".text-xs.text-slate-500 span:nth-of-type(2)",
+        );
+        difficultyTag.textContent = currentWord.difficulty;
+        // Update bookmark button status (if implemented)
+        // updateBookmarkStatus(currentWord.word);
+        // Update navigation buttons state
+        updateNavigationButtonsState();
+      }
+      function updateNavigationButtonsState() {
+        const prevButton = document.querySelector("button:has(i.ri-arrow-left-line)");
+        const nextButton = document.querySelector(
+          "button:has(i.ri-arrow-right-line)",
+        );
+        // Disable previous button if at first word
+        if (currentSession.currentIndex === 0) {
+          prevButton.classList.add("opacity-50", "cursor-not-allowed");
+        } else {
+          prevButton.classList.remove("opacity-50", "cursor-not-allowed");
+        }
+        // Update next button text if at last word
+        if (currentSession.currentIndex === currentSession.words.length - 1) {
+          if (currentSession.completedWords >= currentSession.totalWords) {
+            nextButton.innerHTML = 'Finish <i class="ri-check-double-line"></i>';
+          } else {
+            nextButton.innerHTML = 'More Words <i class="ri-arrow-right-line"></i>';
+          }
+        } else {
+          nextButton.innerHTML = 'Next <i class="ri-arrow-right-line"></i>';
+        }
+      }
+      function updateProgressBar() {
+        const progressBar = document.querySelector(".bg-primary.h-full");
+        const progressText = document.querySelector(
+          ".text-sm.text-slate-400 span.font-medium",
+        );
+        const progressPercentage =
+          (currentSession.completedWords / currentSession.totalWords) * 100;
+        progressBar.style.width = `${progressPercentage}%`;
+        progressText.textContent = currentSession.completedWords;
+      }
+      function recordWordStatus(status) {
+        const currentWord = currentSession.words[currentSession.currentIndex].word;
+        userProgress.wordsStatus[currentWord] = status;
+        // Update counters based on status
+        if (status === "mastered") {
+          userProgress.learned++;
+        } else if (status === "reviewing") {
+          userProgress.reviewing++;
+        } else {
+          userProgress.learning++;
+        }
+      }
+      function moveToNextWord() {
+        // Mark current word as completed
+        currentSession.completedWords++;
+        updateProgressBar();
+        // Move to next word if available
+        if (currentSession.currentIndex < currentSession.words.length - 1) {
+          currentSession.currentIndex++;
+          updateFlashcard();
+        } else {
+          // If we're at the end of the session
+          if (currentSession.completedWords < currentSession.totalWords) {
+            // Add more words to the session
+            addMoreWordsToSession();
+          } else {
+            // End of session
+            showSessionCompleteDialog();
+          }
+        }
+      }
+      function addMoreWordsToSession() {
+        // In a real app, this would fetch more words from the server
+        // For this demo, we'll just shuffle the existing list and add more
+        const remainingWords = vocabularyList.filter(
+          (word) => !currentSession.words.some((w) => w.word === word.word),
+        );
+        const shuffledRemaining = [...remainingWords].sort(() => Math.random() - 0.5);
+        const wordsToAdd = shuffledRemaining.slice(
+          0,
+          currentSession.totalWords - currentSession.words.length,
+        );
+        currentSession.words = [...currentSession.words, ...wordsToAdd];
+        updateFlashcard();
+      }
+      function showSessionCompleteDialog() {
+        // Create modal for session complete
+        const modal = document.createElement("div");
+        modal.className =
+          "fixed inset-0 bg-black/70 flex items-center justify-center z-50";
+        modal.innerHTML = `
+      <div class="bg-slate-800 rounded-lg shadow-xl max-w-md w-full mx-4 p-6">
+      <div class="text-center mb-6">
+      <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+      <i class="ri-check-line text-green-400 text-3xl"></i>
+      </div>
+      <h3 class="text-2xl font-bold mb-2">Session Complete!</h3>
+      <p class="text-slate-400">Great job! You've completed today's study session.</p>
+      </div>
+      <div class="grid grid-cols-3 gap-4 mb-6">
+      <div class="bg-slate-700/30 rounded p-3 text-center">
+      <div class="text-xl font-bold text-red-400">${getSessionStats().learning}</div>
+      <div class="text-xs text-slate-400">Learning</div>
+      </div>
+      <div class="bg-slate-700/30 rounded p-3 text-center">
+      <div class="text-xl font-bold text-yellow-400">${getSessionStats().reviewing}</div>
+      <div class="text-xs text-slate-400">Reviewing</div>
+      </div>
+      <div class="bg-slate-700/30 rounded p-3 text-center">
+      <div class="text-xl font-bold text-green-400">${getSessionStats().mastered}</div>
+      <div class="text-xs text-slate-400">Mastered</div>
+      </div>
+      </div>
+      <div class="flex gap-4">
+      <button class="flex-1 py-3 bg-slate-700 rounded-lg font-medium hover:bg-slate-600 transition !rounded-button whitespace-nowrap">
+      Review Again
+      </button>
+      <button class="flex-1 py-3 bg-primary rounded-lg font-medium hover:bg-primary/90 transition !rounded-button whitespace-nowrap">
+      Finish
+      </button>
+      </div>
+      </div>
+      `;
+        document.body.appendChild(modal);
+        // Add event listeners to buttons
+        const reviewButton = modal.querySelector("button:nth-of-type(1)");
+        const finishButton = modal.querySelector("button:nth-of-type(2)");
+        reviewButton.addEventListener("click", function () {
+          // Reset session with the same words
+          currentSession.completedWords = 0;
+          currentSession.currentIndex = 0;
+          updateProgressBar();
+          updateFlashcard();
+          document.body.removeChild(modal);
+        });
+        finishButton.addEventListener("click", function () {
+          // End session and return to dashboard (in a real app)
+          document.body.removeChild(modal);
+          showNotification("Session saved! Next review scheduled for 8:00 PM.");
+        });
+        // Close modal when clicking outside
+        modal.addEventListener("click", function (e) {
+          if (e.target === modal) {
+            document.body.removeChild(modal);
+          }
+        });
+      }
+      function getSessionStats() {
+        // Count words by status in the current session
+        let learning = 0,
+          reviewing = 0,
+          mastered = 0;
+        currentSession.words
+          .slice(0, currentSession.completedWords)
+          .forEach((word) => {
+            const status = userProgress.wordsStatus[word.word] || "learning";
+            if (status === "mastered") mastered++;
+            else if (status === "reviewing") reviewing++;
+            else learning++;
+          });
+
+        return { learning, reviewing, mastered };
+      }
+      function showNotification(message) {
+        const notification = document.createElement("div");
+        notification.className =
+          "fixed bottom-4 right-4 bg-slate-800 text-white px-4 py-3 rounded-lg shadow-lg z-50 flex items-center";
+        notification.innerHTML = `
+      <i class="ri-information-line mr-2 text-primary"></i>
+      <span>${message}</span>
+      `;
+        document.body.appendChild(notification);
+        // Remove notification after 3 seconds
+        setTimeout(() => {
+          notification.classList.add(
+            "opacity-0",
+            "transition-opacity",
+            "duration-300",
+          );
+          setTimeout(() => {
+            document.body.removeChild(notification);
+          }, 300);
+        }, 3000);
+      }
+      function playWordAudio() {
+        const currentWord = currentSession.words[currentSession.currentIndex].word;
+        // In a real app, this would play an audio file
+        // For this demo, we'll just show a notification
+        showNotification(`Playing pronunciation for "${currentWord}"`);
+        // Simulate audio playing with speech synthesis if available
+        if ("speechSynthesis" in window) {
+          const utterance = new SpeechSynthesisUtterance(currentWord);
+          utterance.rate = 0.8; // Slightly slower for learning
+          window.speechSynthesis.speak(utterance);
+        }
+      }
+      // Bookmark functionality
+      document
+        .querySelectorAll("button:has(i.ri-bookmark-line)")
+        .forEach((button) => {
+          button.addEventListener("click", function (e) {
+            e.stopPropagation(); // Prevent card from flipping
+            const icon = this.querySelector("i");
+            if (icon.classList.contains("ri-bookmark-line")) {
+              icon.classList.remove("ri-bookmark-line");
+              icon.classList.add("ri-bookmark-fill");
+              icon.classList.add("text-yellow-400");
+              showNotification("Word added to bookmarks");
+            } else {
+              icon.classList.remove("ri-bookmark-fill");
+              icon.classList.remove("text-yellow-400");
+              icon.classList.add("ri-bookmark-line");
+              showNotification("Word removed from bookmarks");
+            }
+          });
+        });
+      // User profile button functionality
+      document
+        .querySelector("button:has(i.ri-user-line)")
+        .addEventListener("click", function () {
+          showUserProfileModal();
+        });
+      function showUserProfileModal() {
+        const modal = document.createElement("div");
+        modal.className =
+          "fixed inset-0 bg-black/70 flex items-center justify-center z-50";
+        modal.innerHTML = `
+      <div class="bg-slate-800 rounded-lg shadow-xl max-w-md w-full mx-4">
+      <div class="p-4 border-b border-slate-700 flex justify-between items-center">
+      <h3 class="text-xl font-semibold">User Profile</h3>
+      <button class="w-8 h-8 flex items-center justify-center hover:bg-slate-700 rounded-full transition !rounded-button">
+      <i class="ri-close-line"></i>
+      </button>
+      </div>
+      <div class="p-6">
+      <div class="flex items-center gap-4 mb-6">
+      <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center">
+      <i class="ri-user-line text-2xl text-primary"></i>
+      </div>
+      <div>
+      <h4 class="text-lg font-semibold">Sarah Johnson</h4>
+      <p class="text-slate-400">TOEFL Test Date: May 15, 2025</p>
+      </div>
+      </div>
+      <div class="mb-6">
+      <h4 class="font-medium mb-3">Study Statistics</h4>
+      <div class="grid grid-cols-2 gap-3">
+      <div class="bg-slate-700/30 p-3 rounded">
+      <div class="text-sm text-slate-400">Total Study Time</div>
+      <div class="font-semibold">42.5 hours</div>
+      </div>
+      <div class="bg-slate-700/30 p-3 rounded">
+      <div class="text-sm text-slate-400">Words Learned</div>
+      <div class="font-semibold">${userProgress.learned}</div>
+      </div>
+      <div class="bg-slate-700/30 p-3 rounded">
+      <div class="text-sm text-slate-400">Current Streak</div>
+      <div class="font-semibold">${userProgress.streak} days</div>
+      </div>
+      <div class="bg-slate-700/30 p-3 rounded">
+      <div class="text-sm text-slate-400">Best Streak</div>
+      <div class="font-semibold">14 days</div>
+      </div>
+      </div>
+      </div>
+      <div class="mb-6">
+      <h4 class="font-medium mb-3">Learning Goals</h4>
+      <div class="flex items-center justify-between mb-2">
+      <span>Daily word target</span>
+      <span class="font-medium">45 words</span>
+      </div>
+      <input type="range" min="10" max="100" value="45" class="w-full">
+      </div>
+      <button class="w-full py-3 bg-primary rounded-lg font-medium hover:bg-primary/90 transition !rounded-button whitespace-nowrap">
+      Save Changes
+      </button>
+      </div>
+      </div>
+      `;
+        document.body.appendChild(modal);
+        // Add event listeners
+        const closeButton = modal.querySelector("button:has(i.ri-close-line)");
+        const saveButton = modal.querySelector("button.w-full");
+        const rangeInput = modal.querySelector('input[type="range"]');
+        closeButton.addEventListener("click", function () {
+          document.body.removeChild(modal);
+        });
+        rangeInput.addEventListener("input", function () {
+          const value = this.value;
+          this.previousElementSibling.querySelector("span.font-medium").textContent =
+            `${value} words`;
+        });
+        saveButton.addEventListener("click", function () {
+          // Save user profile changes
+          const dailyTarget = parseInt(rangeInput.value);
+          userProgress.todayWords = dailyTarget;
+          document.body.removeChild(modal);
+          showNotification("Profile updated successfully!");
+        });
+        // Close modal when clicking outside
+        modal.addEventListener("click", function (e) {
+          if (e.target === modal) {
+            document.body.removeChild(modal);
+          }
+        });
+      }
+    </script>
+  </body>
 </html>
