@@ -16,7 +16,7 @@ if (title.indexOf("search") !== -1){
     title = decodeURI(location.search.substring(location.search.indexOf("=") + 1));
 }
 
-const parent = document.querySelector("#__next > div.d_a5_22.d_jm_12n979t.d_gz_29.d_m4_l9tp1y.d_eg_2t9vxr.d_vl_1ft4lg7.ft1v5tm > div.d_ju_gro691.d_dr_1c2m9s5.f1og407v > div > div > div > div.d_mk_1s.m1lmxu0d > div:nth-child(3) > div > div:nth-child(1) > div");
+const parent = document.querySelector("#__next > div.d_a5_22.d_jm_12n979t.d_gz_29.d_m4_l9tp1y.d_eg_2t9vxr.d_vl_1ft4lg7.ft1v5tm > div.d_ju_gro691.d_dr_1c2m9s5.f1og407v > div > div > div.d_mk_1s.d_2l_f.m1lmxu0d > div > div:nth-child(3) > div > div:nth-child(1) > div");
 
 const feed  = [];
 
