@@ -131,6 +131,21 @@ function Game(_mineNumber, _gridX, _gridY){    //x:left-right, y:up-down
         //console.log(grid);
     }
 
+    this.openInit = () => {
+        const noMine = [];
+        for (let i = 0; i < this.gridNumber[0]; i++){
+            for (let j = 0; j < this.gridNumber[1]; j++){
+                if (grid[i][j] == 0){
+                    noMine.push([i,j]);
+                }
+            }
+        }
+        let randomIndex = Math.floor(Math.random()*noMine.length);
+        let gridX = noMine[randomIndex][0];
+        let gridY = noMine[randomIndex][1];
+        open(gridX, gridY);
+    }
+
     //open adjacent boxes
     const open = (gridX, gridY) => {
         if (gridX >= this.gridNumber[0] || gridX < 0){
@@ -347,6 +362,7 @@ function Game(_mineNumber, _gridX, _gridY){    //x:left-right, y:up-down
     this.run = () => {
         this.initialize();
         this.setMine();
+        this.openInit();
         console.log(`${this.mineNumber} mines set in grid[${this.gridNumber[0]}][${this.gridNumber[1]}]`);
         console.log(this.interface);
     }
@@ -357,7 +373,7 @@ function Game(_mineNumber, _gridX, _gridY){    //x:left-right, y:up-down
 let mineSweeper;
 function execute(){
     rect(0,0,600,600);
-    mineSweeper = new Game(10,10,10);
+    mineSweeper = new Game(20,10,10);
     mineSweeper.run();
     mineSweeper.display("processing");
 }
