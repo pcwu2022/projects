@@ -2,14 +2,31 @@
 <html lang="en-us">
     <head>
         <title>Games</title>
-        <meta charset="utf-8">
+        <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="https://cdn.tailwindcss.com"></script>
     </head>
-    <body>
-        <a href="mouse.html">Hit the Mouse</a><br>
-        <a href="minesweeper.html">Minesweeper</a><br>
-        <a href="snake.html">Snake</a><br>
-        <a href="sudoku.html">Sudoku</a><br>
-        <a href="tetris.html">Tetris</a><br>
+    <body class="min-h-screen bg-stone-950 text-white font-sans p-8">
+        <div class="max-w-3xl mx-auto">
+            <header class="mb-6">
+                <h1 class="text-2xl font-semibold">Games</h1>
+                <p class="text-stone-400">Small browser games and experiments.</p>
+            </header>
+
+            <main>
+                <div class="space-y-3">
+                    <a href="mouse.html" class="block p-4 rounded-md bg-stone-800 hover:bg-stone-700">Hit the Mouse</a>
+                    <a href="minesweeper.html" class="block p-4 rounded-md bg-stone-800 hover:bg-stone-700">Minesweeper</a>
+                    <a href="snake.html" class="block p-4 rounded-md bg-stone-800 hover:bg-stone-700">Snake</a>
+                    <a href="sudoku.html" class="block p-4 rounded-md bg-stone-800 hover:bg-stone-700">Sudoku</a>
+                    <a href="tetris.html" class="block p-4 rounded-md bg-stone-800 hover:bg-stone-700">Tetris</a>
+                </div>
+            </main>
+
+            <footer class="mt-8 text-stone-500">
+                <a href="../index.html" class="text-stone-300 hover:text-white">Back to projects</a>
+                <p class="text-sm text-stone-500 mt-2">Visit my homepage — <a href="https://pcwu2022.github.io" class="text-stone-300 hover:text-white">pcwu2022.github.io</a></p>
+            </footer>
+        </div>
     </body>
 </html>
