@@ -1,37 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kmap Solver</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    Enter the number of variables: <input type="text" id="power"><br>
-    Enter the minterms (ex: 0,1,2,4,5): <input type="text" id="minterms"><br>
-    <button id="bt">Submit</button>
+    <header class="site-header">
+        <div class="container">
+            <h1 class="title">Kmap Solver</h1>
+            <p class="subtitle">Enter variables and minterms to compute implicants.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <form id="kmap-form" class="form">
+                <label for="power">Number of variables</label>
+                <input id="power" name="power" inputmode="numeric" placeholder="e.g. 4" required>
+
+                <label for="minterms">Minterms</label>
+                <input id="minterms" name="minterms" placeholder="e.g. 0,1,2,5,6" required>
+
+                <div class="form-row">
+                    <button type="submit" class="btn">Compute</button>
+                    <button type="reset" class="btn btn-ghost">Reset</button>
+                </div>
+            </form>
+
+            <div id="result" class="result" aria-live="polite"></div>
+        </section>
+
+        <section class="note">
+            <p>Examples: for 3 variables valid minterms are values from 0 to 7 separated by commas.</p>
+        </section>
+    </main>
+
+    <footer><small class="muted">Created by <a style="color:#60a5fa;" href="https://pcwu2022.github.io">Po-Chun Wu</a></small></footer>
 
     <script src="script.js"></script>
-    <script>
-
-        let power = document.getElementById("power");
-        let minterms = document.getElementById("minterms");
-        let bt = document.getElementById("bt");
-
-        bt.onclick = function () {
-            try {
-                let ipc = JSON.parse("[" + minterms.value + "]");
-                let imp = findImplicants(ipc, parseInt(power.value));
-                console.log(imp);
-                document.body.innerHTML += "Solution to sigma-m( " + minterms.value + " ): " + JSON.stringify(imp);
-            } catch (err) {
-                document.body.innerHTML += err;
-            }
-
-
-        };
-    </script>
 </body>
 
 </html>

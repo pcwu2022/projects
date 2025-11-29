@@ -1,5 +1,5 @@
 // --- Metro Data ---
-import { LINES } from './lines.js';
+
 
 const LEVELS = [
   { value: 0, label: '無', color: 'var(--level-0)' },

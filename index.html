@@ -9,36 +9,35 @@
     </head>
     <body class="min-h-screen bg-stone-950 text-white font-sans p-8">
         <div class="max-w-4xl mx-auto">
-            <header class="mb-8">
+            <!-- <header class="mb-8">
                 <h1 class="text-3xl font-semibold mb-2">Projects</h1>
                 <p class="text-stone-400">A collection of small projects and experiments.</p>
-            </header>
+            </header> -->
 
             <main>
-                <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                    <a href="ntufood" class="block p-4 rounded-lg bg-stone-800 hover:bg-stone-700 transition-shadow shadow-sm">NTU Food</a>
-                    <a href="airplaneremote/index.html" class="block p-4 rounded-lg bg-stone-800 hover:bg-stone-700 transition-shadow shadow-sm">Airplane Remote</a>
-                    <a href="chess/index.html" class="block p-4 rounded-lg bg-stone-800 hover:bg-stone-700 transition-shadow shadow-sm">Chinese Chess</a>
-                    <a href="games/game.html" class="block p-4 rounded-lg bg-stone-800 hover:bg-stone-700 transition-shadow shadow-sm">Games</a>
-                    <a href="hulan/index.html" class="block p-4 rounded-lg bg-stone-800 hover:bg-stone-700 transition-shadow shadow-sm">Essay Creator</a>
-                    <a href="kmap/index.html" class="block p-4 rounded-lg bg-stone-800 hover:bg-stone-700 transition-shadow shadow-sm">KMAP</a>
-                    <a href="remote/index.html" class="block p-4 rounded-lg bg-stone-800 hover:bg-stone-700 transition-shadow shadow-sm">Remote Control</a>
-                    <a href="wave/index.html" class="block p-4 rounded-lg bg-stone-800 hover:bg-stone-700 transition-shadow shadow-sm">Wave Simulator</a>
-                    <a href="phishing/index.html" class="block p-4 rounded-lg bg-stone-800 hover:bg-stone-700 transition-shadow shadow-sm">Phishing Simulator</a>
-                    <a href="cornway/cornway.html" class="block p-4 rounded-lg bg-stone-800 hover:bg-stone-700 transition-shadow shadow-sm">Cornway's Game of Life</a>
-                    <a href="taipei_metro_level/index.html" class="block p-4 rounded-lg bg-stone-800 hover:bg-stone-700 transition-shadow shadow-sm">Taipei Metro Level</a>
-                    <a href="tra_names/index.html" class="block p-4 rounded-lg bg-stone-800 hover:bg-stone-700 transition-shadow shadow-sm">TRA Names</a>
-                    <a href="eequiz/index.html" class="block p-4 rounded-lg bg-stone-800 hover:bg-stone-700 transition-shadow shadow-sm">EE Quiz</a>
+                <div class="mb-6">
+                    <h1 class="text-3xl font-semibold">Web Projects Showcase</h1>
+                </div>
+
+                <div id="collections" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    <!-- Cards will be injected here by `render_collections.js` -->
                 </div>
             </main>
 
-            <footer class="mt-8 text-stone-500">
+            <!-- <footer class="mt-8 text-stone-500">
                 <a href="../" class="text-stone-300 hover:text-white">Back to homepage</a>
                 <p class="text-sm text-stone-500 mt-2">Visit my homepage — <a href="https://pcwu2022.github.io" class="text-stone-300 hover:text-white">pcwu2022.github.io</a></p>
+            </footer> -->
+            <footer>
+                <br />
+                <small class="muted">Created by <a style="color:#60a5fa;" href="https://pcwu2022.github.io">Po-Chun Wu</a></small>
             </footer>
         </div>
 
+
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="projects_data.js"></script>
+        <script src="render_collections.js"></script>
         <script src="script.js"></script>
     </body>
 </html>

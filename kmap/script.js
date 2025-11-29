@@ -68,3 +68,33 @@ function findImplicants(implicants, power, domain = 0) {
 
     return returnImplicants;
 };
+
+// UI glue: attach form handler and display results
+document.addEventListener('DOMContentLoaded', () => {
+    const powerInput = document.getElementById('power');
+    const mintermsInput = document.getElementById('minterms');
+    const form = document.getElementById('kmap-form');
+    const resultEl = document.getElementById('result');
+
+    if (!form || !powerInput || !mintermsInput || !resultEl) {
+        return;
+    }
+
+    form.addEventListener('submit', (ev) => {
+        ev.preventDefault();
+        resultEl.textContent = '';
+        const powerVal = parseInt(powerInput.value);
+        if (!Number.isInteger(powerVal) || powerVal <= 0) {
+            resultEl.innerHTML = '<span class="error">Please enter a valid positive integer for variables.</span>';
+            return;
+        }
+
+        try {
+            const ipc = JSON.parse('[' + mintermsInput.value + ']');
+            const imp = findImplicants(ipc, powerVal);
+            resultEl.innerHTML = `<strong>Solution to σ-m( ${mintermsInput.value} ):</strong><pre>${JSON.stringify(imp, null, 2)}</pre>`;
+        } catch (err) {
+            resultEl.innerHTML = `<span class="error">${String(err)}</span>`;
+        }
+    });
+});

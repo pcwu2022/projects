@@ -1,4 +1,4 @@
-export const LINES = [
+window.LINES = [
     {
         "name": "新北投支線",
         "color": "var(--pink)",
