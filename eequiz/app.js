@@ -86,6 +86,11 @@ async function loadData(){
     }
   }catch(e){ console.warn('load state failed', e); }
 
+  // make sure UI (buttons/placeholder) reflects restored mode
+  document.querySelectorAll('.mode-switch button').forEach(b=>b.classList.remove('active'));
+  if(mode==='students') studentsBtn.classList.add('active'); else profsBtn.classList.add('active');
+  nameInput.placeholder = mode==='students' ? '輸入學生名字後按 Enter 或按下 +（純記憶，不顯示建議）' : '輸入教授名字後按 Enter 或按下 +（純記憶，不顯示建議）';
+
   updateUI();
 }
 
@@ -205,7 +210,7 @@ function updateUI(){
   } else {
     // professor mode: compute per-group coverage
     const covered = new Set();
-    for(const name of entered){
+    for(const name of entered.keys()){
       // match canonical
       const key = Array.from(profMap.keys()).find(p=>normalizeName(p)===normalizeName(name));
       if(key) covered.add(key);
