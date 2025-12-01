@@ -61,8 +61,8 @@ window.PROJECTS = [
     },
     {
         title: "Git Archive",
-        href: "https://pcwu2022.github.io/gitarchive",
-        image: "https://upload.wikimedia.org/wikipedia/en/f/f7/RickRoll.png",
+        href: "https://pcwu2022.github.io/gitarchive/rick/create.html",
+        image: "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/22312759/rickroll_4k.jpg?quality=90&strip=all&crop=0,10.749448450723,100,78.501103098554",
         description: "A rickrolling website with custom title and description for sharing via social media.",
         date: "July 2024"
     },
