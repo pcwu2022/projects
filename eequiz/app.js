@@ -10,7 +10,7 @@ const MODES = [
   { id: 'buildings', label: '台大建築物', path: buildingsPath, type: 'pairs', placeholder: '輸入建築名稱後按 Enter 或按下 +', showGroups: true },
   { id: 'courses', label: '電資院課程', path: coursesPath, type: 'pairs', placeholder: '輸入課程名稱後按 Enter 或按下 +', showGroups: true },
   { id: 'students', label: 'B11 同學', path: studentsPath, type: 'hashlist', placeholder: '輸入學生名字後按 Enter 或按下 +', showGroups: false }
-];
+]; 
 
 let students = [];
 let profs = []; // [{name, groups}]
