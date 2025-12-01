@@ -1,26 +1,30 @@
 # EEQuiz
 
-A small static frontend memory game to test how many NTUEE students and professors you remember.
+EEQuiz is an interactive quiz application designed to help users test and improve their electrical engineering knowledge.
 
-- Place this folder on GitHub and enable GitHub Pages for the repository (or use the `gh-pages` branch).
- - The app loads `students_hashed.json` and `professors.json` from the same folder. `students.json` (the plain list) is not required and has been removed for privacy.
+## Features
 
-## Files
-- `index.html` — main page
-- `styles.css` — styling
-- `app.js` — JavaScript game logic
-- `students_hashed.json` and `professors.json` — data files (already present)
-	- Note: `students_hashed.json` is a JSON array of SHA256 hex digests of normalized student names. If you previously had `students.json`, you can generate `students_hashed.json` locally using `hash_list.py` (keep the plain file private).
+- Multiple-choice questions
+- Instant feedback on answers
+- Score tracking
+- Responsive design
 
-## Quick start (locally /preview)
-You can preview with a simple static server. From the project folder run:
+## Usage
 
-```bash
-python3 -m http.server 8000
-# then open http://localhost:8000 in your browser
-```
+1. Install dependencies:
+	```bash
+	npm install
+	```
+2. Start the application:
+	```bash
+	npm start
+	```
+3. Open your browser and navigate to `http://localhost:3000`
 
-## Deploy to GitHub Pages
-- Push this folder to a GitHub repo.
-- In repository settings > Pages set the source to the branch/folder where these files live (e.g., `main`/`/root`).
-- Visit the provided GitHub Pages URL.
+## Contributing
+
+Contributions are welcome! Please open issues or submit pull requests.
+
+## License
+
+This project is licensed under the MIT License.
