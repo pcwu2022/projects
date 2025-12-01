@@ -52,6 +52,20 @@ window.PROJECTS = [
         description: "A gibberish essay creater invented before ChatGPT.", 
         date: "April 2020" 
     },
+    {
+        title: "Random Flashcards",
+        href: "https://pcwu2022.github.io/vocabulary_flashcards/",
+        image: "images/vocabulary.png",
+        description: "A vocabulary flashcard app that randomly picks words of your vocabulary level, determined by a small algorithm.",
+        date: "January 2025"
+    },
+    {
+        title: "Git Archive",
+        href: "https://pcwu2022.github.io/gitarchive",
+        image: "https://upload.wikimedia.org/wikipedia/en/f/f7/RickRoll.png",
+        description: "A rickrolling website with custom title and description for sharing via social media.",
+        date: "July 2024"
+    },
     { 
         title: "Cornway's Game of Life", 
         href: "cornway/cornway.html", 
