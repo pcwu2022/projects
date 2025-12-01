@@ -3,12 +3,14 @@ const studentsPath = 'students_hashed.json';
 const profsPath = 'professors.json';
 const buildingsPath = 'buildings.json';
 const coursesPath = 'courses.json';
+const restaurantsPath = 'restaurants.json';
 
 // Generic mode configuration: add new modes here to extend the app
 const MODES = [
   { id: 'profs', label: '電機系教授', path: profsPath, type: 'pairs', placeholder: '輸入教授名字後按 Enter 或按下 +', showGroups: true },
   { id: 'buildings', label: '台大建築物', path: buildingsPath, type: 'pairs', placeholder: '輸入建築名稱後按 Enter 或按下 +', showGroups: true },
   { id: 'courses', label: '電資院課程', path: coursesPath, type: 'pairs', placeholder: '輸入課程名稱後按 Enter 或按下 +', showGroups: true },
+  { id: 'restaurants', label: '校園美食', path: restaurantsPath, type: 'pairs', placeholder: '輸入餐廳名稱後按 Enter 或按下 + | Source: NTUFOOD', showGroups: true },
   { id: 'students', label: 'B11 同學', path: studentsPath, type: 'hashlist', placeholder: '輸入學生名字後按 Enter 或按下 +', showGroups: false }
 ]; 
 
