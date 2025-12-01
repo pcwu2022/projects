@@ -4,6 +4,14 @@ const profsPath = 'professors.json';
 const buildingsPath = 'buildings.json';
 const coursesPath = 'courses.json';
 
+// Generic mode configuration: add new modes here to extend the app
+const MODES = [
+  { id: 'profs', label: '電機系教授', path: profsPath, type: 'pairs', placeholder: '輸入教授名字後按 Enter 或按下 +', showGroups: true },
+  { id: 'buildings', label: '台大建築物', path: buildingsPath, type: 'pairs', placeholder: '輸入建築名稱後按 Enter 或按下 +', showGroups: true },
+  { id: 'courses', label: '電資院課程', path: coursesPath, type: 'pairs', placeholder: '輸入課程名稱後按 Enter 或按下 +', showGroups: true },
+  { id: 'students', label: 'B11 同學', path: studentsPath, type: 'hashlist', placeholder: '輸入學生名字後按 Enter 或按下 +', showGroups: false }
+];
+
 let students = [];
 let profs = []; // [{name, groups}]
 
@@ -11,33 +19,23 @@ const nameInput = document.getElementById('nameInput');
 const addBtn = document.getElementById('addBtn');
 const resetBtn = document.getElementById('resetBtn');
 const exportBtn = document.getElementById('exportBtn');
-const studentsBtn = document.getElementById('studentsBtn');
-const profsBtn = document.getElementById('profsBtn');
+// Mode buttons will be generated dynamically for scalability
+const modeSwitchEl = document.querySelector('.mode-switch');
 // no datalist/suggestions: pure memory gameplay
 const answers = document.getElementById('answers');
 const summary = document.getElementById('summary');
 const groupStats = document.getElementById('groupStats');
-const buildingsBtn = document.getElementById('buildingsBtn');
-const coursesBtn = document.getElementById('coursesBtn');
 
 let mode = 'students';
 
 // entered: Map displayName -> digest (hex string) ; digest may be null until computed
 let entered = new Map();
 
-// For professors analytics
-let profMap = new Map(); // name -> groups[]
-let groupToProfessors = new Map(); // group -> Set of professor names
-
-// buildings
-let buildings = [];
-let buildingMap = new Map(); // name -> groups[]
-let groupToBuildings = new Map(); // group -> Set of building names
-
-// courses
-let courses = [];
-let courseMap = new Map(); // name -> groups[]
-let groupToCourses = new Map(); // group -> Set of course names
+// Data stores and fast-lookup maps per mode
+const dataStore = new Map(); // modeId -> array (raw data)
+const nameMap = new Map(); // modeId -> Map(name -> groups[])
+const groupIndex = new Map(); // modeId -> Map(group -> Set(names))
+const modeButtons = new Map(); // modeId -> button element
 
 const STORAGE_KEY = 'eequiz-state-v1';
 
@@ -68,63 +66,59 @@ async function computeDigestsForEntered(){
 }
 
 async function loadData(){
-  const sResp = await fetch(studentsPath);
-  students = await sResp.json();
-  const pResp = await fetch(profsPath);
-  profs = await pResp.json();
-  const bResp = await fetch(buildingsPath);
-  buildings = await bResp.json();
-  const cResp = await fetch(coursesPath);
-  courses = await cResp.json();
-
-  // build profMap and group indices
-  profMap = new Map();
-  groupToProfessors = new Map();
-  for(const item of profs){
-    const [name, groups] = item;
-    profMap.set(name, groups);
-    for(const g of groups){
-      if(!groupToProfessors.has(g)) groupToProfessors.set(g, new Set());
-      groupToProfessors.get(g).add(name);
+  // load all configured modes' data
+  for(const m of MODES){
+    try{
+      const resp = await fetch(m.path);
+      const data = await resp.json();
+      dataStore.set(m.id, data);
+    }catch(e){
+      console.error('Failed to load', m.path, e);
+      dataStore.set(m.id, []);
     }
   }
 
-  // build building maps
-  buildingMap = new Map();
-  groupToBuildings = new Map();
-  for(const item of buildings){
-    const [name, groups] = item;
-    buildingMap.set(name, groups);
-    for(const g of groups){
-      if(!groupToBuildings.has(g)) groupToBuildings.set(g, new Set());
-      groupToBuildings.get(g).add(name);
-    }
-  }
-
-  // build course maps
-  courseMap = new Map();
-  groupToCourses = new Map();
-  for(const item of courses){
-    const [name, groups] = item;
-    courseMap.set(name, groups);
-    for(const g of groups){
-      if(!groupToCourses.has(g)) groupToCourses.set(g, new Set());
-      groupToCourses.get(g).add(name);
+  // build name maps and group indices for non-hashlist modes
+  for(const m of MODES){
+    if(m.type === 'pairs'){
+      const arr = dataStore.get(m.id) || [];
+      const nm = new Map();
+      const gi = new Map();
+      for(const item of arr){
+        const [name, groups] = item;
+        nm.set(name, groups);
+        for(const g of groups){
+          if(!gi.has(g)) gi.set(g, new Set());
+          gi.get(g).add(name);
+        }
+      }
+      nameMap.set(m.id, nm);
+      groupIndex.set(m.id, gi);
     }
   }
 
   populateDatalist();
+  // generate mode buttons dynamically
+  modeSwitchEl.innerHTML = '';
+  for(const m of MODES){
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.id = `${m.id}Btn`;
+    b.textContent = m.label;
+    b.setAttribute('aria-pressed', 'false');
+    if(m.id === mode) b.classList.add('active');
+    b.addEventListener('click', ()=>switchMode(m.id));
+    modeSwitchEl.appendChild(b);
+    modeButtons.set(m.id, b);
+  }
   // restore saved answers (if any) and then update UI
   try{
     const raw = localStorage.getItem(STORAGE_KEY);
     if(raw){
       const obj = JSON.parse(raw);
       if(obj.mode) mode = obj.mode;
-      let arr = [];
-      if(mode === 'students') arr = obj.students || [];
-      else if(mode === 'profs') arr = obj.profs || [];
-      else if(mode === 'buildings') arr = obj.buildings || [];
-      else if(mode === 'courses') arr = obj.courses || [];
+      // restore entries for the active mode (generic)
+      const arr = obj[mode] || [];
       entered.clear();
       for(const n of arr) entered.set(n, null);
       // compute digests for any restored student entries (async)
@@ -133,18 +127,13 @@ async function loadData(){
   }catch(e){ console.warn('load state failed', e); }
 
   // make sure UI (buttons/placeholder) reflects restored mode
-  document.querySelectorAll('.mode-switch button').forEach(b=>b.classList.remove('active'));
-    if(mode==='students') studentsBtn.classList.add('active'); else if(mode==='profs') profsBtn.classList.add('active'); else if(mode==='buildings') buildingsBtn.classList.add('active');
-    if(typeof coursesBtn !== 'undefined' && coursesBtn) { if(mode==='courses') coursesBtn.classList.add('active'); }
-    // update aria-pressed attributes
-    studentsBtn.setAttribute('aria-pressed', mode==='students');
-    profsBtn.setAttribute('aria-pressed', mode==='profs');
-    buildingsBtn.setAttribute('aria-pressed', mode==='buildings');
-    if(typeof coursesBtn !== 'undefined' && coursesBtn) coursesBtn.setAttribute('aria-pressed', mode==='courses');
-  if(mode==='students') nameInput.placeholder = '輸入學生名字後按 Enter 或按下 +（純記憶，不顯示建議）';
-  else if(mode==='profs') nameInput.placeholder = '輸入教授名字後按 Enter 或按下 +（純記憶，不顯示建議）';
-  else if(mode==='buildings') nameInput.placeholder = '輸入建築名稱後按 Enter 或按下 +（純記憶，不顯示建議）';
-  else if(mode==='courses') nameInput.placeholder = '輸入課程名稱後按 Enter 或按下 +（純記憶，不顯示建議）';
+  // update active state for dynamic buttons
+  modeButtons.forEach((btn, id) => {
+    btn.classList.toggle('active', id === mode);
+    btn.setAttribute('aria-pressed', id === mode);
+  });
+  const modeCfg = MODES.find(m=>m.id===mode) || MODES[0];
+  nameInput.placeholder = modeCfg.placeholder;
 
   updateUI();
 }
@@ -157,16 +146,9 @@ function populateDatalist(){
 function saveState(){
   try{
     const raw = localStorage.getItem(STORAGE_KEY);
-    const obj = raw ? JSON.parse(raw) : { students: [], profs: [], buildings: [], mode };
-    if(mode === 'students'){
-      obj.students = Array.from(entered.keys());
-    } else if(mode === 'profs'){
-      obj.profs = Array.from(entered.keys());
-    } else if(mode === 'buildings'){
-      obj.buildings = Array.from(entered.keys());
-    } else if(mode === 'courses'){
-      obj.courses = Array.from(entered.keys());
-    }
+    const obj = raw ? JSON.parse(raw) : { mode };
+    // save entries under the active mode key
+    obj[mode] = Array.from(entered.keys());
     obj.mode = mode;
     localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
   }catch(e){ console.warn('saveState failed', e); }
@@ -181,11 +163,7 @@ function switchMode(m){
     const raw = localStorage.getItem(STORAGE_KEY);
     if(raw){
       const obj = JSON.parse(raw);
-      let arr = [];
-      if(mode === 'students') arr = obj.students || [];
-      else if(mode === 'profs') arr = obj.profs || [];
-      else if(mode === 'buildings') arr = obj.buildings || [];
-      else if(mode === 'courses') arr = obj.courses || [];
+      const arr = obj[mode] || [];
       entered.clear();
       for(const n of arr) entered.set(n, null);
       // kick off digest computation (async) and update UI when done
@@ -194,16 +172,13 @@ function switchMode(m){
       entered.clear();
     }
   }catch(e){ console.warn('restore on switch failed', e); entered.clear(); }
-
-  document.querySelectorAll('.mode-switch button').forEach(b=>b.classList.remove('active'));
-    if(m==='students') studentsBtn.classList.add('active'); else if(m==='profs') profsBtn.classList.add('active'); else if(m==='buildings') buildingsBtn.classList.add('active');
-  nameInput.placeholder = m==='students' ? '輸入學生名字後按 Enter 或按下 +（純記憶，不顯示建議）' : '輸入教授名字後按 Enter 或按下 +（純記憶，不顯示建議）';
-    studentsBtn.setAttribute('aria-pressed', m==='students');
-    profsBtn.setAttribute('aria-pressed', m==='profs');
-    buildingsBtn.setAttribute('aria-pressed', m==='buildings');
-    if(typeof coursesBtn !== 'undefined' && coursesBtn) coursesBtn.setAttribute('aria-pressed', m==='courses');
-  if(m==='buildings') nameInput.placeholder = '輸入建築名稱後按 Enter 或按下 +（純記憶，不顯示建議）';
-  if(m==='courses') nameInput.placeholder = '輸入課程名稱後按 Enter 或按下 +（純記憶，不顯示建議）';
+  // update active state for dynamic buttons and placeholder
+  modeButtons.forEach((btn, id) => {
+    btn.classList.toggle('active', id === mode);
+    btn.setAttribute('aria-pressed', id === mode);
+  });
+  const modeCfg = MODES.find(x=>x.id===mode);
+  if(modeCfg) nameInput.placeholder = modeCfg.placeholder;
   populateDatalist();
   updateUI();
 }
@@ -221,49 +196,30 @@ function addEntry(){
       }
     }
 
-    if(mode === 'students'){
-      // compute digest of normalized name and check against students digests
+    // generic validation by mode
+    const cfg = MODES.find(x=>x.id===mode);
+    if(!cfg){ nameInput.value = ''; return; }
+    if(cfg.type === 'hashlist'){
       const digest = await hashString(norm);
-      const valid = students.includes(digest);
+      const valid = (dataStore.get(mode) || []).includes(digest);
       if(!valid){
         nameInput.classList.add('input-error');
         setTimeout(()=> nameInput.classList.remove('input-error'), 700);
         nameInput.value = '';
         return;
       }
-      // canonical name: keep the user's raw input for display
-      const canonical = raw;
-      entered.set(canonical, digest);
-    } else if(mode === 'profs'){
-      const valid = Array.from(profMap.keys()).some(p => normalizeName(p) === norm);
-      if(!valid){
+      entered.set(raw, digest);
+    } else if(cfg.type === 'pairs'){
+      const nm = nameMap.get(mode) || new Map();
+      const keys = Array.from(nm.keys());
+      const match = keys.find(k => normalizeName(k) === norm);
+      if(!match){
         nameInput.classList.add('input-error');
         setTimeout(()=> nameInput.classList.remove('input-error'), 700);
         nameInput.value = '';
         return;
       }
-      const canonical = Array.from(profMap.keys()).find(p => normalizeName(p)===norm) || raw;
-      entered.set(canonical, null);
-    } else if(mode === 'buildings'){
-      const valid = Array.from(buildingMap.keys()).some(p => normalizeName(p) === norm);
-      if(!valid){
-        nameInput.classList.add('input-error');
-        setTimeout(()=> nameInput.classList.remove('input-error'), 700);
-        nameInput.value = '';
-        return;
-      }
-      const canonical = Array.from(buildingMap.keys()).find(p => normalizeName(p)===norm) || raw;
-      entered.set(canonical, null);
-    } else if(mode === 'courses'){
-      const valid = Array.from(courseMap.keys()).some(p => normalizeName(p) === norm);
-      if(!valid){
-        nameInput.classList.add('input-error');
-        setTimeout(()=> nameInput.classList.remove('input-error'), 700);
-        nameInput.value = '';
-        return;
-      }
-      const canonical = Array.from(courseMap.keys()).find(p => normalizeName(p)===norm) || raw;
-      entered.set(canonical, null);
+      entered.set(match, null);
     }
 
     nameInput.value = '';
@@ -279,14 +235,14 @@ function updateUI(){
     const li = document.createElement('li');
     li.className = 'answer-item';
     let valid = false;
-    if(mode==='students'){
-      valid = !!digest && students.includes(digest);
-    } else if(mode === 'profs'){
-      valid = Array.from(profMap.keys()).some(p => normalizeName(p)===normalizeName(name));
-    } else if(mode === 'buildings'){
-      valid = Array.from(buildingMap.keys()).some(p => normalizeName(p)===normalizeName(name));
-    } else if(mode === 'courses'){
-      valid = Array.from(courseMap.keys()).some(p => normalizeName(p)===normalizeName(name));
+    const cfg = MODES.find(x=>x.id===mode);
+    if(cfg){
+      if(cfg.type === 'hashlist'){
+        valid = !!digest && (dataStore.get(mode) || []).includes(digest);
+      } else if(cfg.type === 'pairs'){
+        const nm = nameMap.get(mode) || new Map();
+        valid = Array.from(nm.keys()).some(p => normalizeName(p) === normalizeName(name));
+      }
     }
     li.textContent = name;
     li.title = valid ? 'valid' : 'invalid';
@@ -295,74 +251,41 @@ function updateUI(){
   }
 
   // summary
-  if(mode==='students'){
-    const correct = Array.from(entered.values()).filter(d => d && students.includes(d)).length;
-    summary.innerHTML = `<div>Unique entries: ${entered.size} • Correct students: ${correct}</div>`;
-    groupStats.innerHTML = `<div style="color:var(--muted)">Students mode — no group stats.</div>`;
-  } else if(mode === 'profs'){
-    // professor mode: compute per-group coverage
+  // Generic summary & group stats
+  const cfg = MODES.find(x=>x.id===mode) || MODES[0];
+  if(cfg.type === 'hashlist'){
+    const correct = Array.from(entered.values()).filter(d => d && (dataStore.get(mode) || []).includes(d)).length;
+    summary.innerHTML = `<div>Unique entries: ${entered.size} • Correct ${cfg.label.toLowerCase()}: ${correct}</div>`;
+    groupStats.innerHTML = `<div style="color:var(--muted)">${cfg.label} mode — no group stats.</div>`;
+  } else if(cfg.type === 'pairs'){
     const covered = new Set();
+    const nm = nameMap.get(mode) || new Map();
     for(const name of entered.keys()){
-      // match canonical
-      const key = Array.from(profMap.keys()).find(p=>normalizeName(p)===normalizeName(name));
+      const key = Array.from(nm.keys()).find(p=>normalizeName(p)===normalizeName(name));
       if(key) covered.add(key);
     }
-    summary.innerHTML = `<div>Unique entries: ${entered.size} • Recognized professors: ${covered.size}</div>`;
+    summary.innerHTML = `<div>Unique entries: ${entered.size} • Recognized ${cfg.label.toLowerCase()}: ${covered.size}</div>`;
 
     // per-group
     groupStats.innerHTML = '';
-    const groups = Array.from(groupToProfessors.keys()).sort();
-    for(const g of groups){
-      const total = groupToProfessors.get(g).size;
+    const gi = groupIndex.get(mode) || new Map();
+    // compute stats for each group, sort by answered percentage (desc), then name
+    const groups = Array.from(gi.keys());
+    const stats = groups.map(g => {
+      const total = gi.get(g).size;
       let coveredCount = 0;
-      for(const p of groupToProfessors.get(g)) if(covered.has(p)) coveredCount++;
-      const pct = Math.round((coveredCount/total)*100);
+      for(const name of gi.get(g)) if(covered.has(name)) coveredCount++;
+      const pct = total ? Math.round((coveredCount/total)*100) : 0;
+      return { g, total, coveredCount, pct };
+    });
+    stats.sort((a,b) => {
+      if(b.pct !== a.pct) return b.pct - a.pct;
+      return a.g.localeCompare(b.g);
+    });
+    for(const s of stats){
       const row = document.createElement('div');
       row.className = 'group-row';
-      row.innerHTML = `<div>${g}</div><div>${coveredCount}/${total} (${pct}%)</div>`;
-      groupStats.appendChild(row);
-    }
-  } else if(mode === 'buildings'){
-    // buildings mode: compute per-group coverage
-    const covered = new Set();
-    for(const name of entered.keys()){
-      const key = Array.from(buildingMap.keys()).find(p=>normalizeName(p)===normalizeName(name));
-      if(key) covered.add(key);
-    }
-    summary.innerHTML = `<div>Unique entries: ${entered.size} • Recognized buildings: ${covered.size}</div>`;
-
-    // per-group for buildings
-    groupStats.innerHTML = '';
-    const groups = Array.from(groupToBuildings.keys()).sort();
-    for(const g of groups){
-      const total = groupToBuildings.get(g).size;
-      let coveredCount = 0;
-      for(const b of groupToBuildings.get(g)) if(covered.has(b)) coveredCount++;
-      const pct = Math.round((coveredCount/total)*100);
-      const row = document.createElement('div');
-      row.className = 'group-row';
-      row.innerHTML = `<div>${g}</div><div>${coveredCount}/${total} (${pct}%)</div>`;
-      groupStats.appendChild(row);
-    }
-  } else if(mode === 'courses'){
-    // courses mode: compute per-group coverage
-    const covered = new Set();
-    for(const name of entered.keys()){
-      const key = Array.from(courseMap.keys()).find(p=>normalizeName(p)===normalizeName(name));
-      if(key) covered.add(key);
-    }
-    summary.innerHTML = `<div>Unique entries: ${entered.size} • Recognized courses: ${covered.size}</div>`;
-
-    groupStats.innerHTML = '';
-    const groups = Array.from(groupToCourses.keys()).sort();
-    for(const g of groups){
-      const total = groupToCourses.get(g).size;
-      let coveredCount = 0;
-      for(const c of groupToCourses.get(g)) if(covered.has(c)) coveredCount++;
-      const pct = Math.round((coveredCount/total)*100);
-      const row = document.createElement('div');
-      row.className = 'group-row';
-      row.innerHTML = `<div>${g}</div><div>${coveredCount}/${total} (${pct}%)</div>`;
+      row.innerHTML = `<div>${s.g}</div><div>${s.coveredCount}/${s.total} (${s.pct}%)</div>`;
       groupStats.appendChild(row);
     }
   }
@@ -388,10 +311,7 @@ addBtn.addEventListener('click', addEntry);
 nameInput.addEventListener('keydown', (e)=>{ if(e.key==='Enter'){ addEntry(); } });
 resetBtn.addEventListener('click', resetAll);
 exportBtn.addEventListener('click', exportList);
-studentsBtn.addEventListener('click', ()=>switchMode('students'));
-profsBtn.addEventListener('click', ()=>switchMode('profs'));
-buildingsBtn.addEventListener('click', ()=>switchMode('buildings'));
-if(typeof coursesBtn !== 'undefined' && coursesBtn) coursesBtn.addEventListener('click', ()=>switchMode('courses'));
+// mode buttons wired when created in loadData()
 
 // init
 loadData().catch(err=>{
