@@ -257,7 +257,7 @@ function updateUI(){
   const cfg = MODES.find(x=>x.id===mode) || MODES[0];
   if(cfg.type === 'hashlist'){
     const correct = Array.from(entered.values()).filter(d => d && (dataStore.get(mode) || []).includes(d)).length;
-    summary.innerHTML = `<div>Unique entries: ${entered.size} • Correct ${cfg.label.toLowerCase()}: ${correct}</div>`;
+    summary.innerHTML = `<div>Correct ${cfg.label.toLowerCase()}: ${correct}</div>`;
     groupStats.innerHTML = `<div style="color:var(--muted)">${cfg.label} mode — no group stats.</div>`;
   } else if(cfg.type === 'pairs'){
     const covered = new Set();
@@ -266,7 +266,7 @@ function updateUI(){
       const key = Array.from(nm.keys()).find(p=>normalizeName(p)===normalizeName(name));
       if(key) covered.add(key);
     }
-    summary.innerHTML = `<div>Unique entries: ${entered.size} • Recognized ${cfg.label.toLowerCase()}: ${covered.size}</div>`;
+    summary.innerHTML = `<div>Recognized ${cfg.label.toLowerCase()}: ${covered.size}</div>`;
 
     // per-group
     groupStats.innerHTML = '';
