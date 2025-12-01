@@ -2,6 +2,7 @@
 const studentsPath = 'students_hashed.json';
 const profsPath = 'professors.json';
 const buildingsPath = 'buildings.json';
+const coursesPath = 'courses.json';
 
 let students = [];
 let profs = []; // [{name, groups}]
@@ -17,6 +18,7 @@ const answers = document.getElementById('answers');
 const summary = document.getElementById('summary');
 const groupStats = document.getElementById('groupStats');
 const buildingsBtn = document.getElementById('buildingsBtn');
+const coursesBtn = document.getElementById('coursesBtn');
 
 let mode = 'students';
 
@@ -31,6 +33,11 @@ let groupToProfessors = new Map(); // group -> Set of professor names
 let buildings = [];
 let buildingMap = new Map(); // name -> groups[]
 let groupToBuildings = new Map(); // group -> Set of building names
+
+// courses
+let courses = [];
+let courseMap = new Map(); // name -> groups[]
+let groupToCourses = new Map(); // group -> Set of course names
 
 const STORAGE_KEY = 'eequiz-state-v1';
 
@@ -67,6 +74,8 @@ async function loadData(){
   profs = await pResp.json();
   const bResp = await fetch(buildingsPath);
   buildings = await bResp.json();
+  const cResp = await fetch(coursesPath);
+  courses = await cResp.json();
 
   // build profMap and group indices
   profMap = new Map();
@@ -92,6 +101,18 @@ async function loadData(){
     }
   }
 
+  // build course maps
+  courseMap = new Map();
+  groupToCourses = new Map();
+  for(const item of courses){
+    const [name, groups] = item;
+    courseMap.set(name, groups);
+    for(const g of groups){
+      if(!groupToCourses.has(g)) groupToCourses.set(g, new Set());
+      groupToCourses.get(g).add(name);
+    }
+  }
+
   populateDatalist();
   // restore saved answers (if any) and then update UI
   try{
@@ -99,7 +120,11 @@ async function loadData(){
     if(raw){
       const obj = JSON.parse(raw);
       if(obj.mode) mode = obj.mode;
-      const arr = mode === 'students' ? (obj.students || []) : (mode === 'profs' ? (obj.profs || []) : (obj.buildings || []));
+      let arr = [];
+      if(mode === 'students') arr = obj.students || [];
+      else if(mode === 'profs') arr = obj.profs || [];
+      else if(mode === 'buildings') arr = obj.buildings || [];
+      else if(mode === 'courses') arr = obj.courses || [];
       entered.clear();
       for(const n of arr) entered.set(n, null);
       // compute digests for any restored student entries (async)
@@ -110,13 +135,16 @@ async function loadData(){
   // make sure UI (buttons/placeholder) reflects restored mode
   document.querySelectorAll('.mode-switch button').forEach(b=>b.classList.remove('active'));
     if(mode==='students') studentsBtn.classList.add('active'); else if(mode==='profs') profsBtn.classList.add('active'); else if(mode==='buildings') buildingsBtn.classList.add('active');
+    if(typeof coursesBtn !== 'undefined' && coursesBtn) { if(mode==='courses') coursesBtn.classList.add('active'); }
     // update aria-pressed attributes
     studentsBtn.setAttribute('aria-pressed', mode==='students');
     profsBtn.setAttribute('aria-pressed', mode==='profs');
     buildingsBtn.setAttribute('aria-pressed', mode==='buildings');
+    if(typeof coursesBtn !== 'undefined' && coursesBtn) coursesBtn.setAttribute('aria-pressed', mode==='courses');
   if(mode==='students') nameInput.placeholder = '輸入學生名字後按 Enter 或按下 +（純記憶，不顯示建議）';
   else if(mode==='profs') nameInput.placeholder = '輸入教授名字後按 Enter 或按下 +（純記憶，不顯示建議）';
   else if(mode==='buildings') nameInput.placeholder = '輸入建築名稱後按 Enter 或按下 +（純記憶，不顯示建議）';
+  else if(mode==='courses') nameInput.placeholder = '輸入課程名稱後按 Enter 或按下 +（純記憶，不顯示建議）';
 
   updateUI();
 }
@@ -136,6 +164,8 @@ function saveState(){
       obj.profs = Array.from(entered.keys());
     } else if(mode === 'buildings'){
       obj.buildings = Array.from(entered.keys());
+    } else if(mode === 'courses'){
+      obj.courses = Array.from(entered.keys());
     }
     obj.mode = mode;
     localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
@@ -151,7 +181,11 @@ function switchMode(m){
     const raw = localStorage.getItem(STORAGE_KEY);
     if(raw){
       const obj = JSON.parse(raw);
-      const arr = mode === 'students' ? (obj.students || []) : (mode === 'profs' ? (obj.profs || []) : (obj.buildings || []));
+      let arr = [];
+      if(mode === 'students') arr = obj.students || [];
+      else if(mode === 'profs') arr = obj.profs || [];
+      else if(mode === 'buildings') arr = obj.buildings || [];
+      else if(mode === 'courses') arr = obj.courses || [];
       entered.clear();
       for(const n of arr) entered.set(n, null);
       // kick off digest computation (async) and update UI when done
@@ -167,7 +201,9 @@ function switchMode(m){
     studentsBtn.setAttribute('aria-pressed', m==='students');
     profsBtn.setAttribute('aria-pressed', m==='profs');
     buildingsBtn.setAttribute('aria-pressed', m==='buildings');
+    if(typeof coursesBtn !== 'undefined' && coursesBtn) coursesBtn.setAttribute('aria-pressed', m==='courses');
   if(m==='buildings') nameInput.placeholder = '輸入建築名稱後按 Enter 或按下 +（純記憶，不顯示建議）';
+  if(m==='courses') nameInput.placeholder = '輸入課程名稱後按 Enter 或按下 +（純記憶，不顯示建議）';
   populateDatalist();
   updateUI();
 }
@@ -198,29 +234,36 @@ function addEntry(){
       // canonical name: keep the user's raw input for display
       const canonical = raw;
       entered.set(canonical, digest);
-    } else {
-      // professor or building mode: match names from respective maps
-      if(mode === 'profs'){
-        const valid = Array.from(profMap.keys()).some(p => normalizeName(p) === norm);
-        if(!valid){
-          nameInput.classList.add('input-error');
-          setTimeout(()=> nameInput.classList.remove('input-error'), 700);
-          nameInput.value = '';
-          return;
-        }
-        const canonical = Array.from(profMap.keys()).find(p => normalizeName(p)===norm) || raw;
-        entered.set(canonical, null);
-      } else if(mode === 'buildings'){
-        const valid = Array.from(buildingMap.keys()).some(p => normalizeName(p) === norm);
-        if(!valid){
-          nameInput.classList.add('input-error');
-          setTimeout(()=> nameInput.classList.remove('input-error'), 700);
-          nameInput.value = '';
-          return;
-        }
-        const canonical = Array.from(buildingMap.keys()).find(p => normalizeName(p)===norm) || raw;
-        entered.set(canonical, null);
+    } else if(mode === 'profs'){
+      const valid = Array.from(profMap.keys()).some(p => normalizeName(p) === norm);
+      if(!valid){
+        nameInput.classList.add('input-error');
+        setTimeout(()=> nameInput.classList.remove('input-error'), 700);
+        nameInput.value = '';
+        return;
       }
+      const canonical = Array.from(profMap.keys()).find(p => normalizeName(p)===norm) || raw;
+      entered.set(canonical, null);
+    } else if(mode === 'buildings'){
+      const valid = Array.from(buildingMap.keys()).some(p => normalizeName(p) === norm);
+      if(!valid){
+        nameInput.classList.add('input-error');
+        setTimeout(()=> nameInput.classList.remove('input-error'), 700);
+        nameInput.value = '';
+        return;
+      }
+      const canonical = Array.from(buildingMap.keys()).find(p => normalizeName(p)===norm) || raw;
+      entered.set(canonical, null);
+    } else if(mode === 'courses'){
+      const valid = Array.from(courseMap.keys()).some(p => normalizeName(p) === norm);
+      if(!valid){
+        nameInput.classList.add('input-error');
+        setTimeout(()=> nameInput.classList.remove('input-error'), 700);
+        nameInput.value = '';
+        return;
+      }
+      const canonical = Array.from(courseMap.keys()).find(p => normalizeName(p)===norm) || raw;
+      entered.set(canonical, null);
     }
 
     nameInput.value = '';
@@ -238,8 +281,12 @@ function updateUI(){
     let valid = false;
     if(mode==='students'){
       valid = !!digest && students.includes(digest);
-    } else {
+    } else if(mode === 'profs'){
       valid = Array.from(profMap.keys()).some(p => normalizeName(p)===normalizeName(name));
+    } else if(mode === 'buildings'){
+      valid = Array.from(buildingMap.keys()).some(p => normalizeName(p)===normalizeName(name));
+    } else if(mode === 'courses'){
+      valid = Array.from(courseMap.keys()).some(p => normalizeName(p)===normalizeName(name));
     }
     li.textContent = name;
     li.title = valid ? 'valid' : 'invalid';
@@ -297,6 +344,27 @@ function updateUI(){
       row.innerHTML = `<div>${g}</div><div>${coveredCount}/${total} (${pct}%)</div>`;
       groupStats.appendChild(row);
     }
+  } else if(mode === 'courses'){
+    // courses mode: compute per-group coverage
+    const covered = new Set();
+    for(const name of entered.keys()){
+      const key = Array.from(courseMap.keys()).find(p=>normalizeName(p)===normalizeName(name));
+      if(key) covered.add(key);
+    }
+    summary.innerHTML = `<div>Unique entries: ${entered.size} • Recognized courses: ${covered.size}</div>`;
+
+    groupStats.innerHTML = '';
+    const groups = Array.from(groupToCourses.keys()).sort();
+    for(const g of groups){
+      const total = groupToCourses.get(g).size;
+      let coveredCount = 0;
+      for(const c of groupToCourses.get(g)) if(covered.has(c)) coveredCount++;
+      const pct = Math.round((coveredCount/total)*100);
+      const row = document.createElement('div');
+      row.className = 'group-row';
+      row.innerHTML = `<div>${g}</div><div>${coveredCount}/${total} (${pct}%)</div>`;
+      groupStats.appendChild(row);
+    }
   }
 }
 
@@ -323,6 +391,7 @@ exportBtn.addEventListener('click', exportList);
 studentsBtn.addEventListener('click', ()=>switchMode('students'));
 profsBtn.addEventListener('click', ()=>switchMode('profs'));
 buildingsBtn.addEventListener('click', ()=>switchMode('buildings'));
+if(typeof coursesBtn !== 'undefined' && coursesBtn) coursesBtn.addEventListener('click', ()=>switchMode('courses'));
 
 // init
 loadData().catch(err=>{
