@@ -1,6 +1,7 @@
 // EEQuiz app
 const studentsPath = 'students_hashed.json';
 const profsPath = 'professors.json';
+const buildingsPath = 'buildings.json';
 
 let students = [];
 let profs = []; // [{name, groups}]
@@ -15,6 +16,7 @@ const profsBtn = document.getElementById('profsBtn');
 const answers = document.getElementById('answers');
 const summary = document.getElementById('summary');
 const groupStats = document.getElementById('groupStats');
+const buildingsBtn = document.getElementById('buildingsBtn');
 
 let mode = 'students';
 
@@ -24,6 +26,11 @@ let entered = new Map();
 // For professors analytics
 let profMap = new Map(); // name -> groups[]
 let groupToProfessors = new Map(); // group -> Set of professor names
+
+// buildings
+let buildings = [];
+let buildingMap = new Map(); // name -> groups[]
+let groupToBuildings = new Map(); // group -> Set of building names
 
 const STORAGE_KEY = 'eequiz-state-v1';
 
@@ -58,6 +65,8 @@ async function loadData(){
   students = await sResp.json();
   const pResp = await fetch(profsPath);
   profs = await pResp.json();
+  const bResp = await fetch(buildingsPath);
+  buildings = await bResp.json();
 
   // build profMap and group indices
   profMap = new Map();
@@ -71,6 +80,18 @@ async function loadData(){
     }
   }
 
+  // build building maps
+  buildingMap = new Map();
+  groupToBuildings = new Map();
+  for(const item of buildings){
+    const [name, groups] = item;
+    buildingMap.set(name, groups);
+    for(const g of groups){
+      if(!groupToBuildings.has(g)) groupToBuildings.set(g, new Set());
+      groupToBuildings.get(g).add(name);
+    }
+  }
+
   populateDatalist();
   // restore saved answers (if any) and then update UI
   try{
@@ -78,7 +99,7 @@ async function loadData(){
     if(raw){
       const obj = JSON.parse(raw);
       if(obj.mode) mode = obj.mode;
-      const arr = mode === 'students' ? (obj.students || []) : (obj.profs || []);
+      const arr = mode === 'students' ? (obj.students || []) : (mode === 'profs' ? (obj.profs || []) : (obj.buildings || []));
       entered.clear();
       for(const n of arr) entered.set(n, null);
       // compute digests for any restored student entries (async)
@@ -88,8 +109,14 @@ async function loadData(){
 
   // make sure UI (buttons/placeholder) reflects restored mode
   document.querySelectorAll('.mode-switch button').forEach(b=>b.classList.remove('active'));
-  if(mode==='students') studentsBtn.classList.add('active'); else profsBtn.classList.add('active');
-  nameInput.placeholder = mode==='students' ? '輸入學生名字後按 Enter 或按下 +（純記憶，不顯示建議）' : '輸入教授名字後按 Enter 或按下 +（純記憶，不顯示建議）';
+    if(mode==='students') studentsBtn.classList.add('active'); else if(mode==='profs') profsBtn.classList.add('active'); else if(mode==='buildings') buildingsBtn.classList.add('active');
+    // update aria-pressed attributes
+    studentsBtn.setAttribute('aria-pressed', mode==='students');
+    profsBtn.setAttribute('aria-pressed', mode==='profs');
+    buildingsBtn.setAttribute('aria-pressed', mode==='buildings');
+  if(mode==='students') nameInput.placeholder = '輸入學生名字後按 Enter 或按下 +（純記憶，不顯示建議）';
+  else if(mode==='profs') nameInput.placeholder = '輸入教授名字後按 Enter 或按下 +（純記憶，不顯示建議）';
+  else if(mode==='buildings') nameInput.placeholder = '輸入建築名稱後按 Enter 或按下 +（純記憶，不顯示建議）';
 
   updateUI();
 }
@@ -102,11 +129,13 @@ function populateDatalist(){
 function saveState(){
   try{
     const raw = localStorage.getItem(STORAGE_KEY);
-    const obj = raw ? JSON.parse(raw) : { students: [], profs: [], mode };
+    const obj = raw ? JSON.parse(raw) : { students: [], profs: [], buildings: [], mode };
     if(mode === 'students'){
       obj.students = Array.from(entered.keys());
-    } else {
+    } else if(mode === 'profs'){
       obj.profs = Array.from(entered.keys());
+    } else if(mode === 'buildings'){
+      obj.buildings = Array.from(entered.keys());
     }
     obj.mode = mode;
     localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
@@ -122,7 +151,7 @@ function switchMode(m){
     const raw = localStorage.getItem(STORAGE_KEY);
     if(raw){
       const obj = JSON.parse(raw);
-      const arr = mode === 'students' ? (obj.students || []) : (obj.profs || []);
+      const arr = mode === 'students' ? (obj.students || []) : (mode === 'profs' ? (obj.profs || []) : (obj.buildings || []));
       entered.clear();
       for(const n of arr) entered.set(n, null);
       // kick off digest computation (async) and update UI when done
@@ -133,8 +162,12 @@ function switchMode(m){
   }catch(e){ console.warn('restore on switch failed', e); entered.clear(); }
 
   document.querySelectorAll('.mode-switch button').forEach(b=>b.classList.remove('active'));
-  if(m==='students') studentsBtn.classList.add('active'); else profsBtn.classList.add('active');
+    if(m==='students') studentsBtn.classList.add('active'); else if(m==='profs') profsBtn.classList.add('active'); else if(m==='buildings') buildingsBtn.classList.add('active');
   nameInput.placeholder = m==='students' ? '輸入學生名字後按 Enter 或按下 +（純記憶，不顯示建議）' : '輸入教授名字後按 Enter 或按下 +（純記憶，不顯示建議）';
+    studentsBtn.setAttribute('aria-pressed', m==='students');
+    profsBtn.setAttribute('aria-pressed', m==='profs');
+    buildingsBtn.setAttribute('aria-pressed', m==='buildings');
+  if(m==='buildings') nameInput.placeholder = '輸入建築名稱後按 Enter 或按下 +（純記憶，不顯示建議）';
   populateDatalist();
   updateUI();
 }
@@ -166,16 +199,28 @@ function addEntry(){
       const canonical = raw;
       entered.set(canonical, digest);
     } else {
-      // professor mode: same as before, match names
-      const valid = Array.from(profMap.keys()).some(p => normalizeName(p) === norm);
-      if(!valid){
-        nameInput.classList.add('input-error');
-        setTimeout(()=> nameInput.classList.remove('input-error'), 700);
-        nameInput.value = '';
-        return;
+      // professor or building mode: match names from respective maps
+      if(mode === 'profs'){
+        const valid = Array.from(profMap.keys()).some(p => normalizeName(p) === norm);
+        if(!valid){
+          nameInput.classList.add('input-error');
+          setTimeout(()=> nameInput.classList.remove('input-error'), 700);
+          nameInput.value = '';
+          return;
+        }
+        const canonical = Array.from(profMap.keys()).find(p => normalizeName(p)===norm) || raw;
+        entered.set(canonical, null);
+      } else if(mode === 'buildings'){
+        const valid = Array.from(buildingMap.keys()).some(p => normalizeName(p) === norm);
+        if(!valid){
+          nameInput.classList.add('input-error');
+          setTimeout(()=> nameInput.classList.remove('input-error'), 700);
+          nameInput.value = '';
+          return;
+        }
+        const canonical = Array.from(buildingMap.keys()).find(p => normalizeName(p)===norm) || raw;
+        entered.set(canonical, null);
       }
-      const canonical = Array.from(profMap.keys()).find(p => normalizeName(p)===norm) || raw;
-      entered.set(canonical, null);
     }
 
     nameInput.value = '';
@@ -207,7 +252,7 @@ function updateUI(){
     const correct = Array.from(entered.values()).filter(d => d && students.includes(d)).length;
     summary.innerHTML = `<div>Unique entries: ${entered.size} • Correct students: ${correct}</div>`;
     groupStats.innerHTML = `<div style="color:var(--muted)">Students mode — no group stats.</div>`;
-  } else {
+  } else if(mode === 'profs'){
     // professor mode: compute per-group coverage
     const covered = new Set();
     for(const name of entered.keys()){
@@ -224,6 +269,28 @@ function updateUI(){
       const total = groupToProfessors.get(g).size;
       let coveredCount = 0;
       for(const p of groupToProfessors.get(g)) if(covered.has(p)) coveredCount++;
+      const pct = Math.round((coveredCount/total)*100);
+      const row = document.createElement('div');
+      row.className = 'group-row';
+      row.innerHTML = `<div>${g}</div><div>${coveredCount}/${total} (${pct}%)</div>`;
+      groupStats.appendChild(row);
+    }
+  } else if(mode === 'buildings'){
+    // buildings mode: compute per-group coverage
+    const covered = new Set();
+    for(const name of entered.keys()){
+      const key = Array.from(buildingMap.keys()).find(p=>normalizeName(p)===normalizeName(name));
+      if(key) covered.add(key);
+    }
+    summary.innerHTML = `<div>Unique entries: ${entered.size} • Recognized buildings: ${covered.size}</div>`;
+
+    // per-group for buildings
+    groupStats.innerHTML = '';
+    const groups = Array.from(groupToBuildings.keys()).sort();
+    for(const g of groups){
+      const total = groupToBuildings.get(g).size;
+      let coveredCount = 0;
+      for(const b of groupToBuildings.get(g)) if(covered.has(b)) coveredCount++;
       const pct = Math.round((coveredCount/total)*100);
       const row = document.createElement('div');
       row.className = 'group-row';
@@ -255,6 +322,7 @@ resetBtn.addEventListener('click', resetAll);
 exportBtn.addEventListener('click', exportList);
 studentsBtn.addEventListener('click', ()=>switchMode('students'));
 profsBtn.addEventListener('click', ()=>switchMode('profs'));
+buildingsBtn.addEventListener('click', ()=>switchMode('buildings'));
 
 // init
 loadData().catch(err=>{
