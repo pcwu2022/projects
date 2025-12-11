@@ -1,5 +1,8 @@
 :root{
   --bg:#0f1724; --card:#0b1220; --accent:#06b6d4; --muted:#94a3b8; --success:#10b981;
+  --header-height:56px;
+  --controls-height:72px;
+  --controls-height-mobile:140px;
 }
 *{box-sizing:border-box}
 html,body{height:100%;margin:0;font-family:Inter,Segoe UI,system-ui,Arial;background:linear-gradient(180deg,#071021,#081627);color:#e6eef6}
@@ -10,12 +13,23 @@ header h1{margin:0;font-size:18px}
 #hints{background:rgba(255,255,255,0.02);padding:6px 10px;border-radius:6px;color:var(--muted)}
 .clue-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);padding:14px;border-radius:8px;min-height:80px}
 .clue-card img{max-width:100%;border-radius:6px;display:block;margin-bottom:8px}
+/* two-column layout when supporting text is revealed */
+#clues .clue-card.has-text{display:flex;gap:14px;align-items:flex-start}
+#clues .clue-card.has-text img{max-width:45%;height:auto;margin-bottom:0}
+#clues .clue-card.has-text .clue-text{display:block}
 /* Layout adjusted: controls are placed at top, clues below */
-.clue-badge{position:absolute;margin:-10px 0 0 -10px;background:var(--accent);color:#04202a;padding:4px 8px;border-radius:12px;font-size:12px;font-weight:700}
-.clue-card{position:relative}
-main{padding:12px 24px;display:block;gap:20px}
+#clue-badge{position:absolute;margin:-10px 0 0 -10px;background:var(--accent);color:#04202a;padding:4px 8px;border-radius:12px;font-size:12px;font-weight:700;z-index:2}
+#clue-card{position:relative}
+#app-top-spacer{height:calc(var(--header-height) + var(--controls-height));}
+header{position:fixed;top:0;left:0;right:0;height:var(--header-height);padding:10px 20px;z-index:9999;background:linear-gradient(180deg,#071021,#081627)}
+#controls{position:fixed;top:var(--header-height);left:0;right:0;height:var(--controls-height);padding:10px 20px;margin:0;z-index:9998}
+/* ensure clue cards and images are under the fixed header/controls */
+.clue-card{position:relative;z-index:1}
+.clue-card img{position:relative;z-index:0}
+main{padding:12px 24px;display:block;gap:20px;padding-top:calc(var(--header-height) + var(--controls-height) + 20px)}
 #clues{display:flex;flex-direction:column;gap:12px}
-#controls{display:block;width:100%;padding:12px;margin:12px 0;background:rgba(255,255,255,0.02);border-radius:8px;border:1px solid rgba(255,255,255,0.03)}
+/* controls styling adjusted (fixed) */
+#controls{display:block;width:100%;background:rgba(0,0,0,1);border-radius:8px;border:1px solid rgba(255,255,255,0.03)}
 /* limit input width so the guessing panel isn't too wide */
 input#guess-input{max-width:640px;flex:1;padding:10px;border-radius:6px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit}
 /* keep controls layout */
@@ -34,3 +48,14 @@ footer{padding:12px 24px;border-top:1px solid rgba(255,255,255,0.02);font-size:1
 .small{font-size:12px}
 
 @media(max-width:900px){main{grid-template-columns:1fr;}}
+
+/* Phone layout: stack header+controls, make controls taller */
+@media(max-width:600px){
+  :root{--controls-height:var(--controls-height-mobile)}
+  header{height:48px;padding:8px 12px}
+  #controls{position:fixed;top:48px;height:auto;padding:10px 12px}
+  .controls-row{flex-direction:column;align-items:stretch}
+  input#guess-input{max-width:100%;width:100%}
+  button{width:100%}
+  main{padding-top:calc(48px + var(--controls-height-mobile) + 16px)}
+}

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Game Results — Plonkit</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* small overrides to reuse the app dark theme */
+    .page{max-width:900px;margin:24px auto;padding:16px}
+    h1{margin:0 0 8px}
+    .summary{display:flex;gap:16px;align-items:center;margin-bottom:12px}
+    .box{padding:12px;border-radius:8px;background:var(--card);border:1px solid rgba(255,255,255,0.04);color:inherit}
+    table{width:100%;border-collapse:collapse;margin-top:12px}
+    th,td{padding:8px;border-bottom:1px solid rgba(255,255,255,0.03);text-align:left}
+    th{background:transparent;color:var(--muted)}
+    .big{font-size:1.25rem;font-weight:600}
+    .muted{color:var(--muted);font-size:0.95rem}
+    .actions{margin-top:18px}
+    a.button{display:inline-block;padding:10px 14px;border-radius:8px;background:var(--accent);color:#04202a;text-decoration:none}
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>Game Summary</h1>
+  <div class="summary">
+    <div class="box">
+      <div class="muted">Total Score</div>
+      <div id="total" class="big">0</div>
+    </div>
+    <div class="box">
+      <div class="muted">Previous High</div>
+      <div id="prevHigh" class="big">0</div>
+    </div>
+    <div class="box">
+      <div class="muted">New High</div>
+      <div id="newHigh" class="big">0</div>
+    </div>
+  </div>
+
+  <div id="listContainer" class="box">
+    <div class="muted">Per-country results</div>
+    <table id="resultsTable">
+      <thead>
+        <tr><th>#</th><th>Country</th><th>Score</th><th>Revealed</th><th>Wrong Guesses</th><th>Gave Up</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+    <div class="actions">
+      <a href="index.html" class="button">Play Again</a>
+    </div>
+  </div>
+
+  <script>
+    function qs(name){
+      const params = new URLSearchParams(window.location.search);
+      return params.get(name);
+    }
+    const raw = qs('data');
+    if(!raw){
+      document.body.innerHTML = '<p>No results data found. <a href="index.html">Back to game</a></p>';
+      throw new Error('no data');
+    }
+    let payload = null;
+    try{ payload = JSON.parse(decodeURIComponent(raw)); } catch(e){
+      document.body.innerHTML = '<p>Invalid results data. <a href="index.html">Back to game</a></p>';
+      throw e;
+    }
+
+    const {rounds = [], total = 0, prevHigh = 0, newHigh = 0} = payload;
+    document.getElementById('total').textContent = total;
+    document.getElementById('prevHigh').textContent = prevHigh;
+    document.getElementById('newHigh').textContent = newHigh;
+
+    const tbody = document.querySelector('#resultsTable tbody');
+    rounds.forEach((r, i) => {
+      const tr = document.createElement('tr');
+      const idx = document.createElement('td'); idx.textContent = (i+1);
+      const name = document.createElement('td'); name.textContent = r.country || '—';
+      const score = document.createElement('td'); score.textContent = r.score;
+      const revealed = document.createElement('td'); revealed.textContent = r.revealedCount;
+      const wrong = document.createElement('td'); wrong.textContent = r.wrongGuesses || 0;
+      const gaveUp = document.createElement('td'); gaveUp.textContent = r.gaveUp ? 'Yes' : 'No';
+      tr.appendChild(idx); tr.appendChild(name); tr.appendChild(score); tr.appendChild(revealed); tr.appendChild(wrong); tr.appendChild(gaveUp);
+      tbody.appendChild(tr);
+    });
+  </script>
+</body>
+</html>

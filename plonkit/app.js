@@ -1,9 +1,10 @@
 // Simple country guessing game using plonkit_db.json
 const DB_PATH = 'plonkit_db.json';
-const MATCHES = 10;
+const MATCHES = 5;
 const PER_GAME_MAX = 1500; // user requested per-game max
 const PER_MATCH_MAX = Math.round(PER_GAME_MAX / MATCHES);
 const WRONG_GUESS_PENALTY = 50; // points lost per wrong guess (adjustable)
+const CLUE_PENALTY = 10; // points lost per extra clue beyond first (adjustable)
 const MAX_WRONG_GUESSES = 5; // maximum wrong guesses per round
 const LATEST_TOP_COUNT = 1; // number of latest clues (from DB end) to place at top
 
@@ -16,6 +17,13 @@ let gameState = {
   current: null,
   mode: 'idle', // 'playing' or 'revealed'
 };
+
+// per-game results (filled during play)
+gameState.results = [];
+
+// valid country inputs (display names and slugs) used to prevent accidental submits
+// map of accepted input (lowercase) -> canonical slug present in DB
+let inputMap = new Map();
 
 // UI elements
 const cluesEl = document.getElementById('clues');
@@ -70,6 +78,7 @@ function shuffleArray(arr){
 
 function startGame(){
   gameState.matchIndex = 0; gameState.totalScore = 0; gameState.rounds = pickRandomCountries(MATCHES);
+  gameState.results = [];
   scoreInfo.textContent = `Score: ${gameState.totalScore}`;
   nextMatch();
 }
@@ -81,6 +90,8 @@ function renderClueCard(clue, showText, idx){
     const b = document.createElement('div'); b.className = 'clue-badge'; b.textContent = `#${idx+1}`;
     card.appendChild(b);
   }
+  // mark card with class when supporting text should be shown
+  if(showText) card.classList.add('has-text');
   if(clue.img){
     const img = document.createElement('img'); img.src = clue.img; card.appendChild(img);
   }
@@ -154,7 +165,7 @@ function computeMatchScore(){
   if(cur.gaveUp) return 0;
   const base = PER_MATCH_MAX;
   const revealedClues = cur.revealed ? cur.revealed.length : 1; // number of clues shown
-  const cluePenalty = 5 * Math.max(0, revealedClues - 1);
+  const cluePenalty = CLUE_PENALTY * Math.max(0, revealedClues - 1);
   // score cannot be negative
   let score = Math.max(0, base - cluePenalty);
   return score;
@@ -163,11 +174,41 @@ function computeMatchScore(){
 function endRound(revealedAll=false){
   stopTimer();
   const score = computeMatchScore();
+  // record result for this round
+  const cur = gameState.current;
+  const roundInfo = {
+    country: cur.key,
+    score,
+    revealedCount: cur.revealed ? cur.revealed.length : 0,
+    wrongGuesses: cur.wrongGuesses || 0,
+    gaveUp: !!cur.gaveUp,
+  };
+  gameState.results.push(roundInfo);
   gameState.totalScore += score;
   scoreInfo.textContent = `Score: ${gameState.totalScore}`;
   moreBtn.disabled = true; giveupBtn.disabled = true;
-  // keep guessBtn enabled because it will be reused as Next
   return score;
+}
+
+function finishGame(){
+  // compute previous high, update localStorage if needed, then redirect to end.html
+  const prevHighRaw = localStorage.getItem('plonkit_highscore');
+  const prevHigh = prevHighRaw ? parseInt(prevHighRaw,10) : 0;
+  const total = gameState.totalScore || 0;
+  let newHigh = prevHigh;
+  if(total > prevHigh){
+    localStorage.setItem('plonkit_highscore', String(total));
+    newHigh = total;
+  }
+  const payload = {
+    rounds: gameState.results,
+    total,
+    prevHigh,
+    newHigh,
+  };
+  const encoded = encodeURIComponent(JSON.stringify(payload));
+  // redirect to end screen with data in query
+  window.location.href = `end.html?data=${encoded}`;
 }
 
 function revealAnswer(){
@@ -199,11 +240,16 @@ function escapeHtml(s){ return s.replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;'
 
 function onGuess(){
   const val = guessInput.value.trim().toLowerCase(); if(!val) return;
+  // if the entered value doesn't correspond to any known country or alias, don't treat it as a submission
+  if(!inputMap.has(val)){
+    feedback.textContent = 'Please choose a country from the suggestions before submitting.';
+    return;
+  }
   const cur = gameState.current;
-  // compare against display name and slug
-  const targetSlug = cur.key.toLowerCase();
-  const targets = [toDisplayName(targetSlug).toLowerCase(), targetSlug];
-  if(targets.includes(val) || val === targetSlug || val === toDisplayName(targetSlug).toLowerCase().replace(/\s+/g,' ')){
+  // map the entered value to a canonical slug and compare
+  const mapped = inputMap.get(val);
+  const targetSlug = cur.key;
+  if(mapped === targetSlug){
     feedback.textContent = 'Correct!';
     revealAnswer();
   } else {
@@ -254,12 +300,8 @@ function setupEventListeners(){
 
 function nextMatch(){
   if(gameState.matchIndex >= MATCHES){
-    // game over
-    cluesEl.innerHTML = `<div class="clue-card"><strong>Game over</strong><br>Your final score: ${gameState.totalScore} / ${PER_GAME_MAX}</div>`;
-    matchInfo.textContent = `Match ${MATCHES} / ${MATCHES}`;
-    timerEl.textContent = '00:00'; hintsEl.textContent='Hints: 0';
-    moreBtn.disabled=true; guessBtn.disabled=true; giveupBtn.disabled=true;
-    feedback.innerHTML = `<div class="small">Refresh to play again.</div>`;
+    // game over: finish and redirect to end screen
+    finishGame();
     return;
   }
   const key = gameState.rounds[gameState.matchIndex];
@@ -302,8 +344,105 @@ async function init(){
   // populate datalist
   const keys = Object.keys(db).filter(k=>Array.isArray(db[k]) && db[k].length>0).sort();
   keys.forEach(k=>{
-    const opt = document.createElement('option'); opt.value = toDisplayName(k); countriesList.appendChild(opt);
+    const display = toDisplayName(k);
+    const opt = document.createElement('option'); opt.value = display; countriesList.appendChild(opt);
+    inputMap.set(display.toLowerCase(), k);
+    inputMap.set(k.toLowerCase(), k);
   });
+
+  // common alias candidates mapped to arrays of possible canonical slugs (try to resolve against DB)
+  const aliasCandidates = {
+    'us': ['united-states','united-states-of-america','america'],
+    'usa': ['united-states','united-states-of-america'],
+    'u.s.': ['united-states','united-states-of-america'],
+    'america': ['united-states','united-states-of-america'],
+    'uk': ['united-kingdom','great-britain'],
+    'gb': ['united-kingdom','great-britain'],
+    'britain': ['united-kingdom','great-britain'],
+    'england': ['united-kingdom','england'],
+    'uae': ['united-arab-emirates','uae'],
+    'south korea': ['south-korea','korea-republic','korea, south','republic-of-korea'],
+    'north korea': ['north-korea','korea-dpr','democratic-peoples-republic-of-korea'],
+    'russia': ['russia','russian-federation'],
+    'prc': ['china','peoples-republic-of-china'],
+    'china': ['china','peoples-republic-of-china'],
+    'de': ['germany','deutschland'],
+    'holland': ['netherlands'],
+    'south africa': ['south-africa'],
+    'sa': ['south-africa'],
+    'nigeria': ['nigeria'],
+    'ivory coast': ['cote-ivoire','cote-d-ivoire'],
+    'czechia': ['czech-republic','czechia'],
+    'slovakia': ['slovakia','slovak-republic'],
+    'north macedonia': ['north-macedonia','macedonia'],
+    'vietnam': ['vietnam','viet-nam'],
+    'taiwan': ['taiwan','taiwan-province-of-china'],
+    'ua': ['ukraine'],
+    'ireland': ['ireland'],
+    'nz': ['new-zealand'],
+    'australia': ['australia'],
+    'ca': ['canada'],
+    'canada': ['canada']
+  };
+
+  // resolve aliases to existing DB slugs and add them to inputMap and datalist
+  Object.keys(aliasCandidates).forEach(alias => {
+    const choices = aliasCandidates[alias];
+    for(const c of choices){
+      if(keys.includes(c)){
+        inputMap.set(alias.toLowerCase(), c);
+        break;
+      }
+    }
+  });
+  
+  // create a small suggestion overlay that appears when the user types a known alias
+  const suggestionEl = document.createElement('div');
+  suggestionEl.id = 'alias-suggestion';
+  suggestionEl.style.position = 'absolute';
+  suggestionEl.style.background = 'var(--card)';
+  suggestionEl.style.border = '1px solid rgba(255,255,255,0.04)';
+  suggestionEl.style.color = 'inherit';
+  suggestionEl.style.padding = '8px 10px';
+  suggestionEl.style.borderRadius = '8px';
+  suggestionEl.style.boxShadow = '0 6px 20px rgba(2,6,23,0.6)';
+  suggestionEl.style.cursor = 'pointer';
+  suggestionEl.style.zIndex = '100000';
+  suggestionEl.style.display = 'none';
+  document.body.appendChild(suggestionEl);
+
+  let suggestionVisibleFor = null;
+  function showAliasSuggestion(alias, slug){
+    const display = toDisplayName(slug);
+    suggestionEl.textContent = display;
+    const rect = guessInput.getBoundingClientRect();
+    suggestionEl.style.left = `${rect.left + window.scrollX}px`;
+    suggestionEl.style.top = `${rect.bottom + window.scrollY + 6}px`;
+    suggestionEl.style.minWidth = `${rect.width}px`;
+    suggestionEl.style.display = 'block';
+    suggestionVisibleFor = alias;
+  }
+  function hideAliasSuggestion(){ suggestionEl.style.display='none'; suggestionVisibleFor = null; }
+
+  // clicking the suggestion fills the input with the formal display name
+  suggestionEl.addEventListener('click', ()=>{
+    if(!suggestionVisibleFor) return; const slug = inputMap.get(suggestionVisibleFor); if(!slug) return; guessInput.value = toDisplayName(slug); hideAliasSuggestion(); guessInput.focus();
+  });
+
+  // show suggestion when typing an alias
+  guessInput.addEventListener('input', ()=>{
+    const v = guessInput.value.trim().toLowerCase();
+    if(!v){ hideAliasSuggestion(); return; }
+    if(inputMap.has(v)){
+      const mapped = inputMap.get(v);
+      // if the mapping is a different slug (i.e., alias), suggest the formal display name
+      if(mapped && mapped !== v){ showAliasSuggestion(v, mapped); return; }
+    }
+    hideAliasSuggestion();
+  });
+
+  // hide suggestion on outside click or blur
+  document.addEventListener('click', (e)=>{ if(!suggestionEl.contains(e.target) && e.target !== guessInput) hideAliasSuggestion(); });
   // start game
   gameState.rounds = pickRandomCountries(MATCHES);
   startGame();
