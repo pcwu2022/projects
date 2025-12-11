@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Plonkit — Country Guessing Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Plonkit — Guess the Country</h1>
+    <div class="meta">
+      <div id="match-info">Match 0 / 10</div>
+      <div id="score-info">Score: 0</div>
+      <div id="timer">00:00</div>
+      <div id="hints">Hints: 0</div>
+    </div>
+  </header>
+
+  <!-- Controls moved to top for a compact guessing panel -->
+  <section id="controls">
+    <div class="controls-row">
+      <input id="guess-input" placeholder="Type country name or pick from suggestions" list="countries-list" autocomplete="off">
+      <datalist id="countries-list"></datalist>
+      <button id="guess-btn">Guess</button>
+      <button id="more-btn">More clues</button>
+      <button id="giveup-btn">Give up</button>
+    </div>
+    <div class="controls-row">
+      <div id="feedback"></div>
+    </div>
+  </section>
+
+  <main>
+    <section id="clues">
+      <!-- Clue cards will appear here -->
+    </section>
+  </main>
+
+  <footer>
+    <small>Local demo using <a href="plonkit_db.json">plonkit_db.json</a>. Host on GitHub Pages for public use.</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
