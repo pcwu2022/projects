@@ -38,6 +38,13 @@ window.PROJECTS = [
         description: "How many TRA stations can you name?", 
         date: "September 2025" 
     },
+    {
+        title: "Plonkit Guessr",
+        href: "plonkit/index.html",
+        image: "images/plonkit.png",
+        description: "A Geoguessr training game based on the Plonkit database",
+        date: "December 2025"
+    },
     { 
         title: "EE Quiz", 
         href: "eequiz/index.html", 
