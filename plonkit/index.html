@@ -3,43 +3,195 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Plonkit Guessr</title>
+  <title>Plonkit — Start</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .preset { margin: 8px 0; }
+    .modes { display:grid; grid-template-columns: repeat(auto-fit,minmax(160px,1fr)); gap:12px; margin:12px 0; }
+    .mode-card { padding:12px; border-radius:8px; border:1px solid rgba(0,0,0,0.08); cursor:pointer; background:var(--card,#fff); }
+    .mode-card.active { outline:3px solid rgba(96,165,250,0.18); box-shadow:0 6px 20px rgba(2,6,23,0.06); }
+    .labels { display: grid; grid-template-columns: repeat(auto-fit,minmax(160px,1fr)); gap:8px; margin-top:12px; }
+    .label-item { display:flex; align-items:center; }
+    .controls { margin-top:18px; }
+    .small { font-size:0.9rem; color:var(--muted,#999); }
+    header { margin-bottom: 6px; }
+    .lead { margin: 6px 0 12px 0; font-size:1rem; color:var(--muted,#666); }
+    .mode-card img { width:100%; height:100px; object-fit:cover; border-radius:6px; margin-bottom:8px; display:block }
+    .mode-card h3{margin:0 0 6px 0}
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Plonkit Guessr</h1>
-    <div class="meta">
-      <div id="match-info">Match 0 / 10</div>
-      <div id="score-info">Score: 0</div>
-      <div id="timer">00:00</div>
-      <div id="hints">Hints: 0</div>
-    </div>
-  </header>
+  <main class="container" style="padding-top: calc(var(--header-height) + 12px);">
+    <header>
+      <h1>Plonkit Guessr</h1>
+    </header>
+    <p class="lead">Welcome to Plonkit Guessr — start a short game by choosing a mode below. Use presets for quick play, or pick "Custom" to fine-tune which clue types appear. Your custom choices will be remembered for next time.</p>
 
-  <!-- Controls moved to top for a compact guessing panel -->
-  <section id="controls">
-    <div class="controls-row">
-      <input id="guess-input" placeholder="Type country name or pick from suggestions" list="countries-list" autocomplete="off">
-      <datalist id="countries-list"></datalist>
-      <button id="guess-btn">Guess</button>
-      <button id="more-btn">More clues</button>
-      <button id="giveup-btn">Give up</button>
-    </div>
-    <div class="controls-row">
-      <div id="feedback"></div>
-    </div>
-  </section>
+    <section>
+      <div>
+        <strong>Choose Mode:</strong>
+        <div class="modes" id="modes">
+          <div class="mode-card" data-mode="scene" id="mode-scene">
+            <img src="https://images.unsplash.com/photo-1444858291040-58f756a3bdd6?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFybXxlbnwwfHwwfHx8MA%3D%3D" alt="Scene">
+            <h3>Scene Mode</h3>
+            <div class="small">Landscapes + Architecture</div>
+          </div>
+          <div class="mode-card" data-mode="urban" id="mode-urban">
+            <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2l0eXxlbnwwfHwwfHx8MA%3D%3D" alt="Urban">
+            <h3>Urban Mode</h3>
+            <div class="small">Signs, Vehicles, Brands</div>
+          </div>
+          <div class="mode-card" data-mode="car" id="mode-car">
+            <img src="https://images.unsplash.com/photo-1431391284046-6951bdb680c9?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z3VhcmRyYWlsc3xlbnwwfHwwfHx8MA%3D%3D" alt="car">
+            <h3>Road Mode</h3>
+            <div class="small">Poles, Bollards, Guardrails, Chevrons</div>
+          </div>
+          <div class="mode-card" data-mode="language" id="mode-language">
+            <img src="https://images.unsplash.com/photo-1737406417548-78e5470cb1cb?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8ZmFxfGVufDB8fDB8fHww" alt="Language">
+            <h3>Language Mode</h3>
+            <div class="small">Languages-focused clues</div>
+          </div>
+          <div class="mode-card" data-mode="complete" id="mode-complete">
+            <img src="https://images.unsplash.com/photo-1468136020796-0eec5226a897?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3RyZWV0JTIwdmlld3xlbnwwfHwwfHx8MA%3D%3D" alt="Complete">
+            <h3>Complete Mode</h3>
+            <div class="small">All clue types</div>
+          </div>
+          <div class="mode-card" data-mode="custom" id="mode-custom">
+            <img src="https://images.unsplash.com/photo-1525022404438-91321710652d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c291bmQlMjBtaXhlcnxlbnwwfHwwfHx8MA%3D%3D" alt="Custom">
+            <h3>Custom</h3>
+            <div class="small">Pick specific clue types</div>
+          </div>
+        </div>
 
-  <main>
-    <section id="clues">
-      <!-- Clue cards will appear here -->
+        <form id="labels-form">
+          <div id="labels" class="labels" style="display:none;"></div>
+          <div class="controls">
+            <button type="button" id="start-game">Start Game</button>
+            <button type="button" id="clear-custom" style="display:none;">Clear Custom</button>
+          </div>
+        </form>
+
+        <p class="small">Tip: Scene Mode pre-selects Landscapes and Architecture. Click 'Custom' to reveal detailed options.</p>
+      </div>
     </section>
   </main>
 
   <footer class="container layout"><br /><small class="muted">Created by <a style="color:#60a5fa;" href="https://pcwu2022.github.io">Po-Chun Wu</a></small></footer>
 
 
-  <script src="app.js"></script>
+  <script>
+  // labels must match those in app.js
+  const LABELS = ["Languages","Poles","Bollards","Guardrails","Signs","Chevrons","Road Lines","Vehicles","Camera","License Plates","Architecture","Landscapes","Brands","Materials","Miscellaneous"];
+  const STORE_KEY = 'plonkit_selected_labels';
+
+  const MODES = {
+    'scene': ['Landscapes','Architecture'],
+    'urban': ['Signs','Vehicles','Brands'],
+    'car': ['Poles','Bollards','Guardrails','Chevrons'],
+    'language': ['Languages'],
+    'complete': 'all',
+    'custom': 'custom'
+  };
+
+  let activeMode = 'scene';
+
+  function makeCheckbox(id, label, checked){
+    const el = document.createElement('label'); el.className='label-item';
+    const cb = document.createElement('input'); cb.type='checkbox'; cb.value=label; cb.id=id; cb.checked = !!checked;
+    const span = document.createElement('span'); span.style.marginLeft='8px'; span.textContent = label;
+    el.appendChild(cb); el.appendChild(span);
+    return el;
+  }
+
+  function loadStored(){
+    try{ const raw = localStorage.getItem(STORE_KEY); if(!raw) return null; return JSON.parse(raw); }catch(e){return null}
+  }
+
+  function saveStored(arr){ localStorage.setItem(STORE_KEY, JSON.stringify(arr)); }
+
+  function renderLabels(){
+    const container = document.getElementById('labels'); container.innerHTML='';
+    const stored = loadStored();
+    LABELS.forEach(l=>{
+      const id = 'label-'+l.replace(/\s+/g,'-').toLowerCase();
+      const checked = stored ? stored.includes(l) : false;
+      container.appendChild(makeCheckbox(id, l, checked));
+    });
+  }
+
+  function getSelected(){
+    return Array.from(document.querySelectorAll('#labels input[type=checkbox]:checked')).map(i=>i.value);
+  }
+
+  function setActiveMode(mode){
+    activeMode = mode;
+    document.querySelectorAll('.mode-card').forEach(c=> c.classList.toggle('active', c.dataset.mode === mode));
+    const labelsEl = document.getElementById('labels');
+    if(mode === 'custom'){
+      labelsEl.style.display = '';
+      renderLabels();
+    } else {
+      labelsEl.style.display = 'none';
+    }
+    // show Clear Custom only for custom mode
+    try{
+      const clearBtn = document.getElementById('clear-custom');
+      if(clearBtn) clearBtn.style.display = (mode === 'custom') ? '' : 'none';
+    }catch(e){}
+    // if selecting a preset, prefill stored values for custom when switching back
+    if(mode !== 'custom'){
+      const mapped = MODES[mode];
+      if(Array.isArray(mapped)) saveStored(mapped);
+      else if(mapped === 'all') saveStored(LABELS.slice());
+      else if(Array.isArray(mapped) && mapped.length===0) saveStored([]);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', ()=>{
+    // wire mode cards
+    document.querySelectorAll('.mode-card').forEach(card=>{
+      card.addEventListener('click', ()=> setActiveMode(card.dataset.mode));
+    });
+    // default active
+    setActiveMode('scene');
+
+    // start button
+    document.getElementById('start-game').addEventListener('click', ()=>{
+      let sel = [];
+      const mode = activeMode;
+      const mapped = MODES[mode];
+      if(mode === 'custom'){
+        sel = getSelected();
+        saveStored(sel);
+      } else if(mapped === 'all'){
+        sel = LABELS.slice();
+        saveStored(sel);
+      } else if(Array.isArray(mapped)){
+        sel = mapped.slice();
+        saveStored(sel);
+      } else if(Array.isArray(mapped) && mapped.length===0){
+        sel = [];
+        saveStored(sel);
+      }
+
+      // prepare query param
+      let q = '';
+      if(!sel || sel.length === 0){
+        q = '?labels=none';
+      } else if(sel.length === LABELS.length){
+        q = '?labels=all';
+      } else {
+        const enc = encodeURIComponent(sel.join(','));
+        q = `?labels=${enc}`;
+      }
+      window.location.href = 'game.html' + q;
+    });
+
+    document.getElementById('clear-custom').addEventListener('click', ()=>{
+      document.querySelectorAll('#labels input[type=checkbox]').forEach(cb=> cb.checked = false);
+      saveStored([]);
+    });
+  });
+  </script>
 </body>
 </html>

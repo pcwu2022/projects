@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Plonkit Guessr</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Make header link look like non-blue logo text */
+    header h1 a { color: inherit; text-decoration: none; display: inline-block; cursor: pointer; }
+    header h1 a:hover { opacity: 0.95; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><a href="index.html" title="Back to start">Plonkit Guessr</a></h1>
+    <div class="meta">
+      <div id="match-info">Match 0 / 5</div>
+      <div id="score-info">Score: 0</div>
+      <div id="timer">00:00</div>
+      <div id="hints">Hints: 0</div>
+    </div>
+  </header>
+  <section id="controls">
+    <div class="controls-row">
+      <input id="guess-input" placeholder="Type country name or pick from suggestions" list="countries-list" autocomplete="off">
+      <datalist id="countries-list"></datalist>
+      <button id="guess-btn">Guess</button>
+      <button id="more-btn">More clues</button>
+      <button id="giveup-btn">Give up</button>
+    </div>
+    <div class="controls-row">
+      <div id="feedback"></div>
+    </div>
+  </section>
+
+  <main>
+    <section id="clues">
+      <!-- Clue cards will appear here -->
+    </section>
+  </main>
+
+  <footer class="container layout"><br /><small class="muted">Created by <a style="color:#60a5fa;" href="https://pcwu2022.github.io">Po-Chun Wu</a></small></footer>
+
+
+  <script src="app.js"></script>
+</body>
+</html>

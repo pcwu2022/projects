@@ -39,6 +39,82 @@ const hintsEl = document.getElementById('hints');
 const matchInfo = document.getElementById('match-info');
 const scoreInfo = document.getElementById('score-info');
 
+const labels = ["Languages","Poles","Bollards","Guardrails","Signs","Chevrons","Road Lines","Vehicles","Camera","License Plates","Architecture","Landscapes","Brands","Materials","Miscellaneous"];
+
+// Selected labels (array of label names) — loaded from localStorage by init()
+let selectedLabels = null; // null or [] means include all (Complete Mode)
+
+function loadSelectedLabels(){
+  try{
+    const raw = localStorage.getItem('plonkit_selected_labels');
+    if(!raw) return null;
+    const parsed = JSON.parse(raw);
+    if(!Array.isArray(parsed)) return null;
+    // empty array means user explicitly chose none — treat as allow none (no clues)
+    return parsed;
+  }catch(e){ return null; }
+}
+
+const ALL_MARKER = '__PLONKIT_ALL__';
+function parseLabelsFromURL(){
+  try{
+    const params = new URLSearchParams(window.location.search);
+    if(!params.has('labels')) return undefined; // no explicit param
+    const raw = params.get('labels');
+    if(!raw) return undefined;
+    if(raw === 'all') return ALL_MARKER; // explicit all
+    if(raw === 'none') return []; // explicit none
+    const dec = decodeURIComponent(raw);
+    const arr = dec.split(',').map(s=>s.trim()).filter(Boolean);
+    return normalizeLabels(arr);
+  }catch(e){ return undefined; }
+}
+
+function normalizeLabels(arr){
+  if(!Array.isArray(arr)) return null;
+  // map incoming labels to canonical labels (case-insensitive)
+  const canon = labels.slice();
+  const lowerMap = new Map(canon.map(l=>[l.toLowerCase(), l]));
+  const out = [];
+  arr.forEach(a=>{
+    const low = a.toLowerCase();
+    if(lowerMap.has(low)) out.push(lowerMap.get(low));
+    else {
+      // try fuzzy matching by substring
+      for(const c of canon){ if(c.toLowerCase().includes(low) || low.includes(c.toLowerCase())){ out.push(c); break; } }
+    }
+  });
+  // dedupe, preserve order
+  return Array.from(new Set(out));
+}
+
+function clueFilename(url){
+  if(!url) return '';
+  try{ return url.split('/').pop().split('?')[0].toLowerCase(); }catch(e){return ''}
+}
+
+function isClueMatchLabel(clue, label){
+  if(!clue) return false;
+  const l = label.toLowerCase();
+  const txt = (clue.text||'').toLowerCase();
+  const fn = clueFilename(clue.img);
+  // direct word match
+  if(txt.includes(l)) return true;
+  if(fn.includes(l.replace(/\s+/g,''))) return true;
+  // some label-specific heuristics
+  if(l === 'road lines' && /line|lane|crosswalk|zebra/.test(txt)) return true;
+  if(l === 'chevrons' && /chevron/.test(txt)) return true;
+  if(l === 'license plates' && /plate|licen|licen[c,s]e|registration/.test(txt)) return true;
+  if(l === 'vehicles' && /car|truck|van|bus|motorbike|motorcycle|vehicle|uber|taxi/.test(txt)) return true;
+  if(l === 'camera' && /camera|gen3|gen4|surveil|cctv|dashcam/.test(txt)) return true;
+  if(l === 'languages' && /english|中文|汉语|español|fran(c|ç)ais|deutsch|русск|日本語|한국어|arabic|ไทย/.test(txt)) return true;
+  if(l === 'bollards' && /bollard|bollards/.test(txt)) return true;
+  if(l === 'poles' && /pole|poles/.test(txt)) return true;
+  if(l === 'signs' && /sign|signage/.test(txt)) return true;
+  // fallback: check label word as substring inside text words
+  return txt.indexOf(l) !== -1;
+}
+
 function toDisplayName(slug){
   return slug.split('-').map(s=>s.charAt(0).toUpperCase()+s.slice(1)).join(' ');
 }
@@ -60,9 +136,26 @@ function getCluesFor(countryKey){
   return clues;
 }
 
+// Filtered clues by selectedLabels (when set). null => include all; [] => include none
+function getFilteredCluesFor(countryKey){
+  const clues = getCluesFor(countryKey);
+  if(selectedLabels === null) return clues; // complete mode
+  if(Array.isArray(selectedLabels) && selectedLabels.length === 0) return [];
+  // keep clues that match any selected label
+  return clues.filter(c => selectedLabels.some(lbl => isClueMatchLabel(c, lbl)));
+}
+
 function pickRandomCountries(n){
   const keys = Object.keys(db).filter(k=>Array.isArray(db[k]) && db[k].length>0);
   // shuffle
+  for(let i=keys.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1)); [keys[i],keys[j]]=[keys[j],keys[i]];
+  }
+  return keys.slice(0,n);
+}
+
+function pickRandomCountriesFromList(list, n){
+  const keys = list.slice();
   for(let i=keys.length-1;i>0;i--){
     const j = Math.floor(Math.random()*(i+1)); [keys[i],keys[j]]=[keys[j],keys[i]];
   }
@@ -77,7 +170,13 @@ function shuffleArray(arr){
 }
 
 function startGame(){
-  gameState.matchIndex = 0; gameState.totalScore = 0; gameState.rounds = pickRandomCountries(MATCHES);
+  gameState.matchIndex = 0; gameState.totalScore = 0;
+  // if gameState.rounds already set (by init with filtered keys), respect it; otherwise pick normally
+  if(!gameState.rounds || !Array.isArray(gameState.rounds) || gameState.rounds.length === 0){
+    gameState.rounds = pickRandomCountries(MATCHES);
+  }
+  // set how many matches we'll actually play (could be fewer than MATCHES if pool smaller)
+  gameState.totalMatches = Math.min(MATCHES, gameState.rounds.length);
   gameState.results = [];
   scoreInfo.textContent = `Score: ${gameState.totalScore}`;
   nextMatch();
@@ -104,11 +203,21 @@ function renderClueCard(clue, showText, idx){
 
 function showCurrentClues(){
   cluesEl.innerHTML='';
-  const showText = !!(gameState.current && gameState.current.showText);
-  gameState.current.revealed.forEach(idx => {
-    const clue = gameState.current.clues[idx];
+  const cur = gameState.current;
+  if(!cur || !Array.isArray(cur.revealed) || !Array.isArray(cur.clues)) return;
+  const showText = !!cur.showText;
+  cur.revealed.forEach(idx => {
+    const clue = cur.clues[idx];
     cluesEl.prepend(renderClueCard(clue, showText, idx));
   });
+  // disable More button if there are no unseen clues
+  try{
+    if(!cur || !Array.isArray(cur.clues) || cur.clues.length <= ((cur.revealedIndex||0)+1)){
+      moreBtn.disabled = true;
+    } else {
+      moreBtn.disabled = false;
+    }
+  }catch(e){ if(moreBtn) moreBtn.disabled = true; }
 }
 
 let timerInterval = null;
@@ -148,8 +257,11 @@ function formatTime(s){ const mm = String(Math.floor(s/60)).padStart(2,'0'); con
 
 function revealNext(){
   const cur = gameState.current;
-  if(cur.revealedIndex+1 >= cur.clues.length) return false;
-  cur.revealedIndex++;
+  if(!cur || !Array.isArray(cur.clues)) return false;
+  const idx = typeof cur.revealedIndex === 'number' ? cur.revealedIndex : 0;
+  if(idx+1 >= cur.clues.length) return false;
+  cur.revealedIndex = idx + 1;
+  if(!Array.isArray(cur.revealed)) cur.revealed = [];
   cur.revealed.push(cur.revealedIndex);
   showCurrentClues();
   updateStatus();
@@ -167,8 +279,11 @@ function computeMatchScore(){
   const base = PER_MATCH_MAX;
   const revealedClues = cur.revealed ? cur.revealed.length : 1; // number of clues shown
   const cluePenalty = CLUE_PENALTY * Math.max(0, revealedClues - 1);
+  // apply wrong-guess penalty as well
+  const wrongs = cur.wrongGuesses || 0;
+  const wrongPenalty = WRONG_GUESS_PENALTY * wrongs;
   // score cannot be negative
-  let score = Math.max(0, base - cluePenalty);
+  let score = Math.max(0, base - cluePenalty - wrongPenalty);
   return score;
 }
 
@@ -222,7 +337,6 @@ function revealAnswer(){
   showCurrentClues();
   gameState.mode = 'revealed';
   const displayName = toDisplayName(cur.key);
-  feedback.innerHTML = `<strong>Answer:</strong> ${displayName}`;
   // compute score and show it as a banner at the top of clues
   const gained = endRound();
   const banner = document.createElement('div'); banner.className = 'score-banner';
@@ -230,6 +344,13 @@ function revealAnswer(){
   // insert banner at top
   if(cluesEl.firstChild) cluesEl.insertBefore(banner, cluesEl.firstChild);
   else cluesEl.appendChild(banner);
+  // append an answer block directly under the score banner (instead of using the controls feedback)
+  try{
+    const answerDiv = document.createElement('div'); answerDiv.className = 'answer';
+    answerDiv.innerHTML = `<strong>Answer:</strong> ${displayName}`;
+    if(banner.nextSibling) cluesEl.insertBefore(answerDiv, banner.nextSibling);
+    else cluesEl.appendChild(answerDiv);
+  }catch(e){ /* ignore DOM errors */ }
   // update Guess button to act as Next
   // if this was the final match (matchIndex points to next), offer Results Breakdown
   if(gameState.matchIndex >= MATCHES){
@@ -312,13 +433,13 @@ function setupEventListeners(){
 }
 
 function nextMatch(){
-  if(gameState.matchIndex >= MATCHES){
+  if(gameState.matchIndex >= (gameState.totalMatches||MATCHES)){
     // game over: finish and redirect to end screen
     finishGame();
     return;
   }
   const key = gameState.rounds[gameState.matchIndex];
-  const clues = getCluesFor(key);
+  const clues = getFilteredCluesFor(key);
   // Move the latest clues (last items in DB order) to the top, then shuffle the rest
   const latest = clues.splice(-LATEST_TOP_COUNT);
   shuffleArray(clues);
@@ -357,8 +478,27 @@ async function init(){
   }catch(e){
     cluesEl.innerHTML = `<div class="clue-card">Failed to load plonkit_db.json — open locally or serve over HTTP.</div>`; return;
   }
+  // load selected labels from URL first (so start page can pass them), fall back to stored
+  const fromURL = parseLabelsFromURL();
+  if(fromURL === undefined){
+    selectedLabels = loadSelectedLabels();
+  } else if(fromURL === ALL_MARKER){
+    selectedLabels = null; // explicit all
+  } else {
+    selectedLabels = fromURL; // could be [] or list
+  }
+
+  // compute available keys (countries that have at least one clue after filtering)
+  const allKeys = Object.keys(db).filter(k=>Array.isArray(db[k]) && db[k].length>0);
+  const availableKeys = allKeys.filter(k => {
+    try{ return Array.isArray(getFilteredCluesFor(k)) && getFilteredCluesFor(k).length>0; }catch(e){ return false; }
+  }).sort();
+  if(availableKeys.length === 0){
+    cluesEl.innerHTML = `<div class="clue-card">No clues available for the selected filters. Please go back to the start page and choose other clue types.</div>`;
+    return;
+  }
   // populate datalist
-  const keys = Object.keys(db).filter(k=>Array.isArray(db[k]) && db[k].length>0).sort();
+  const keys = availableKeys;
   keys.forEach(k=>{
     const display = toDisplayName(k);
     const opt = document.createElement('option'); opt.value = display; countriesList.appendChild(opt);
@@ -459,8 +599,8 @@ async function init(){
 
   // hide suggestion on outside click or blur
   document.addEventListener('click', (e)=>{ if(!suggestionEl.contains(e.target) && e.target !== guessInput) hideAliasSuggestion(); });
-  // start game
-  gameState.rounds = pickRandomCountries(MATCHES);
+  // start game with a random selection of available keys
+  gameState.rounds = pickRandomCountriesFromList(availableKeys, MATCHES);
   startGame();
 }
 
