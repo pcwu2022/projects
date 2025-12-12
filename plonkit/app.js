@@ -1,10 +1,10 @@
 // Simple country guessing game using plonkit_db.json
 const DB_PATH = 'plonkit_db.json';
 const MATCHES = 5;
-const PER_GAME_MAX = 1500; // user requested per-game max
+const PER_GAME_MAX = 5000; // user requested per-game max
 const PER_MATCH_MAX = Math.round(PER_GAME_MAX / MATCHES);
-const WRONG_GUESS_PENALTY = 50; // points lost per wrong guess (adjustable)
-const CLUE_PENALTY = 10; // points lost per extra clue beyond first (adjustable)
+const WRONG_GUESS_PENALTY = 100; // points lost per wrong guess (adjustable)
+const CLUE_PENALTY = 50; // points lost per extra clue beyond first (adjustable)
 const MAX_WRONG_GUESSES = 5; // maximum wrong guesses per round
 const LATEST_TOP_COUNT = 1; // number of latest clues (from DB end) to place at top
 
@@ -123,8 +123,9 @@ function startTimer(){
     cur.remaining -= 1;
     if(cur.remaining < 0){
       clearInterval(timerInterval); timerInterval = null;
-      // time's up: auto reveal
-      feedback.textContent = 'Time expired — showing answer';
+      // time's up: mark as give-up so the round scores zero, then reveal
+      cur.gaveUp = true;
+      feedback.textContent = 'Time expired — round ends with 0 points.';
       revealAnswer();
       return;
     }
@@ -186,7 +187,8 @@ function endRound(revealedAll=false){
   gameState.results.push(roundInfo);
   gameState.totalScore += score;
   scoreInfo.textContent = `Score: ${gameState.totalScore}`;
-  moreBtn.disabled = true; giveupBtn.disabled = true;
+  // hide hint and give-up controls when round ends / answer revealed
+  moreBtn.style.display = 'none'; giveupBtn.style.display = 'none';
   return score;
 }
 
@@ -229,7 +231,12 @@ function revealAnswer(){
   if(cluesEl.firstChild) cluesEl.insertBefore(banner, cluesEl.firstChild);
   else cluesEl.appendChild(banner);
   // update Guess button to act as Next
-  guessBtn.textContent = 'Next';
+  // if this was the final match (matchIndex points to next), offer Results Breakdown
+  if(gameState.matchIndex >= MATCHES){
+    guessBtn.textContent = 'Results Breakdown';
+  } else {
+    guessBtn.textContent = 'Next';
+  }
   guessBtn.classList.add('secondary');
   updateStatus();
   // ensure all clue text elements are visible after reveal
@@ -271,7 +278,13 @@ function onGuess(){
 function guessOrNext(){
   console.debug('guessOrNext()', {mode: gameState.mode});
   if(gameState.mode === 'revealed'){
-    // act as Next
+    // act as Next (or Results Breakdown when final match)
+    // If we've finished all matches, show the breakdown (finishGame handles redirect)
+    if(gameState.matchIndex >= MATCHES){
+      finishGame();
+      return;
+    }
+    // otherwise continue to next match
     guessBtn.textContent = 'Guess';
     guessBtn.classList.remove('secondary');
     feedback.textContent = '';
@@ -319,7 +332,10 @@ function nextMatch(){
   matchInfo.textContent = `Match ${gameState.matchIndex+1} / ${MATCHES}`;
   // show first clue only
   showCurrentClues();
-  guessBtn.disabled=false; moreBtn.disabled=false; giveupBtn.disabled=false;
+  guessBtn.disabled=false; 
+  // ensure hint/giveup controls are visible for new round
+  moreBtn.style.display = ''; moreBtn.disabled = false;
+  giveupBtn.style.display = ''; giveupBtn.disabled = false;
   feedback.textContent = '';
   // reset input
   guessInput.value='';

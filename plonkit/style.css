@@ -58,4 +58,9 @@ footer{padding:12px 24px;border-top:1px solid rgba(255,255,255,0.02);font-size:1
   input#guess-input{max-width:100%;width:100%}
   button{width:100%}
   main{padding-top:calc(48px + var(--controls-height-mobile) + 16px)}
+
+  /* On small screens, stack revealed clue text below the image */
+  #clues .clue-card.has-text{display:block}
+  #clues .clue-card.has-text img{max-width:100%;height:auto;margin-bottom:8px}
+  #clues .clue-card.has-text .clue-text{display:block}
 }
