@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Plonkit — Start</title>
+  <title>Plonkit Guessr</title>
   <meta name="description" content="Plonkit Guessr — a country guessing game using photographic clues. Choose game modes and customize clue types." />
   <!-- Social preview -->
   <meta property="og:title" content="Plonkit Guessr" />
@@ -132,15 +132,19 @@
     return Array.from(document.querySelectorAll('#labels input[type=checkbox]:checked')).map(i=>i.value);
   }
 
-  function setActiveMode(mode){
+  function setActiveMode(mode, opts){
+    const userInitiated = opts && opts.user;
     activeMode = mode;
     document.querySelectorAll('.mode-card').forEach(c=> c.classList.toggle('active', c.dataset.mode === mode));
     const labelsEl = document.getElementById('labels');
+    const startBtn = document.getElementById('start-game');
     if(mode === 'custom'){
       labelsEl.style.display = '';
       renderLabels();
+      if(startBtn) startBtn.style.display = '';
     } else {
       labelsEl.style.display = 'none';
+      if(startBtn) startBtn.style.display = 'none';
     }
     // show Clear Custom only for custom mode
     try{
@@ -154,12 +158,33 @@
       else if(mapped === 'all') saveStored(LABELS.slice());
       else if(Array.isArray(mapped) && mapped.length===0) saveStored([]);
     }
+
+    // if user clicked a non-custom mode, immediately start the game
+    if(userInitiated && mode !== 'custom'){
+      // build selection array same as Start button logic
+      let sel = [];
+      const mapped = MODES[mode];
+      if(mapped === 'all') sel = LABELS.slice();
+      else if(Array.isArray(mapped)) sel = mapped.slice();
+      else sel = [];
+      // prepare query param
+      let q = '';
+      if(!sel || sel.length === 0){
+        q = '?labels=none';
+      } else if(sel.length === LABELS.length){
+        q = '?labels=all';
+      } else {
+        const enc = encodeURIComponent(sel.join(','));
+        q = `?labels=${enc}`;
+      }
+      window.location.href = 'game.html' + q;
+    }
   }
 
   document.addEventListener('DOMContentLoaded', ()=>{
     // wire mode cards
     document.querySelectorAll('.mode-card').forEach(card=>{
-      card.addEventListener('click', ()=> setActiveMode(card.dataset.mode));
+      card.addEventListener('click', ()=> setActiveMode(card.dataset.mode, {user: true}));
     });
     // default active
     setActiveMode('scene');

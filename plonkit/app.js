@@ -88,6 +88,25 @@ function normalizeLabels(arr){
   return Array.from(new Set(out));
 }
 
+// Simple URI-safe compression helpers using base64 of UTF-8 to shorten long JSON in URLs.
+function compressToEncodedURIComponent(input){
+  if(input == null) return '';
+  try{
+    const utf8 = unescape(encodeURIComponent(input));
+    const b64 = btoa(utf8);
+    return encodeURIComponent(b64);
+  }catch(e){ return encodeURIComponent(input); }
+}
+
+function decompressFromEncodedURIComponent(input){
+  if(input == null) return null;
+  try{
+    const b64 = decodeURIComponent(input);
+    const utf8 = atob(b64);
+    return decodeURIComponent(escape(utf8));
+  }catch(e){ try{ return decodeURIComponent(input); }catch(e2){ return input; } }
+}
+
 function clueFilename(url){
   if(!url) return '';
   try{ return url.split('/').pop().split('?')[0].toLowerCase(); }catch(e){return ''}
@@ -323,9 +342,17 @@ function finishGame(){
     prevHigh,
     newHigh,
   };
-  const encoded = encodeURIComponent(JSON.stringify(payload));
+  const encoded = compressToEncodedURIComponent(JSON.stringify(payload));
   // redirect to end screen with data in query
-  window.location.href = `end.html?data=${encoded}`;
+  // also include the label selection used for the game so the end screen can show it
+  let labelsParam = '';
+  try{
+    if(selectedLabels === null){ labelsParam = 'all'; }
+    else if(Array.isArray(selectedLabels) && selectedLabels.length === 0){ labelsParam = 'none'; }
+    else labelsParam = encodeURIComponent(selectedLabels.join(','));
+  }catch(e){ labelsParam = '' }
+  const labelQuery = labelsParam ? `&labels=${labelsParam}` : '';
+  window.location.href = `end.html?data=${encoded}${labelQuery}`;
 }
 
 function revealAnswer(){

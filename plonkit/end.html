@@ -3,11 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Game Results — Plonkit</title>
+  <title>Game Results — Plonkit Guessr</title>
   <link rel="stylesheet" href="style.css">
   <style>
     /* small overrides to reuse the app dark theme */
     .page{max-width:900px;margin:24px auto;padding:16px}
+    /* improved screenshot-friendly layout */
+    .hero{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+    .logo{font-size:1.4rem;font-weight:700}
+    .share-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:8px;background:linear-gradient(90deg,#06b6d4,#10b981);color:#04202a;text-decoration:none;font-weight:700}
     h1{margin:0 0 8px}
     .summary{display:flex;gap:16px;align-items:center;margin-bottom:12px}
     .box{padding:12px;border-radius:8px;background:var(--card);border:1px solid rgba(255,255,255,0.04);color:inherit}
@@ -22,7 +26,15 @@
 </head>
 <body>
   <div class="page">
-    <h1>Game Summary</h1>
+    <div class="hero">
+      <div>
+        <div class="logo">Plonkit Guessr</div>
+        <div class="muted">Game Summary</div>
+      </div>
+      <div>
+        <a id="shareBtn" class="share-btn" href="#">Share my game</a>
+      </div>
+    </div>
   <div class="summary">
     <div class="box">
       <div class="muted">Total Score</div>
@@ -36,6 +48,10 @@
       <div class="muted">New High</div>
       <div id="newHigh" class="big">0</div>
     </div>
+    <div class="box">
+      <div class="muted">Hints used</div>
+      <div id="labelsUsed" class="big">—</div>
+    </div>
   </div>
 
   <div id="listContainer" class="box">
@@ -47,13 +63,22 @@
       <tbody></tbody>
     </table>
   </div>
-
     <div class="actions">
       <a href="index.html" class="button">Play Again</a>
+      <a id="twitterShare" class="button" style="margin-left:8px;display:none">Share on Twitter</a>
     </div>
   </div>
 
   <script>
+    // decompression helper matching app.js compressToEncodedURIComponent
+    function decompressFromEncodedURIComponent(input){
+      if(input == null) return null;
+      try{
+        const b64 = decodeURIComponent(input);
+        const utf8 = atob(b64);
+        return decodeURIComponent(escape(utf8));
+      }catch(e){ try{ return decodeURIComponent(input); }catch(e2){ return input; } }
+    }
     function qs(name){
       const params = new URLSearchParams(window.location.search);
       return params.get(name);
@@ -64,7 +89,7 @@
       throw new Error('no data');
     }
     let payload = null;
-    try{ payload = JSON.parse(decodeURIComponent(raw)); } catch(e){
+    try{ const dec = decompressFromEncodedURIComponent(raw); payload = JSON.parse(dec); } catch(e){
       document.body.innerHTML = '<p>Invalid results data. <a href="index.html">Back to game</a></p>';
       throw e;
     }
@@ -74,17 +99,58 @@
     document.getElementById('prevHigh').textContent = prevHigh;
     document.getElementById('newHigh').textContent = newHigh;
 
+    // read labels param from URL if present
+    const labelsParam = new URLSearchParams(window.location.search).get('labels');
+    const labelsUsedEl = document.getElementById('labelsUsed');
+    if(labelsParam === 'all' || !labelsParam){ labelsUsedEl.textContent = 'All types'; }
+    else if(labelsParam === 'none') { labelsUsedEl.textContent = 'None'; }
+    else {
+      try{
+        const dec = decodeURIComponent(labelsParam);
+        labelsUsedEl.textContent = dec.split(',').join(', ');
+      }catch(e){ labelsUsedEl.textContent = labelsParam }
+    }
+
     const tbody = document.querySelector('#resultsTable tbody');
     rounds.forEach((r, i) => {
       const tr = document.createElement('tr');
       const idx = document.createElement('td'); idx.textContent = (i+1);
-      const name = document.createElement('td'); name.textContent = r.country || '—';
+      const name = document.createElement('td'); name.textContent = r.country.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()) || '—';
       const score = document.createElement('td'); score.textContent = r.score;
       const revealed = document.createElement('td'); revealed.textContent = r.revealedCount;
       const wrong = document.createElement('td'); wrong.textContent = r.wrongGuesses || 0;
       const gaveUp = document.createElement('td'); gaveUp.textContent = r.gaveUp ? 'Yes' : 'No';
       tr.appendChild(idx); tr.appendChild(name); tr.appendChild(score); tr.appendChild(revealed); tr.appendChild(wrong); tr.appendChild(gaveUp);
       tbody.appendChild(tr);
+    });
+
+    // share button copies current page URL (which includes the encoded results payload)
+    const shareBtn = document.getElementById('shareBtn');
+    shareBtn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const url = location.href;
+      try{
+        if(navigator.share){
+          await navigator.share({ title: 'Plonkit Guessr', text: `I scored ${total} points on Plonkit Guessr. Can you beat my score?`, url });
+          return;
+        }
+      }catch(err){ /* ignore */ }
+      try{
+        await navigator.clipboard.writeText(url);
+        shareBtn.textContent = 'Link copied!';
+        setTimeout(()=> shareBtn.textContent = 'Share my game', 2500);
+      }catch(e){
+        alert('Copy failed — here is the link:\n' + url);
+      }
+    });
+
+    // twitter share link
+    const twitter = document.getElementById('twitterShare');
+    twitter.addEventListener('click', ()=>{
+      const text = encodeURIComponent(`I scored ${total} points on Plonkit Guessr! Play it:`);
+      const url = encodeURIComponent(location.href);
+      const href = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
+      window.open(href,'_blank','noopener');
     });
   </script>
 </body>
