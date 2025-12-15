@@ -24,6 +24,20 @@ window.PROJECTS = [
         description: "A collection of small browser games (snake, minesweeper, etc) based on an HTML-based ProcessingJS parser developed by me.", 
         date: "2020 - 2024" 
     },
+    {
+        title: "Plonkit Guessr",
+        href: "plonkit/index.html",
+        image: "images/plonkit.png",
+        description: "A Geoguessr training game based on the Plonkit database",
+        date: "December 2025"
+    },
+    {
+        title: "@maps.az",
+        href: "https://pcwu2022.github.io/maps.az/",
+        image: "images/maps.png",
+        description: "A showcase of interactive maps created for my instagram account @maps.az.",
+        date: "December 2025"
+    },
     { 
         title: "Taipei Metro Level", 
         href: "taipei_metro_level/index.html", 
@@ -37,13 +51,6 @@ window.PROJECTS = [
         image: "images/tra_names.png", 
         description: "How many TRA stations can you name?", 
         date: "September 2025" 
-    },
-    {
-        title: "Plonkit Guessr",
-        href: "plonkit/index.html",
-        image: "images/plonkit.png",
-        description: "A Geoguessr training game based on the Plonkit database",
-        date: "December 2025"
     },
     { 
         title: "EE Quiz", 
@@ -65,6 +72,13 @@ window.PROJECTS = [
         image: "images/vocabulary.png",
         description: "A vocabulary flashcard app that randomly picks words of your vocabulary level, determined by a small algorithm.",
         date: "January 2025"
+    },
+    {
+        title: "SLEK System",
+        href: "https://slek-system.vercel.app/",
+        image: "images/slek.png",
+        description: "A web-based simulation system to help medical students practice diagnosis and treatment.",
+        date: "October 2024"
     },
     {
         title: "Git Archive",
@@ -100,12 +114,5 @@ window.PROJECTS = [
         image: "images/phishing.png", 
         description: "A demonstration of how phishing attacks work.", 
         date: "July 2024" 
-    },
-    { 
-        title: "Remote Control", 
-        href: "remote/index.html", 
-        image: "images/remote.png", 
-        description: "A simple remote control UI demo. Note that it can only be used from mobile devices.", 
-        date: "August 2020" 
     }
 ];
