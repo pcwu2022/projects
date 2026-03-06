@@ -25,6 +25,20 @@ window.PROJECTS = [
         date: "2020 - 2024" 
     },
     {
+        title: "Whiskers",
+        href: "https://whiskers-codes.vercel.app/",
+        image: "images/whiskers.png",
+        description: "A web based IDE for writing Scratch-like code. Designed for students transitioning from blocks to code.",
+        date: "February 2026"
+    },
+    {
+        title: "Acquired Universe",
+        href: "https://acquired-universe.vercel.app/",
+        image: "images/acquired_universe.png",
+        description: "An interactive time-lapse of every company covered on the Acquired podcast and where its listeners are in the world.",
+        date: "March 2026"
+    },
+    {
         title: "Plonkit Guessr",
         href: "plonkit/index.html",
         image: "images/plonkit.png",
@@ -39,17 +53,17 @@ window.PROJECTS = [
         date: "December 2025"
     },
     { 
-        title: "Taipei Metro Level", 
-        href: "taipei_metro_level/index.html", 
-        image: "images/taipei_metro_level.png", 
-        description: "How many stations have you been to in Taipei Metro?", 
-        date: "September 2025" 
-    },
-    { 
         title: "TRA Names", 
         href: "tra_names/index.html", 
         image: "images/tra_names.png", 
         description: "How many TRA stations can you name?", 
+        date: "September 2025" 
+    },
+    { 
+        title: "Taipei Metro Level", 
+        href: "taipei_metro_level/index.html", 
+        image: "images/taipei_metro_level.png", 
+        description: "How many stations have you been to in Taipei Metro?", 
         date: "September 2025" 
     },
     { 
