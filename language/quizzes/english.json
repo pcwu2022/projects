@@ -1,0 +1,1031 @@
+{
+    "id": "english",
+    "name": "English Dialects",
+    "description": "Distinguish between American English and British English through subtle syntax and vocabulary.",
+    "languages": [
+        "American English",
+        "British English"
+    ],
+    "questions": [
+        {
+            "text": "I’ll write to you as soon as I’ve gotten the results.",
+            "answer": "American English",
+            "explanation": "The use of 'gotten' as the past participle of 'get' is a standard feature of American English; British English almost exclusively uses 'got'.",
+            "lang": "American English"
+        },
+        {
+            "text": "The government are expected to announce a new policy tomorrow.",
+            "answer": "British English",
+            "explanation": "In British English, collective nouns (like government, team, or staff) often take plural verb forms, whereas American English strictly uses the singular.",
+            "lang": "British English"
+        },
+        {
+            "text": "We decided to stay home and watch a movie since it was raining.",
+            "answer": "American English",
+            "explanation": "Americans often omit the preposition 'at' before the word 'home' (stay home), whereas British speakers typically say 'stay at home'.",
+            "lang": "American English"
+        },
+        {
+            "text": "Could you please pass me the kitchen roll? I’ve spilled some water.",
+            "answer": "British English",
+            "explanation": "What Americans call 'paper towels', British speakers refer to as 'kitchen roll'.",
+            "lang": "British English"
+        },
+        {
+            "text": "I’m going to visit my parents on the weekend.",
+            "answer": "American English",
+            "explanation": "American English uses 'on' for weekends, while British English traditionally uses 'at the weekend'.",
+            "lang": "American English"
+        },
+        {
+            "text": "She has already learnt the entire piece by heart.",
+            "answer": "British English",
+            "explanation": "The '-t' ending for past tense verbs (learnt, dreamt, spelt) is a hallmark of British English; American English prefers '-ed' (learned).",
+            "lang": "British English"
+        },
+        {
+            "text": "He’s currently in hospital recovering from the surgery.",
+            "answer": "British English",
+            "explanation": "British English omits the definite article 'the' when referring to a patient being in a medical facility ('in hospital'), while Americans say 'in the hospital'.",
+            "lang": "British English"
+        },
+        {
+            "text": "I need to check the schedule before I book the flight.",
+            "answer": "American English",
+            "explanation": "While 'schedule' is used in both, the pronunciation and frequent use in this context are American; a British speaker might lean toward 'timetable' for public transport/flights.",
+            "lang": "American English"
+        },
+        {
+            "text": "The baby is using a dummy to stay calm.",
+            "answer": "British English",
+            "explanation": "In the UK, a silicone teat for babies is called a 'dummy'; in the US, it is a 'pacifier'.",
+            "lang": "British English"
+        },
+        {
+            "text": "I'll go wash up the dishes before we leave.",
+            "answer": "American English",
+            "explanation": "The construction 'go wash' (omitting 'and') is a common American colloquialism. British English would use 'go and wash'.",
+            "lang": "American English"
+        },
+        {
+            "text": "I’ve got a lot of work to do this afternoon.",
+            "answer": "British English",
+            "explanation": "BrE uses 'have got' for possession; AmE commonly uses 'have' (I have a lot of work).",
+            "lang": "British English"
+        },
+        {
+            "text": "The team is playing well today.",
+            "answer": "American English",
+            "explanation": "AmE treats collective nouns as singular; BrE would frequently say 'The team are'.",
+            "lang": "American English"
+        },
+        {
+            "text": "I’ll write you as soon as I arrive.",
+            "answer": "American English",
+            "explanation": "AmE can use 'write' as a transitive verb with a person; BrE requires 'write TO you'.",
+            "lang": "American English"
+        },
+        {
+            "text": "He’s been in hospital for three days.",
+            "answer": "British English",
+            "explanation": "BrE omits 'the' for institutional nouns; AmE says 'in the hospital'.",
+            "lang": "British English"
+        },
+        {
+            "text": "Did you eat already?",
+            "answer": "American English",
+            "explanation": "AmE uses simple past with 'already'; BrE typically requires present perfect ('Have you eaten already?').",
+            "lang": "American English"
+        },
+        {
+            "text": "She has spelt her name incorrectly on the form.",
+            "answer": "British English",
+            "explanation": "The '-t' ending for irregular verbs (spelt, burnt, dreamt) is characteristic of BrE.",
+            "lang": "British English"
+        },
+        {
+            "text": "I’ll see you at the weekend.",
+            "answer": "British English",
+            "explanation": "BrE uses 'at the weekend'; AmE uses 'on the weekend'.",
+            "lang": "British English"
+        },
+        {
+            "text": "Please fill out this form and return it to the desk.",
+            "answer": "American English",
+            "explanation": "AmE uses 'fill out' a form; BrE prefers 'fill IN' a form.",
+            "lang": "American English"
+        },
+        {
+            "text": "He dived into the pool from the high board.",
+            "answer": "British English",
+            "explanation": "BrE uses 'dived' as the past tense; AmE often uses 'dove'.",
+            "lang": "British English"
+        },
+        {
+            "text": "The shop is open Monday through Friday.",
+            "answer": "American English",
+            "explanation": "AmE uses 'through' to indicate a range of days; BrE uses 'to' or 'until' (Monday to Friday).",
+            "lang": "American English"
+        },
+        {
+            "text": "I’m going to have a bath before dinner.",
+            "answer": "British English",
+            "explanation": "BrE 'has' a bath/shower/break; AmE 'takes' a bath/shower/break.",
+            "lang": "British English"
+        },
+        {
+            "text": "I suspect he’s gotten lost in the city center.",
+            "answer": "American English",
+            "explanation": "AmE uses 'gotten' as the past participle of 'get'; BrE uses 'got'.",
+            "lang": "American English"
+        },
+        {
+            "text": "Everything is organized for the meeting.",
+            "answer": "American English",
+            "explanation": "AmE uses '-ize' exclusively; BrE accepts '-ise' (though Oxford spelling allows -ize, -ise is the standard differentiator).",
+            "lang": "American English"
+        },
+        {
+            "text": "Can you pass me that tea towel?",
+            "answer": "British English",
+            "explanation": "BrE 'tea towel' is the US 'dish towel'.",
+            "lang": "British English"
+        },
+        {
+            "text": "Is it okay if I sit here?",
+            "answer": "American English",
+            "explanation": "The spelling 'okay' is preferred in AmE; BrE often uses 'OK'.",
+            "lang": "American English"
+        },
+        {
+            "text": "He lives in a flat near the station.",
+            "answer": "British English",
+            "explanation": "BrE 'flat' vs AmE 'apartment'.",
+            "lang": "British English"
+        },
+        {
+            "text": "I need to go to the restroom.",
+            "answer": "American English",
+            "explanation": "AmE 'restroom' is a common euphemism; BrE prefers 'toilet' or 'loo'.",
+            "lang": "American English"
+        },
+        {
+            "text": "Could you fetch the bin for me?",
+            "answer": "British English",
+            "explanation": "BrE 'bin' vs AmE 'trash can' or 'garbage can'.",
+            "lang": "British English"
+        },
+        {
+            "text": "Wait, I haven't finished yet.",
+            "answer": "British English",
+            "explanation": "BrE strictly uses present perfect with 'yet'. AmE might say 'I didn't finish yet'.",
+            "lang": "British English"
+        },
+        {
+            "text": "Check the trunk of the car for the spare tire.",
+            "answer": "American English",
+            "explanation": "AmE 'trunk/tire' vs BrE 'boot/tyre'.",
+            "lang": "American English"
+        },
+        {
+            "text": "He's wearing a jumper because it's cold.",
+            "answer": "British English",
+            "explanation": "BrE 'jumper' is the US 'sweater'.",
+            "lang": "British English"
+        },
+        {
+            "text": "I'll go get my bangs trimmed.",
+            "answer": "American English",
+            "explanation": "AmE 'bangs' vs BrE 'fringe'.",
+            "lang": "American English"
+        },
+        {
+            "text": "The curtains are very colorful.",
+            "answer": "American English",
+            "explanation": "AmE 'colorful' vs BrE 'colourful'.",
+            "lang": "American English"
+        },
+        {
+            "text": "The lift is out of order.",
+            "answer": "British English",
+            "explanation": "BrE 'lift' vs AmE 'elevator'.",
+            "lang": "British English"
+        },
+        {
+            "text": "Would you like a biscuit?",
+            "answer": "British English",
+            "explanation": "BrE 'biscuit' vs AmE 'cookie'.",
+            "lang": "British English"
+        },
+        {
+            "text": "I’m going to stay at home tonight.",
+            "answer": "British English",
+            "explanation": "BrE requires 'at' in 'stay at home'; AmE often says 'stay home'.",
+            "lang": "British English"
+        },
+        {
+            "text": "Check the timetable for the next train.",
+            "answer": "British English",
+            "explanation": "BrE 'timetable' vs AmE 'schedule'.",
+            "lang": "British English"
+        },
+        {
+            "text": "The baby needs a fresh diaper.",
+            "answer": "American English",
+            "explanation": "AmE 'diaper' vs BrE 'nappy'.",
+            "lang": "American English"
+        },
+        {
+            "text": "I’ve just had a brilliant idea.",
+            "answer": "British English",
+            "explanation": "The use of 'brilliant' to mean 'excellent' is highly characteristic of BrE.",
+            "lang": "British English"
+        },
+        {
+            "text": "The movie was quite long.",
+            "answer": "American English",
+            "explanation": "AmE 'movie' vs BrE 'film'.",
+            "lang": "American English"
+        },
+        {
+            "text": "I’m standing in a queue for tickets.",
+            "answer": "British English",
+            "explanation": "BrE 'queue' vs AmE 'line'.",
+            "lang": "British English"
+        },
+        {
+            "text": "He bought a new pair of sneakers.",
+            "answer": "American English",
+            "explanation": "AmE 'sneakers' vs BrE 'trainers'.",
+            "lang": "American English"
+        },
+        {
+            "text": "I’ll ring you later.",
+            "answer": "British English",
+            "explanation": "BrE 'ring' vs AmE 'call'.",
+            "lang": "British English"
+        },
+        {
+            "text": "She’s on vacation in Hawaii.",
+            "answer": "American English",
+            "explanation": "AmE 'vacation' vs BrE 'holiday'.",
+            "lang": "American English"
+        },
+        {
+            "text": "The motorway is very busy today.",
+            "answer": "British English",
+            "explanation": "BrE 'motorway' vs AmE 'highway' or 'freeway'.",
+            "lang": "British English"
+        },
+        {
+            "text": "I’ll go to the drugstore to get some aspirin.",
+            "answer": "American English",
+            "explanation": "AmE 'drugstore' vs BrE 'chemist'.",
+            "lang": "American English"
+        },
+        {
+            "text": "Mind the gap as you exit.",
+            "answer": "British English",
+            "explanation": "Famous BrE phrasing; AmE would likely say 'watch your step'.",
+            "lang": "British English"
+        },
+        {
+            "text": "Throw that in the garbage.",
+            "answer": "American English",
+            "explanation": "AmE 'garbage' vs BrE 'rubbish'.",
+            "lang": "American English"
+        },
+        {
+            "text": "He lives on the second floor.",
+            "answer": "American English",
+            "explanation": "In AmE, the second floor is one level above the ground; in BrE, that is the first floor.",
+            "lang": "American English"
+        },
+        {
+            "text": "The staff are attending a training session.",
+            "answer": "British English",
+            "explanation": "Plural verb agreement with the collective noun 'staff' indicates British English.",
+            "lang": "British English"
+        },
+        {
+            "text": "I’m absolutely knackered after that long shift.",
+            "answer": "British English",
+            "explanation": "‘Knackered’ is a common British colloquialism for being exhausted.",
+            "lang": "British English"
+        },
+        {
+            "text": "The students are enrolled on a new chemistry course.",
+            "answer": "British English",
+            "explanation": "BrE uses ‘enrolled on’ a course, whereas AmE uses ‘enrolled in’.",
+            "lang": "British English"
+        },
+        {
+            "text": "Can you buy some aubergines for the moussaka?",
+            "answer": "British English",
+            "explanation": "BrE uses ‘aubergine’ while AmE uses ‘eggplant’.",
+            "lang": "British English"
+        },
+        {
+            "text": "I’ll meet you at the parking lot in ten minutes.",
+            "answer": "American English",
+            "explanation": "AmE ‘parking lot’ vs BrE ‘car park’.",
+            "lang": "American English"
+        },
+        {
+            "text": "He was sidelined from the game with a broken leg.",
+            "answer": "American English",
+            "explanation": "The term ‘sidelined’ in a sports context is predominantly American English.",
+            "lang": "American English"
+        },
+        {
+            "text": "The flat has a lovely garden at the back.",
+            "answer": "British English",
+            "explanation": "BrE uses ‘garden’ for the area around a house; AmE usually says ‘yard’.",
+            "lang": "British English"
+        },
+        {
+            "text": "I need to go to the store to buy some cilantro.",
+            "answer": "American English",
+            "explanation": "AmE ‘cilantro’ vs BrE ‘coriander’.",
+            "lang": "American English"
+        },
+        {
+            "text": "That’s a bloody brilliant result for the team!",
+            "answer": "British English",
+            "explanation": "‘Bloody’ as an intensifier is a hallmark of British English speech.",
+            "lang": "British English"
+        },
+        {
+            "text": "I dropped my cell phone and the screen cracked.",
+            "answer": "American English",
+            "explanation": "AmE ‘cell phone’ vs BrE ‘mobile’ or ‘mobile phone’.",
+            "lang": "American English"
+        },
+        {
+            "text": "He’s a bit of a chancer, if you ask me.",
+            "answer": "British English",
+            "explanation": "‘Chancer’ (someone who takes risks for personal gain) is a British slang term.",
+            "lang": "British English"
+        },
+        {
+            "text": "We need to buy a new stroller for the baby.",
+            "answer": "American English",
+            "explanation": "AmE ‘stroller’ vs BrE ‘pushchair’ or ‘pram’.",
+            "lang": "American English"
+        },
+        {
+            "text": "I’m going to have a lie-in on Sunday morning.",
+            "answer": "British English",
+            "explanation": "BrE ‘lie-in’ vs AmE ‘sleep in’.",
+            "lang": "British English"
+        },
+        {
+            "text": "Could you please pass me the zucchini?",
+            "answer": "American English",
+            "explanation": "AmE ‘zucchini’ vs BrE ‘courgette’.",
+            "lang": "American English"
+        },
+        {
+            "text": "The kids are playing in the sandpit.",
+            "answer": "British English",
+            "explanation": "BrE ‘sandpit’ vs AmE ‘sandbox’.",
+            "lang": "British English"
+        },
+        {
+            "text": "I haven’t seen him in years.",
+            "answer": "American English",
+            "explanation": "While used in both, ‘in years’ is the standard AmE prepositional choice; BrE often uses ‘for years’.",
+            "lang": "American English"
+        },
+        {
+            "text": "That’s a real pisser, isn’t it?",
+            "answer": "British English",
+            "explanation": "In BrE, ‘a pisser’ refers to an annoying or disappointing situation.",
+            "lang": "British English"
+        },
+        {
+            "text": "We should go to the movies tonight.",
+            "answer": "American English",
+            "explanation": "AmE ‘the movies’ vs BrE ‘the cinema’.",
+            "lang": "American English"
+        },
+        {
+            "text": "He’s been working as a solicitor for a decade.",
+            "answer": "British English",
+            "explanation": "BrE ‘solicitor’ vs AmE ‘lawyer’ or ‘attorney’.",
+            "lang": "British English"
+        },
+        {
+            "text": "I left the faucet running in the kitchen.",
+            "answer": "American English",
+            "explanation": "AmE ‘faucet’ vs BrE ‘tap’.",
+            "lang": "American English"
+        },
+        {
+            "text": "It’s all gone pear-shaped, I’m afraid.",
+            "answer": "British English",
+            "explanation": "‘Gone pear-shaped’ (gone wrong) is a classic British idiom.",
+            "lang": "British English"
+        },
+        {
+            "text": "Can you give me a ride to the airport?",
+            "answer": "American English",
+            "explanation": "AmE ‘give me a ride’ vs BrE ‘give me a lift’.",
+            "lang": "American English"
+        },
+        {
+            "text": "I need to get some petrol before we leave.",
+            "answer": "British English",
+            "explanation": "BrE ‘petrol’ vs AmE ‘gas’ or ‘gasoline’.",
+            "lang": "British English"
+        },
+        {
+            "text": "The apartment is on the fourth floor.",
+            "answer": "American English",
+            "explanation": "AmE ‘apartment’ vs BrE ‘flat’.",
+            "lang": "American English"
+        },
+        {
+            "text": "Are you coming to the pub for a few pints?",
+            "answer": "British English",
+            "explanation": "The cultural context of ‘the pub’ and ‘pints’ is strongly associated with BrE.",
+            "lang": "British English"
+        },
+        {
+            "text": "He’s wearing a vest under his shirt.",
+            "answer": "British English",
+            "explanation": "In BrE, a ‘vest’ is an undershirt. In AmE, it’s a sleeveless garment worn over a shirt (a ‘waistcoat’ in BrE).",
+            "lang": "British English"
+        },
+        {
+            "text": "I’ll take the trash out after dinner.",
+            "answer": "American English",
+            "explanation": "AmE ‘trash’ vs BrE ‘rubbish’.",
+            "lang": "American English"
+        },
+        {
+            "text": "I’m chuffed to bits with my new job!",
+            "answer": "British English",
+            "explanation": "‘Chuffed’ (very pleased) is a common British colloquialism.",
+            "lang": "British English"
+        },
+        {
+            "text": "The flashlight is in the kitchen drawer.",
+            "answer": "American English",
+            "explanation": "AmE ‘flashlight’ vs BrE ‘torch’.",
+            "lang": "American English"
+        },
+        {
+            "text": "She’s quite a mardy child, isn’t she?",
+            "answer": "British English",
+            "explanation": "‘Mardy’ (meaning grumpy or sulky) is dialect-specific to British English (notably Northern/Midlands).",
+            "lang": "British English"
+        },
+        {
+            "text": "I’m going to buy some sneakers at the mall.",
+            "answer": "American English",
+            "explanation": "AmE ‘sneakers/mall’ vs BrE ‘trainers/shopping centre’.",
+            "lang": "American English"
+        },
+        {
+            "text": "The curtains are made of a very thin material.",
+            "answer": "British English",
+            "explanation": "BrE ‘curtains’ vs AmE ‘drapes’.",
+            "lang": "British English"
+        },
+        {
+            "text": "I’m visiting with my relatives this weekend.",
+            "answer": "American English",
+            "explanation": "‘Visiting with’ is a common American construction; BrE would simply say ‘visiting’.",
+            "lang": "American English"
+        },
+        {
+            "text": "He’s a bit of a wally, but he means well.",
+            "answer": "British English",
+            "explanation": "‘Wally’ (a mild insult for someone silly) is uniquely British.",
+            "lang": "British English"
+        },
+        {
+            "text": "The store is located downtown.",
+            "answer": "American English",
+            "explanation": "‘Downtown’ is an American concept; BrE would use ‘city centre’.",
+            "lang": "American English"
+        },
+        {
+            "text": "I’ll ring you back in a tick.",
+            "answer": "British English",
+            "explanation": "‘In a tick’ (very soon) is a common British idiom.",
+            "lang": "British English"
+        },
+        {
+            "text": "Do you have any Scotch tape I could borrow?",
+            "answer": "American English",
+            "explanation": "AmE ‘Scotch tape’ vs BrE ‘Sellotape’.",
+            "lang": "American English"
+        },
+        {
+            "text": "He’s always moaning about the weather.",
+            "answer": "British English",
+            "explanation": "‘Moaning’ used to mean ‘complaining’ is very common in BrE.",
+            "lang": "British English"
+        },
+        {
+            "text": "I need to go to the hardware store.",
+            "answer": "American English",
+            "explanation": "AmE ‘hardware store’ vs BrE ‘ironmonger’ or ‘DIY store’.",
+            "lang": "American English"
+        },
+        {
+            "text": "That’s a bit dodgy, don’t you think?",
+            "answer": "British English",
+            "explanation": "‘Dodgy’ (suspicious or low quality) is quintessentially British.",
+            "lang": "British English"
+        },
+        {
+            "text": "I’ll grab a soda from the fridge.",
+            "answer": "American English",
+            "explanation": "AmE ‘soda’ vs BrE ‘fizzy drink’ or ‘pop’.",
+            "lang": "American English"
+        },
+        {
+            "text": "I'm going to take a rain check on that offer.",
+            "answer": "American English",
+            "explanation": "‘Rain check’ originated in American baseball and remains an American idiom.",
+            "lang": "American English"
+        },
+        {
+            "text": "He’s completely gormless when it comes to technology.",
+            "answer": "British English",
+            "explanation": "‘Gormless’ (lacking sense or initiative) is British slang.",
+            "lang": "British English"
+        },
+        {
+            "text": "I’m heading to the pharmacy to pick up my prescription.",
+            "answer": "American English",
+            "explanation": "AmE ‘pharmacy’ vs BrE ‘chemist’.",
+            "lang": "American English"
+        },
+        {
+            "text": "The whole thing was a total cock-up.",
+            "answer": "British English",
+            "explanation": "‘Cock-up’ (a mess or mistake) is informal British English.",
+            "lang": "British English"
+        },
+        {
+            "text": "Can you put those leftovers in a To-Go box?",
+            "answer": "American English",
+            "explanation": "‘To-Go box’ is an Americanism; BrE might say ‘doggy bag’ or just ask for a container.",
+            "lang": "American English"
+        },
+        {
+            "text": "I’m feeling a bit peaky today.",
+            "answer": "British English",
+            "explanation": "‘Peaky’ (looking pale or unwell) is British English.",
+            "lang": "British English"
+        },
+        {
+            "text": "He’s an absolute legend for doing that.",
+            "answer": "British English",
+            "explanation": "While gaining global use, calling someone a ‘legend’ for a small favor is very BrE/Australian.",
+            "lang": "British English"
+        },
+        {
+            "text": "I’ll have a grilled cheese sandwich, please.",
+            "answer": "American English",
+            "explanation": "AmE ‘grilled cheese’ vs BrE ‘toasted sandwich’ or ‘cheese toastie’.",
+            "lang": "American English"
+        },
+        {
+            "text": "Stop faffing around and get ready!",
+            "answer": "British English",
+            "explanation": "‘Faffing around’ (wasting time) is a distinct British expression.",
+            "lang": "British English"
+        },
+        {
+            "text": "The windshield of the car is covered in frost.",
+            "answer": "American English",
+            "explanation": "AmE ‘windshield’ vs BrE ‘windscreen’.",
+            "lang": "American English"
+        },
+        {
+            "text": "I’m going to the offie to get some wine.",
+            "answer": "British English",
+            "explanation": "‘Offie’ (short for off-licence) is a British term for a liquor store.",
+            "lang": "British English"
+        },
+        {
+            "text": "I need to buy some new suspenders for my suit.",
+            "answer": "American English",
+            "explanation": "In AmE, ‘suspenders’ hold up trousers; in BrE, they are ‘braces’. ‘Suspenders’ in BrE refer to garter belts.",
+            "lang": "American English"
+        },
+        {
+            "text": "That’s a proper bargain, that is.",
+            "answer": "British English",
+            "explanation": "The use of ‘proper’ as an adverb for ‘very’ or ‘real’ is common in BrE dialects.",
+            "lang": "British English"
+        },
+        {
+            "text": "I’ll meet you at the intersection of 5th and Main.",
+            "answer": "American English",
+            "explanation": "AmE ‘intersection’ vs BrE ‘junction’ or ‘crossroads’.",
+            "lang": "American English"
+        },
+        {
+            "text": "I’m absolutely gutted about the news.",
+            "answer": "British English",
+            "explanation": "‘Gutted’ (extremely disappointed) is very common in British English.",
+            "lang": "British English"
+        },
+        {
+            "text": "Can you get me a bag of chips with my burger?",
+            "answer": "American English",
+            "explanation": "In AmE, ‘chips’ are thin, crispy snacks; in BrE, these are ‘crisps’.",
+            "lang": "American English"
+        },
+        {
+            "text": "The baby is wearing a new nappy.",
+            "answer": "British English",
+            "explanation": "BrE ‘nappy’ vs AmE ‘diaper’.",
+            "lang": "British English"
+        },
+        {
+            "text": "I’m going to take a shower before work.",
+            "answer": "American English",
+            "explanation": "AmE ‘take a shower’ vs BrE ‘have a shower’.",
+            "lang": "American English"
+        },
+        {
+            "text": "He’s a right plonker, isn’t he?",
+            "answer": "British English",
+            "explanation": "‘Plonker’ (a foolish person) is a classic British insult.",
+            "lang": "British English"
+        },
+        {
+            "text": "I’ll have a side of fries with that.",
+            "answer": "American English",
+            "explanation": "AmE ‘fries’ vs BrE ‘chips’.",
+            "lang": "American English"
+        },
+        {
+            "text": "We’re going on holiday to Spain this summer.",
+            "answer": "British English",
+            "explanation": "BrE ‘holiday’ vs AmE ‘vacation’.",
+            "lang": "British English"
+        },
+        {
+            "text": "I need to find a restroom quickly.",
+            "answer": "American English",
+            "explanation": "AmE ‘restroom’ vs BrE ‘toilet’ or ‘loo’.",
+            "lang": "American English"
+        },
+        {
+            "text": "I’m skint until payday, unfortunately.",
+            "answer": "British English",
+            "explanation": "‘Skint’ (having no money) is a British slang term.",
+            "lang": "British English"
+        },
+        {
+            "text": "I’ll go check the mailbox for the package.",
+            "answer": "American English",
+            "explanation": "AmE ‘mailbox’ vs BrE ‘letterbox’ or ‘postbox’.",
+            "lang": "American English"
+        },
+        {
+            "text": "He’s a bit of a tosser, to be honest.",
+            "answer": "British English",
+            "explanation": "‘Tosser’ is a common British slang insult.",
+            "lang": "British English"
+        },
+        {
+            "text": "I’m going to the gym to work out.",
+            "answer": "American English",
+            "explanation": "While global, the phrase ‘work out’ is of American origin; BrE might also use ‘train’.",
+            "lang": "American English"
+        },
+        {
+            "text": "I’ll have a banger and mash for lunch.",
+            "answer": "British English",
+            "explanation": "‘Bangers and mash’ (sausages and mashed potatoes) is a traditional British dish.",
+            "lang": "British English"
+        },
+        {
+            "text": "The elevator is out of service.",
+            "answer": "American English",
+            "explanation": "AmE ‘elevator’ vs BrE ‘lift’.",
+            "lang": "American English"
+        },
+        {
+            "text": "That’s a load of rubbish!",
+            "answer": "British English",
+            "explanation": "BrE ‘rubbish’ vs AmE ‘garbage’ or ‘baloney’.",
+            "lang": "British English"
+        },
+        {
+            "text": "I’m going to buy some new slacks for the party.",
+            "answer": "American English",
+            "explanation": "AmE ‘slacks’ (for trousers) is a term rarely used in BrE.",
+            "lang": "American English"
+        },
+        {
+            "text": "I’m off to the shops to buy some milk.",
+            "answer": "British English",
+            "explanation": "BrE ‘the shops’ vs AmE ‘the store’.",
+            "lang": "British English"
+        },
+        {
+            "text": "I’ll have a jelly and peanut butter sandwich.",
+            "answer": "American English",
+            "explanation": "In AmE, ‘jelly’ is fruit preserve; in BrE, ‘jelly’ is a gelatin dessert (Jell-O).",
+            "lang": "American English"
+        },
+        {
+            "text": "He’s a bit of a dimwit, isn’t he?",
+            "answer": "British English",
+            "explanation": "‘Dimwit’ (a stupid person) is common in BrE.",
+            "lang": "British English"
+        },
+        {
+            "text": "I’m going to the theater to see a play.",
+            "answer": "American English",
+            "explanation": "AmE spelling ‘theater’ vs BrE ‘theatre’.",
+            "lang": "American English"
+        },
+        {
+            "text": "That’s a smashing idea!",
+            "answer": "British English",
+            "explanation": "‘Smashing’ (meaning wonderful or excellent) is a British colloquialism.",
+            "lang": "British English"
+        },
+        {
+            "text": "I need to get some new tires for my car.",
+            "answer": "American English",
+            "explanation": "AmE spelling ‘tires’ vs BrE ‘tyres’.",
+            "lang": "American English"
+        },
+        {
+            "text": "I’m going to the cinema to see the new Bond film.",
+            "answer": "British English",
+            "explanation": "BrE ‘cinema/film’ vs AmE ‘movies/movie’.",
+            "lang": "British English"
+        },
+        {
+            "text": "I’ll have a biscuit with my tea.",
+            "answer": "British English",
+            "explanation": "In BrE, ‘biscuit’ is a cookie; in AmE, it’s a savory quick bread.",
+            "lang": "British English"
+        },
+        {
+            "text": "I’m going to the mall to do some shopping.",
+            "answer": "American English",
+            "explanation": "AmE ‘mall’ vs BrE ‘shopping centre’.",
+            "lang": "American English"
+        },
+        {
+            "text": "I’m going to the loo, be right back.",
+            "answer": "British English",
+            "explanation": "‘Loo’ is a very common British term for the toilet.",
+            "lang": "British English"
+        },
+        {
+            "text": "I’m quite happy with the results of the experiment.",
+            "answer": "British English",
+            "explanation": "In BrE, 'quite' often means 'somewhat' or 'moderately'. In AmE, it usually means 'very' or 'completely'.",
+            "lang": "British English"
+        },
+        {
+            "text": "He really lucked out when he found that rare book.",
+            "answer": "American English",
+            "explanation": "In AmE, 'lucked out' means to be very lucky. In some older BrE contexts, it can actually mean to run out of luck.",
+            "lang": "American English"
+        },
+        {
+            "text": "I need to go buy some new pants for the wedding.",
+            "answer": "American English",
+            "explanation": "In AmE, 'pants' are outerwear (trousers). In BrE, 'pants' refers to underwear.",
+            "lang": "American English"
+        },
+        {
+            "text": "The project was a complete washout.",
+            "answer": "British English",
+            "explanation": "While understood globally, 'washout' to mean a total failure is a staple of British idiomatic English.",
+            "lang": "British English"
+        },
+        {
+            "text": "Can you bring me a pitcher of water?",
+            "answer": "American English",
+            "explanation": "AmE 'pitcher' vs BrE 'jug'.",
+            "lang": "American English"
+        },
+        {
+            "text": "I'll give you a shout when I'm ready to leave.",
+            "answer": "British English",
+            "explanation": "Using 'give someone a shout' to mean 'contact someone' is a common British colloquialism.",
+            "lang": "British English"
+        },
+        {
+            "text": "We need to table this discussion until next week.",
+            "answer": "American English",
+            "explanation": "In AmE, to 'table' a motion means to postpone it. In BrE, it actually means to bring it to the table for immediate discussion.",
+            "lang": "American English"
+        },
+        {
+            "text": "He’s a bit of a clever clogs, isn't he?",
+            "answer": "British English",
+            "explanation": "‘Clever clogs’ is a British term for a 'know-it-all'.",
+            "lang": "British English"
+        },
+        {
+            "text": "I'm going to take a seat in the bleachers.",
+            "answer": "American English",
+            "explanation": "‘Bleachers’ (tiered benches at sports fields) is a uniquely American term.",
+            "lang": "American English"
+        },
+        {
+            "text": "I've left my kit bag in the changing room.",
+            "answer": "British English",
+            "explanation": "BrE 'kit' (sports gear) and 'changing room' (locker room) are distinctive markers.",
+            "lang": "British English"
+        },
+        {
+            "text": "Do you want some jelly with your ice cream?",
+            "answer": "British English",
+            "explanation": "In BrE, 'jelly' is the gelatin dessert (Jell-O). In AmE, 'jelly' is fruit spread.",
+            "lang": "British English"
+        },
+        {
+            "text": "The principal will speak at the assembly today.",
+            "answer": "American English",
+            "explanation": "AmE 'principal' vs BrE 'headmaster' or 'headteacher'.",
+            "lang": "American English"
+        },
+        {
+            "text": "He’s a right muppet, that one.",
+            "answer": "British English",
+            "explanation": "‘Muppet’ is a common British slang term for a foolish or incompetent person.",
+            "lang": "British English"
+        },
+        {
+            "text": "I need to renew my driver's license.",
+            "answer": "American English",
+            "explanation": "AmE uses the 's' in 'license' for both noun and verb; BrE uses 'licence' for the noun.",
+            "lang": "American English"
+        },
+        {
+            "text": "I’m going to have a nosy around the shops.",
+            "answer": "British English",
+            "explanation": "‘To have a nosy’ (to look around/pry) is a British informal expression.",
+            "lang": "British English"
+        },
+        {
+            "text": "Could you please pass me a napkin?",
+            "answer": "American English",
+            "explanation": "AmE 'napkin' vs BrE 'serviette' (though both are used, 'napkin' is the primary American term).",
+            "lang": "American English"
+        },
+        {
+            "text": "I’m totally zonked after that workout.",
+            "answer": "American English",
+            "explanation": "While used elsewhere, 'zonked' (exhausted) has its roots in American slang.",
+            "lang": "American English"
+        },
+        {
+            "text": "The car’s got a massive dent in the wing.",
+            "answer": "British English",
+            "explanation": "BrE 'wing' of a car vs AmE 'fender'.",
+            "lang": "British English"
+        },
+        {
+            "text": "I’ll have a seltzer with lime.",
+            "answer": "American English",
+            "explanation": "AmE 'seltzer' vs BrE 'sparkling water' or 'soda water'.",
+            "lang": "American English"
+        },
+        {
+            "text": "Stop being so stroppy and just help me.",
+            "answer": "British English",
+            "explanation": "‘Stroppy’ (bad-tempered or argumentative) is a British slang word.",
+            "lang": "British English"
+        },
+        {
+            "text": "I need to buy a new comforter for the bed.",
+            "answer": "American English",
+            "explanation": "AmE 'comforter' vs BrE 'duvet'.",
+            "lang": "American English"
+        },
+        {
+            "text": "He’s a very keen student.",
+            "answer": "British English",
+            "explanation": "While used in both, 'keen' to mean enthusiastic is much more frequent in British speech.",
+            "lang": "British English"
+        },
+        {
+            "text": "I'll meet you on the sidewalk.",
+            "answer": "American English",
+            "explanation": "AmE 'sidewalk' vs BrE 'pavement'.",
+            "lang": "American English"
+        },
+        {
+            "text": "Can I have the bill, please?",
+            "answer": "British English",
+            "explanation": "BrE 'the bill' vs AmE 'the check' at a restaurant.",
+            "lang": "British English"
+        },
+        {
+            "text": "I’m going to go get some takeout for dinner.",
+            "answer": "American English",
+            "explanation": "AmE 'takeout' vs BrE 'takeaway'.",
+            "lang": "American English"
+        },
+        {
+            "text": "He’s talking absolute rubbish.",
+            "answer": "British English",
+            "explanation": "BrE 'rubbish' vs AmE 'garbage' or 'nonsense'.",
+            "lang": "British English"
+        },
+        {
+            "text": "I’m wearing my sneakers today.",
+            "answer": "American English",
+            "explanation": "AmE 'sneakers' vs BrE 'trainers'.",
+            "lang": "American English"
+        },
+        {
+            "text": "I need to tidy up the sitting room.",
+            "answer": "British English",
+            "explanation": "BrE 'sitting room' vs AmE 'living room'.",
+            "lang": "British English"
+        },
+        {
+            "text": "I need to find a public telephone.",
+            "answer": "British English",
+            "explanation": "While rare now, 'public telephone' is the BrE formal term; AmE uses 'payphone'.",
+            "lang": "British English"
+        },
+        {
+            "text": "I’ll just pop to the shops for a minute.",
+            "answer": "British English",
+            "explanation": "The verb 'pop' used to mean 'to go quickly somewhere' is very British.",
+            "lang": "British English"
+        },
+        {
+            "text": "I’m going to the movies with some friends.",
+            "answer": "American English",
+            "explanation": "AmE 'the movies' vs BrE 'the cinema'.",
+            "lang": "American English"
+        },
+        {
+            "text": "Could you pass me the cling film?",
+            "answer": "British English",
+            "explanation": "BrE 'cling film' vs AmE 'plastic wrap'.",
+            "lang": "British English"
+        },
+        {
+            "text": "I’m going to go wash my hands in the lavatory.",
+            "answer": "British English",
+            "explanation": "‘Lavatory’ is a formal/older British term for a bathroom.",
+            "lang": "British English"
+        },
+        {
+            "text": "The store is having a big sale on sweaters.",
+            "answer": "American English",
+            "explanation": "AmE 'sweater' vs BrE 'jumper'.",
+            "lang": "American English"
+        },
+        {
+            "text": "I’ve got a massive ladder in my tights.",
+            "answer": "British English",
+            "explanation": "In BrE, a 'ladder' is a run in hosiery; in AmE, this is called a 'run'.",
+            "lang": "British English"
+        },
+        {
+            "text": "I’ll see you in two weeks’ time.",
+            "answer": "British English",
+            "explanation": "BrE frequently adds 'time' to durations (two weeks' time), whereas AmE says 'in two weeks'.",
+            "lang": "British English"
+        },
+        {
+            "text": "I’m going to use the vacuum to clean the rug.",
+            "answer": "American English",
+            "explanation": "AmE 'vacuum' (verb/noun) vs BrE 'Hoover'.",
+            "lang": "American English"
+        },
+        {
+            "text": "The kids are in the crèche while the parents shop.",
+            "answer": "British English",
+            "explanation": "BrE 'crèche' vs AmE 'daycare'.",
+            "lang": "British English"
+        },
+        {
+            "text": "I need to buy some more tinfoil.",
+            "answer": "American English",
+            "explanation": "AmE 'tinfoil' vs BrE 'aluminium foil'.",
+            "lang": "American English"
+        },
+        {
+            "text": "That was a bit of a damp squib.",
+            "answer": "British English",
+            "explanation": "A 'damp squib' is a British idiom for something that was expected to be exciting but failed.",
+            "lang": "British English"
+        }
+    ]
+}

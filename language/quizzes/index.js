@@ -47,4 +47,10 @@ const QUIZ_LIST = [
     description: 'Explore the linguistic similarities and differences between these Austronesian languages.',
     file: 'austronesian_comparison.json'
   },
+  {
+    id: 'english',
+    name: 'English Dialects',
+    description: 'Distinguish between American English and British English through subtle syntax and vocabulary.',
+    file: 'english.json'
+  }
 ];
