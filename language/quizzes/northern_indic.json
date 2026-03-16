@@ -373,6 +373,126 @@
       "answer": "Hindi",
       "explanation": "Simple Hindi sentence in Devanagari script.",
       "lang": "Hindi"
+    },
+    {
+      "text": "तुझे नाव काय आहे?",
+      "answer": "Marathi",
+      "explanation": "Uses Devanagari. The word 'नाव' (name) and 'आहे' (is) are distinct Marathi markers.",
+      "lang": "Marathi"
+    },
+    {
+      "text": "ਤੁਹਾਡਾ ਨਾਮ ਕੀ ਹੈ?",
+      "answer": "Punjabi",
+      "explanation": "Uses Gurmukhi script. Characterized by the square-topped 'ਤ' (ta) and 'ਹ' (ha).",
+      "lang": "Punjabi"
+    },
+    {
+      "text": "तपाईंको नाम के हो?",
+      "answer": "Nepali",
+      "explanation": "Devanagari script. 'तपाईंको' (your) and the terminal 'हो' are standard Nepali.",
+      "lang": "Nepali"
+    },
+    {
+      "text": "আপনার নাম কি?",
+      "answer": "Bengali",
+      "explanation": "Bengali-Assamese script. The character 'র' (ra) with a diagonal stroke is specific to Bengali.",
+      "lang": "Bengali"
+    },
+    {
+      "text": "তোমাৰ নাম কি?",
+      "answer": "Assamese",
+      "explanation": "Uses Bengali-Assamese script. Note the 'ৰ' (v-shaped internal stroke for 'ra') which distinguishes it from Bengali.",
+      "lang": "Assamese"
+    },
+    {
+      "text": "अहं छात्रः अस्मि।",
+      "answer": "Sanskrit",
+      "explanation": "Devanagari. The use of the visarga (ः) and terminal 'अस्मि' (am) are indicative of Sanskrit.",
+      "lang": "Sanskrit"
+    },
+    {
+      "text": "सत श्री अकाल",
+      "answer": "Punjabi",
+      "explanation": "Gurmukhi script. The iconic Sikh greeting 'Sat Sri Akal'.",
+      "lang": "Punjabi"
+    },
+    {
+      "text": "मी घरी जातो.",
+      "answer": "Marathi",
+      "explanation": "Devanagari. The first-person pronoun 'मी' and verb ending 'तो' are Marathi identifiers.",
+      "lang": "Marathi"
+    },
+    {
+      "text": "भारत माझा देश आहे।",
+      "answer": "Marathi",
+      "explanation": "Devanagari. Note the use of 'माझा' (my) instead of the Hindi 'मेरा'.",
+      "lang": "Marathi"
+    },
+    {
+      "text": "মই ভাত খাওঁ।",
+      "answer": "Assamese",
+      "explanation": "Bengali-Assamese script. The pronoun 'মই' (I) and the specific 'ৰ' sound are Assamese.",
+      "lang": "Assamese"
+    },
+    {
+      "text": "नमो नमः",
+      "answer": "Sanskrit",
+      "explanation": "Devanagari. Classic Sanskrit greeting utilizing the visarga (ः).",
+      "lang": "Sanskrit"
+    },
+    {
+      "text": "ਤੁਸੀਂ ਕਿਵੇਂ ਹੋ?",
+      "answer": "Punjabi",
+      "explanation": "Gurmukhi script. 'ਕਿਵੇਂ' (how) uses the unique Gurmukhi vowel markers.",
+      "lang": "Punjabi"
+    },
+    {
+      "text": "আমি তোমাকে ভালোবাসি।",
+      "answer": "Bengali",
+      "explanation": "Bengali script. 'আমি' (I) and the verb 'ভালোবাসি' (love) are high-frequency Bengali words.",
+      "lang": "Bengali"
+    },
+    {
+      "text": "आज मौसम बहुत अच्छा है।",
+      "answer": "Hindi",
+      "explanation": "Devanagari script. 'बहुत' (very) and 'मौसम' (weather) are standard Hindi lexicon.",
+      "lang": "Hindi"
+    },
+    {
+      "text": "तुका कशें आसा?",
+      "answer": "Konkani",
+      "explanation": "Devanagari script. The word 'कशें' with the nasal dot is a common Konkani 'how'.",
+      "lang": "Konkani"
+    },
+    {
+      "text": "के छ खबर?",
+      "answer": "Nepali",
+      "explanation": "Devanagari script. A common Nepali greeting meaning 'What's the news?'.",
+      "lang": "Nepali"
+    },
+    {
+      "text": "ঐৰাৱত এটা ডাঙৰ জন্তু।",
+      "answer": "Assamese",
+      "explanation": "Bengali-Assamese script. Uses 'ৰ' (ra) and 'ৱ' (wa), specific to the Assamese alphabet.",
+      "lang": "Assamese"
+    },
+    {
+      "text": "ਅੱਜ ਬਹੁਤ ਗਰਮੀ ਹੈ।",
+      "answer": "Punjabi",
+      "explanation": "Gurmukhi script. Uses the 'Adhak' (ੱ) to double the consonant sound in 'ਅੱਜ'.",
+      "lang": "Punjabi"
+    },
+    {
+      "text": "धन्यवाद:",
+      "answer": "Sanskrit",
+      "explanation": "Devanagari script. Note the terminal visarga often used in formal Sanskrit address.",
+      "lang": "Sanskrit"
+    },
+    {
+      "text": "আমি জল খাব।",
+      "answer": "Bengali",
+      "explanation": "Bengali script. The use of 'জল' (water) and the 'খাব' (will eat/drink) construction.",
+      "lang": "Bengali"
     }
   ]
 }
