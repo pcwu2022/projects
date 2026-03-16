@@ -52,5 +52,11 @@ const QUIZ_LIST = [
     name: 'English Dialects',
     description: 'Distinguish between American English and British English through subtle syntax and vocabulary.',
     file: 'english.json'
+  },
+  {
+    id: "chinese",
+    name: "The Ultimate Chinese Quiz",
+    description: "Distinguish between Taiwan and Mainland Chinese usage across Formal, IT, and Internet Slang categories.",
+    file: "chinese.json"
   }
 ];
