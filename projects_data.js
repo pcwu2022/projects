@@ -46,6 +46,13 @@ window.PROJECTS = [
         date: "December 2025"
     },
     {
+        title: "Linguist - Guess the Language",
+        href: "language/index.html",
+        image: "images/language.png",
+        description: "A game to test your language recognition skills. Can you guess the language based on a short text sample?",
+        date: "March 2026"
+    },
+    {
         title: "@maps.az",
         href: "https://pcwu2022.github.io/maps.az/",
         image: "images/maps.png",
