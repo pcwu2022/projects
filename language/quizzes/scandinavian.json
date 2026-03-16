@@ -1,0 +1,192 @@
+{
+  "id": "scandinavian",
+  "name": "Scandinavian Languages",
+  "description": "Distinguish between Norwegian (Bokm\u00e5l), Swedish, and Danish.",
+  "languages": [
+    "Norwegian",
+    "Swedish",
+    "Danish"
+  ],
+  "questions": [
+    {
+      "text": "Jeg spiser et r\u00f8dt eple.",
+      "answer": "Norwegian",
+      "explanation": "Norwegian uses 'jeg' (like Danish) and 'eple' with a 'p'. It also uses the '\u00f8' and '\u00e6' characters.",
+      "lang": "Norwegian"
+    },
+    {
+      "text": "Jeg spiser et r\u00f8dt \u00e6ble.",
+      "answer": "Danish",
+      "explanation": "Danish uses '\u00e6ble' with a 'b', whereas Norwegian uses a 'p'.",
+      "lang": "Danish"
+    },
+    {
+      "text": "Jag \u00e4ter ett r\u00f6tt \u00e4pple.",
+      "answer": "Swedish",
+      "explanation": "Swedish is easily identified by the use of '\u00e4' and '\u00f6' instead of '\u00e6' and '\u00f8'.",
+      "lang": "Swedish"
+    },
+    {
+      "text": "Hvad hedder du?",
+      "answer": "Danish",
+      "explanation": "The 'hv-' start for question words and 'd' in 'hedder' are characteristic of Danish.",
+      "lang": "Danish"
+    },
+    {
+      "text": "Hva heter du?",
+      "answer": "Norwegian",
+      "explanation": "Norwegian drops the 'd' in 'hva' and uses 't' in 'heter' where Danish uses 'd'.",
+      "lang": "Norwegian"
+    },
+    {
+      "text": "Vad heter du?",
+      "answer": "Swedish",
+      "explanation": "Swedish uses 'Vad' and 'heter' (with a 't') along with its distinct vowel markings.",
+      "lang": "Swedish"
+    },
+    {
+      "text": "Hvor er togstasjonen?",
+      "answer": "Norwegian",
+      "explanation": "Uses 'hvor' (where) and the compound 'togstasjonen' with a 'g'.",
+      "lang": "Norwegian"
+    },
+    {
+      "text": "Hvor er togstationen?",
+      "answer": "Danish",
+      "explanation": "Danish uses 'stationen' (with a 't') rather than the Norwegian 'stasjonen'.",
+      "lang": "Danish"
+    },
+    {
+      "text": "Var \u00e4r t\u00e5gstationen?",
+      "answer": "Swedish",
+      "explanation": "Swedish uses 'Var' for 'Where' and the '\u00e5' character in 't\u00e5g'.",
+      "lang": "Swedish"
+    },
+    {
+      "text": "En pojke och en flicka.",
+      "answer": "Swedish",
+      "explanation": "The word 'flicka' (girl) and 'och' (and) are uniquely Swedish in this group.",
+      "lang": "Swedish"
+    },
+    {
+      "text": "En gutt og ei jente.",
+      "answer": "Norwegian",
+      "explanation": "Norwegian uses 'gutt' (boy) and 'jente' (girl), and 'og' for 'and'.",
+      "lang": "Norwegian"
+    },
+    {
+      "text": "En dreng og en pige.",
+      "answer": "Danish",
+      "explanation": "Danish uses 'dreng' (boy) and 'pige' (girl).",
+      "lang": "Danish"
+    },
+    {
+      "text": "Velkommen til v\u00e5r butikk.",
+      "answer": "Norwegian",
+      "explanation": "Uses 'v\u00e5r' (our) and 'butikk' with a double 'k'.",
+      "lang": "Norwegian"
+    },
+    {
+      "text": "V\u00e4lkommen till v\u00e5r butik.",
+      "answer": "Swedish",
+      "explanation": "Swedish uses 'V\u00e4lkommen' with an '\u00e4' and a single 'k' in 'butik'.",
+      "lang": "Swedish"
+    },
+    {
+      "text": "Velkommen til vores butik.",
+      "answer": "Danish",
+      "explanation": "Danish uses 'vores' for 'our' and a single 'k' in 'butik'.",
+      "lang": "Danish"
+    },
+    {
+      "text": "\u00d6vning ger f\u00e4rdighet.",
+      "answer": "Swedish",
+      "explanation": "The '\u00f6' and '\u00e4' characters are the primary giveaway for Swedish.",
+      "lang": "Swedish"
+    },
+    {
+      "text": "\u00d8velse gj\u00f8r mester.",
+      "answer": "Norwegian",
+      "explanation": "Uses '\u00f8' and the verb 'gj\u00f8r' (makes/does).",
+      "lang": "Norwegian"
+    },
+    {
+      "text": "\u00d8velse g\u00f8r mester.",
+      "answer": "Danish",
+      "explanation": "Danish uses 'g\u00f8r', which is spelled with a '\u00f8' but lacks the 'j' found in Norwegian 'gj\u00f8r'.",
+      "lang": "Danish"
+    },
+    {
+      "text": "M\u00e5nga b\u00e4ckar sm\u00e5.",
+      "answer": "Swedish",
+      "explanation": "Swedish uses 'm\u00e5nga' (many) and '\u00e4' in 'b\u00e4ckar'.",
+      "lang": "Swedish"
+    },
+    {
+      "text": "Mange b\u00e6kke sm\u00e5.",
+      "answer": "Danish",
+      "explanation": "Danish uses 'mange' and 'b\u00e6kke'.",
+      "lang": "Danish"
+    },
+    {
+      "text": "Mange bekker sm\u00e5.",
+      "answer": "Norwegian",
+      "explanation": "Norwegian uses 'mange' and 'bekker' with a 'k' where Danish uses 'k'.",
+      "lang": "Norwegian"
+    },
+    {
+      "text": "K\u00e4rleken \u00e4r blind.",
+      "answer": "Swedish",
+      "explanation": "Swedish uses 'k\u00e4rleken' (the love) with an '\u00e4'.",
+      "lang": "Swedish"
+    },
+    {
+      "text": "Kj\u00e6rligheten er blind.",
+      "answer": "Norwegian",
+      "explanation": "Norwegian uses 'kj\u00e6rlighet' with a 'j' and '\u00e6'.",
+      "lang": "Norwegian"
+    },
+    {
+      "text": "K\u00e6rligheden er blind.",
+      "answer": "Danish",
+      "explanation": "Danish uses 'k\u00e6rlighed' with a 'd' ending where Norwegian uses 't'.",
+      "lang": "Danish"
+    },
+    {
+      "text": "Det er deilig \u00e5 v\u00e6re norsk.",
+      "answer": "Danish",
+      "explanation": "Though this is a famous slogan about Norway, 'deilig' and the syntax are classically Danish.",
+      "lang": "Danish"
+    },
+    {
+      "text": "Det er deilig \u00e5 v\u00e6re norsk.",
+      "answer": "Norwegian",
+      "explanation": "In written form (Bokm\u00e5l), this sentence is identical to Danish, but often associated with Norwegian tourism.",
+      "lang": "Norwegian"
+    },
+    {
+      "text": "Det \u00e4r h\u00e4rligt att vara svensk.",
+      "answer": "Swedish",
+      "explanation": "Uses '\u00e4r' instead of 'er' and 'att' instead of '\u00e5'.",
+      "lang": "Swedish"
+    },
+    {
+      "text": "Frokost er dagens viktigste m\u00e5ltid.",
+      "answer": "Norwegian",
+      "explanation": "Uses 'viktigste' (most important) and 'frokost' (breakfast).",
+      "lang": "Norwegian"
+    },
+    {
+      "text": "Morgenmad er dagens vigtigste m\u00e5ltid.",
+      "answer": "Danish",
+      "explanation": "Danish uses 'morgenmad' for breakfast, whereas in Norwegian 'frokost' is breakfast.",
+      "lang": "Danish"
+    },
+    {
+      "text": "Frukost \u00e4r dagens viktigaste m\u00e5ltid.",
+      "answer": "Swedish",
+      "explanation": "Swedish uses 'frukost' (u instead of o) and '\u00e4r'.",
+      "lang": "Swedish"
+    }
+  ]
+}

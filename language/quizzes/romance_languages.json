@@ -1,0 +1,733 @@
+{
+  "id": "romance_languages",
+  "name": "Romance Languages",
+  "description": "Distinguish between French, Spanish, Portuguese, and Italian.",
+  "languages": [
+    "French",
+    "Spanish",
+    "Portuguese",
+    "Italian"
+  ],
+  "questions": [
+    {
+      "text": "Onde fica a biblioteca?",
+      "answer": "Portuguese",
+      "explanation": "The word 'Onde' (where) and the use of 'fica' for location are characteristic of Portuguese.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Dove si trova la biblioteca?",
+      "answer": "Italian",
+      "explanation": "Italian uses 'Dove' for where and 'si trova' (finds itself) for location.",
+      "lang": "Italian"
+    },
+    {
+      "text": "\u00bfD\u00f3nde est\u00e1 la biblioteca?",
+      "answer": "Spanish",
+      "explanation": "Spanish uses the inverted question mark and 'd\u00f3nde' with an accent.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "O\u00f9 se trouve la biblioth\u00e8que ?",
+      "answer": "French",
+      "explanation": "The spelling 'biblioth\u00e8que' and the grave accent on 'O\u00f9' are unique to French here.",
+      "lang": "French"
+    },
+    {
+      "text": "Voudriez-vous un peu de pain ?",
+      "answer": "French",
+      "explanation": "The use of 'vous' and the word 'pain' (bread) are distinctly French.",
+      "lang": "French"
+    },
+    {
+      "text": "Quisiera un poco de pan, por favor.",
+      "answer": "Spanish",
+      "explanation": "'Quisiera' is a common Spanish polite request, and 'pan' is the Spanish word for bread.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Eu gostaria de um pouco de p\u00e3o.",
+      "answer": "Portuguese",
+      "explanation": "The nasal '\u00e3o' in 'p\u00e3o' is a major phonetic marker for Portuguese.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Vorrei un po' di pane, per favore.",
+      "answer": "Italian",
+      "explanation": "The conditional 'Vorrei' and the ending in 'pane' identify this as Italian.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Il fait tr\u00e8s froid aujourd'hui.",
+      "answer": "French",
+      "explanation": "'Aujourd'hui' is one of the most uniquely recognizable words in the French language.",
+      "lang": "French"
+    },
+    {
+      "text": "Hace mucho fr\u00edo hoy.",
+      "answer": "Spanish",
+      "explanation": "The use of 'Hace' for weather and 'hoy' for today is standard Spanish.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Est\u00e1 muito frio hoje.",
+      "answer": "Portuguese",
+      "explanation": "Portuguese uses 'hoje' for today, which is similar but spelled differently than Spanish 'hoy'.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Fa molto freddo oggi.",
+      "answer": "Italian",
+      "explanation": "Italian uses 'oggi' for today and 'freddo' with a double 'd'.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Mangio una mela rossa.",
+      "answer": "Italian",
+      "explanation": "The word 'mela' (apple) and 'mangio' (I eat) are Italian.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Como una manzana roja.",
+      "answer": "Spanish",
+      "explanation": "'Manzana' and 'roja' are classic Spanish vocabulary words.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Eu como uma ma\u00e7\u00e3 vermelha.",
+      "answer": "Portuguese",
+      "explanation": "The word 'ma\u00e7\u00e3' with the cedilla and tilde is uniquely Portuguese.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Je mange une pomme rouge.",
+      "answer": "French",
+      "explanation": "'Je mange' and 'pomme' (apple) are French.",
+      "lang": "French"
+    },
+    {
+      "text": "Qu'est-ce que tu fais ce soir ?",
+      "answer": "French",
+      "explanation": "The 'Qu'est-ce que' construction is a staple of French questioning.",
+      "lang": "French"
+    },
+    {
+      "text": "\u00bfQu\u00e9 haces esta noche?",
+      "answer": "Spanish",
+      "explanation": "Spanish uses 'noche' for night/evening and 'haces' for 'you do'.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "O que voc\u00ea vai fazer hoje \u00e0 noite?",
+      "answer": "Portuguese",
+      "explanation": "'Voc\u00ea' is the common second-person pronoun in Brazilian Portuguese.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Cosa fai stasera?",
+      "answer": "Italian",
+      "explanation": "'Stasera' is the Italian contraction for 'questa sera' (this evening).",
+      "lang": "Italian"
+    },
+    {
+      "text": "Arrivederci, a domani!",
+      "answer": "Italian",
+      "explanation": "'Arrivederci' is a globally recognized Italian farewell.",
+      "lang": "Italian"
+    },
+    {
+      "text": "\u00a1Hasta ma\u00f1ana!",
+      "answer": "Spanish",
+      "explanation": "The tilde on the '\u00f1' in 'ma\u00f1ana' is a key Spanish identifier.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "At\u00e9 amanh\u00e3!",
+      "answer": "Portuguese",
+      "explanation": "Portuguese uses 'nh' instead of '\u00f1' for the same sound.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "\u00c0 demain !",
+      "answer": "French",
+      "explanation": "French uses 'demain' for tomorrow and the '\u00c0' preposition for 'until'.",
+      "lang": "French"
+    },
+    {
+      "text": "La fen\u00eatre est ouverte.",
+      "answer": "French",
+      "explanation": "The circumflex on 'fen\u00eatre' (window) is very common in French spelling.",
+      "lang": "French"
+    },
+    {
+      "text": "La ventana est\u00e1 abierta.",
+      "answer": "Spanish",
+      "explanation": "'Ventana' and 'abierta' are standard Spanish vocabulary.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "A janela est\u00e1 aberta.",
+      "answer": "Portuguese",
+      "explanation": "Portuguese uses 'janela' for window, distinct from the other three.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "La finestra \u00e8 aperta.",
+      "answer": "Italian",
+      "explanation": "The '\u00e8' (is) with a grave accent is an Italian marker.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Mi piace molto viaggiare.",
+      "answer": "Italian",
+      "explanation": "'Mi piace' is the Italian way to express liking something.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Me gusta mucho viajar.",
+      "answer": "Spanish",
+      "explanation": "'Me gusta' is the Spanish equivalent of 'I like'.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Eu gosto muito de viajar.",
+      "answer": "Portuguese",
+      "explanation": "Portuguese requires the preposition 'de' after 'gostar'.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "J'aime beaucoup voyager.",
+      "answer": "French",
+      "explanation": "The contraction 'J'aime' and the adverb 'beaucoup' are French.",
+      "lang": "French"
+    },
+    {
+      "text": "Il y a un chat dans le jardin.",
+      "answer": "French",
+      "explanation": "'Il y a' means 'there is' in French; 'chat' is cat.",
+      "lang": "French"
+    },
+    {
+      "text": "Hay un gato en el jard\u00edn.",
+      "answer": "Spanish",
+      "explanation": "'Hay' is 'there is' in Spanish, and 'jard\u00edn' has the Spanish acute accent.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "H\u00e1 um gato no jardim.",
+      "answer": "Portuguese",
+      "explanation": "Portuguese uses 'H\u00e1' (there is) and 'no' (contraction of in + the).",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "C'\u00e8 un gatto nel giardino.",
+      "answer": "Italian",
+      "explanation": "Italian uses 'C'\u00e8' for 'there is' and 'nel' for 'in the'.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Parlez-vous anglais ?",
+      "answer": "French",
+      "explanation": "The hyphenated verb-pronoun inversion is typical of French questions.",
+      "lang": "French"
+    },
+    {
+      "text": "\u00bfHabla usted ingl\u00e9s?",
+      "answer": "Spanish",
+      "explanation": "'Usted' is the formal 'you' in Spanish; 'ingl\u00e9s' has the Spanish accent.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Voc\u00ea fala ingl\u00eas?",
+      "answer": "Portuguese",
+      "explanation": "In Portuguese, 'ingl\u00eas' is spelled with a circumflex accent.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Parla inglese?",
+      "answer": "Italian",
+      "explanation": "Italian often omits the subject pronoun ('Lei') in this question.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Sempre sognando un futuro migliore.",
+      "answer": "Italian",
+      "explanation": "The double 'n' and ending in 'ore' are common Italian traits.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Siempre so\u00f1ando con un futuro mejor.",
+      "answer": "Spanish",
+      "explanation": "The 'ie' in 'Siempre' and the word 'mejor' are Spanish.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Sempre sonhando com um futuro melhor.",
+      "answer": "Portuguese",
+      "explanation": "The 'nh' in 'sonhando' is a Portuguese phonetic marker.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Toujours r\u00eavant d'un avenir meilleur.",
+      "answer": "French",
+      "explanation": "'Toujours' and 'avenir' (future) are French.",
+      "lang": "French"
+    },
+    {
+      "text": "L'addition, s'il vous pla\u00eet.",
+      "answer": "French",
+      "explanation": "'L'addition' is the specific French term for a restaurant bill.",
+      "lang": "French"
+    },
+    {
+      "text": "La cuenta, por favor.",
+      "answer": "Spanish",
+      "explanation": "'La cuenta' is the Spanish word for the bill.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "A conta, por favor.",
+      "answer": "Portuguese",
+      "explanation": "The Portuguese 'A' as a feminine article is a key marker.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Il conto, per favore.",
+      "answer": "Italian",
+      "explanation": "Italian uses 'Il' as the masculine article and 'conto' for the bill.",
+      "lang": "Italian"
+    },
+    {
+      "text": "C'est une belle journ\u00e9e.",
+      "answer": "French",
+      "explanation": "'C'est' and 'journ\u00e9e' (day) are French.",
+      "lang": "French"
+    },
+    {
+      "text": "\u00c8 una bella giornata.",
+      "answer": "Italian",
+      "explanation": "'Bella' and 'giornata' are Italian descriptors for a nice day.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Es un d\u00eda hermoso.",
+      "answer": "Spanish",
+      "explanation": "'Hermoso' (beautiful) and 'd\u00eda' (day) are Spanish.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "\u00c9 um dia bonito.",
+      "answer": "Portuguese",
+      "explanation": "Portuguese uses '\u00c9' (is) with an acute accent and 'bonito' (beautiful).",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Quels sont vos projets ?",
+      "answer": "French",
+      "explanation": "The plural 'Quels' and 'projets' with a silent 's' are French.",
+      "lang": "French"
+    },
+    {
+      "text": "\u00bfCu\u00e1les son sus planes?",
+      "answer": "Spanish",
+      "explanation": "Spanish uses 'Cu\u00e1les' for 'which ones' and 'planes' for plans.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Quais s\u00e3o os seus planos?",
+      "answer": "Portuguese",
+      "explanation": "'Quais s\u00e3o' is the Portuguese plural for 'which are'.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Quali sono i tuoi progetti?",
+      "answer": "Italian",
+      "explanation": "'Quali' and 'tuoi' are Italian plural markers.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Merci beaucoup pour votre aide.",
+      "answer": "French",
+      "explanation": "'Merci' and 'aide' (help) are French.",
+      "lang": "French"
+    },
+    {
+      "text": "Muchas gracias por su ayuda.",
+      "answer": "Spanish",
+      "explanation": "'Muchas gracias' and 'ayuda' (help) are Spanish.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Muito obrigado pela sua ajuda.",
+      "answer": "Portuguese",
+      "explanation": "'Obrigado' and the contraction 'pela' (por + a) are Portuguese.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Grazie mille per il tuo aiuto.",
+      "answer": "Italian",
+      "explanation": "'Grazie mille' (thousand thanks) and 'aiuto' are Italian.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Se eu tivesse mais tempo, eu viajaria pelo mundo.",
+      "answer": "Portuguese",
+      "explanation": "The imperfect subjunctive 'tivesse' and the conditional 'viajaria' are distinctively Portuguese.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Si tuviera m\u00e1s tiempo, viajar\u00eda por el mundo.",
+      "answer": "Spanish",
+      "explanation": "The Spanish imperfect subjunctive 'tuviera' and the use of 'por' for 'through' identify this.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Se avessi pi\u00f9 tempo, viaggerei per il mondo.",
+      "answer": "Italian",
+      "explanation": "The Italian double 's' in 'avessi' and the conditional ending 'ei' in 'viaggerei' are key.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Si j'avais plus de temps, je voyagerais \u00e0 travers le monde.",
+      "answer": "French",
+      "explanation": "The French 'avais' (imperfect) and the complex '\u00e0 travers le monde' are unique here.",
+      "lang": "French"
+    },
+    {
+      "text": "L'enfant joue avec un petit oiseau dans la for\u00eat.",
+      "answer": "French",
+      "explanation": "The word 'oiseau' (bird) contains almost all French vowels and is a classic identifier.",
+      "lang": "French"
+    },
+    {
+      "text": "El ni\u00f1o juega con un pajarito en el bosque.",
+      "answer": "Spanish",
+      "explanation": "'Ni\u00f1o' (boy) and 'bosque' (forest) are standard Spanish vocabulary.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "O menino brinca com um passarinho na floresta.",
+      "answer": "Portuguese",
+      "explanation": "The word 'menino' and the 'fl' in 'floresta' are typical Portuguese markers.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Il bambino gioca con un uccellino nel bosco.",
+      "answer": "Italian",
+      "explanation": "The double consonants in 'bambino' and 'uccellino' are very characteristic of Italian.",
+      "lang": "Italian"
+    },
+    {
+      "text": "\u00c8 necessario che tu faccia i compiti ogni giorno.",
+      "answer": "Italian",
+      "explanation": "The subjunctive 'faccia' and the word 'compiti' (homework) are Italian.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Es necesario que hagas la tarea todos los d\u00edas.",
+      "answer": "Spanish",
+      "explanation": "The subjunctive 'hagas' and 'tarea' (homework) identify this as Spanish.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "\u00c9 necess\u00e1rio que voc\u00ea fa\u00e7a os deveres todos os dias.",
+      "answer": "Portuguese",
+      "explanation": "The tilde in 'necess\u00e1rio' and 'fa\u00e7a' with a cedilla are Portuguese markers.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Il est n\u00e9cessaire que tu fasses tes devoirs chaque jour.",
+      "answer": "French",
+      "explanation": "The spelling of 'n\u00e9cessaire' and the subjunctive 'fasses' are French.",
+      "lang": "French"
+    },
+    {
+      "text": "Acredito que eles chegar\u00e3o amanh\u00e3 de manh\u00e3.",
+      "answer": "Portuguese",
+      "explanation": "The future ending '\u00e3o' in 'chegar\u00e3o' is a major Portuguese giveaway.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Creo que llegar\u00e1n ma\u00f1ana por la ma\u00f1ana.",
+      "answer": "Spanish",
+      "explanation": "The future ending '\u00e1n' and the word 'ma\u00f1ana' are Spanish.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Credo che arriveranno domani mattina.",
+      "answer": "Italian",
+      "explanation": "The double 'r' in 'arriveranno' and 'mattina' are classic Italian.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Je crois qu'ils arriveront demain matin.",
+      "answer": "French",
+      "explanation": "The French 'crois' and 'arriveront' identify this sentence.",
+      "lang": "French"
+    },
+    {
+      "text": "Voglio mangiare una pizza deliziosa in quel ristorante.",
+      "answer": "Italian",
+      "explanation": "The 'gl' sound in 'voglio' and the ending of 'ristorante' are Italian.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Quero comer uma pizza deliciosa naquele restaurante.",
+      "answer": "Portuguese",
+      "explanation": "The contraction 'naquele' (em + aquele) is a specific Portuguese feature.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Quiero comer una pizza deliciosa en ese restaurante.",
+      "answer": "Spanish",
+      "explanation": "The 'ie' in 'Quiero' and the demonstrative 'ese' are Spanish.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Je veux manger une pizza d\u00e9licieuse dans ce restaurant.",
+      "explanation": "The French 'veux' and the spelling 'd\u00e9licieuse' are unique identifiers.",
+      "answer": "French",
+      "lang": "French"
+    },
+    {
+      "text": "O cachorro est\u00e1 latindo para o gato preto.",
+      "answer": "Portuguese",
+      "explanation": "Portuguese uses 'cachorro' for dog and the 'o' article before it.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "El perro est\u00e1 ladrando al gato negro.",
+      "answer": "Spanish",
+      "explanation": "'Perro' and the color 'negro' are standard Spanish.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Le chien aboie apr\u00e8s le chat noir.",
+      "answer": "French",
+      "explanation": "'Chien' and 'noir' (black) are common French words.",
+      "lang": "French"
+    },
+    {
+      "text": "Il cane abbaia al gatto nero.",
+      "answer": "Italian",
+      "explanation": "The word 'cane' and 'gatto' are Italian markers here.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Nous allons \u00e0 la plage ce week-end.",
+      "answer": "French",
+      "explanation": "The French verb 'allons' and the noun 'plage' are distinct.",
+      "lang": "French"
+    },
+    {
+      "text": "Vamos a la playa este fin de semana.",
+      "answer": "Spanish",
+      "explanation": "The word 'playa' (beach) and 'fin de semana' are Spanish.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Andiamo in spiaggia questo fine settimana.",
+      "answer": "Italian",
+      "explanation": "The Italian 'andiamo' and 'spiaggia' (beach) with double 'g' are key.",
+      "lang": "Italian"
+    },
+    {
+      "text": "N\u00f3s vamos \u00e0 praia este fim de semana.",
+      "answer": "Portuguese",
+      "explanation": "The word 'praia' and the grave accent on '\u00e0' identify Portuguese.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "I miei genitori vivono in una grande citt\u00e0.",
+      "answer": "Italian",
+      "explanation": "The plural possessive 'I miei' and 'citt\u00e0' with the accent are Italian.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Mis padres viven en una gran ciudad.",
+      "answer": "Spanish",
+      "explanation": "Spanish uses 'padres' for parents and 'ciudad' for city.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Meus pais vivem em uma cidade grande.",
+      "answer": "Portuguese",
+      "explanation": "'Meus pais' and 'cidade' are common Portuguese markers.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Mes parents vivent dans une grande ville.",
+      "answer": "French",
+      "explanation": "'Mes parents' and 'ville' (city) are French terms.",
+      "lang": "French"
+    },
+    {
+      "text": "Elle lit un livre int\u00e9ressant dans sa chambre.",
+      "answer": "French",
+      "explanation": "The pronoun 'Elle' and the word 'livre' are French.",
+      "lang": "French"
+    },
+    {
+      "text": "Ella lee un libro interesante en su habitaci\u00f3n.",
+      "answer": "Spanish",
+      "explanation": "The double 'e' in 'lee' (reads) and 'habitaci\u00f3n' are Spanish.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Lei legge un libro interessante nella sua camera.",
+      "answer": "Italian",
+      "explanation": "The double 'g' in 'legge' and the pronoun 'Lei' are Italian.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Ela l\u00ea um livro interessante no seu quarto.",
+      "answer": "Portuguese",
+      "explanation": "The circumflex in 'l\u00ea' and the word 'quarto' (room) are Portuguese.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Temos que comprar leite e ovos no mercado.",
+      "answer": "Portuguese",
+      "explanation": "The nasal 'em' and words like 'leite' and 'ovos' are Portuguese.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Tenemos que comprar leche y huevos en el mercado.",
+      "answer": "Spanish",
+      "explanation": "'Leche' and 'huevos' (eggs) are standard Spanish.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Dobbiamo comprare latte e uova al mercato.",
+      "answer": "Italian",
+      "explanation": "The double 'b' in 'dobbiamo' and 'latte' (milk) are Italian.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Nous devons acheter du lait et des \u0153ufs au march\u00e9.",
+      "answer": "French",
+      "explanation": "The French partitive articles 'du' and 'des' identify this sentence.",
+      "lang": "French"
+    },
+    {
+      "text": "L'eau est tr\u00e8s froide ce matin.",
+      "answer": "French",
+      "explanation": "The word 'eau' (water) is a classic French vowel-heavy word.",
+      "lang": "French"
+    },
+    {
+      "text": "L'acqua \u00e8 molto fredda questa mattina.",
+      "answer": "Italian",
+      "explanation": "The spelling 'acqua' with 'cq' is unique to Italian.",
+      "lang": "Italian"
+    },
+    {
+      "text": "El agua est\u00e1 muy fr\u00eda esta ma\u00f1ana.",
+      "answer": "Spanish",
+      "explanation": "Spanish uses 'agua' and the feminine 'esta ma\u00f1ana'.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "A \u00e1gua est\u00e1 muito fria esta manh\u00e3.",
+      "answer": "Portuguese",
+      "explanation": "Portuguese uses 'A' as the article for '\u00e1gua'.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Per favore, chiuda la porta quando esce.",
+      "answer": "Italian",
+      "explanation": "The spelling 'chiuda' (close) and 'porta' are Italian.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Por favor, cierre la puerta cuando salga.",
+      "answer": "Spanish",
+      "explanation": "The Spanish 'ie' in 'cierre' and the subjunctive 'salga' are key.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Por favor, feche a porta quando sair.",
+      "answer": "Portuguese",
+      "explanation": "The word 'feche' (close) is unique to Portuguese among these.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "S'il vous pla\u00eet, fermez la porte quand vous sortez.",
+      "answer": "French",
+      "explanation": "The verb 'fermez' and 'sortez' identify this as French.",
+      "lang": "French"
+    },
+    {
+      "text": "Cette voiture rouge est tr\u00e8s rapide.",
+      "answer": "French",
+      "explanation": "The word 'voiture' (car) is a common French term.",
+      "lang": "French"
+    },
+    {
+      "text": "Este coche rojo es muy r\u00e1pido.",
+      "answer": "Spanish",
+      "explanation": "The word 'coche' and the color 'rojo' are Spanish identifiers.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Este carro vermelho \u00e9 muito r\u00e1pido.",
+      "answer": "Portuguese",
+      "explanation": "Portuguese uses 'carro' and the color 'vermelho'.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Questa macchina rossa \u00e8 molto veloce.",
+      "answer": "Italian",
+      "explanation": "Italian uses 'macchina' for car and 'rossa' for the color red.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Il pleut toujours en automne ici.",
+      "answer": "French",
+      "explanation": "'Il pleut' (it rains) and 'automne' are French.",
+      "lang": "French"
+    },
+    {
+      "text": "Llueve siempre en oto\u00f1o aqu\u00ed.",
+      "answer": "Spanish",
+      "explanation": "The double 'l' in 'Llueve' and 'oto\u00f1o' with the '\u00f1' are Spanish.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Chove sempre no outono aqui.",
+      "answer": "Portuguese",
+      "explanation": "The 'ch' in 'Chove' and 'outono' are Portuguese identifiers.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Piove sempre in autunno qui.",
+      "answer": "Italian",
+      "explanation": "The word 'piove' (it rains) and 'autunno' are Italian.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Vorrei un bicchiere di vino rosso.",
+      "answer": "Italian",
+      "explanation": "The spelling 'bicchiere' (glass) is a classic Italian identifier.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Quisiera una copa de vino tinto.",
+      "answer": "Spanish",
+      "explanation": "Spanish uses 'copa' for wine glass and 'tinto' for red wine.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Eu gostaria de um copo de vinho tinto.",
+      "answer": "Portuguese",
+      "explanation": "Portuguese uses 'copo' (which looks like Spanish 'copa' but is masculine).",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Je voudrais un verre de vin rouge.",
+      "answer": "French",
+      "explanation": "The French 'verre' (glass) and 'vin' are distinct here.",
+      "lang": "French"
+    }
+  ]
+}

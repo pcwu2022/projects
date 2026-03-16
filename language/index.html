@@ -15,37 +15,43 @@
   <p class="subtitle">Can you identify these languages?</p>
 </header>
 
-<div class="quiz-selector" id="quizSelector">
+<!-- Landing Page -->
+<div class="page landing-page" id="landingPage">
   <div class="selector-card">
     <p class="selector-eyebrow">Choose a Quiz</p>
     <div class="quiz-grid" id="quizGrid"></div>
   </div>
 </div>
 
-<div class="quiz-wrap" id="quizWrap">
-  <div class="progress-bar-wrap">
-    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-    <span class="progress-label" id="progressLabel">1 / 10</span>
-    <button class="back-btn" id="backBtn" onclick="backToSelector()">← Back</button>
-  </div>
+<!-- Game Page -->
+<div class="page game-page" id="gamePage" style="display: none;">
+  <div class="quiz-wrap" id="quizWrap">
+    <div class="progress-bar-wrap">
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <span class="progress-label" id="progressLabel">1 / 10</span>
+      <button class="back-btn" id="backBtn" onclick="app.backToHome()">← Home</button>
+    </div>
 
-  <div class="lang-tags" id="langTags"></div>
+    <div class="lang-tags" id="langTags"></div>
 
-  <div class="card">
-    <p class="question-num" id="questionNum">Question 01</p>
-    <p class="question-text" id="questionText"></p>
-    <p class="question-hint" id="questionHint">Which language is this phrase written in?</p>
-    <div class="options" id="options"></div>
-    <div class="feedback" id="feedback"></div>
-    <button class="next-btn" id="nextBtn" onclick="nextQuestion()">Next Question →</button>
+    <div class="card">
+      <p class="question-num" id="questionNum">Question 01</p>
+      <p class="question-text" id="questionText"></p>
+      <p class="question-hint" id="questionHint">Which language is this phrase written in?</p>
+      <div class="options" id="options"></div>
+      <div class="feedback" id="feedback"></div>
+      <button class="next-btn" id="nextBtn" onclick="app.nextQuestion()">Next Question →</button>
+    </div>
   </div>
 </div>
 
-<div class="results-page" id="resultsPage">
+<!-- Results Page -->
+<div class="page results-page" id="resultsPage" style="display: none;">
   <div class="results-container">
     <div class="results-header">
       <p class="results-eyebrow">Quiz Complete</p>
       <h2 class="results-title" id="resultsTitle"></h2>
+      <p class="quiz-name-subtitle" id="quizNameSubtitle"></p>
     </div>
     
     <div class="score-display">
@@ -56,18 +62,32 @@
       <p class="results-message" id="resultsMessage"></p>
     </div>
 
+    <div class="high-score-info">
+      <p class="high-score-text" id="highScoreText"></p>
+    </div>
+
     <div class="results-breakdown">
       <p class="breakdown-title">Score by Language</p>
       <div class="breakdown" id="breakdown"></div>
     </div>
 
+    <div class="share-section">
+      <p class="share-label">Share your score</p>
+      <div class="share-controls">
+        <input type="text" id="shareLink" class="share-link-input" readonly>
+        <button class="copy-btn" onclick="app.copyShareLink()">Copy</button>
+      </div>
+    </div>
+
     <div class="results-actions">
-      <button class="restart-btn" onclick="restart()">Try Again</button>
-      <button class="back-to-quiz-btn" onclick="backToSelector()">← Different Quiz</button>
+      <button class="restart-btn" onclick="app.retakeQuiz()">Play Again</button>
+      <button class="back-to-quiz-btn" onclick="app.backToHome()">← Home</button>
     </div>
   </div>
 </div>
 
+<script src="quizzes/index.js"></script>
+<script src="app.js"></script>
 <script src="quiz.js"></script>
 </body>
 </html>

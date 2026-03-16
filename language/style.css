@@ -402,6 +402,7 @@ h1 em {
 .results-container {
     width: 100%;
     max-width: 620px;
+    margin: 0 auto;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 4px;
@@ -493,6 +494,15 @@ h1 em {
     color: var(--text);
     line-height: 1.8;
     letter-spacing: 0.05em;
+    text-align: center;
+}
+
+.results-message em {
+    color: var(--gold-dim);
+    font-style: italic;
+    display: block;
+    margin-top: 16px;
+    font-size: 12px;
 }
 
 .results-breakdown {
@@ -588,6 +598,7 @@ h1 em {
     flex-direction: column;
     gap: 12px;
     margin-top: 28px;
+    align-items: center;
 }
 
 .restart-btn {
@@ -715,12 +726,26 @@ h1 em {
     cursor: pointer;
     transition: all 0.25s ease;
     text-align: center;
+    position: relative;
 }
 
 .quiz-card:hover {
     border-color: var(--gold);
     background: rgba(201, 168, 76, 0.04);
     transform: translateY(-3px);
+}
+
+.high-score-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: var(--gold);
+    color: var(--bg);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
 }
 
 .quiz-name {
@@ -762,4 +787,82 @@ h1 em {
 
 .back-btn {
     margin-left: auto;
+}
+
+.high-score-info {
+    margin-bottom: 28px;
+    padding: 12px 16px;
+    background: rgba(201, 168, 76, 0.08);
+    border-left: 3px solid var(--gold);
+    border-radius: 3px;
+}
+
+.high-score-text {
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+.quiz-name-subtitle {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    margin-top: 6px;
+}
+
+.share-section {
+    margin-bottom: 28px;
+    padding: 20px;
+    background: rgba(201, 168, 76, 0.04);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+}
+
+.share-label {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.share-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.share-link-input {
+    flex: 1;
+    padding: 10px 12px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    color: var(--text);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.copy-btn {
+    padding: 10px 16px;
+    background: var(--gold);
+    border: none;
+    color: var(--bg);
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 3px;
+    font-weight: 500;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.copy-btn:hover {
+    background: #dbc06a;
+    transform: translateY(-1px);
 }

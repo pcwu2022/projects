@@ -1,0 +1,191 @@
+{
+  "id": "austronesian_comparison",
+  "name": "Malay vs. Indonesian",
+  "description": "Distinguish between the two major standardized registers of the Malay language.",
+  "languages": [
+    "Malay",
+    "Indonesian"
+  ],
+  "questions": [
+    {
+      "text": "Saya mahu memesan teksi ke lapangan terbang.",
+      "answer": "Malay",
+      "explanation": "Malay often uses 'mahu' for 'want' (though also used in ID, it is the standard preference here) and 'lapangan terbang' is the standard term for airport.",
+      "lang": "Malay"
+    },
+    {
+      "text": "Saya ingin memesan taksi ke bandara.",
+      "answer": "Indonesian",
+      "explanation": "Indonesian uses 'taksi' (Dutch influence) and 'bandara' (abbreviation of bandar udara) for airport.",
+      "lang": "Indonesian"
+    },
+    {
+      "text": "Kereta ini sangat laju.",
+      "answer": "Malay",
+      "explanation": "In Malay, 'kereta' means car. In Indonesian, 'kereta' usually refers to a train (kereta api).",
+      "lang": "Malay"
+    },
+    {
+      "text": "Mobil ini sangat cepat.",
+      "answer": "Indonesian",
+      "explanation": "Indonesian uses 'mobil' (from automobile) for car, whereas Malay uses 'kereta'.",
+      "lang": "Indonesian"
+    },
+    {
+      "text": "Boleh saya dapatkan bil, sila?",
+      "answer": "Malay",
+      "explanation": "Malay uses 'bil' (English loan) and 'sila' for please in this context.",
+      "lang": "Malay"
+    },
+    {
+      "text": "Boleh saya minta bonnya?",
+      "answer": "Indonesian",
+      "explanation": "Indonesian uses 'bon' (Dutch loan) for a bill or receipt.",
+      "lang": "Indonesian"
+    },
+    {
+      "text": "Sila beratur di sini.",
+      "answer": "Malay",
+      "explanation": "'Sila' is the standard polite 'please' in Malaysia for invitations or instructions.",
+      "lang": "Malay"
+    },
+    {
+      "text": "Silakan antre di sini.",
+      "answer": "Indonesian",
+      "explanation": "Indonesian uses 'antre' (Dutch 'antrie') for queueing, while Malay uses 'beratur'.",
+      "lang": "Indonesian"
+    },
+    {
+      "text": "Rumah sakit itu sangat besar.",
+      "answer": "Indonesian",
+      "explanation": "Both use 'rumah sakit' (hospital), but in this specific quiz context, Indonesian uses this exclusively while Malay often uses 'hospital'.",
+      "lang": "Indonesian"
+    },
+    {
+      "text": "Hospital itu sangat besar.",
+      "answer": "Malay",
+      "explanation": "Malay has adopted 'hospital' from English as the primary formal term.",
+      "lang": "Malay"
+    },
+    {
+      "text": "Pejabat pos terletak di hujung jalan.",
+      "answer": "Malay",
+      "explanation": "Malay uses 'pejabat' for office.",
+      "lang": "Malay"
+    },
+    {
+      "text": "Kantor pos terletak di ujung jalan.",
+      "answer": "Indonesian",
+      "explanation": "Indonesian uses 'kantor' (Dutch 'kantoor') for office.",
+      "lang": "Indonesian"
+    },
+    {
+      "text": "Saya akan pergi ke kedai runcit.",
+      "answer": "Malay",
+      "explanation": "'Kedai' is the standard Malay word for shop.",
+      "lang": "Malay"
+    },
+    {
+      "text": "Saya akan pergi ke toko kelontong.",
+      "answer": "Indonesian",
+      "explanation": "Indonesian uses 'toko' for shop and 'kelontong' for a small grocery store.",
+      "lang": "Indonesian"
+    },
+    {
+      "text": "Syarikat itu sangat berjaya.",
+      "answer": "Malay",
+      "explanation": "Malay uses 'syarikat' (Arabic origin) for company.",
+      "lang": "Malay"
+    },
+    {
+      "text": "Perusahaan itu sangat sukses.",
+      "answer": "Indonesian",
+      "explanation": "Indonesian uses 'perusahaan' for company and 'sukses' (Dutch 'succes') for successful.",
+      "lang": "Indonesian"
+    },
+    {
+      "text": "Berapakah harga tiket ini?",
+      "answer": "Malay",
+      "explanation": "While both understand this, the suffix '-kah' is a classic formal Malay interrogative marker.",
+      "lang": "Malay"
+    },
+    {
+      "text": "Berapa harga tiketnya?",
+      "answer": "Indonesian",
+      "explanation": "Indonesian frequently uses the '-nya' suffix as a definite article or possessive marker in daily speech.",
+      "lang": "Indonesian"
+    },
+    {
+      "text": "Tandas lelaki ada di sebelah kiri.",
+      "answer": "Malay",
+      "explanation": "Malay uses 'tandas' for toilet.",
+      "lang": "Malay"
+    },
+    {
+      "text": "Kamar kecil pria ada di sebelah kiri.",
+      "answer": "Indonesian",
+      "explanation": "Indonesian uses 'kamar kecil' or 'WC' and 'pria' for male.",
+      "lang": "Indonesian"
+    },
+    {
+      "text": "Bas itu lewat dua puluh minit.",
+      "answer": "Malay",
+      "explanation": "Malay uses 'bas' (English) and 'minit' (English).",
+      "lang": "Indonesian"
+    },
+    {
+      "text": "Bis itu terlambat dua puluh menit.",
+      "answer": "Indonesian",
+      "explanation": "Indonesian uses 'bis' and 'menit' (Dutch 'minuut').",
+      "lang": "Indonesian"
+    },
+    {
+      "text": "Dia bekerja sebagai kerani.",
+      "answer": "Malay",
+      "explanation": "Malay uses 'kerani' (clerk).",
+      "lang": "Malay"
+    },
+    {
+      "text": "Dia bekerja sebagai staf administrasi.",
+      "answer": "Indonesian",
+      "explanation": "Indonesian tends toward modern loanwords like 'staf' or 'pegawai'.",
+      "lang": "Indonesian"
+    },
+    {
+      "text": "Kuala Lumpur ialah ibu negara Malaysia.",
+      "answer": "Malay",
+      "explanation": "Malay uses 'ibu negara' for capital city.",
+      "lang": "Malay"
+    },
+    {
+      "text": "Jakarta adalah ibu kota Indonesia.",
+      "answer": "Indonesian",
+      "explanation": "Indonesian uses 'ibu kota' for capital city.",
+      "lang": "Indonesian"
+    },
+    {
+      "text": "Selamat menyambut hari lahir!",
+      "answer": "Malay",
+      "explanation": "Malay uses 'hari lahir' for birthday.",
+      "lang": "Malay"
+    },
+    {
+      "text": "Selamat ulang tahun!",
+      "answer": "Indonesian",
+      "explanation": "Indonesian uses 'ulang tahun' for birthdays and anniversaries.",
+      "lang": "Indonesian"
+    },
+    {
+      "text": "Keluarga saya tinggal di rumah pangsa.",
+      "answer": "Malay",
+      "explanation": "Malay uses 'rumah pangsa' for flat/apartment.",
+      "lang": "Malay"
+    },
+    {
+      "text": "Keluarga saya tinggal di apartemen.",
+      "answer": "Indonesian",
+      "explanation": "Indonesian uses the loanword 'apartemen'.",
+      "lang": "Indonesian"
+    }
+  ]
+}

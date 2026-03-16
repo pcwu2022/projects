@@ -1,0 +1,379 @@
+{
+  "id": "brahmic_scripts_challenge",
+  "name": "Southern & SE Asian Scripts",
+  "description": "Master the art of distinguishing between the rounded, curly, and ornate scripts of South and Southeast Asia.",
+  "languages": [
+    "Malayalam",
+    "Sinhala",
+    "Telugu",
+    "Kannada",
+    "Odia",
+    "Burmese",
+    "Thai",
+    "Lao",
+    "Khmer",
+    "Javanese"
+  ],
+  "questions": [
+    {
+      "text": "\u0d0e\u0d19\u0d4d\u0d19\u0d28\u0d46\u0d2f\u0d41\u0d23\u0d4d\u0d1f\u0d4d?",
+      "answer": "Malayalam",
+      "explanation": "Extremely dense and circular; lacks the top 'ticks' seen in Telugu or Kannada.",
+      "lang": "Malayalam"
+    },
+    {
+      "text": "\u0d9a\u0ddc\u0dc4\u0ddc\u0db8\u0daf?",
+      "answer": "Sinhala",
+      "explanation": "Distinctly 'coiled' look. It lacks the horizontal lines of Hindi and is more 'bubbly' than Tamil.",
+      "lang": "Sinhala"
+    },
+    {
+      "text": "\u0c0e\u0c32\u0c3e \u0c09\u0c28\u0c4d\u0c28\u0c3e\u0c30\u0c41?",
+      "answer": "Telugu",
+      "explanation": "Look for the distinct 'check-mark' or 'tick' (talakattu) at the top of the characters.",
+      "lang": "Telugu"
+    },
+    {
+      "text": "\u0cb9\u0cc7\u0c97\u0cbf\u0ca6\u0ccd\u0ca6\u0cc0\u0cb0\u0cbe?",
+      "answer": "Kannada",
+      "explanation": "Virtually identical to Telugu but often features slightly more complex internal loops.",
+      "lang": "Kannada"
+    },
+    {
+      "text": "\u0b06\u0b2a\u0b23 \u0b15\u0b47\u0b2e\u0b3f\u0b24\u0b3f \u0b05\u0b1b\u0b28\u0b4d\u0b24\u0b3f?",
+      "answer": "Odia",
+      "explanation": "Defined by the large 'umbrella' or curved cap over almost every letter.",
+      "lang": "Odia"
+    },
+    {
+      "text": "\u1014\u1031\u1000\u1031\u102c\u1004\u103a\u1038\u101c\u102c\u1038\u104b",
+      "answer": "Burmese",
+      "explanation": "The 'roundest' script. Composed almost entirely of overlapping circles.",
+      "lang": "Burmese"
+    },
+    {
+      "text": "\u0e2a\u0e1a\u0e32\u0e22\u0e14\u0e35\u0e44\u0e2b\u0e21?",
+      "answer": "Thai",
+      "explanation": "Notice the small 'heads' (tiny circles) at the start of the strokes and its vertical, fluid look.",
+      "lang": "Thai"
+    },
+    {
+      "text": "\u0eaa\u0eb0\u0e9a\u0eb2\u0e8d\u0e94\u0eb5\u0e9a\u0ecd?",
+      "answer": "Lao",
+      "explanation": "Similar to Thai but more rounded/loopy with fewer sharp angles.",
+      "lang": "Lao"
+    },
+    {
+      "text": "\u178f\u17be\u17a2\u17d2\u1793\u1780\u179f\u17bb\u1781\u179f\u1794\u17d2\u1794\u17b6\u1799\u1787\u17b6\u1791\u17c1?",
+      "answer": "Khmer",
+      "explanation": "Highly ornate and jagged. It looks heavier and more 'ancient' than Thai.",
+      "lang": "Khmer"
+    },
+    {
+      "text": "\ua9a5\ua9bf\ua9b6\u0d2f\ua9a5\ua9b8\ua9a4\ua98f\ua9a7\ua9ab\ua9ba?",
+      "answer": "Javanese",
+      "explanation": "A traditional script with a very wavy, consistent 'mountain-peak' flow.",
+      "lang": "Javanese"
+    },
+    {
+      "text": "\u0d28\u0d28\u0d4d\u0d26\u0d3f",
+      "answer": "Malayalam",
+      "explanation": "The word for 'Thanks'. Very circular and lacks top-side adornments.",
+      "lang": "Malayalam"
+    },
+    {
+      "text": "\u0dc3\u0dca\u0dad\u0dd4\u0dad\u0dd2\u0dba\u0dd2",
+      "answer": "Sinhala",
+      "explanation": "Note the intricate 'y' shapes at the end which are unique to Sri Lankan Sinhala.",
+      "lang": "Sinhala"
+    },
+    {
+      "text": "\u0c27\u0c28\u0c4d\u0c2f\u0c35\u0c3e\u0c26\u0c3e\u0c32\u0c41",
+      "answer": "Telugu",
+      "explanation": "The check-marks are clearly visible on the first and third characters.",
+      "lang": "Telugu"
+    },
+    {
+      "text": "\u0ca7\u0ca8\u0ccd\u0caf\u0cb5\u0cbe\u0ca6\u0c97\u0cb3\u0cc1",
+      "answer": "Kannada",
+      "explanation": "Note the blockier nature of some loops compared to Telugu.",
+      "lang": "Kannada"
+    },
+    {
+      "text": "\u0b27\u0b28\u0b4d\u0b5f\u0b2c\u0b3e\u0b26",
+      "answer": "Odia",
+      "explanation": "The 'umbrella' curves are the dead giveaway here.",
+      "lang": "Odia"
+    },
+    {
+      "text": "\u1000\u103b\u1031\u1038\u1007\u1030\u1038\u1010\u1004\u103a\u1015\u102b\u1010\u101a\u103a\u104b",
+      "answer": "Burmese",
+      "explanation": "Pure circularity. No straight lines or sharp corners.",
+      "lang": "Burmese"
+    },
+    {
+      "text": "\u0e02\u0e2d\u0e1a\u0e04\u0e38\u0e13",
+      "answer": "Thai",
+      "explanation": "The small loops at the base of the letters are characteristic of Thai.",
+      "lang": "Thai"
+    },
+    {
+      "text": "\u0e82\u0ead\u0e9a\u0ec3\u0e88",
+      "answer": "Lao",
+      "explanation": "More simplified and rounded than its Thai counterpart.",
+      "lang": "Lao"
+    },
+    {
+      "text": "\u179f\u17bc\u1798\u17a2\u179a\u1782\u17bb\u178e",
+      "answer": "Khmer",
+      "explanation": "Deeply intricate with small 'tails' on top of characters.",
+      "lang": "Khmer"
+    },
+    {
+      "text": "\ua9a9\ua9a0\ua9b8\ua982\ua9a4\ua9b8\ua9ae\ua9b8\ua9a4\ua9c0",
+      "answer": "Javanese",
+      "explanation": "Consistent zigzag/wavy pattern across the baseline.",
+      "lang": "Javanese"
+    },
+    {
+      "text": "\u0d38\u0d4d\u0d35\u0d3e\u0d17\u0d24\u0d02",
+      "answer": "Malayalam",
+      "explanation": "The 'm' sound at the end is a small circle, common in Malayalam.",
+      "lang": "Malayalam"
+    },
+    {
+      "text": "\u0d86\u0dba\u0dd4\u0db6\u0ddd\u0dc0\u0db1\u0dca",
+      "answer": "Sinhala",
+      "explanation": "The famous Sri Lankan greeting; note the 'coiled' aesthetic.",
+      "lang": "Sinhala"
+    },
+    {
+      "text": "\u0c38\u0c4d\u0c35\u0c3e\u0c17\u0c24\u0c02",
+      "answer": "Telugu",
+      "explanation": "Similar to Malayalam but uses the top tick mark.",
+      "lang": "Telugu"
+    },
+    {
+      "text": "\u0cb8\u0ccd\u0cb5\u0cbe\u0c97\u0ca4",
+      "answer": "Kannada",
+      "explanation": "Features the top tick but lacks the final circular 'm' found in Telugu/Malayalam versions.",
+      "lang": "Kannada"
+    },
+    {
+      "text": "\u0b38\u0b4d\u0b71\u0b3e\u0b17\u0b24",
+      "answer": "Odia",
+      "explanation": "The first character is encased in the signature Odia round cap.",
+      "lang": "Odia"
+    },
+    {
+      "text": "\u1000\u103c\u102d\u102f\u1006\u102d\u102f\u1015\u102b\u1010\u101a\u103a\u104b",
+      "answer": "Burmese",
+      "explanation": "Looks like a series of interconnected zeros or 'o's.",
+      "lang": "Burmese"
+    },
+    {
+      "text": "\u0e22\u0e34\u0e19\u0e14\u0e35\u0e15\u0e49\u0e2d\u0e19\u0e23\u0e31\u0e1a",
+      "answer": "Thai",
+      "explanation": "Features many vertical stalks with small 'heads'.",
+      "lang": "Thai"
+    },
+    {
+      "text": "\u0e8d\u0eb4\u0e99\u0e94\u0eb5\u0e95\u0ec9\u0ead\u0e99\u0eae\u0eb1\u0e9a",
+      "answer": "Lao",
+      "explanation": "Notice the softer, more cursive flow compared to Thai.",
+      "lang": "Lao"
+    },
+    {
+      "text": "\u179f\u17bc\u1798\u179f\u17d2\u179c\u17b6\u1782\u1798\u1793\u17cd",
+      "answer": "Khmer",
+      "explanation": "The most complex and 'busy' looking script in this group.",
+      "lang": "Khmer"
+    },
+    {
+      "text": "\ua9b1\ua9b8\ua992\ua9bc\ua981\ua9ab\ua9ae\ua9b8\ua983",
+      "answer": "Javanese",
+      "explanation": "The script looks like a continuous wave across the page.",
+      "lang": "Javanese"
+    },
+    {
+      "text": "\u0d0e\u0d35\u0d3f\u0d1f\u0d46\u0d2f\u0d3e\u0d23\u0d4d?",
+      "answer": "Malayalam",
+      "explanation": "No top ticks; extremely compact and round.",
+      "lang": "Malayalam"
+    },
+    {
+      "text": "\u0d9a\u0ddc\u0dc4\u0dda\u0daf?",
+      "answer": "Sinhala",
+      "explanation": "The vowel markers on the left of characters are very 'curly'.",
+      "lang": "Sinhala"
+    },
+    {
+      "text": "\u0c0e\u0c15\u0c4d\u0c15\u0c21?",
+      "answer": "Telugu",
+      "explanation": "Classic Telugu structure with the 'check' marks on top.",
+      "lang": "Telugu"
+    },
+    {
+      "text": "\u0c8e\u0cb2\u0ccd\u0cb2\u0cbf\u0ca6\u0cc6?",
+      "answer": "Kannada",
+      "explanation": "Round, but the 'tick' is slightly more angled than Telugu.",
+      "lang": "Kannada"
+    },
+    {
+      "text": "\u0b15\u0b47\u0b09\u0b01\u0b20\u0b3e\u0b30\u0b47?",
+      "answer": "Odia",
+      "explanation": "The 'umbrella' shape is dominant throughout.",
+      "lang": "Odia"
+    },
+    {
+      "text": "\u1018\u101a\u103a\u1019\u103e\u102c\u101c\u1032\u104b",
+      "answer": "Burmese",
+      "explanation": "Very little variation in stroke height; mostly circles.",
+      "lang": "Burmese"
+    },
+    {
+      "text": "\u0e17\u0e35\u0e48\u0e44\u0e2b\u0e19?",
+      "answer": "Thai",
+      "explanation": "The first character is a tall, thin vowel marker with a head at the bottom.",
+      "lang": "Thai"
+    },
+    {
+      "text": "\u0ea2\u0eb9\u0ec8\u0ec3\u0eaa?",
+      "answer": "Lao",
+      "explanation": "The 'u' sound marker (bottom) is very loopy.",
+      "lang": "Lao"
+    },
+    {
+      "text": "\u1793\u17c5\u17af\u178e\u17b6?",
+      "answer": "Khmer",
+      "explanation": "Distinctive 'roofs' on characters that are more jagged than Odia.",
+      "lang": "Khmer"
+    },
+    {
+      "text": "\ua9ae\ua9ba\ua9b4\ua9a4\ua9c0\ua9a0\ua9bc\ua9a4\ua9c0\ua9a5\ua9b8\ua9a4\ua9c0\ua9a2\ua9b6?",
+      "answer": "Javanese",
+      "explanation": "Distinctive tall markers at the start and end of segments.",
+      "lang": "Javanese"
+    },
+    {
+      "text": "\u0d2d\u0d15\u0d4d\u0d37\u0d23\u0d02",
+      "answer": "Malayalam",
+      "explanation": "Round, but contains the 'ksh' conjunct which is very dense.",
+      "lang": "Malayalam"
+    },
+    {
+      "text": "\u0d9a\u0dd1\u0db8",
+      "answer": "Sinhala",
+      "explanation": "The left-side vowel marker is a single, large loop.",
+      "lang": "Sinhala"
+    },
+    {
+      "text": "\u0c06\u0c39\u0c3e\u0c30\u0c02",
+      "answer": "Telugu",
+      "explanation": "Notice the 'm' (circle with a tick) at the end.",
+      "lang": "Telugu"
+    },
+    {
+      "text": "\u0c86\u0cb9\u0cbe\u0cb0",
+      "answer": "Kannada",
+      "explanation": "Lacks the final circular 'm' used in Telugu for this word.",
+      "lang": "Kannada"
+    },
+    {
+      "text": "\u0b16\u0b3e\u0b26\u0b4d\u0b5f",
+      "answer": "Odia",
+      "explanation": "The final character has a unique 'y' hook under the umbrella.",
+      "lang": "Odia"
+    },
+    {
+      "text": "\u1021\u1005\u102c\u1038\u1021\u1005\u102c\u104b",
+      "answer": "Burmese",
+      "explanation": "The stacking of circles is very common in Burmese words.",
+      "lang": "Burmese"
+    },
+    {
+      "text": "\u0e2d\u0e32\u0e2b\u0e32\u0e23",
+      "answer": "Thai",
+      "explanation": "Relatively few 'heads' in this specific word, but very vertical.",
+      "lang": "Thai"
+    },
+    {
+      "text": "\u0ead\u0eb2\u0eab\u0eb2\u0e99",
+      "answer": "Lao",
+      "explanation": "The 'n' at the end (last char) is more curved than Thai.",
+      "lang": "Lao"
+    },
+    {
+      "text": "\u17a2\u17b6\u17a0\u17b6\u179a",
+      "answer": "Khmer",
+      "explanation": "The first letter has a double-leg look common in Khmer.",
+      "lang": "Khmer"
+    },
+    {
+      "text": "\ua9a5\ua994\ua9a4\ua9a4\ua9c0",
+      "answer": "Javanese",
+      "explanation": "Consistent rhythm and height across the word.",
+      "lang": "Javanese"
+    },
+    {
+      "text": "\u0d35\u0d46\u0d33\u0d4d\u0d33\u0d02",
+      "answer": "Malayalam",
+      "explanation": "The word for 'water'. Very loopy and finishes with a circle.",
+      "lang": "Malayalam"
+    },
+    {
+      "text": "\u0dc0\u0dad\u0dd4\u0dbb",
+      "answer": "Sinhala",
+      "explanation": "Each character is almost a self-contained coil.",
+      "lang": "Sinhala"
+    },
+    {
+      "text": "\u0c28\u0c40\u0c30\u0c41",
+      "answer": "Telugu",
+      "explanation": "The long 'ii' vowel marker is a curl on top of the first letter.",
+      "lang": "Telugu"
+    },
+    {
+      "text": "\u0ca8\u0cc0\u0cb0\u0cc1",
+      "answer": "Kannada",
+      "explanation": "Similar to Telugu, but the 'u' marker on the second letter is distinct.",
+      "lang": "Kannada"
+    },
+    {
+      "text": "\u0b1c\u0b33",
+      "answer": "Odia",
+      "explanation": "Two very prominent round caps.",
+      "lang": "Odia"
+    },
+    {
+      "text": "\u101b\u1031\u104b",
+      "answer": "Burmese",
+      "explanation": "Only two characters, both based on the circle.",
+      "lang": "Burmese"
+    },
+    {
+      "text": "\u0e19\u0e49\u0e33",
+      "answer": "Thai",
+      "explanation": "The small circle above the second character is a vowel marker.",
+      "lang": "Thai"
+    },
+    {
+      "text": "\u0e99\u0ec9\u0eb3",
+      "answer": "Lao",
+      "explanation": "Similar to Thai but with more 'swooping' lines.",
+      "lang": "Lao"
+    },
+    {
+      "text": "\u1791\u17b9\u1780",
+      "answer": "Khmer",
+      "explanation": "The 'k' at the end is very jagged and ornate.",
+      "lang": "Khmer"
+    },
+    {
+      "text": "\ua9a7\ua99a\ua9b8",
+      "answer": "Javanese",
+      "explanation": "A very short, wavy example of the script.",
+      "lang": "Javanese"
+    }
+  ]
+}

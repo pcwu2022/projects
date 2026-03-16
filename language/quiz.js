@@ -13,104 +13,75 @@ const LANGUAGE_ABBREV = {
   'Dutch': 'nl'
 };
 
-let allQuizzes = [];
-let currentQuiz = null;
-let questions = [];
-let LANGS = [];
-let KEYS = [];
-
-let current = 0;
-let score = 0;
-let answered = false;
-let langScores = {};
-let langCounts = {};
-
-// Fetch and initialize quizzes
-async function initializeApp() {
-  try {
-    const response = await fetch('quizzes.json');
-    const data = await response.json();
-    allQuizzes = data.quizzes;
-    showQuizSelector();
-  } catch (error) {
-    console.error('Error loading quizzes:', error);
+// Calculate binomial coefficient C(n, k)
+function binomialCoefficient(n, k) {
+  if (k > n - k) k = n - k;
+  let result = 1;
+  for (let i = 0; i < k; i++) {
+    result = result * (n - i) / (i + 1);
   }
+  return Math.round(result);
 }
 
-function showQuizSelector() {
-  const selector = document.getElementById('quizSelector');
-  const quizWrap = document.getElementById('quizWrap');
-  const resultsPage = document.getElementById('resultsPage');
-  
-  selector.classList.remove('hidden');
-  quizWrap.style.display = 'none';
-  resultsPage.classList.remove('active');
-  
-  const grid = document.getElementById('quizGrid');
-  grid.innerHTML = '';
-  
-  allQuizzes.forEach(quiz => {
-    const card = document.createElement('div');
-    card.className = 'quiz-card';
-    card.innerHTML = `
-      <p class="quiz-name">${quiz.name}</p>
-      <p class="quiz-desc">${quiz.description}</p>
-    `;
-    card.onclick = () => startQuiz(quiz.id);
-    grid.appendChild(card);
-  });
+// Calculate binomial probability mass function P(X = k)
+function binomialPMF(n, k, p) {
+  const coeff = binomialCoefficient(n, k);
+  return coeff * Math.pow(p, k) * Math.pow(1 - p, n - k);
 }
 
-function startQuiz(quizId) {
-  currentQuiz = allQuizzes.find(q => q.id === quizId);
-  if (!currentQuiz) return;
+// Calculate cumulative binomial probability P(X >= k)
+function binomialCDF(n, k, p) {
+  let probability = 0;
+  for (let i = k; i <= n; i++) {
+    probability += binomialPMF(n, i, p);
+  }
+  return probability;
+}
+
+// Initialize quiz with quiz data
+function initializeQuiz(quizData) {
+  const g = window.quizGlobal;
   
-  // Select 10 random questions from the quiz
-  const allQuestions = currentQuiz.questions;
-  questions = [];
+  // Select 10 random questions
+  const allQuestions = quizData.questions;
+  g.questions = [];
   const indices = new Set();
-  while (questions.length < 10) {
+  while (g.questions.length < 10 && g.questions.length < allQuestions.length) {
     const idx = Math.floor(Math.random() * allQuestions.length);
     if (!indices.has(idx)) {
       indices.add(idx);
-      questions.push(allQuestions[idx]);
+      g.questions.push(allQuestions[idx]);
     }
   }
-  
-  LANGS = currentQuiz.languages;
-  KEYS = LANGS.map((_, i) => String.fromCharCode(65 + i)); // A, B, C, D...
-  
-  langScores = {};
-  langCounts = {};
-  LANGS.forEach(lang => {
-    langScores[lang] = 0;
-    langCounts[lang] = 0;
+
+  g.LANGS = quizData.languages;
+  g.KEYS = g.LANGS.map((_, i) => String.fromCharCode(65 + i));
+
+  g.langScores = {};
+  g.langCounts = {};
+  g.LANGS.forEach(lang => {
+    g.langScores[lang] = 0;
+    g.langCounts[lang] = 0;
   });
-  
-  current = 0;
-  score = 0;
-  answered = false;
-  
-  // Show quiz UI
-  document.getElementById('quizSelector').classList.add('hidden');
-  document.getElementById('quizWrap').style.display = 'block';
-  document.getElementById('resultsPage').classList.remove('active');
-  document.getElementById('quizWrap').querySelector('.card').style.display = 'block';
-  
-  // Render language tags with proper abbreviation
+
+  g.current = 0;
+  g.score = 0;
+  g.answered = false;
+
+  // Render language tags
   const tagsContainer = document.getElementById('langTags');
   tagsContainer.innerHTML = '';
-  LANGS.forEach((lang, idx) => {
+  g.LANGS.forEach((lang, idx) => {
     const tag = document.createElement('span');
     const abbrev = LANGUAGE_ABBREV[lang] || lang.substring(0, 2).toLowerCase();
     tag.className = 'tag tag-' + abbrev;
     tag.textContent = lang;
     tagsContainer.appendChild(tag);
   });
-  
-  // Shuffle and load first question
-  window.shuffledQuestions = shuffle(questions);
-  loadQuestion();
+
+  // Shuffle and load
+  g.shuffledQuestions = shuffle(g.questions);
+  loadQuestion(g);
 }
 
 function shuffle(arr) {
@@ -122,15 +93,15 @@ function shuffle(arr) {
   return a;
 }
 
-function loadQuestion() {
-  answered = false;
-  const q = window.shuffledQuestions[current];
-  langCounts[q.lang]++;
+function loadQuestion(g) {
+  g.answered = false;
+  const q = g.shuffledQuestions[g.current];
+  g.langCounts[q.lang]++;
 
-  document.getElementById('questionNum').textContent = `Question ${String(current + 1).padStart(2, '0')}`;
+  document.getElementById('questionNum').textContent = `Question ${String(g.current + 1).padStart(2, '0')}`;
   document.getElementById('questionText').textContent = q.text;
-  document.getElementById('progressLabel').textContent = `${current + 1} / ${questions.length}`;
-  document.getElementById('progressFill').style.width = `${(current / questions.length) * 100}%`;
+  document.getElementById('progressLabel').textContent = `${g.current + 1} / ${g.questions.length}`;
+  document.getElementById('progressFill').style.width = `${(g.current / g.questions.length) * 100}%`;
 
   const fb = document.getElementById('feedback');
   fb.className = 'feedback';
@@ -138,18 +109,16 @@ function loadQuestion() {
 
   const nextBtn = document.getElementById('nextBtn');
   nextBtn.className = 'next-btn';
-  nextBtn.textContent = current === questions.length - 1 ? 'See Results →' : 'Next Question →';
+  nextBtn.textContent = g.current === g.questions.length - 1 ? 'See Results →' : 'Next Question →';
 
   const optDiv = document.getElementById('options');
   optDiv.innerHTML = '';
 
-  // Always include the correct answer, pick up to 3 other random options (max 4 total)
   const correctAnswer = q.answer;
-  const otherLanguages = LANGS.filter(lang => lang !== correctAnswer);
-  
+  const otherLanguages = g.LANGS.filter(lang => lang !== correctAnswer);
+
   let selectedOptions = [correctAnswer];
   if (otherLanguages.length > 3) {
-    // Pick 3 random from the others
     const randomOthers = [];
     const indices = new Set();
     while (randomOthers.length < 3) {
@@ -161,25 +130,23 @@ function loadQuestion() {
     }
     selectedOptions = selectedOptions.concat(randomOthers);
   } else {
-    // Include all if 3 or fewer
     selectedOptions = selectedOptions.concat(otherLanguages);
   }
-  
+
   const opts = shuffle(selectedOptions);
   opts.forEach((lang, i) => {
     const btn = document.createElement('button');
     btn.className = 'option-btn';
-    btn.innerHTML = `<span class="option-key">${KEYS[i]}</span><span>${lang}</span>`;
-    btn.onclick = () => selectAnswer(lang, btn, opts);
+    btn.innerHTML = `<span class="option-key">${g.KEYS[i]}</span><span>${lang}</span>`;
+    btn.onclick = () => selectAnswer(lang, btn, opts, q, g);
     optDiv.appendChild(btn);
   });
 }
 
-function selectAnswer(selected, btn, opts) {
-  if (answered) return;
-  answered = true;
+function selectAnswer(selected, btn, opts, q, g) {
+  if (g.answered) return;
+  g.answered = true;
 
-  const q = window.shuffledQuestions[current];
   const correct = selected === q.answer;
   const fb = document.getElementById('feedback');
   const btns = document.querySelectorAll('.option-btn');
@@ -197,8 +164,8 @@ function selectAnswer(selected, btn, opts) {
   });
 
   if (correct) {
-    score++;
-    langScores[q.lang]++;
+    g.score++;
+    g.langScores[q.lang]++;
     fb.className = 'feedback correct-fb show';
     fb.textContent = `✓ Correct! ${q.explanation}`;
   } else {
@@ -209,89 +176,77 @@ function selectAnswer(selected, btn, opts) {
   document.getElementById('nextBtn').classList.add('visible');
 }
 
-function nextQuestion() {
-  current++;
-  if (current >= questions.length) {
-    showScore();
-  } else {
-    loadQuestion();
-    document.getElementById('quizWrap').querySelector('.card').style.animation = 'none';
-    requestAnimationFrame(() => {
-      document.getElementById('quizWrap').querySelector('.card').style.animation = 'fadeUp 0.4s ease both';
-    });
-  }
-}
+// Display results (called from app.js)
+function displayResults(score, total, quizData, breakdown) {
+  const pct = score / total;
+  const percentage = Math.round((score / total) * 100);
 
-function showScore() {
-  // Hide quiz, show results page
-  document.getElementById('quizWrap').style.display = 'none';
-  const resultsPage = document.getElementById('resultsPage');
-  resultsPage.classList.add('active');
-
-  const pct = score / questions.length;
-  const percentage = Math.round((score / questions.length) * 100);
-  
   let title, msg;
-  if (pct === 1) { 
-    title = "Perfect!"; 
-    msg = "Flawless. You identified all languages without a single mistake. A true polyglot!"; 
+  if (pct === 1) {
+    title = "Perfect!";
+    msg = "Flawless. You identified all languages without a single mistake. A true polyglot!";
   }
-  else if (pct >= 0.85) { 
-    title = "Excellent"; 
-    msg = "Outstanding command. You have a strong intuition for distinguishing these languages. Just a few slipped through."; 
+  else if (pct >= 0.85) {
+    title = "Excellent";
+    msg = "Outstanding command. You have a strong intuition for distinguishing these languages. Just a few slipped through.";
   }
-  else if (pct >= 0.65) { 
-    title = "Good"; 
-    msg = "Nice work! You caught the obvious markers but the subtler patterns still need some study."; 
+  else if (pct >= 0.65) {
+    title = "Good";
+    msg = "Nice work! You caught the obvious markers but the subtler patterns still need some study.";
   }
-  else if (pct >= 0.45) { 
-    title = "Fair"; 
-    msg = "You're getting familiar with these languages, but mix-ups are common at this stage."; 
+  else if (pct >= 0.45) {
+    title = "Fair";
+    msg = "You're getting familiar with these languages, but mix-ups are common at this stage.";
   }
-  else { 
-    title = "Keep Practicing"; 
-    msg = "These languages are tricky! Review their unique phonetic and lexical markers and try again!"; 
+  else {
+    title = "Keep Practicing";
+    msg = "These languages are tricky! Review their unique phonetic and lexical markers and try again!";
   }
 
   document.getElementById('resultsTitle').textContent = title;
-  document.getElementById('resultsMessage').textContent = msg;
+  document.getElementById('quizNameSubtitle').textContent = quizData.name;
   document.getElementById('scorePercentage').textContent = percentage + '%';
-  document.getElementById('scoreRatio').textContent = `${score} / ${questions.length}`;
+  document.getElementById('scoreRatio').textContent = `${score} / ${total}`;
 
+  // High score comparison
+  const currentHighScore = app.getHighScore(app.currentQuizId);
+  let highScoreText = '';
+  if (score === currentHighScore && score > 0) {
+    highScoreText = `🏆 New personal best: ${score}/${total}`;
+  } else if (currentHighScore && currentHighScore > score) {
+    highScoreText = `Your high score: ${currentHighScore}/${total}`;
+  }
+  if (highScoreText) {
+    document.getElementById('highScoreText').textContent = highScoreText;
+  }
+
+  // Calculate binomial probability
+  const numOptions = Math.min(4, quizData.languages.length);
+  const pGuess = 1 / numOptions;
+  const randomProbability = binomialCDF(total, score, pGuess);
+
+  let probabilityText = '';
+  if (randomProbability < 0.0001) {
+    probabilityText = '<0.01%';
+  } else if (randomProbability < 0.01) {
+    probabilityText = (randomProbability * 100).toFixed(3) + '%';
+  } else {
+    probabilityText = (randomProbability * 100).toFixed(2) + '%';
+  }
+
+  const resultsMessage = document.getElementById('resultsMessage');
+  resultsMessage.innerHTML = msg + `<br><br><em>Probability of this score by random guessing: ${probabilityText}</em>`;
+
+  // Breakdown
   const bd = document.getElementById('breakdown');
-  bd.innerHTML = LANGS.map(l => {
+  bd.innerHTML = quizData.languages.map(l => {
     const abbrev = LANGUAGE_ABBREV[l] || l.substring(0, 2).toLowerCase();
+    const data = breakdown[l] || { correct: 0, total: 0 };
     return `
       <div class="breakdown-item">
-        <div class="breakdown-count ${abbrev}">${langScores[l]} / ${langCounts[l]}</div>
+        <div class="breakdown-count ${abbrev}">${data.correct} / ${data.total}</div>
         <div class="breakdown-label">${l}</div>
       </div>
     `;
   }).join('');
 }
-
-function restart() {
-  current = 0; 
-  score = 0; 
-  answered = false;
-  LANGS.forEach(lang => {
-    langScores[lang] = 0;
-    langCounts[lang] = 0;
-  });
-
-  // Hide results page, show quiz
-  document.getElementById('resultsPage').classList.remove('active');
-  document.getElementById('quizWrap').style.display = 'block';
-  
-  window.shuffledQuestions = shuffle(questions);
-  loadQuestion();
-}
-
-function backToSelector() {
-  document.getElementById('quizWrap').style.display = 'none';
-  document.getElementById('resultsPage').classList.remove('active');
-  showQuizSelector();
-}
-
-// Initialize when page loads
-window.addEventListener('DOMContentLoaded', initializeApp);
