@@ -157,6 +157,55 @@ h1 em {
     color: var(--nl);
 }
 
+/* Position-based color classes for breakdown */
+.breakdown-count.sp {
+    color: var(--sp);
+}
+
+.breakdown-count.pt {
+    color: var(--pt);
+}
+
+.breakdown-count.ca {
+    color: var(--ca);
+}
+
+.breakdown-count.fr {
+    color: var(--fr);
+}
+
+.breakdown-count.it {
+    color: var(--it);
+}
+
+.breakdown-count.de {
+    color: var(--de);
+}
+
+.breakdown-count.ru {
+    color: var(--ru);
+}
+
+.breakdown-count.uk {
+    color: var(--uk);
+}
+
+.breakdown-count.be {
+    color: var(--be);
+}
+
+.breakdown-count.sv {
+    color: var(--sv);
+}
+
+.breakdown-count.no {
+    color: var(--no);
+}
+
+.breakdown-count.nl {
+    color: var(--nl);
+}
+
 .quiz-wrap {
     width: 100%;
     max-width: 680px;

@@ -728,6 +728,702 @@
       "answer": "French",
       "explanation": "The French 'verre' (glass) and 'vin' are distinct here.",
       "lang": "French"
+    },
+    {
+      "text": "Spero che tu possa venire alla festa domani sera, nonostante l'impegno.",
+      "answer": "Italian",
+      "explanation": "The use of the subjunctive 'possa' and the double consonants in 'festa' and 'notostante' are key Italian markers.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Espero que possas vir à festa amanhã à noite, apesar do compromisso.",
+      "answer": "Portuguese",
+      "explanation": "The personal infinitive 'possas' and the grave accent in 'à' are characteristic of Portuguese.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Espero que puedas venir a la fiesta mañana por la noche, a pesar del compromiso.",
+      "answer": "Spanish",
+      "explanation": "The diphthong 'ue' in 'puedas' and the use of 'mañana por la noche' are distinctively Spanish.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "J'espère que tu pourras venir à la fête demain soir, malgré ton engagement.",
+      "answer": "French",
+      "explanation": "The circumflex accent in 'fête' and the future tense 'pourras' (rather than subjunctive) after 'espérer' are French traits.",
+      "lang": "French"
+    },
+    {
+      "text": "Si j'avais su qu'il pleuvrait, j'aurais apporté mon parapluie.",
+      "answer": "French",
+      "explanation": "The structure 'Si' + pluperfect followed by conditional 'aurais' is a classic French hypothetical.",
+      "lang": "French"
+    },
+    {
+      "text": "Se avessi saputo che sarebbe piovuto, avrei portato l'ombrello.",
+      "answer": "Italian",
+      "explanation": "The double 's' in 'avessi' and the word 'ombrello' (umbrella) are typical Italian features.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Si hubiera sabido que iba a llover, habría traído mi paraguas.",
+      "answer": "Spanish",
+      "explanation": "The past subjunctive 'hubiera' and the compound word 'paraguas' are uniquely Spanish.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Se eu soubesse que ia chover, teria trazido o meu guarda-chuva.",
+      "answer": "Portuguese",
+      "explanation": "The spelling 'soubesse' and the hyphenated 'guarda-chuva' identify this as Portuguese.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Il faut que nous fassions attention aux détails de ce projet important.",
+      "answer": "French",
+      "explanation": "The impersonal 'Il faut que' and the nasal 'nous fassions' are distinct French markers.",
+      "lang": "French"
+    },
+    {
+      "text": "Es necesario que prestemos atención a los detalles de este proyecto importante.",
+      "answer": "Spanish",
+      "explanation": "The verb 'prestar' in this context and the 'oy' in 'proyecto' are common in Spanish.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "É necessário que prestemos atenção aos detalhes deste projeto importante.",
+      "answer": "Portuguese",
+      "explanation": "The opening 'É' with an acute accent and the contraction 'deste' are Portuguese identifiers.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "È necessario che prestiamo attenzione ai dettagli di questo progetto importante.",
+      "answer": "Italian",
+      "explanation": "The grave accent on 'È' and the plural 'dettagli' ending in 'i' indicate Italian.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Ho cercato di chiamarti più volte, ma il tuo telefono era sempre spento.",
+      "answer": "Italian",
+      "explanation": "The auxiliary 'Ho' and the word 'spento' (off/extinguished) are specific to Italian.",
+      "lang": "Italian"
+    },
+    {
+      "text": "He intentado llamarte varias veces, pero tu teléfono estaba siempre apagado.",
+      "answer": "Spanish",
+      "explanation": "The present perfect 'He intentado' and the word 'apagado' (off) are typical Spanish.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Tentei ligar-te várias vezes, mas o teu telemóvel estava sempre desligado.",
+      "answer": "Portuguese",
+      "explanation": "The enclitic pronoun 'ligar-te' and the term 'telemóvel' (common in European Portuguese) mark this language.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "J'ai essayé de t'appeler plusieurs fois, mais ton téléphone était toujours éteint.",
+      "answer": "French",
+      "explanation": "The apostrophe in 't'appeler' and the word 'éteint' are French characteristics.",
+      "lang": "French"
+    },
+    {
+      "text": "Ninguém sabe ao certo onde eles esconderam o tesouro antigo.",
+      "answer": "Portuguese",
+      "explanation": "The word 'Ninguém' (nobody) and the nasal 'em' ending are hallmarks of Portuguese.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Nadie sabe con certeza dónde escondieron el tesoro antiguo.",
+      "answer": "Spanish",
+      "explanation": "The word 'Nadie' and the accent on 'dónde' distinguish this as Spanish.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Nessuno sa con certezza dove abbiano nascosto il tesoro antico.",
+      "answer": "Italian",
+      "explanation": "The word 'Nessuno' and the past participle 'nascosto' are Italian markers.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Personne ne sait avec certitude où ils ont caché le trésor antique.",
+      "answer": "French",
+      "explanation": "The double negation 'Personne ne' and the 'ch' in 'caché' are distinctively French.",
+      "lang": "French"
+    },
+    {
+      "text": "Bien que nous soyons fatigués, nous continuerons à marcher jusqu'au village.",
+      "answer": "French",
+      "explanation": "The conjunction 'Bien que' followed by the subjunctive 'soyons' is a French indicator.",
+      "lang": "French"
+    },
+    {
+      "text": "Aunque estemos cansados, seguiremos caminando hasta el pueblo.",
+      "answer": "Spanish",
+      "explanation": "The word 'Aunque' and the 'll' in 'pueblo' (meaning village) are Spanish.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Embora estejamos cansados, continuaremos a caminhar até à aldeia.",
+      "answer": "Portuguese",
+      "explanation": "The word 'Embora' and the nasal 'caminhar' are Portuguese identifiers.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Sebbene siamo stanchi, continueremo a camminare fino al villaggio.",
+      "answer": "Italian",
+      "explanation": "The word 'Sebbene' and the double 'm' in 'camminare' indicate Italian.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Qualcuno ha lasciato una borsa di pelle sul sedile posteriore dell'auto.",
+      "answer": "Italian",
+      "explanation": "The word 'Qualcuno' (someone) and 'borsa' (bag) are Italian terms.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Alguém deixou uma bolsa de couro no banco de trás do carro.",
+      "answer": "Portuguese",
+      "explanation": "The nasal 'Alguém' and the word 'couro' (leather) are Portuguese.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Alguien dejó un bolso de cuero en el asiento trasero del coche.",
+      "answer": "Spanish",
+      "explanation": "The word 'Alguien' and 'asiento' (seat) identify this as Spanish.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Quelqu'un a laissé un sac en cuir sur le siège arrière de la voiture.",
+      "answer": "French",
+      "explanation": "The word 'Quelqu'un' and the spelling 'siège' are classic French.",
+      "lang": "French"
+    },
+    {
+      "text": "Il me semble que vous avez oublié vos clés sur la table du salon.",
+      "answer": "French",
+      "explanation": "The phrase 'Il me semble' and the plural 'clés' (keys) are French.",
+      "lang": "French"
+    },
+    {
+      "text": "Mi sembra che abbiate dimenticato le chiavi sul tavolo del soggiorno.",
+      "answer": "Italian",
+      "explanation": "The verb 'dimenticato' and the 'chi' in 'chiavi' are Italian.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Parece-me que esqueceram as chaves em cima da mesa da sala.",
+      "answer": "Portuguese",
+      "explanation": "The hyphenated 'Parece-me' and the 'ch' in 'chaves' mark this as Portuguese.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Me parece que habéis olvidado las llaves sobre la mesa del salón.",
+      "answer": "Spanish",
+      "explanation": "The 'll' in 'llaves' and the 'éis' ending in 'habéis' (Spain Spanish) are Spanish markers.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Le petit garçon courait dans le jardin avec son chien fidèle.",
+      "answer": "French",
+      "explanation": "The articles 'le' and the word 'chien' (dog) are very French.",
+      "lang": "French"
+    },
+    {
+      "text": "El niño pequeño corría por el jardín con su perro fiel.",
+      "answer": "Spanish",
+      "explanation": "The word 'niño' with the tilde (ñ) and 'perro' (dog) are Spanish.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "O menino pequeno corria pelo jardim com o seu cão fiel.",
+      "answer": "Portuguese",
+      "explanation": "The word 'menino' and the 'ão' in 'cão' (dog) are Portuguese markers.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Il bambino piccolo correva nel giardino con il suo cane fedele.",
+      "answer": "Italian",
+      "explanation": "The word 'bambino' and 'cane' (dog) are Italian identifiers.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Si vous voulez réussir, vous devez travailler avec beaucoup de persévérance.",
+      "answer": "French",
+      "explanation": "The spelling of 'réussir' and 'beaucoup' are characteristic of French.",
+      "lang": "French"
+    },
+    {
+      "text": "Se volete avere successo, dovete lavorare con molta perseveranza.",
+      "answer": "Italian",
+      "explanation": "The word 'successo' and the adverb 'molta' are Italian features.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Se quiserem ter sucesso, devem trabalhar com muita perseverança.",
+      "answer": "Portuguese",
+      "explanation": "The future subjunctive 'quiserem' and 'muita' are Portuguese markers.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Si queréis tener éxito, debéis trabajar con mucha perseverancia.",
+      "answer": "Spanish",
+      "explanation": "The word 'éxito' and the 'éis' endings are characteristic of Spanish.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "L'insegnante ha spiegato la lezione in modo molto chiaro oggi.",
+      "answer": "Italian",
+      "explanation": "The word 'insegnante' and 'chiaro' with 'chi' are typical of Italian.",
+      "lang": "Italian"
+    },
+    {
+      "text": "O professor explicou a lição de forma muito clara hoje.",
+      "answer": "Portuguese",
+      "explanation": "The nasal 'lição' and the word 'hoje' (today) are Portuguese markers.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "El profesor explicó la lección de forma muy clara hoy.",
+      "answer": "Spanish",
+      "explanation": "The word 'lección' and 'hoy' (today) distinguish this as Spanish.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Le professeur a expliqué la leçon de manière très claire aujourd'hui.",
+      "answer": "French",
+      "explanation": "The word 'aujourd'hui' and the 'très' are uniquely French.",
+      "lang": "French"
+    },
+    {
+      "text": "Nous irons à la plage dès que le temps se réchauffera un peu.",
+      "answer": "French",
+      "explanation": "The word 'plage' and the future 'réchauffera' are French.",
+      "lang": "French"
+    },
+    {
+      "text": "Andremo in spiaggia non appena il tempo si scalderà un po'.",
+      "answer": "Italian",
+      "explanation": "The word 'spiaggia' and 'non appena' (as soon as) are Italian.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Iremos a la playa tan pronto como el tiempo se caliente un poco.",
+      "answer": "Spanish",
+      "explanation": "The word 'playa' and 'tan pronto como' identify this as Spanish.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Iremos à praia assim que o tempo aquecer um pouco.",
+      "answer": "Portuguese",
+      "explanation": "The word 'praia' and the future subjunctive 'aquecer' are Portuguese.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Todos os dias ela costuma caminhar pela beira-mar ao pôr do sol.",
+      "answer": "Portuguese",
+      "explanation": "The circumflex in 'pôr' and the word 'beira-mar' are Portuguese markers.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Todos los días ella suele caminar por la orilla del mar al atardecer.",
+      "answer": "Spanish",
+      "explanation": "The verb 'suele' and the word 'atardecer' are Spanish features.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Ogni giorno lei è solita camminare lungo il mare al tramonto.",
+      "answer": "Italian",
+      "explanation": "The phrase 'Ogni giorno' and the word 'tramonto' are Italian.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Chaque jour, elle a l'habitude de marcher au bord de la mer au coucher du soleil.",
+      "answer": "French",
+      "explanation": "The phrase 'Chaque jour' and 'coucher du soleil' (sunset) are French.",
+      "lang": "French"
+    },
+    {
+      "text": "Je ne pense pas qu'il soit nécessaire d'acheter un nouveau livre maintenant.",
+      "answer": "French",
+      "explanation": "The negation 'ne... pas' and the subjunctive 'soit' are French markers.",
+      "lang": "French"
+    },
+    {
+      "text": "Non credo che sia necessario comprare un nuovo libro adesso.",
+      "answer": "Italian",
+      "explanation": "The word 'adesso' and the subjunctive 'sia' are Italian features.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Não creio que seja necessário comprar um livro novo agora.",
+      "answer": "Portuguese",
+      "explanation": "The negation 'Não' and the word 'agora' are Portuguese markers.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "No creo que sea necesario comprar un libro nuevo ahora.",
+      "answer": "Spanish",
+      "explanation": "The negation 'No' and the word 'ahora' distinguish this as Spanish.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "S'il vous plaît, pourriez-vous me dire où se trouve la gare la plus proche ?",
+      "answer": "French",
+      "explanation": "The phrase 'S'il vous plaît' and the word 'gare' (train station) are French.",
+      "lang": "French"
+    },
+    {
+      "text": "Per favore, potrebbe dirmi dove si trova la stazione ferroviaria più vicina?",
+      "answer": "Italian",
+      "explanation": "The phrase 'Per favore' and 'più vicina' identify this as Italian.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Por favor, ¿podría decirme dónde está la estación de tren más cercana?",
+      "answer": "Spanish",
+      "explanation": "The phrase 'Por favor' and the word 'cercana' are Spanish features.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Por favor, poderia dizer-me onde fica a estação de comboios mais próxima?",
+      "answer": "Portuguese",
+      "explanation": "The word 'comboios' (trains) and 'próxima' are Portuguese markers.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "O vento soprava com muita força enquanto atravessávamos a ponte de ferro.",
+      "answer": "Portuguese",
+      "explanation": "The 'ão' in 'enquanto' and the word 'ponte' are Portuguese.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Il vento soffiava con molta forza mentre attraversavamo il ponte di ferro.",
+      "answer": "Italian",
+      "explanation": "The word 'mentre' and the verb 'soffiava' are Italian features.",
+      "lang": "Italian"
+    },
+    {
+      "text": "El viento soplaba con mucha fuerza mientras cruzábamos el puente de hierro.",
+      "answer": "Spanish",
+      "explanation": "The word 'mientras' and 'hierro' (iron) are Spanish markers.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Le vent soufflait très fort pendant que nous traversions le pont de fer.",
+      "answer": "French",
+      "explanation": "The word 'pendant' and the 'tr' in 'traversions' are French.",
+      "lang": "French"
+    },
+    {
+      "text": "Guarda come corrono velocemente quei bambini nel prato fiorito.",
+      "answer": "Italian",
+      "explanation": "The word 'Guarda' and 'fiorito' identify this as Italian.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Regarde comme ces enfants courent vite dans la prairie fleurie.",
+      "answer": "French",
+      "explanation": "The word 'Regarde' and the spelling 'prairie' are French markers.",
+      "lang": "French"
+    },
+    {
+      "text": "Mira cómo corren rápido esos niños en el prado florido.",
+      "answer": "Spanish",
+      "explanation": "The word 'Mira' and the 'ñ' in 'niños' are Spanish identifiers.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Olha como essas crianças correm depressa no prado florido.",
+      "answer": "Portuguese",
+      "explanation": "The word 'Olha' and 'crianças' (children) are Portuguese markers.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Estou muito cansado porque tive um dia de trabalho muito longo.",
+      "answer": "Portuguese",
+      "explanation": "The word 'Estou' and the nasal 'um' are Portuguese markers.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Estoy muy cansado porque he tenido un día de trabajo muy largo.",
+      "answer": "Spanish",
+      "explanation": "The word 'Estoy' and 'largo' distinguish this as Spanish.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Sono molto stanco perché ho avuto una giornata di lavoro molto lunga.",
+      "answer": "Italian",
+      "explanation": "The word 'Sono' and 'stanco' identify this as Italian.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Je suis très fatigué parce que j'ai eu une très longue journée de travail.",
+      "answer": "French",
+      "explanation": "The phrase 'Je suis' and the spelling 'journée' are French.",
+      "lang": "French"
+    },
+    {
+      "text": "Elle s'est assise sur le banc pour lire son roman préféré tranquillement.",
+      "answer": "French",
+      "explanation": "The word 'banc' and the adverb 'tranquillement' are French features.",
+      "lang": "French"
+    },
+    {
+      "text": "Si è seduta sulla panchina per leggere il suo romanzo preferito in pace.",
+      "answer": "Italian",
+      "explanation": "The word 'panchina' (bench) and 'romanzo' (novel) are Italian.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Ella se sentó en el banco para leer su novela favorita tranquilamente.",
+      "answer": "Spanish",
+      "explanation": "The word 'novela' and the 'll' in 'ella' are Spanish markers.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Ela sentou-se no banco para ler o seu romance preferido tranquilamente.",
+      "answer": "Portuguese",
+      "explanation": "The reflexive 'sentou-se' and the word 'romance' identify this as Portuguese.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Questi stivali sono troppo stretti per me, devo cambiarli domani.",
+      "answer": "Italian",
+      "explanation": "The word 'stivali' (boots) and 'stretti' (tight) are Italian.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Estas botas são muito apertadas para mim, tenho de as trocar amanhã.",
+      "answer": "Portuguese",
+      "explanation": "The word 'botas' and 'amanhã' are Portuguese identifiers.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Estas botas son demasiado estrechas para mí, tengo que cambiarlas mañana.",
+      "answer": "Spanish",
+      "explanation": "The word 'mañana' and 'estrechas' (narrow/tight) are Spanish markers.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Ces bottes sont trop étroites pour moi, je dois les changer demain.",
+      "answer": "French",
+      "explanation": "The word 'bottes' and the circumflex in 'étroites' are French.",
+      "lang": "French"
+    },
+    {
+      "text": "Il pleut des cordes depuis ce matin, donc je resterai à la maison.",
+      "answer": "French",
+      "explanation": "The idiom 'pleut des cordes' (raining cats and dogs) and 'maison' are French.",
+      "lang": "French"
+    },
+    {
+      "text": "Está a chover torrencialmente desde manhã, por isso ficarei em casa.",
+      "answer": "Portuguese",
+      "explanation": "The construction 'está a chover' and 'casa' are Portuguese markers.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Está lloviendo a cántaros desde esta mañana, así que me quedaré en casa.",
+      "answer": "Spanish",
+      "explanation": "The idiom 'lloviendo a cántaros' and 'quedaré' are Spanish identifiers.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Piove a dirotto da stamattina, quindi rimarrò a casa.",
+      "answer": "Italian",
+      "explanation": "The idiom 'piove a dirotto' and 'quindi' (therefore) are Italian.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Chiunque abbia trovato le mie chiavi è pregato di restituirle subito.",
+      "answer": "Italian",
+      "explanation": "The word 'Chiunque' (whoever) and 'subito' (immediately) are Italian.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Quem quer que tenha encontrado as minhas chaves, por favor, devolva-as agora.",
+      "answer": "Portuguese",
+      "explanation": "The phrase 'Quem quer que' and 'encontrado' are Portuguese.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Quienquiera que haya encontrado mis llaves, por favor, devuélvalas ahora.",
+      "answer": "Spanish",
+      "explanation": "The word 'Quienquiera' and 'haya' are Spanish features.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Quiconque a trouvé mes clés est prié de les rendre immédiatement.",
+      "answer": "French",
+      "explanation": "The word 'Quiconque' and 'immédiatement' are French identifiers.",
+      "lang": "French"
+    },
+    {
+      "text": "Nous devrions prendre le petit-déjeuner avant de partir pour la montagne.",
+      "answer": "French",
+      "explanation": "The word 'petit-déjeuner' and 'montagne' are French markers.",
+      "lang": "French"
+    },
+    {
+      "text": "Dovremmo fare colazione prima di partire per la montagna.",
+      "answer": "Italian",
+      "explanation": "The word 'colazione' (breakfast) and 'partire' are Italian markers.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Deberíamos desayunar antes de salir para la montaña.",
+      "answer": "Spanish",
+      "explanation": "The verb 'desayunar' and 'salir' identify this as Spanish.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Deveríamos tomar o pequeno-almoço antes de partirmos para a montanha.",
+      "answer": "Portuguese",
+      "explanation": "The term 'pequeno-almoço' (common in Portugal) and 'partirmos' are Portuguese.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "O gato está dormindo tranquilamente em cima do tapete da sala.",
+      "answer": "Portuguese",
+      "explanation": "The gerund 'dormindo' and 'tapete' (rug) are Portuguese markers.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Il gatto sta dormendo tranquillamente sopra il tappeto del soggiorno.",
+      "answer": "Italian",
+      "explanation": "The double 'p' in 'tappeto' and 'soggiorno' (living room) are Italian.",
+      "lang": "Italian"
+    },
+    {
+      "text": "El gato está durmiendo tranquilamente encima de la alfombra del salón.",
+      "answer": "Spanish",
+      "explanation": "The word 'alfombra' (rug) and 'durmiendo' identify this as Spanish.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Le chat dort tranquillement sur le tapis du salon.",
+      "answer": "French",
+      "explanation": "The word 'chat' (cat) and 'tapis' are French identifiers.",
+      "lang": "French"
+    },
+    {
+      "text": "L'eau du lac est très froide à cette période de l'année.",
+      "answer": "French",
+      "explanation": "The word 'l'eau' (water) and 'lac' (lake) are French.",
+      "lang": "French"
+    },
+    {
+      "text": "L'acqua del lago è molto fredda in questo periodo dell'anno.",
+      "answer": "Italian",
+      "explanation": "The word 'l'acqua' and 'lago' identify this as Italian.",
+      "lang": "Italian"
+    },
+    {
+      "text": "El agua del lago está muy fría en esta época del año.",
+      "answer": "Spanish",
+      "explanation": "The word 'agua' and 'época' are Spanish markers.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "A água do lago está muito fria nesta época do ano.",
+      "answer": "Portuguese",
+      "explanation": "The word 'água' and the contraction 'nesta' are Portuguese.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Spero che voi abbiate passato una bella vacanza al mare.",
+      "answer": "Italian",
+      "explanation": "The word 'abbiate' and 'vacanza' are Italian identifiers.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Espero que vocês tenham passado umas ótimas férias na praia.",
+      "answer": "Portuguese",
+      "explanation": "The word 'vocês' and 'tenham' are Portuguese markers.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Espero que hayáis pasado unas buenas vacaciones en la playa.",
+      "answer": "Spanish",
+      "explanation": "The word 'hayáis' and 'playa' identify this as Spanish.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "J'espère que vous avez passé de bonnes vacances à la mer.",
+      "answer": "French",
+      "explanation": "The word 'passé' and 'vacances' are French markers.",
+      "lang": "French"
+    },
+    {
+      "text": "Le ciel est bleu aujourd'hui et il n'y a pas de nuages.",
+      "answer": "French",
+      "explanation": "The word 'bleu' and 'nuages' (clouds) are French.",
+      "lang": "French"
+    },
+    {
+      "text": "Il cielo è azzurro oggi e non ci sono nuvole.",
+      "answer": "Italian",
+      "explanation": "The word 'azzurro' and 'nuvole' (clouds) are Italian.",
+      "lang": "Italian"
+    },
+    {
+      "text": "El cielo está azul hoy y no hay nubes.",
+      "answer": "Spanish",
+      "explanation": "The word 'azul' and 'nubes' (clouds) are Spanish.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "O céu está azul hoje e não há nuvens.",
+      "answer": "Portuguese",
+      "explanation": "The word 'céu' and 'nuvens' (clouds) are Portuguese.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Ele me disse que viria se tivesse tempo suficiente esta tarde.",
+      "answer": "Portuguese",
+      "explanation": "The word 'disse' and 'tivesse' are Portuguese markers.",
+      "lang": "Portuguese"
+    },
+    {
+      "text": "Él me dijo que vendría si tuviera tiempo suficiente esta tarde.",
+      "answer": "Spanish",
+      "explanation": "The word 'dijo' and 'tuviera' identify this as Spanish.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Mi ha detto che verrebbe se avesse abbastanza tempo oggi pomeriggio.",
+      "answer": "Italian",
+      "explanation": "The word 'pomeriggio' and 'abbastanza' are Italian.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Il m'a dit qu'il viendrait s'il avait assez de temps cet après-midi.",
+      "answer": "French",
+      "explanation": "The word 'viendrait' and 'après-midi' are French identifiers.",
+      "lang": "French"
+    },
+    {
+      "text": "Vous devez faire attention en traversant la rue avec les bagages.",
+      "answer": "French",
+      "explanation": "The word 'bagages' and 'rue' (street) are French.",
+      "lang": "French"
+    },
+    {
+      "text": "Dovete fare attenzione quando attraversate la strada con i bagagli.",
+      "answer": "Italian",
+      "explanation": "The word 'bagagli' and 'strada' are Italian markers.",
+      "lang": "Italian"
+    },
+    {
+      "text": "Debéis tener cuidado al cruzar la calle con el equipaje.",
+      "answer": "Spanish",
+      "explanation": "The word 'calle' and 'equipaje' identify this as Spanish.",
+      "lang": "Spanish"
+    },
+    {
+      "text": "Devem ter cuidado ao atravessar a rua com as bagagens.",
+      "answer": "Portuguese",
+      "explanation": "The word 'atravessar' and 'bagagens' are Portuguese markers.",
+      "lang": "Portuguese"
     }
   ]
 }

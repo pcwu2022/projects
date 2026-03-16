@@ -1,0 +1,372 @@
+{
+  "id": "cyrillic",
+  "name": "Cyrillic Slavic Languages",
+  "description": "Distinguish between Russian, Ukrainian, and Belarusian",
+  "languages": [
+    "Russian",
+    "Ukrainian",
+    "Belarusian"
+  ],
+  "questions": [
+    {
+      "text": "\u0413\u0434\u0435 \u043d\u0430\u0445\u043e\u0434\u0438\u0442\u0441\u044f \u0431\u0438\u0431\u043b\u0438\u043e\u0442\u0435\u043a\u0430?",
+      "answer": "Russian",
+      "explanation": "Russian uses the Cyrillic script exclusively and has distinctive grammar patterns.",
+      "lang": "Russian"
+    },
+    {
+      "text": "\u0414\u0435 \u0440\u043e\u0437\u0442\u0430\u0448\u043e\u0432\u0430\u043d\u0430 \u0431\u0456\u0431\u043b\u0456\u043e\u0442\u0435\u043a\u0430?",
+      "answer": "Ukrainian",
+      "explanation": "Ukrainian often uses \u0457 and \u0454 which are rare or absent in Russian. The spelling pattern is distinctive.",
+      "lang": "Ukrainian"
+    },
+    {
+      "text": "\u0414\u0437\u0435 \u0437\u043d\u0430\u0445\u043e\u0434\u0437\u0456\u0446\u0446\u0430 \u0431\u0456\u0431\u043b\u0456\u044f\u0442\u044d\u043a\u0430?",
+      "answer": "Belarusian",
+      "explanation": "Belarusian uses \u045e (u-breve) and has characteristic spelling and grammar that differ from Russian and Ukrainian.",
+      "lang": "Belarusian"
+    },
+    {
+      "text": "\u041a\u0430\u043a \u0434\u0435\u043b\u0430?",
+      "answer": "Russian",
+      "explanation": "This common Russian greeting uses the Russian word order and grammar patterns.",
+      "lang": "Russian"
+    },
+    {
+      "text": "\u042f\u043a \u0443 \u0442\u0435\u0431\u0435?",
+      "answer": "Ukrainian",
+      "explanation": "The Ukrainian '\u044f\u043a' (how) and '\u0443' (in) structure are distinctly Ukrainian.",
+      "lang": "Ukrainian"
+    },
+    {
+      "text": "\u042f\u043a \u0441\u043f\u0440\u0430\u0432\u044b?",
+      "answer": "Belarusian",
+      "explanation": "The Belarusian word '\u0441\u043f\u0440\u0430\u0432\u044b' and the characteristic spelling pattern mark this as Belarusian.",
+      "lang": "Belarusian"
+    },
+    {
+      "text": "\u042f \u043b\u044e\u0431\u043b\u044e \u0440\u0443\u0441\u0441\u043a\u0443\u044e \u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0443.",
+      "answer": "Russian",
+      "explanation": "The Russian adjective ending '\u0443\u044e' and the distinctive word forms are characteristic.",
+      "lang": "Russian"
+    },
+    {
+      "text": "\u042f \u043b\u044e\u0431\u043b\u044e \u0443\u043a\u0440\u0430\u0457\u043d\u0441\u044c\u043a\u0443 \u043b\u0456\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0443.",
+      "answer": "Ukrainian",
+      "explanation": "The Ukrainian adjective '\u0443\u043a\u0440\u0430\u0457\u043d\u0441\u044c\u043a\u0443' with its distinctive ending marks this as Ukrainian.",
+      "lang": "Ukrainian"
+    },
+    {
+      "text": "\u042f \u043b\u044e\u0431\u043b\u044e \u0431\u0435\u043b\u0430\u0440\u0443\u0441\u043a\u0443\u044e \u043b\u0456\u0442\u0430\u0440\u0430\u0442\u0443\u0440\u0443.",
+      "answer": "Belarusian",
+      "explanation": "The Belarusian '\u0431\u0435\u043b\u0430\u0440\u0443\u0441\u043a\u0443\u044e' and the spelling '\u043b\u0456\u0442\u0430\u0440\u0430\u0442\u0443\u0440\u0443' (with '\u0456') are distinctly Belarusian.",
+      "lang": "Belarusian"
+    },
+    {
+      "text": "\u042d\u0442\u043e \u043e\u0447\u0435\u043d\u044c \u043a\u0440\u0430\u0441\u0438\u0432\u044b\u0439 \u0433\u043e\u0440\u043e\u0434.",
+      "answer": "Russian",
+      "explanation": "Russian uses '\u044d\u0442\u043e' and the adjective ending '\u044b\u0439' is typical morphology.",
+      "lang": "Russian"
+    },
+    {
+      "text": "\u0426\u0435 \u0434\u0443\u0436\u0435 \u0433\u0430\u0440\u043d\u0435 \u043c\u0456\u0441\u0442\u043e.",
+      "answer": "Ukrainian",
+      "explanation": "Ukrainian '\u0446\u0435', '\u0434\u0443\u0436\u0435' (very) and '\u043c\u0456\u0441\u0442\u043e' (city) are distinctive.",
+      "lang": "Ukrainian"
+    },
+    {
+      "text": "\u0413\u044d\u0442\u0430 \u0432\u0435\u043b\u044c\u043c\u0456 \u043f\u0440\u044b\u0433\u043e\u0436\u044b \u0433\u043e\u0440\u0430\u0434.",
+      "answer": "Belarusian",
+      "explanation": "Belarusian '\u0433\u044d\u0442\u0430', '\u0432\u0435\u043b\u044c\u043c\u0456' and '\u043f\u0440\u044b\u0433\u043e\u0436\u044b' (beautiful) are distinctly Belarusian.",
+      "lang": "Belarusian"
+    },
+    {
+      "text": "\u041c\u043d\u0435 \u043d\u0443\u0436\u043d\u0430 \u043f\u043e\u043c\u043e\u0449\u044c.",
+      "answer": "Russian",
+      "explanation": "Russian uses '\u043c\u043d\u0435 \u043d\u0443\u0436\u043d\u0430', a distinctive construction.",
+      "lang": "Russian"
+    },
+    {
+      "text": "\u041c\u0435\u043d\u0456 \u043f\u043e\u0442\u0440\u0456\u0431\u043d\u0430 \u0434\u043e\u043f\u043e\u043c\u043e\u0433\u0430.",
+      "answer": "Ukrainian",
+      "explanation": "Ukrainian '\u043c\u0435\u043d\u0456' and '\u043f\u043e\u0442\u0440\u0456\u0431\u043d\u0430', along with '\u0434\u043e\u043f\u043e\u043c\u043e\u0433\u0430', are distinctly Ukrainian.",
+      "lang": "Ukrainian"
+    },
+    {
+      "text": "\u041c\u043d\u0435 \u0442\u0440\u044d\u0431\u0430 \u0434\u0430\u043f\u0430\u043c\u043e\u0433\u0430.",
+      "answer": "Belarusian",
+      "explanation": "Belarusian '\u043c\u043d\u0435' and '\u0442\u0440\u044d\u0431\u0430' (need) are distinctly Belarusian.",
+      "lang": "Belarusian"
+    },
+    {
+      "text": "\u0421\u0435\u0439\u0447\u0430\u0441 \u044f \u0440\u0430\u0431\u043e\u0442\u0430\u044e \u0432 \u043e\u0444\u0438\u0441\u0435.",
+      "answer": "Russian",
+      "explanation": "The Russian word '\u0441\u0435\u0439\u0447\u0430\u0441' (now) is characteristic.",
+      "lang": "Russian"
+    },
+    {
+      "text": "\u0417\u0430\u0440\u0430\u0437 \u044f \u043f\u0440\u0430\u0446\u044e\u044e \u0432 \u043e\u0444\u0456\u0441\u0456.",
+      "answer": "Ukrainian",
+      "explanation": "Ukrainian '\u0437\u0430\u0440\u0430\u0437' and the use of '\u0456' in '\u043e\u0444\u0456\u0441\u0456' are Ukrainian.",
+      "lang": "Ukrainian"
+    },
+    {
+      "text": "\u0417\u0430\u0440\u0430\u0437 \u044f \u043f\u0440\u0430\u0446\u0443\u044e \u045e \u043e\u0444\u0456\u0441\u0435.",
+      "answer": "Belarusian",
+      "explanation": "Belarusian '\u043f\u0440\u0430\u0446\u0443\u044e' and the \u045e (u-breve) before '\u043e\u0444\u0456\u0441\u0435' are distinctive.",
+      "lang": "Belarusian"
+    },
+    {
+      "text": "\u0412\u0447\u0435\u0440\u0430 \u0431\u044b\u043b\u0430 \u0445\u043e\u0440\u043e\u0448\u0430\u044f \u043f\u043e\u0433\u043e\u0434\u0430.",
+      "answer": "Russian",
+      "explanation": "'\u0412\u0447\u0435\u0440\u0430' (yesterday) and '\u0445\u043e\u0440\u043e\u0448\u0430\u044f' are typical Russian.",
+      "lang": "Russian"
+    },
+    {
+      "text": "\u0412\u0447\u043e\u0440\u0430 \u0431\u0443\u043b\u0430 \u0433\u0430\u0440\u043d\u0430 \u043f\u043e\u0433\u043e\u0434\u0430.",
+      "answer": "Ukrainian",
+      "explanation": "Ukrainian '\u0432\u0447\u043e\u0440\u0430' and '\u0433\u0430\u0440\u043d\u0430' (good/beautiful) are distinctive.",
+      "lang": "Ukrainian"
+    },
+    {
+      "text": "\u0423\u0447\u043e\u0440\u0430 \u0431\u044b\u043b\u0430 \u0434\u043e\u0431\u0440\u0430\u0435 \u043d\u0430\u0434\u0432\u043e\u0440'\u0435.",
+      "answer": "Belarusian",
+      "explanation": "The word '\u043d\u0430\u0434\u0432\u043e\u0440'\u0435' (weather) and '\u0443\u0447\u043e\u0440\u0430' are Belarusian.",
+      "lang": "Belarusian"
+    },
+    {
+      "text": "\u0414\u043e\u0431\u0440\u043e\u0435 \u0443\u0442\u0440\u043e, \u0434\u0440\u0443\u0437\u044c\u044f!",
+      "answer": "Russian",
+      "explanation": "The Russian greeting '\u0414\u043e\u0431\u0440\u043e\u0435 \u0443\u0442\u0440\u043e' is standard.",
+      "lang": "Russian"
+    },
+    {
+      "text": "\u0414\u043e\u0431\u0440\u043e\u0433\u043e \u0440\u0430\u043d\u043a\u0443, \u0434\u0440\u0443\u0437\u0456!",
+      "answer": "Ukrainian",
+      "explanation": "Ukrainian uses '\u0414\u043e\u0431\u0440\u043e\u0433\u043e \u0440\u0430\u043d\u043a\u0443' and the vocative-like '\u0434\u0440\u0443\u0437\u0456'.",
+      "lang": "Ukrainian"
+    },
+    {
+      "text": "\u0414\u043e\u0431\u0440\u0430\u0439 \u0440\u0430\u043d\u0456\u0446\u044b, \u0441\u044f\u0431\u0440\u044b!",
+      "answer": "Belarusian",
+      "explanation": "'\u0414\u043e\u0431\u0440\u0430\u0439 \u0440\u0430\u043d\u0456\u0446\u044b' and '\u0441\u044f\u0431\u0440\u044b' (friends) are uniquely Belarusian.",
+      "lang": "Belarusian"
+    },
+    {
+      "text": "\u041a\u0430\u043a \u0432\u0430\u0441 \u0437\u043e\u0432\u0443\u0442?",
+      "answer": "Russian",
+      "explanation": "Standard Russian phrasing for 'What is your name?'.",
+      "lang": "Russian"
+    },
+    {
+      "text": "\u042f\u043a \u0432\u0430\u0441 \u0437\u0432\u0430\u0442\u0438?",
+      "answer": "Ukrainian",
+      "explanation": "Ukrainian uses '\u0437\u0432\u0430\u0442\u0438' (to call) in this context.",
+      "lang": "Ukrainian"
+    },
+    {
+      "text": "\u042f\u043a \u0432\u0430\u0441 \u0437\u0430\u0432\u0443\u0446\u044c?",
+      "answer": "Belarusian",
+      "explanation": "Belarusian uses '\u0437\u0430\u0432\u0443\u0446\u044c' with the characteristic '\u0446\u044c' ending.",
+      "lang": "Belarusian"
+    },
+    {
+      "text": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u043f\u043e\u0434\u043e\u0436\u0434\u0438\u0442\u0435 \u043c\u0438\u043d\u0443\u0442\u0443.",
+      "answer": "Russian",
+      "explanation": "Russian '\u043f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430' (please) is very distinctive.",
+      "lang": "Russian"
+    },
+    {
+      "text": "\u0411\u0443\u0434\u044c \u043b\u0430\u0441\u043a\u0430, \u0437\u0430\u0447\u0435\u043a\u0430\u0439\u0442\u0435 \u0445\u0432\u0438\u043b\u0438\u043d\u0443.",
+      "answer": "Ukrainian",
+      "explanation": "Ukrainian '\u0431\u0443\u0434\u044c \u043b\u0430\u0441\u043a\u0430' and '\u0445\u0432\u0438\u043b\u0438\u043d\u0443' (minute) are distinctive.",
+      "lang": "Ukrainian"
+    },
+    {
+      "text": "\u041a\u0430\u043b\u0456 \u043b\u0430\u0441\u043a\u0430, \u043f\u0430\u0447\u0430\u043a\u0430\u0439\u0446\u0435 \u0445\u0432\u0456\u043b\u0456\u043d\u0443.",
+      "answer": "Belarusian",
+      "explanation": "Belarusian '\u043a\u0430\u043b\u0456 \u043b\u0430\u0441\u043a\u0430' and '\u0445\u0432\u0456\u043b\u0456\u043d\u0443' (with '\u0456') mark this language.",
+      "lang": "Belarusian"
+    },
+    {
+      "text": "\u042f \u043d\u0435 \u043f\u043e\u043d\u0438\u043c\u0430\u044e \u044d\u0442\u043e\u0442 \u0432\u043e\u043f\u0440\u043e\u0441.",
+      "answer": "Russian",
+      "explanation": "Russian '\u043f\u043e\u043d\u0438\u043c\u0430\u044e' and '\u044d\u0442\u043e\u0442' (this) are standard.",
+      "lang": "Russian"
+    },
+    {
+      "text": "\u042f \u043d\u0435 \u0440\u043e\u0437\u0443\u043c\u0456\u044e \u0446\u0435 \u043f\u0438\u0442\u0430\u043d\u043d\u044f.",
+      "answer": "Ukrainian",
+      "explanation": "Ukrainian '\u0440\u043e\u0437\u0443\u043c\u0456\u044e' and '\u043f\u0438\u0442\u0430\u043d\u043d\u044f' (question) are key identifiers.",
+      "lang": "Ukrainian"
+    },
+    {
+      "text": "\u042f \u043d\u0435 \u0440\u0430\u0437\u0443\u043c\u0435\u044e \u0433\u044d\u0442\u0430\u0435 \u043f\u044b\u0442\u0430\u043d\u043d\u0435.",
+      "answer": "Belarusian",
+      "explanation": "Belarusian '\u0440\u0430\u0437\u0443\u043c\u0435\u044e' and '\u043f\u044b\u0442\u0430\u043d\u043d\u0435' (with '\u044b') are distinctive.",
+      "lang": "Belarusian"
+    },
+    {
+      "text": "\u0413\u0434\u0435 \u0432\u044b \u0436\u0438\u0432\u0451\u0442\u0435?",
+      "answer": "Russian",
+      "explanation": "Russian uses '\u0433\u0434\u0435' and the verb '\u0436\u0438\u0432\u0451\u0442\u0435' with '\u0451'.",
+      "lang": "Russian"
+    },
+    {
+      "text": "\u0414\u0435 \u0432\u0438 \u0436\u0438\u0432\u0435\u0442\u0435?",
+      "answer": "Ukrainian",
+      "explanation": "Ukrainian '\u0434\u0435' and '\u0436\u0438\u0432\u0435\u0442\u0435' (with '\u0438') are characteristic.",
+      "lang": "Ukrainian"
+    },
+    {
+      "text": "\u0414\u0437\u0435 \u0432\u044b \u0436\u044b\u0432\u044f\u0446\u0435?",
+      "answer": "Belarusian",
+      "explanation": "Belarusian '\u0434\u0437\u0435' and '\u0436\u044b\u0432\u044f\u0446\u0435' (with '\u044f') are distinctive.",
+      "lang": "Belarusian"
+    },
+    {
+      "text": "\u0411\u043e\u043b\u044c\u0448\u043e\u0435 \u0441\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043f\u043e\u0434\u0430\u0440\u043e\u043a.",
+      "answer": "Russian",
+      "explanation": "Russian '\u0441\u043f\u0430\u0441\u0438\u0431\u043e' (thank you) is the most common form.",
+      "lang": "Russian"
+    },
+    {
+      "text": "\u0414\u0443\u0436\u0435 \u0434\u044f\u043a\u0443\u044e \u0437\u0430 \u043f\u043e\u0434\u0430\u0440\u0443\u043d\u043e\u043a.",
+      "answer": "Ukrainian",
+      "explanation": "Ukrainian '\u0434\u044f\u043a\u0443\u044e' and '\u043f\u043e\u0434\u0430\u0440\u0443\u043d\u043e\u043a' are distinctive.",
+      "lang": "Ukrainian"
+    },
+    {
+      "text": "\u0412\u044f\u043b\u0456\u043a\u0456 \u0434\u0437\u044f\u043a\u0443\u0439 \u0437\u0430 \u043f\u0430\u0434\u0430\u0440\u0443\u043d\u0430\u043a.",
+      "answer": "Belarusian",
+      "explanation": "Belarusian '\u0434\u0437\u044f\u043a\u0443\u0439' and '\u043f\u0430\u0434\u0430\u0440\u0443\u043d\u0430\u043a' (with '\u0430') are characteristic.",
+      "lang": "Belarusian"
+    },
+    {
+      "text": "\u041a\u043d\u0438\u0433\u0430 \u043b\u0435\u0436\u0438\u0442 \u043d\u0430 \u0441\u0442\u043e\u043b\u0435.",
+      "answer": "Russian",
+      "explanation": "Russian '\u043a\u043d\u0438\u0433\u0430' and '\u0441\u0442\u043e\u043b\u0435' (prepositional case) are standard.",
+      "lang": "Russian"
+    },
+    {
+      "text": "\u041a\u043d\u0438\u0433\u0430 \u043b\u0435\u0436\u0438\u0442\u044c \u043d\u0430 \u0441\u0442\u043e\u043b\u0456.",
+      "answer": "Ukrainian",
+      "explanation": "Ukrainian uses '\u0441\u0442\u043e\u043b\u0456' (with '\u0456') in the locative case.",
+      "lang": "Ukrainian"
+    },
+    {
+      "text": "\u041a\u043d\u0456\u0433\u0430 \u043b\u044f\u0436\u044b\u0446\u044c \u043d\u0430 \u0441\u0442\u0430\u043b\u0435.",
+      "answer": "Belarusian",
+      "explanation": "Belarusian '\u043a\u043d\u0456\u0433\u0430' (with '\u0456') and '\u043b\u044f\u0436\u044b\u0446\u044c' are distinctive.",
+      "lang": "Belarusian"
+    },
+    {
+      "text": "\u0412\u044b \u0433\u043e\u0432\u043e\u0440\u0438\u0442\u0435 \u043f\u043e-\u0430\u043d\u0433\u043b\u0438\u0439\u0441\u043a\u0438?",
+      "answer": "Russian",
+      "explanation": "Russian '\u0433\u043e\u0432\u043e\u0440\u0438\u0442\u0435' and the prefix '\u043f\u043e-' are typical.",
+      "lang": "Russian"
+    },
+    {
+      "text": "\u0412\u0438 \u0440\u043e\u0437\u043c\u043e\u0432\u043b\u044f\u0454\u0442\u0435 \u0430\u043d\u0433\u043b\u0456\u0439\u0441\u044c\u043a\u043e\u044e?",
+      "answer": "Ukrainian",
+      "explanation": "Ukrainian '\u0440\u043e\u0437\u043c\u043e\u0432\u043b\u044f\u0454\u0442\u0435' (to speak) is uniquely Ukrainian.",
+      "lang": "Ukrainian"
+    },
+    {
+      "text": "\u0412\u044b \u0440\u0430\u0437\u043c\u0430\u045e\u043b\u044f\u0435\u0446\u0435 \u043f\u0430-\u0430\u043d\u0433\u043b\u0456\u0439\u0441\u043a\u0443?",
+      "answer": "Belarusian",
+      "explanation": "Belarusian '\u0440\u0430\u0437\u043c\u0430\u045e\u043b\u044f\u0435\u0446\u0435' with '\u045e' is characteristic.",
+      "lang": "Belarusian"
+    },
+    {
+      "text": "\u0421\u0435\u0433\u043e\u0434\u043d\u044f \u0445\u043e\u043b\u043e\u0434\u043d\u044b\u0439 \u0434\u0435\u043d\u044c.",
+      "answer": "Russian",
+      "explanation": "Russian '\u0441\u0435\u0433\u043e\u0434\u043d\u044f' (today) and '\u0445\u043e\u043b\u043e\u0434\u043d\u044b\u0439' are standard.",
+      "lang": "Russian"
+    },
+    {
+      "text": "\u0421\u044c\u043e\u0433\u043e\u0434\u043d\u0456 \u0445\u043e\u043b\u043e\u0434\u043d\u0438\u0439 \u0434\u0435\u043d\u044c.",
+      "answer": "Ukrainian",
+      "explanation": "Ukrainian '\u0441\u044c\u043e\u0433\u043e\u0434\u043d\u0456' (with '\u0456') is the distinctive form.",
+      "lang": "Ukrainian"
+    },
+    {
+      "text": "\u0421\u0451\u043d\u043d\u044f \u0445\u0430\u043b\u043e\u0434\u043d\u044b \u0434\u0437\u0435\u043d\u044c.",
+      "answer": "Belarusian",
+      "explanation": "Belarusian '\u0441\u0451\u043d\u043d\u044f' and '\u0434\u0437\u0435\u043d\u044c' (with '\u0434\u0437') are characteristic.",
+      "lang": "Belarusian"
+    },
+    {
+      "text": "\u041f\u0440\u0438\u044f\u0442\u043d\u043e\u0433\u043e \u0430\u043f\u043f\u0435\u0442\u0438\u0442\u0430!",
+      "answer": "Russian",
+      "explanation": "Standard Russian wish before a meal.",
+      "lang": "Russian"
+    },
+    {
+      "text": "\u0421\u043c\u0430\u0447\u043d\u043e\u0433\u043e!",
+      "answer": "Ukrainian",
+      "explanation": "Ukrainian uses the short and unique word '\u0441\u043c\u0430\u0447\u043d\u043e\u0433\u043e'.",
+      "lang": "Ukrainian"
+    },
+    {
+      "text": "\u0421\u043c\u0430\u0447\u043d\u0430 \u0435\u0441\u0446\u0456!",
+      "answer": "Belarusian",
+      "explanation": "Belarusian '\u0441\u043c\u0430\u0447\u043d\u0430 \u0435\u0441\u0446\u0456' is the traditional greeting.",
+      "lang": "Belarusian"
+    },
+    {
+      "text": "\u042f \u0445\u043e\u0447\u0443 \u043f\u0438\u0442\u044c \u0432\u043e\u0434\u0443.",
+      "answer": "Russian",
+      "explanation": "Russian '\u0445\u043e\u0447\u0443' (want) and '\u043f\u0438\u0442\u044c' (drink) are standard.",
+      "lang": "Russian"
+    },
+    {
+      "text": "\u042f \u0445\u043e\u0447\u0443 \u043f\u0438\u0442\u0438 \u0432\u043e\u0434\u0443.",
+      "answer": "Ukrainian",
+      "explanation": "Ukrainian '\u043f\u0438\u0442\u0438' (with '\u0438') is the infinitive form.",
+      "lang": "Ukrainian"
+    },
+    {
+      "text": "\u042f \u0445\u0430\u0447\u0443 \u043f\u0456\u0446\u044c \u0432\u0430\u0434\u0443.",
+      "answer": "Belarusian",
+      "explanation": "Belarusian '\u0445\u0430\u0447\u0443' (with '\u0430') and '\u043f\u0456\u0446\u044c' (with '\u0456') are distinctive.",
+      "lang": "Belarusian"
+    },
+    {
+      "text": "\u0414\u043e \u0441\u0432\u0438\u0434\u0430\u043d\u0438\u044f, \u0434\u043e \u0441\u043a\u043e\u0440\u043e\u0439 \u0432\u0441\u0442\u0440\u0435\u0447\u0438.",
+      "answer": "Russian",
+      "explanation": "Russian '\u0434\u043e \u0441\u0432\u0438\u0434\u0430\u043d\u0438\u044f' is the formal goodbye.",
+      "lang": "Russian"
+    },
+    {
+      "text": "\u0414\u043e \u043f\u043e\u0431\u0430\u0447\u0435\u043d\u043d\u044f, \u0434\u043e \u0441\u043a\u043e\u0440\u043e\u0457 \u0437\u0443\u0441\u0442\u0440\u0456\u0447\u0456.",
+      "answer": "Ukrainian",
+      "explanation": "Ukrainian '\u043f\u043e\u0431\u0430\u0447\u0435\u043d\u043d\u044f' and '\u0437\u0443\u0441\u0442\u0440\u0456\u0447\u0456' are uniquely Ukrainian.",
+      "lang": "Ukrainian"
+    },
+    {
+      "text": "\u0414\u0430 \u043f\u0430\u0431\u0430\u0447\u044d\u043d\u043d\u044f, \u0434\u0430 \u0445\u0443\u0442\u043a\u0430\u0439 \u0441\u0443\u0441\u0442\u0440\u044d\u0447\u044b.",
+      "answer": "Belarusian",
+      "explanation": "Belarusian '\u043f\u0430\u0431\u0430\u0447\u044d\u043d\u043d\u044f' (with '\u0430') and '\u0441\u0443\u0441\u0442\u0440\u044d\u0447\u044b' are characteristic.",
+      "lang": "Belarusian"
+    },
+    {
+      "text": "\u041c\u043e\u0439 \u0431\u0440\u0430\u0442 \u0443\u0447\u0438\u0442\u0441\u044f \u0432 \u0443\u043d\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442\u0435.",
+      "answer": "Russian",
+      "explanation": "Russian '\u0443\u0447\u0438\u0442\u0441\u044f' and '\u0443\u043d\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442\u0435' (with '\u0435') are typical.",
+      "lang": "Russian"
+    },
+    {
+      "text": "\u041c\u0456\u0439 \u0431\u0440\u0430\u0442 \u043d\u0430\u0432\u0447\u0430\u0454\u0442\u044c\u0441\u044f \u0432 \u0443\u043d\u0456\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442\u0456.",
+      "answer": "Ukrainian",
+      "explanation": "Ukrainian '\u043c\u0456\u0439', '\u043d\u0430\u0432\u0447\u0430\u0454\u0442\u044c\u0441\u044f' and '\u0443\u043d\u0456\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442\u0456' (with '\u0456') are distinctive.",
+      "lang": "Ukrainian"
+    },
+    {
+      "text": "\u041c\u043e\u0439 \u0431\u0440\u0430\u0442 \u0432\u0443\u0447\u044b\u0446\u0446\u0430 \u0432\u0430 \u045e\u043d\u0456\u0432\u0435\u0440\u0441\u0456\u0442\u044d\u0446\u0435.",
+      "answer": "Belarusian",
+      "explanation": "Belarusian '\u0432\u0443\u0447\u044b\u0446\u0446\u0430' and the use of '\u045e' are unique.",
+      "lang": "Belarusian"
+    }
+  ]
+}

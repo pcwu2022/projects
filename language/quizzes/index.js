@@ -6,10 +6,10 @@ const QUIZ_LIST = [
     file: 'romance_languages.json'
   },
   {
-    id: 'slavic',
-    name: 'Slavic Languages',
+    id: 'cyrillic',
+    name: 'Cyrillic Slavic Languages',
     description: 'Distinguish between Russian, Ukrainian, and Belarusian.',
-    file: 'slavic.json'
+    file: 'cyrillic.json'
   },
   {
     id: 'scandinavian',
@@ -18,10 +18,16 @@ const QUIZ_LIST = [
     file: 'scandinavian.json'
   },
   {
-    id: 'fennoscandian',
-    name: 'Northern Neighbors',
-    description: 'Challenge yourself with Finnish, Swedish, and Norwegian.',
-    file: 'fennoscandian.json'
+    id: "slavic",
+    name: "West & South Slavic Challenge",
+    description: "Distinguish between Czech, Polish, Slovak, Slovene, Croatian, and Serbian.",
+    file: "slavic.json"
+  },
+  {
+    id: 'uralic',
+    name: 'Uralic Languages',
+    description: 'Challenge yourself with Finnish, Estonian, and Hungarian.',
+    file: 'uralic.json'
   },
   {
     id: 'northern_indic',

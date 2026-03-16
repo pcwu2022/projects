@@ -1,0 +1,192 @@
+{
+  "id": "uralic",
+  "name": "Uralic Languages",
+  "description": "Distinguish between Finnish, Estonian, and Hungarian",
+  "languages": [
+    "Finnish",
+    "Estonian",
+    "Hungarian"
+  ],
+  "questions": [
+    {
+      "text": "Hol van a legközelebbi buszmegálló?",
+      "answer": "Hungarian",
+      "explanation": "Hungarian uses 'hol' for where. The word 'buszmegálló' shows how Hungarian builds long compound words.",
+      "lang": "Hungarian"
+    },
+    {
+      "text": "Missä on lähin bussipysäkki?",
+      "answer": "Finnish",
+      "explanation": "Finnish uses long double vowels ('lähin') and specific suffixes. It is a Finno-Ugric language, distinct from Swedish.",
+      "lang": "Finnish"
+    },
+    {
+      "text": "Kus on lähim bussipeatus?",
+      "answer": "Estonian",
+      "explanation": "Estonian is closely related to Finnish but often 'drops' the final vowel seen in Finnish words (peatus vs pysäkki).",
+      "lang": "Estonian"
+    },
+    {
+      "text": "Nem beszélek magyarul.",
+      "answer": "Hungarian",
+      "explanation": "Hungarian uses 'nem' for negation. The 'ul/ül' suffix on 'magyarul' indicates the manner/language being spoken.",
+      "lang": "Hungarian"
+    },
+    {
+      "text": "Minä en puhu suomea.",
+      "answer": "Finnish",
+      "explanation": "Finnish negation uses a conjugated verb 'en' followed by the main verb.",
+      "lang": "Finnish"
+    },
+    {
+      "text": "Ma ei räägi eesti keelt.",
+      "answer": "Estonian",
+      "explanation": "Estonian uses 'ma' for 'I' and 'ei' as a universal negation particle, unlike the conjugated Finnish version.",
+      "lang": "Estonian"
+    },
+    {
+      "text": "Egy csésze kávét kérek, köszönöm.",
+      "answer": "Hungarian",
+      "explanation": "Hungarian uses the accusative suffix '-t' (kávét) to indicate the object of the request.",
+      "lang": "Hungarian"
+    },
+    {
+      "text": "Kuppi kahvia, kiitos.",
+      "answer": "Finnish",
+      "explanation": "Finnish often ends loanwords with an 'i' (Kuppi) and uses 'kiitos' for thanks.",
+      "lang": "Finnish"
+    },
+    {
+      "text": "Üks tass kohvi, palun.",
+      "answer": "Estonian",
+      "explanation": "Estonian uses 'ü' (like German) and 'palun' for please.",
+      "lang": "Estonian"
+    },
+    {
+      "text": "Üdvözöljük boltunkban.",
+      "answer": "Hungarian",
+      "explanation": "The suffix '-unkban' combines the possessive 'our' and the locative 'in' into one word.",
+      "lang": "Hungarian"
+    },
+    {
+      "text": "Tervetuloa kauppaamme.",
+      "answer": "Finnish",
+      "explanation": "The 'Terve-' prefix is common in Finnish greetings.",
+      "lang": "Finnish"
+    },
+    {
+      "text": "Tere tulemast meie poodi.",
+      "answer": "Estonian",
+      "explanation": "Estonian 'Tere' is shorter than the Finnish 'Tervetuloa'.",
+      "lang": "Estonian"
+    },
+    {
+      "text": "A ház piros és fehér.",
+      "answer": "Hungarian",
+      "explanation": "Hungarian uses 'a' or 'az' as definite articles. Note the vowel harmony in 'fehér'.",
+      "lang": "Hungarian"
+    },
+    {
+      "text": "Talo on punainen ja valkoinen.",
+      "answer": "Finnish",
+      "explanation": "Finnish colors often end in '-inen'.",
+      "lang": "Finnish"
+    },
+    {
+      "text": "Maja on punane ja valge.",
+      "answer": "Estonian",
+      "explanation": "Estonian words are often shorter versions of their Finnish cousins (punane vs punainen).",
+      "lang": "Estonian"
+    },
+    {
+      "text": "Hogy hívnak?",
+      "answer": "Hungarian",
+      "explanation": "Hungarian often omits the personal pronoun because the verb ending already indicates the subject.",
+      "lang": "Hungarian"
+    },
+    {
+      "text": "Mikä sinun nimesi on?",
+      "answer": "Finnish",
+      "explanation": "Uses the possessive suffix '-si' on the word name (nimi).",
+      "lang": "Finnish"
+    },
+    {
+      "text": "Mis su nimi on?",
+      "answer": "Estonian",
+      "explanation": "Uses 'mis' for what and 'su' as a short form of your.",
+      "lang": "Estonian"
+    },
+    {
+      "text": "Ma havazik odakint.",
+      "answer": "Hungarian",
+      "explanation": "The word 'ma' means today, and 'havazik' comes from 'hó' (snow) using a verbal suffix.",
+      "lang": "Hungarian"
+    },
+    {
+      "text": "Ulkona sataa lunta tänään.",
+      "answer": "Finnish",
+      "explanation": "Finnish uses 'lunta' (partitive of lumi) to describe the snow falling.",
+      "lang": "Finnish"
+    },
+    {
+      "text": "Täna sajab väljas lund.",
+      "answer": "Estonian",
+      "explanation": "Note the word 'täna' (today), which lacks the double vowels of Finnish 'tänään'.",
+      "lang": "Estonian"
+    },
+    {
+      "text": "Húst vagy halat eszel?",
+      "answer": "Hungarian",
+      "explanation": "Hungarian uses 'vagy' for 'or'. The '-t' suffix again marks the direct objects 'húst' and 'halat'.",
+      "lang": "Hungarian"
+    },
+    {
+      "text": "Syötkö lihaa vai kalaa?",
+      "answer": "Finnish",
+      "explanation": "The suffix '-kö' turns the verb 'syöt' into a question.",
+      "lang": "Finnish"
+    },
+    {
+      "text": "Kas sa sööd liha või kala?",
+      "answer": "Estonian",
+      "explanation": "Estonian uses the particle 'Kas' at the start of a sentence to form a question.",
+      "lang": "Estonian"
+    },
+    {
+      "text": "Hétfő, kedd, szerda.",
+      "answer": "Hungarian",
+      "explanation": "Hungarian days of the week have unique origins, often borrowed from Slavic languages but fully integrated.",
+      "lang": "Hungarian"
+    },
+    {
+      "text": "Maanantai, tiistai, keskiviikko.",
+      "answer": "Finnish",
+      "explanation": "Finnish days are borrowed from Germanic but given a distinct vowel-heavy spelling.",
+      "lang": "Finnish"
+    },
+    {
+      "text": "Esmaspäev, teisipäev, kolmapäev.",
+      "answer": "Estonian",
+      "explanation": "Estonian days end in '-päev' (day).",
+      "lang": "Estonian"
+    },
+    {
+      "text": "Nyisd ki az ablakot, kérlek.",
+      "answer": "Hungarian",
+      "explanation": "Hungarian uses verbal prefixes like 'ki' (out/open) to change the meaning of the verb 'nyit'.",
+      "lang": "Hungarian"
+    },
+    {
+      "text": "Avaa ikkuna, kiitos.",
+      "answer": "Finnish",
+      "explanation": "Uses 'ikkuna' for window, a loan from Russian but adapted to Finnish phonology.",
+      "lang": "Finnish"
+    },
+    {
+      "text": "Ava aken, palun.",
+      "answer": "Estonian",
+      "explanation": "The Estonian word 'aken' is related to Finnish 'ikkuna' but significantly shortened.",
+      "lang": "Estonian"
+    }
+  ]
+}

@@ -1,372 +1,728 @@
 {
   "id": "slavic",
-  "name": "Slavic Languages",
-  "description": "Distinguish between Russian, Ukrainian, and Belarusian",
-  "languages": [
-    "Russian",
-    "Ukrainian",
-    "Belarusian"
-  ],
+  "name": "West & South Slavic Challenge",
+  "description": "Distinguish between Czech, Polish, Slovak, Slovene, Croatian, and Serbian (Latinica).",
+  "languages": ["Czech", "Polish", "Slovak", "Slovene", "Croatian", "Serbian"],
   "questions": [
     {
-      "text": "\u0413\u0434\u0435 \u043d\u0430\u0445\u043e\u0434\u0438\u0442\u0441\u044f \u0431\u0438\u0431\u043b\u0438\u043e\u0442\u0435\u043a\u0430?",
-      "answer": "Russian",
-      "explanation": "Russian uses the Cyrillic script exclusively and has distinctive grammar patterns.",
-      "lang": "Russian"
+      "text": "Mluvím trochu česky, ale stále se učím.",
+      "answer": "Czech",
+      "explanation": "The 'ů' and 'v' at the start of 'všichni' or 'vlak' are common; 'česky' without an 'i' at the end is typical for the adverb.",
+      "lang": "Czech"
     },
     {
-      "text": "\u0414\u0435 \u0440\u043e\u0437\u0442\u0430\u0448\u043e\u0432\u0430\u043d\u0430 \u0431\u0456\u0431\u043b\u0456\u043e\u0442\u0435\u043a\u0430?",
-      "answer": "Ukrainian",
-      "explanation": "Ukrainian often uses \u0457 and \u0454 which are rare or absent in Russian. The spelling pattern is distinctive.",
-      "lang": "Ukrainian"
+      "text": "Děkuji vám za vaši pomoc a laskavost.",
+      "answer": "Czech",
+      "explanation": "The 'ě' character is a primary marker for Czech text.",
+      "lang": "Czech"
     },
     {
-      "text": "\u0414\u0437\u0435 \u0437\u043d\u0430\u0445\u043e\u0434\u0437\u0456\u0446\u0446\u0430 \u0431\u0456\u0431\u043b\u0456\u044f\u0442\u044d\u043a\u0430?",
-      "answer": "Belarusian",
-      "explanation": "Belarusian uses \u045e (u-breve) and has characteristic spelling and grammar that differ from Russian and Ukrainian.",
-      "lang": "Belarusian"
+      "text": "Přeji vám hezký den a hodně štěstí.",
+      "answer": "Czech",
+      "explanation": "The 'ř' (přeji) and 'šť' cluster are unmistakable Czech features.",
+      "lang": "Czech"
     },
     {
-      "text": "\u041a\u0430\u043a \u0434\u0435\u043b\u0430?",
-      "answer": "Russian",
-      "explanation": "This common Russian greeting uses the Russian word order and grammar patterns.",
-      "lang": "Russian"
+      "text": "Chtěl bych si objednat šálek kávy.",
+      "answer": "Czech",
+      "explanation": "The combination of 'chtěl' (l-participle) and 'šálek' is specific to Czech vocabulary.",
+      "lang": "Czech"
     },
     {
-      "text": "\u042f\u043a \u0443 \u0442\u0435\u0431\u0435?",
-      "answer": "Ukrainian",
-      "explanation": "The Ukrainian '\u044f\u043a' (how) and '\u0443' (in) structure are distinctly Ukrainian.",
-      "lang": "Ukrainian"
+      "text": "Kde najdu nejbližší stanici metra?",
+      "answer": "Czech",
+      "explanation": "The superlative prefix 'nej-' followed by the root is common across West Slavic, but 'nejbližší' with 'žš' is very Czech.",
+      "lang": "Czech"
     },
     {
-      "text": "\u042f\u043a \u0441\u043f\u0440\u0430\u0432\u044b?",
-      "answer": "Belarusian",
-      "explanation": "The Belarusian word '\u0441\u043f\u0440\u0430\u0432\u044b' and the characteristic spelling pattern mark this as Belarusian.",
-      "lang": "Belarusian"
+      "text": "Tento dům je velmi starý a krásný.",
+      "answer": "Czech",
+      "explanation": "Czech uses 'velmi' for 'very' and 'krásný' with the long 'á'.",
+      "lang": "Czech"
     },
     {
-      "text": "\u042f \u043b\u044e\u0431\u043b\u044e \u0440\u0443\u0441\u0441\u043a\u0443\u044e \u043b\u0438\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0443.",
-      "answer": "Russian",
-      "explanation": "The Russian adjective ending '\u0443\u044e' and the distinctive word forms are characteristic.",
-      "lang": "Russian"
+      "text": "Mohl byste mi prosím ukázat cestu?",
+      "answer": "Czech",
+      "explanation": "The conditional 'byste' and the word 'cestu' (accusative of cesta) appear here.",
+      "lang": "Czech"
     },
     {
-      "text": "\u042f \u043b\u044e\u0431\u043b\u044e \u0443\u043a\u0440\u0430\u0457\u043d\u0441\u044c\u043a\u0443 \u043b\u0456\u0442\u0435\u0440\u0430\u0442\u0443\u0440\u0443.",
-      "answer": "Ukrainian",
-      "explanation": "The Ukrainian adjective '\u0443\u043a\u0440\u0430\u0457\u043d\u0441\u044c\u043a\u0443' with its distinctive ending marks this as Ukrainian.",
-      "lang": "Ukrainian"
+      "text": "Dnes je venku opravdu horké počasí.",
+      "answer": "Czech",
+      "explanation": "The word 'počasí' (weather) ends in 'í', whereas Slovak uses 'počasie'.",
+      "lang": "Czech"
     },
     {
-      "text": "\u042f \u043b\u044e\u0431\u043b\u044e \u0431\u0435\u043b\u0430\u0440\u0443\u0441\u043a\u0443\u044e \u043b\u0456\u0442\u0430\u0440\u0430\u0442\u0443\u0440\u0443.",
-      "answer": "Belarusian",
-      "explanation": "The Belarusian '\u0431\u0435\u043b\u0430\u0440\u0443\u0441\u043a\u0443\u044e' and the spelling '\u043b\u0456\u0442\u0430\u0440\u0430\u0442\u0443\u0440\u0443' (with '\u0456') are distinctly Belarusian.",
-      "lang": "Belarusian"
+      "text": "Musíme jít do obchodu koupit chleba.",
+      "answer": "Czech",
+      "explanation": "The verb 'jít' (to go) and 'koupit' (to buy) are standard Czech infinitives.",
+      "lang": "Czech"
     },
     {
-      "text": "\u042d\u0442\u043e \u043e\u0447\u0435\u043d\u044c \u043a\u0440\u0430\u0441\u0438\u0432\u044b\u0439 \u0433\u043e\u0440\u043e\u0434.",
-      "answer": "Russian",
-      "explanation": "Russian uses '\u044d\u0442\u043e' and the adjective ending '\u044b\u0439' is typical morphology.",
-      "lang": "Russian"
+      "text": "V kolik hodin začíná ten koncert?",
+      "answer": "Czech",
+      "explanation": "The phrase 'V kolik hodin' is the standard way to ask 'at what time'.",
+      "lang": "Czech"
     },
     {
-      "text": "\u0426\u0435 \u0434\u0443\u0436\u0435 \u0433\u0430\u0440\u043d\u0435 \u043c\u0456\u0441\u0442\u043e.",
-      "answer": "Ukrainian",
-      "explanation": "Ukrainian '\u0446\u0435', '\u0434\u0443\u0436\u0435' (very) and '\u043c\u0456\u0441\u0442\u043e' (city) are distinctive.",
-      "lang": "Ukrainian"
+      "text": "Mám rád čtení knih v češtině.",
+      "answer": "Czech",
+      "explanation": "Verbal nouns ending in '-ní' and the language name 'češtině' identify this.",
+      "lang": "Czech"
     },
     {
-      "text": "\u0413\u044d\u0442\u0430 \u0432\u0435\u043b\u044c\u043c\u0456 \u043f\u0440\u044b\u0433\u043e\u0436\u044b \u0433\u043e\u0440\u0430\u0434.",
-      "answer": "Belarusian",
-      "explanation": "Belarusian '\u0433\u044d\u0442\u0430', '\u0432\u0435\u043b\u044c\u043c\u0456' and '\u043f\u0440\u044b\u0433\u043e\u0436\u044b' (beautiful) are distinctly Belarusian.",
-      "lang": "Belarusian"
+      "text": "Věříte, že se situace brzy zlepší?",
+      "answer": "Czech",
+      "explanation": "Uses 'ě' and the future tense construction 'se zlepší'.",
+      "lang": "Czech"
     },
     {
-      "text": "\u041c\u043d\u0435 \u043d\u0443\u0436\u043d\u0430 \u043f\u043e\u043c\u043e\u0449\u044c.",
-      "answer": "Russian",
-      "explanation": "Russian uses '\u043c\u043d\u0435 \u043d\u0443\u0436\u043d\u0430', a distinctive construction.",
-      "lang": "Russian"
+      "text": "Můj bratr pracuje jako programátor v Praze.",
+      "answer": "Czech",
+      "explanation": "The locative case 'v Praze' (in Prague) shows the typical consonant shift.",
+      "lang": "Czech"
     },
     {
-      "text": "\u041c\u0435\u043d\u0456 \u043f\u043e\u0442\u0440\u0456\u0431\u043d\u0430 \u0434\u043e\u043f\u043e\u043c\u043e\u0433\u0430.",
-      "answer": "Ukrainian",
-      "explanation": "Ukrainian '\u043c\u0435\u043d\u0456' and '\u043f\u043e\u0442\u0440\u0456\u0431\u043d\u0430', along with '\u0434\u043e\u043f\u043e\u043c\u043e\u0433\u0430', are distinctly Ukrainian.",
-      "lang": "Ukrainian"
+      "text": "Užijte si víkend se svou rodinou.",
+      "answer": "Czech",
+      "explanation": "The imperative 'užijte' and 'rodinou' (instrumental case) are standard.",
+      "lang": "Czech"
     },
     {
-      "text": "\u041c\u043d\u0435 \u0442\u0440\u044d\u0431\u0430 \u0434\u0430\u043f\u0430\u043c\u043e\u0433\u0430.",
-      "answer": "Belarusian",
-      "explanation": "Belarusian '\u043c\u043d\u0435' and '\u0442\u0440\u044d\u0431\u0430' (need) are distinctly Belarusian.",
-      "lang": "Belarusian"
+      "text": "Pamatujete si na našeho starého učitele?",
+      "answer": "Czech",
+      "explanation": "The 'ou' ending in 'našeho' and 'učitele' are Czech grammatical markers.",
+      "lang": "Czech"
     },
     {
-      "text": "\u0421\u0435\u0439\u0447\u0430\u0441 \u044f \u0440\u0430\u0431\u043e\u0442\u0430\u044e \u0432 \u043e\u0444\u0438\u0441\u0435.",
-      "answer": "Russian",
-      "explanation": "The Russian word '\u0441\u0435\u0439\u0447\u0430\u0441' (now) is characteristic.",
-      "lang": "Russian"
+      "text": "To je skvělý nápad, pojďme to udělat.",
+      "answer": "Czech",
+      "explanation": "The word 'nápad' (idea) and 'udělat' (to do/make) are key.",
+      "lang": "Czech"
     },
     {
-      "text": "\u0417\u0430\u0440\u0430\u0437 \u044f \u043f\u0440\u0430\u0446\u044e\u044e \u0432 \u043e\u0444\u0456\u0441\u0456.",
-      "answer": "Ukrainian",
-      "explanation": "Ukrainian '\u0437\u0430\u0440\u0430\u0437' and the use of '\u0456' in '\u043e\u0444\u0456\u0441\u0456' are Ukrainian.",
-      "lang": "Ukrainian"
+      "text": "Zítra bude pršet, nezapomeňte si deštník.",
+      "answer": "Czech",
+      "explanation": "The future 'bude' and the specific word 'deštník' (umbrella).",
+      "lang": "Czech"
     },
     {
-      "text": "\u0417\u0430\u0440\u0430\u0437 \u044f \u043f\u0440\u0430\u0446\u0443\u044e \u045e \u043e\u0444\u0456\u0441\u0435.",
-      "answer": "Belarusian",
-      "explanation": "Belarusian '\u043f\u0440\u0430\u0446\u0443\u044e' and the \u045e (u-breve) before '\u043e\u0444\u0456\u0441\u0435' are distinctive.",
-      "lang": "Belarusian"
+      "text": "Cesta trvala déle, než jsme čekali.",
+      "answer": "Czech",
+      "explanation": "The comparative 'déle' and the 'jsme' auxiliary for past tense.",
+      "lang": "Czech"
     },
     {
-      "text": "\u0412\u0447\u0435\u0440\u0430 \u0431\u044b\u043b\u0430 \u0445\u043e\u0440\u043e\u0448\u0430\u044f \u043f\u043e\u0433\u043e\u0434\u0430.",
-      "answer": "Russian",
-      "explanation": "'\u0412\u0447\u0435\u0440\u0430' (yesterday) and '\u0445\u043e\u0440\u043e\u0448\u0430\u044f' are typical Russian.",
-      "lang": "Russian"
+      "text": "Můžete mi půjčit tu tužku?",
+      "answer": "Czech",
+      "explanation": "The verb 'půjčit' and the word 'tužka' (pencil) are typical.",
+      "lang": "Czech"
     },
     {
-      "text": "\u0412\u0447\u043e\u0440\u0430 \u0431\u0443\u043b\u0430 \u0433\u0430\u0440\u043d\u0430 \u043f\u043e\u0433\u043e\u0434\u0430.",
-      "answer": "Ukrainian",
-      "explanation": "Ukrainian '\u0432\u0447\u043e\u0440\u0430' and '\u0433\u0430\u0440\u043d\u0430' (good/beautiful) are distinctive.",
-      "lang": "Ukrainian"
+      "text": "Dívám se na televizi každý večer.",
+      "answer": "Czech",
+      "explanation": "The verb 'dívám se' (I watch) and 'každý' (every) are Czech.",
+      "lang": "Czech"
     },
     {
-      "text": "\u0423\u0447\u043e\u0440\u0430 \u0431\u044b\u043b\u0430 \u0434\u043e\u0431\u0440\u0430\u0435 \u043d\u0430\u0434\u0432\u043e\u0440'\u0435.",
-      "answer": "Belarusian",
-      "explanation": "The word '\u043d\u0430\u0434\u0432\u043e\u0440'\u0435' (weather) and '\u0443\u0447\u043e\u0440\u0430' are Belarusian.",
-      "lang": "Belarusian"
+      "text": "Bardzo dziękuję za Twoją pomoc.",
+      "answer": "Polish",
+      "explanation": "The nasal 'ę' in 'dziękuję' is a definitive Polish marker.",
+      "lang": "Polish"
     },
     {
-      "text": "\u0414\u043e\u0431\u0440\u043e\u0435 \u0443\u0442\u0440\u043e, \u0434\u0440\u0443\u0437\u044c\u044f!",
-      "answer": "Russian",
-      "explanation": "The Russian greeting '\u0414\u043e\u0431\u0440\u043e\u0435 \u0443\u0442\u0440\u043e' is standard.",
-      "lang": "Russian"
+      "text": "Czy mówisz po angielsku lub po polsku?",
+      "answer": "Polish",
+      "explanation": "The question marker 'Czy' is unique to Polish among these six.",
+      "lang": "Polish"
     },
     {
-      "text": "\u0414\u043e\u0431\u0440\u043e\u0433\u043e \u0440\u0430\u043d\u043a\u0443, \u0434\u0440\u0443\u0437\u0456!",
-      "answer": "Ukrainian",
-      "explanation": "Ukrainian uses '\u0414\u043e\u0431\u0440\u043e\u0433\u043e \u0440\u0430\u043d\u043a\u0443' and the vocative-like '\u0434\u0440\u0443\u0437\u0456'.",
-      "lang": "Ukrainian"
+      "text": "Chciałbym zamówić kolację dla dwóch osób.",
+      "answer": "Polish",
+      "explanation": "The 'ł' character (l with a stroke) and the 'sz'/'cz' sounds are very Polish.",
+      "lang": "Polish"
     },
     {
-      "text": "\u0414\u043e\u0431\u0440\u0430\u0439 \u0440\u0430\u043d\u0456\u0446\u044b, \u0441\u044f\u0431\u0440\u044b!",
-      "answer": "Belarusian",
-      "explanation": "'\u0414\u043e\u0431\u0440\u0430\u0439 \u0440\u0430\u043d\u0456\u0446\u044b' and '\u0441\u044f\u0431\u0440\u044b' (friends) are uniquely Belarusian.",
-      "lang": "Belarusian"
+      "text": "Gdzie znajduje się najbliższa apteka?",
+      "answer": "Polish",
+      "explanation": "The cluster 'najbliższa' with 'ż' and 'sz' is Polish orthography.",
+      "lang": "Polish"
     },
     {
-      "text": "\u041a\u0430\u043a \u0432\u0430\u0441 \u0437\u043e\u0432\u0443\u0442?",
-      "answer": "Russian",
-      "explanation": "Standard Russian phrasing for 'What is your name?'.",
-      "lang": "Russian"
+      "text": "Dzisiaj jest bardzo ładna pogoda.",
+      "answer": "Polish",
+      "explanation": "The word 'dzisiaj' (today) and 'bardzo' (very) are Polish.",
+      "lang": "Polish"
     },
     {
-      "text": "\u042f\u043a \u0432\u0430\u0441 \u0437\u0432\u0430\u0442\u0438?",
-      "answer": "Ukrainian",
-      "explanation": "Ukrainian uses '\u0437\u0432\u0430\u0442\u0438' (to call) in this context.",
-      "lang": "Ukrainian"
+      "text": "Przepraszam, nie zrozumiałem, co powiedziałeś.",
+      "answer": "Polish",
+      "explanation": "The 'prz' digraph and the nasal 'ą' in 'zrozumiałem' identify this.",
+      "lang": "Polish"
     },
     {
-      "text": "\u042f\u043a \u0432\u0430\u0441 \u0437\u0430\u0432\u0443\u0446\u044c?",
-      "answer": "Belarusian",
-      "explanation": "Belarusian uses '\u0437\u0430\u0432\u0443\u0446\u044c' with the characteristic '\u0446\u044c' ending.",
-      "lang": "Belarusian"
+      "text": "Moja siostra mieszka w Warszawie od lat.",
+      "answer": "Polish",
+      "explanation": "The spelling of 'Warszawie' (Warsaw) and the 'sz' digraph.",
+      "lang": "Polish"
     },
     {
-      "text": "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u043f\u043e\u0434\u043e\u0436\u0434\u0438\u0442\u0435 \u043c\u0438\u043d\u0443\u0442\u0443.",
-      "answer": "Russian",
-      "explanation": "Russian '\u043f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430' (please) is very distinctive.",
-      "lang": "Russian"
+      "text": "Lubię jeść pierogi z kapustą i grzybami.",
+      "answer": "Polish",
+      "explanation": "The nasal 'ą' in 'kapustą' and the 'rz' in 'grzybami' are Polish.",
+      "lang": "Polish"
     },
     {
-      "text": "\u0411\u0443\u0434\u044c \u043b\u0430\u0441\u043a\u0430, \u0437\u0430\u0447\u0435\u043a\u0430\u0439\u0442\u0435 \u0445\u0432\u0438\u043b\u0438\u043d\u0443.",
-      "answer": "Ukrainian",
-      "explanation": "Ukrainian '\u0431\u0443\u0434\u044c \u043b\u0430\u0441\u043a\u0430' and '\u0445\u0432\u0438\u043b\u0438\u043d\u0443' (minute) are distinctive.",
-      "lang": "Ukrainian"
+      "text": "Jutro rano muszę iść do pracy.",
+      "answer": "Polish",
+      "explanation": "The word 'jutro' (tomorrow) is shared, but the overall sentence structure is Polish.",
+      "lang": "Polish"
     },
     {
-      "text": "\u041a\u0430\u043b\u0456 \u043b\u0430\u0441\u043a\u0430, \u043f\u0430\u0447\u0430\u043a\u0430\u0439\u0446\u0435 \u0445\u0432\u0456\u043b\u0456\u043d\u0443.",
-      "answer": "Belarusian",
-      "explanation": "Belarusian '\u043a\u0430\u043b\u0456 \u043b\u0430\u0441\u043a\u0430' and '\u0445\u0432\u0456\u043b\u0456\u043d\u0443' (with '\u0456') mark this language.",
-      "lang": "Belarusian"
+      "text": "Proszę, usiądź i poczekaj chwilę.",
+      "answer": "Polish",
+      "explanation": "The 'sz' and 'ś' in 'proszę' and 'usiądź' are typical Polish sounds.",
+      "lang": "Polish"
     },
     {
-      "text": "\u042f \u043d\u0435 \u043f\u043e\u043d\u0438\u043c\u0430\u044e \u044d\u0442\u043e\u0442 \u0432\u043e\u043f\u0440\u043e\u0441.",
-      "answer": "Russian",
-      "explanation": "Russian '\u043f\u043e\u043d\u0438\u043c\u0430\u044e' and '\u044d\u0442\u043e\u0442' (this) are standard.",
-      "lang": "Russian"
+      "text": "Cieszę się, że cię widzę.",
+      "answer": "Polish",
+      "explanation": "The 'sz' and nasal 'ę' in 'cieszę' are Polish identifiers.",
+      "lang": "Polish"
     },
     {
-      "text": "\u042f \u043d\u0435 \u0440\u043e\u0437\u0443\u043c\u0456\u044e \u0446\u0435 \u043f\u0438\u0442\u0430\u043d\u043d\u044f.",
-      "answer": "Ukrainian",
-      "explanation": "Ukrainian '\u0440\u043e\u0437\u0443\u043c\u0456\u044e' and '\u043f\u0438\u0442\u0430\u043d\u043d\u044f' (question) are key identifiers.",
-      "lang": "Ukrainian"
+      "text": "To jest mój ulubiony samochód.",
+      "answer": "Polish",
+      "explanation": "The 'ó' (o with acute) is used in Polish (and Czech), but 'samochód' is the Polish word for car.",
+      "lang": "Polish"
     },
     {
-      "text": "\u042f \u043d\u0435 \u0440\u0430\u0437\u0443\u043c\u0435\u044e \u0433\u044d\u0442\u0430\u0435 \u043f\u044b\u0442\u0430\u043d\u043d\u0435.",
-      "answer": "Belarusian",
-      "explanation": "Belarusian '\u0440\u0430\u0437\u0443\u043c\u0435\u044e' and '\u043f\u044b\u0442\u0430\u043d\u043d\u0435' (with '\u044b') are distinctive.",
-      "lang": "Belarusian"
+      "text": "Nigdy nie widziałem tak pięknego miasta.",
+      "answer": "Polish",
+      "explanation": "The 'ł' and 'ę' in 'widziałem' and 'pięknego' are Polish.",
+      "lang": "Polish"
     },
     {
-      "text": "\u0413\u0434\u0435 \u0432\u044b \u0436\u0438\u0432\u0451\u0442\u0435?",
-      "answer": "Russian",
-      "explanation": "Russian uses '\u0433\u0434\u0435' and the verb '\u0436\u0438\u0432\u0451\u0442\u0435' with '\u0451'.",
-      "lang": "Russian"
+      "text": "Czy możesz mi pożyczyć trochę pieniędzy?",
+      "answer": "Polish",
+      "explanation": "The 'ż' and nasal 'ę' in 'pieniędzy' are distinctively Polish.",
+      "lang": "Polish"
     },
     {
-      "text": "\u0414\u0435 \u0432\u0438 \u0436\u0438\u0432\u0435\u0442\u0435?",
-      "answer": "Ukrainian",
-      "explanation": "Ukrainian '\u0434\u0435' and '\u0436\u0438\u0432\u0435\u0442\u0435' (with '\u0438') are characteristic.",
-      "lang": "Ukrainian"
+      "text": "Wszystko będzie dobrze, nie martw się.",
+      "answer": "Polish",
+      "explanation": "The 'sz' in 'wszystko' and the 'ę' in 'będzie' mark this as Polish.",
+      "lang": "Polish"
     },
     {
-      "text": "\u0414\u0437\u0435 \u0432\u044b \u0436\u044b\u0432\u044f\u0446\u0435?",
-      "answer": "Belarusian",
-      "explanation": "Belarusian '\u0434\u0437\u0435' and '\u0436\u044b\u0432\u044f\u0446\u0435' (with '\u044f') are distinctive.",
-      "lang": "Belarusian"
+      "text": "Mój ojciec jest inżynierem.",
+      "answer": "Polish",
+      "explanation": "The 'ż' and the nasal 'em' ending for instrumental case.",
+      "lang": "Polish"
     },
     {
-      "text": "\u0411\u043e\u043b\u044c\u0448\u043e\u0435 \u0441\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043f\u043e\u0434\u0430\u0440\u043e\u043a.",
-      "answer": "Russian",
-      "explanation": "Russian '\u0441\u043f\u0430\u0441\u0438\u0431\u043e' (thank you) is the most common form.",
-      "lang": "Russian"
+      "text": "Polska to kraj o bogatej historii.",
+      "answer": "Polish",
+      "explanation": "The word 'kraj' is common, but the 'ej' ending in 'bogatej' is Polish.",
+      "lang": "Polish"
     },
     {
-      "text": "\u0414\u0443\u0436\u0435 \u0434\u044f\u043a\u0443\u044e \u0437\u0430 \u043f\u043e\u0434\u0430\u0440\u0443\u043d\u043e\u043a.",
-      "answer": "Ukrainian",
-      "explanation": "Ukrainian '\u0434\u044f\u043a\u0443\u044e' and '\u043f\u043e\u0434\u0430\u0440\u0443\u043d\u043e\u043a' are distinctive.",
-      "lang": "Ukrainian"
+      "text": "Idziemy do kina w przyszły piątek.",
+      "answer": "Polish",
+      "explanation": "The 'sz' and 'y' in 'przyszły' and the nasal 'ą' in 'piątek'.",
+      "lang": "Polish"
     },
     {
-      "text": "\u0412\u044f\u043b\u0456\u043a\u0456 \u0434\u0437\u044f\u043a\u0443\u0439 \u0437\u0430 \u043f\u0430\u0434\u0430\u0440\u0443\u043d\u0430\u043a.",
-      "answer": "Belarusian",
-      "explanation": "Belarusian '\u0434\u0437\u044f\u043a\u0443\u0439' and '\u043f\u0430\u0434\u0430\u0440\u0443\u043d\u0430\u043a' (with '\u0430') are characteristic.",
-      "lang": "Belarusian"
+      "text": "Zawsze piję herbatę rano.",
+      "answer": "Polish",
+      "explanation": "The word 'herbata' (tea) is unique to Polish (compared to čaj in others) and the nasal 'ę' in 'piję'.",
+      "lang": "Polish"
     },
     {
-      "text": "\u041a\u043d\u0438\u0433\u0430 \u043b\u0435\u0436\u0438\u0442 \u043d\u0430 \u0441\u0442\u043e\u043b\u0435.",
-      "answer": "Russian",
-      "explanation": "Russian '\u043a\u043d\u0438\u0433\u0430' and '\u0441\u0442\u043e\u043b\u0435' (prepositional case) are standard.",
-      "lang": "Russian"
+      "text": "Nie mam pojęcia, jak to zrobić.",
+      "answer": "Polish",
+      "explanation": "The 'ę' in 'pojęcia' and the word 'zrobić' are Polish.",
+      "lang": "Polish"
     },
     {
-      "text": "\u041a\u043d\u0438\u0433\u0430 \u043b\u0435\u0436\u0438\u0442\u044c \u043d\u0430 \u0441\u0442\u043e\u043b\u0456.",
-      "answer": "Ukrainian",
-      "explanation": "Ukrainian uses '\u0441\u0442\u043e\u043b\u0456' (with '\u0456') in the locative case.",
-      "lang": "Ukrainian"
+      "text": "Hovorím trochu po slovensky.",
+      "answer": "Slovak",
+      "explanation": "Slovak uses 'vsky' or 'cky' for adverbs, and 'hovorím' is 'to speak'.",
+      "lang": "Slovak"
     },
     {
-      "text": "\u041a\u043d\u0456\u0433\u0430 \u043b\u044f\u0436\u044b\u0446\u044c \u043d\u0430 \u0441\u0442\u0430\u043b\u0435.",
-      "answer": "Belarusian",
-      "explanation": "Belarusian '\u043a\u043d\u0456\u0433\u0430' (with '\u0456') and '\u043b\u044f\u0436\u044b\u0446\u044c' are distinctive.",
-      "lang": "Belarusian"
+      "text": "Veľmi pekne vám ďakujem za pomoc.",
+      "answer": "Slovak",
+      "explanation": "The 'ľ' (l with caron) and 'ď' are common in Slovak orthography.",
+      "lang": "Slovak"
     },
     {
-      "text": "\u0412\u044b \u0433\u043e\u0432\u043e\u0440\u0438\u0442\u0435 \u043f\u043e-\u0430\u043d\u0433\u043b\u0438\u0439\u0441\u043a\u0438?",
-      "answer": "Russian",
-      "explanation": "Russian '\u0433\u043e\u0432\u043e\u0440\u0438\u0442\u0435' and the prefix '\u043f\u043e-' are typical.",
-      "lang": "Russian"
+      "text": "Prajeme vám veľa úspechov v práci.",
+      "answer": "Slovak",
+      "explanation": "The 'ľ' in 'veľa' and 'ú' in 'úspechov' are Slovak indicators.",
+      "lang": "Slovak"
     },
     {
-      "text": "\u0412\u0438 \u0440\u043e\u0437\u043c\u043e\u0432\u043b\u044f\u0454\u0442\u0435 \u0430\u043d\u0433\u043b\u0456\u0439\u0441\u044c\u043a\u043e\u044e?",
-      "answer": "Ukrainian",
-      "explanation": "Ukrainian '\u0440\u043e\u0437\u043c\u043e\u0432\u043b\u044f\u0454\u0442\u0435' (to speak) is uniquely Ukrainian.",
-      "lang": "Ukrainian"
+      "text": "Kde sa nachádza najbližšia zastávka?",
+      "answer": "Slovak",
+      "explanation": "The 'ia' in 'nachádza' and the word 'zastávka' distinguish it from Czech 'stanice'.",
+      "lang": "Slovak"
     },
     {
-      "text": "\u0412\u044b \u0440\u0430\u0437\u043c\u0430\u045e\u043b\u044f\u0435\u0446\u0435 \u043f\u0430-\u0430\u043d\u0433\u043b\u0456\u0439\u0441\u043a\u0443?",
-      "answer": "Belarusian",
-      "explanation": "Belarusian '\u0440\u0430\u0437\u043c\u0430\u045e\u043b\u044f\u0435\u0446\u0435' with '\u045e' is characteristic.",
-      "lang": "Belarusian"
+      "text": "Môžem vás poprosiť o pohár vody?",
+      "answer": "Slovak",
+      "explanation": "The 'ô' (o with circumflex) is unique to Slovak among these languages.",
+      "lang": "Slovak"
     },
     {
-      "text": "\u0421\u0435\u0433\u043e\u0434\u043d\u044f \u0445\u043e\u043b\u043e\u0434\u043d\u044b\u0439 \u0434\u0435\u043d\u044c.",
-      "answer": "Russian",
-      "explanation": "Russian '\u0441\u0435\u0433\u043e\u0434\u043d\u044f' (today) and '\u0445\u043e\u043b\u043e\u0434\u043d\u044b\u0439' are standard.",
-      "lang": "Russian"
+      "text": "Dnes je vonku skutočne horúco.",
+      "answer": "Slovak",
+      "explanation": "The 'ú' in 'horúco' and the word 'vonku' (outside) are Slovak.",
+      "lang": "Slovak"
     },
     {
-      "text": "\u0421\u044c\u043e\u0433\u043e\u0434\u043d\u0456 \u0445\u043e\u043b\u043e\u0434\u043d\u0438\u0439 \u0434\u0435\u043d\u044c.",
-      "answer": "Ukrainian",
-      "explanation": "Ukrainian '\u0441\u044c\u043e\u0433\u043e\u0434\u043d\u0456' (with '\u0456') is the distinctive form.",
-      "lang": "Ukrainian"
+      "text": "Môj brat pracuje ako lekár v Bratislave.",
+      "answer": "Slovak",
+      "explanation": "The 'ô' in 'Môj' is the key identifier here.",
+      "lang": "Slovak"
     },
     {
-      "text": "\u0421\u0451\u043d\u043d\u044f \u0445\u0430\u043b\u043e\u0434\u043d\u044b \u0434\u0437\u0435\u043d\u044c.",
-      "answer": "Belarusian",
-      "explanation": "Belarusian '\u0441\u0451\u043d\u043d\u044f' and '\u0434\u0437\u0435\u043d\u044c' (with '\u0434\u0437') are characteristic.",
-      "lang": "Belarusian"
+      "text": "Ideme na výlet do Vysokých Tatier.",
+      "answer": "Slovak",
+      "explanation": "The plural 'Tatier' and the specific vowel 'ý' in 'Vysokých'.",
+      "lang": "Slovak"
     },
     {
-      "text": "\u041f\u0440\u0438\u044f\u0442\u043d\u043e\u0433\u043e \u0430\u043f\u043f\u0435\u0442\u0438\u0442\u0430!",
-      "answer": "Russian",
-      "explanation": "Standard Russian wish before a meal.",
-      "lang": "Russian"
+      "text": "Prosím, posaďte sa a chvíľu počkajte.",
+      "answer": "Slovak",
+      "explanation": "The 'ľ' in 'chvíľu' is a classic Slovak marker.",
+      "lang": "Slovak"
     },
     {
-      "text": "\u0421\u043c\u0430\u0447\u043d\u043e\u0433\u043e!",
-      "answer": "Ukrainian",
-      "explanation": "Ukrainian uses the short and unique word '\u0441\u043c\u0430\u0447\u043d\u043e\u0433\u043e'.",
-      "lang": "Ukrainian"
+      "text": "Slovensko je krásna krajina s horami.",
+      "answer": "Slovak",
+      "explanation": "The word 'Slovensko' and 'krajina' (country) identify the language.",
+      "lang": "Slovak"
     },
     {
-      "text": "\u0421\u043c\u0430\u0447\u043d\u0430 \u0435\u0441\u0446\u0456!",
-      "answer": "Belarusian",
-      "explanation": "Belarusian '\u0441\u043c\u0430\u0447\u043d\u0430 \u0435\u0441\u0446\u0456' is the traditional greeting.",
-      "lang": "Belarusian"
+      "text": "Všetko bude v poriadku, neboj sa.",
+      "answer": "Slovak",
+      "explanation": "The cluster 'ia' in 'poriadku' is more common in Slovak than Czech 'o'.",
+      "lang": "Slovak"
     },
     {
-      "text": "\u042f \u0445\u043e\u0447\u0443 \u043f\u0438\u0442\u044c \u0432\u043e\u0434\u0443.",
-      "answer": "Russian",
-      "explanation": "Russian '\u0445\u043e\u0447\u0443' (want) and '\u043f\u0438\u0442\u044c' (drink) are standard.",
-      "lang": "Russian"
+      "text": "Rád čítam knihy v slovenčine.",
+      "answer": "Slovak",
+      "explanation": "The language name 'slovenčine' and the lack of 'ř' helps differentiate from Czech.",
+      "lang": "Slovak"
     },
     {
-      "text": "\u042f \u0445\u043e\u0447\u0443 \u043f\u0438\u0442\u0438 \u0432\u043e\u0434\u0443.",
-      "answer": "Ukrainian",
-      "explanation": "Ukrainian '\u043f\u0438\u0442\u0438' (with '\u0438') is the infinitive form.",
-      "lang": "Ukrainian"
+      "text": "Dúfam, že sa čoskoro uvidíme.",
+      "answer": "Slovak",
+      "explanation": "The 'ú' in 'Dúfam' and the word 'čoskoro' (soon) are Slovak.",
+      "lang": "Slovak"
     },
     {
-      "text": "\u042f \u0445\u0430\u0447\u0443 \u043f\u0456\u0446\u044c \u0432\u0430\u0434\u0443.",
-      "answer": "Belarusian",
-      "explanation": "Belarusian '\u0445\u0430\u0447\u0443' (with '\u0430') and '\u043f\u0456\u0446\u044c' (with '\u0456') are distinctive.",
-      "lang": "Belarusian"
+      "text": "Máte nejaké otázky k téme?",
+      "answer": "Slovak",
+      "explanation": "The 'ia' in 'otázky' and the word 'nejaké' are standard Slovak.",
+      "lang": "Slovak"
     },
     {
-      "text": "\u0414\u043e \u0441\u0432\u0438\u0434\u0430\u043d\u0438\u044f, \u0434\u043e \u0441\u043a\u043e\u0440\u043e\u0439 \u0432\u0441\u0442\u0440\u0435\u0447\u0438.",
-      "answer": "Russian",
-      "explanation": "Russian '\u0434\u043e \u0441\u0432\u0438\u0434\u0430\u043d\u0438\u044f' is the formal goodbye.",
-      "lang": "Russian"
+      "text": "Bývam v malom byte na okraji mesta.",
+      "answer": "Slovak",
+      "explanation": "The verb 'bývam' (I live/reside) is common to West Slavic, but 'byte' (apartment) fits Slovak.",
+      "lang": "Slovak"
     },
     {
-      "text": "\u0414\u043e \u043f\u043e\u0431\u0430\u0447\u0435\u043d\u043d\u044f, \u0434\u043e \u0441\u043a\u043e\u0440\u043e\u0457 \u0437\u0443\u0441\u0442\u0440\u0456\u0447\u0456.",
-      "answer": "Ukrainian",
-      "explanation": "Ukrainian '\u043f\u043e\u0431\u0430\u0447\u0435\u043d\u043d\u044f' and '\u0437\u0443\u0441\u0442\u0440\u0456\u0447\u0456' are uniquely Ukrainian.",
-      "lang": "Ukrainian"
+      "text": "Tento týždeň mám veľa práce.",
+      "answer": "Slovak",
+      "explanation": "The 'ý' and 'ž' in 'týždeň' (week) and 'ľ' in 'veľa'.",
+      "lang": "Slovak"
     },
     {
-      "text": "\u0414\u0430 \u043f\u0430\u0431\u0430\u0447\u044d\u043d\u043d\u044f, \u0434\u0430 \u0445\u0443\u0442\u043a\u0430\u0439 \u0441\u0443\u0441\u0442\u0440\u044d\u0447\u044b.",
-      "answer": "Belarusian",
-      "explanation": "Belarusian '\u043f\u0430\u0431\u0430\u0447\u044d\u043d\u043d\u044f' (with '\u0430') and '\u0441\u0443\u0441\u0442\u0440\u044d\u0447\u044b' are characteristic.",
-      "lang": "Belarusian"
+      "text": "Chcem si kúpiť nový mobilný telefón.",
+      "explanation": "The 'ú' in 'kúpiť' distinguishes it from Czech 'koupit'.",
+      "answer": "Slovak",
+      "lang": "Slovak"
     },
     {
-      "text": "\u041c\u043e\u0439 \u0431\u0440\u0430\u0442 \u0443\u0447\u0438\u0442\u0441\u044f \u0432 \u0443\u043d\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442\u0435.",
-      "answer": "Russian",
-      "explanation": "Russian '\u0443\u0447\u0438\u0442\u0441\u044f' and '\u0443\u043d\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442\u0435' (with '\u0435') are typical.",
-      "lang": "Russian"
+      "text": "Cesta bola veľmi dlhá a únavná.",
+      "answer": "Slovak",
+      "explanation": "The 'ľ' in 'veľmi' and the 'ú' in 'únavná'.",
+      "lang": "Slovak"
     },
     {
-      "text": "\u041c\u0456\u0439 \u0431\u0440\u0430\u0442 \u043d\u0430\u0432\u0447\u0430\u0454\u0442\u044c\u0441\u044f \u0432 \u0443\u043d\u0456\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442\u0456.",
-      "answer": "Ukrainian",
-      "explanation": "Ukrainian '\u043c\u0456\u0439', '\u043d\u0430\u0432\u0447\u0430\u0454\u0442\u044c\u0441\u044f' and '\u0443\u043d\u0456\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442\u0456' (with '\u0456') are distinctive.",
-      "lang": "Ukrainian"
+      "text": "Počasie sa má zajtra zlepšiť.",
+      "answer": "Slovak",
+      "explanation": "The word 'počasie' (weather) with '-ie' is Slovak.",
+      "lang": "Slovak"
     },
     {
-      "text": "\u041c\u043e\u0439 \u0431\u0440\u0430\u0442 \u0432\u0443\u0447\u044b\u0446\u0446\u0430 \u0432\u0430 \u045e\u043d\u0456\u0432\u0435\u0440\u0441\u0456\u0442\u044d\u0446\u0435.",
-      "answer": "Belarusian",
-      "explanation": "Belarusian '\u0432\u0443\u0447\u044b\u0446\u0446\u0430' and the use of '\u045e' are unique.",
-      "lang": "Belarusian"
+      "text": "Ďakujem za tvoju trpezlivosť.",
+      "answer": "Slovak",
+      "explanation": "The 'Ď' and the 'v' instead of 'u' in 'trpezlivosť'.",
+      "lang": "Slovak"
+    },
+    {
+      "text": "Ali govorite slovensko?",
+      "answer": "Slovene",
+      "explanation": "The question marker 'Ali' and the 'o' ending for the language name.",
+      "lang": "Slovene"
+    },
+    {
+      "text": "Najlepša hvala za vašo pomoč.",
+      "answer": "Slovene",
+      "explanation": "The 'š' and the ending 'o' in 'vašo' are typical Slovene.",
+      "lang": "Slovene"
+    },
+    {
+      "text": "Kje se nahaja najbližja avtobusna postaja?",
+      "answer": "Slovene",
+      "explanation": "The word 'Kje' (where) and 'postaja' (station) are Slovene.",
+      "lang": "Slovene"
+    },
+    {
+      "text": "Danes je zelo lep in sončen dan.",
+      "answer": "Slovene",
+      "explanation": "The word 'zelo' (very) and 'danes' (today) are Slovene.",
+      "lang": "Slovene"
+    },
+    {
+      "text": "Želim si naročiti skodelico kave.",
+      "answer": "Slovene",
+      "explanation": "The word 'naročiti' (to order) and 'skodelico' (cup) are Slovene.",
+      "lang": "Slovene"
+    },
+    {
+      "text": "Moja sestra živi v Ljubljani.",
+      "answer": "Slovene",
+      "explanation": "The locative 'v Ljubljani' uses the standard Slovene ending.",
+      "lang": "Slovene"
+    },
+    {
+      "text": "Rad berem knjige v slovenščini.",
+      "answer": "Slovene",
+      "explanation": "The 'šč' in 'slovenščini' is a common Slovene cluster.",
+      "lang": "Slovene"
+    },
+    {
+      "text": "Vsi ljudje so enakovredni.",
+      "answer": "Slovene",
+      "explanation": "The word 'Vsi' (all) is a classic Slovene identifier.",
+      "lang": "Slovene"
+    },
+    {
+      "text": "Ali mi lahko pokažete pot na zemljevidu?",
+      "answer": "Slovene",
+      "explanation": "The word 'zemljevidu' (map) and the question word 'Ali'.",
+      "lang": "Slovene"
+    },
+    {
+      "text": "Jutri bo deževalo, ne pozabi dežnika.",
+      "answer": "Slovene",
+      "explanation": "The verb 'deževalo' (it will rain) comes from 'dež' (rain).",
+      "lang": "Slovene"
+    },
+    {
+      "text": "Vesel sem, da sva se spoznala.",
+      "answer": "Slovene",
+      "explanation": "The use of the dual form 'sva' (we two) is unique to Slovene among these.",
+      "lang": "Slovene"
+    },
+    {
+      "text": "To je moja najljubša barva.",
+      "answer": "Slovene",
+      "explanation": "The word 'barva' (color) is used in Slovene and Croatian, but 'najljubša' is the Slovene form.",
+      "lang": "Slovene"
+    },
+    {
+      "text": "Moramo iti v trgovino po kruh.",
+      "answer": "Slovene",
+      "explanation": "The 'iti' infinitive and the word 'trgovino' (shop).",
+      "lang": "Slovene"
+    },
+    {
+      "text": "Kateri dan je danes?",
+      "answer": "Slovene",
+      "explanation": "The question word 'Kateri' (which) is Slovene.",
+      "lang": "Slovene"
+    },
+    {
+      "text": "Slovenija ima čudovito naravo.",
+      "answer": "Slovene",
+      "explanation": "The adjective 'čudovito' (wonderful) is very common in Slovene.",
+      "lang": "Slovene"
+    },
+    {
+      "text": "Ali veš, kje je ključ?",
+      "answer": "Slovene",
+      "explanation": "The question starter 'Ali' and the word 'ključ' (key).",
+      "lang": "Slovene"
+    },
+    {
+      "text": "Zvečer rad gledam televizijo.",
+      "answer": "Slovene",
+      "explanation": "The adverb 'Zvečer' (in the evening) and 'gledam' (I watch).",
+      "lang": "Slovene"
+    },
+    {
+      "text": "Pridi sem in mi pomagaj.",
+      "answer": "Slovene",
+      "explanation": "The imperative 'Pridi' (come) and 'pomagaj' (help).",
+      "lang": "Slovene"
+    },
+    {
+      "text": "Njegov avto je zelo hiter.",
+      "answer": "Slovene",
+      "explanation": "The word 'hiter' (fast) and 'zelo' (very).",
+      "lang": "Slovene"
+    },
+    {
+      "text": "Lepo se imejte na počitnicah.",
+      "answer": "Slovene",
+      "explanation": "The phrase 'Lepo se imejte' (have a nice time) is typical.",
+      "lang": "Slovene"
+    },
+    {
+      "text": "Govorite li hrvatski? Ja još učim.",
+      "answer": "Croatian",
+      "explanation": "The question particle 'li' and the word 'hrvatski' (Croatian).",
+      "lang": "Croatian"
+    },
+    {
+      "text": "Puno vam hvala na vašoj pomoći.",
+      "answer": "Croatian",
+      "explanation": "Croatian uses 'puno' (a lot) and 'hvala' commonly.",
+      "lang": "Croatian"
+    },
+    {
+      "text": "Gdje se nalazi najbliža ljekarna?",
+      "answer": "Croatian",
+      "explanation": "The word 'ljekarna' (pharmacy) is a specifically Croatian word, distinct from Serbian 'apoteka'.",
+      "lang": "Croatian"
+    },
+    {
+      "text": "Danas je vrijeme veoma lijepo i sunčano.",
+      "answer": "Croatian",
+      "explanation": "The Ijekavian 'vrijeme' and 'lijepo' are standard in Croatian.",
+      "lang": "Croatian"
+    },
+    {
+      "text": "Želio bih naručiti šalicu kave.",
+      "answer": "Croatian",
+      "explanation": "The Ijekavian 'želio' and the word 'šalicu' (cup).",
+      "lang": "Croatian"
+    },
+    {
+      "text": "Moja sestra živi u Zagrebu već godinama.",
+      "answer": "Croatian",
+      "explanation": "The locative 'u Zagrebu' and the word 'već' (already).",
+      "lang": "Croatian"
+    },
+    {
+      "text": "Volim čitati knjige na hrvatskom jeziku.",
+      "answer": "Croatian",
+      "explanation": "The preposition 'na' followed by the locative 'jeziku' is the standard way to say 'in a language'.",
+      "lang": "Croatian"
+    },
+    {
+      "text": "Svi ljudi su slobodni i jednaki.",
+      "answer": "Croatian",
+      "explanation": "While similar to others, the combination is typical of the South Slavic group.",
+      "lang": "Croatian"
+    },
+    {
+      "text": "Možete li mi pokazati put na karti?",
+      "answer": "Croatian",
+      "explanation": "The word 'karta' (map) is used in Croatian, whereas Serbian might use 'mapa'.",
+      "lang": "Croatian"
+    },
+    {
+      "text": "Sutra će padati kiša, ne zaboravite kišobran.",
+      "answer": "Croatian",
+      "explanation": "The future tense with 'će' and the word 'kišobran' (umbrella).",
+      "lang": "Croatian"
+    },
+    {
+      "text": "Drago mi je što smo se upoznali.",
+      "answer": "Croatian",
+      "explanation": "The conjunction 'što' is frequently used in Croatian instead of Serbian 'da'.",
+      "lang": "Croatian"
+    },
+    {
+      "text": "To je moja omiljena boja.",
+      "answer": "Croatian",
+      "explanation": "The word 'omiljena' (favorite) and 'boja' (color).",
+      "lang": "Croatian"
+    },
+    {
+      "text": "Moramo ići u trgovinu po kruh.",
+      "answer": "Croatian",
+      "explanation": "Croatian uses 'kruh' for bread (Serbian often uses 'hleb').",
+      "lang": "Croatian"
+    },
+    {
+      "text": "Koji je danas datum?",
+      "answer": "Croatian",
+      "explanation": "The question word 'Koji' (which) and 'datum'.",
+      "lang": "Croatian"
+    },
+    {
+      "text": "Hrvatska ima prekrasnu obalu i more.",
+      "answer": "Croatian",
+      "explanation": "The word 'prekrasnu' (beautiful) and 'obalu' (coast).",
+      "lang": "Croatian"
+    },
+    {
+      "text": "Znate li gdje se nalazi kolodvor?",
+      "answer": "Croatian",
+      "explanation": "The word 'kolodvor' (station) is uniquely Croatian compared to Serbian 'stanica'.",
+      "lang": "Croatian"
+    },
+    {
+      "text": "Navečer volim gledati televiziju.",
+      "answer": "Croatian",
+      "explanation": "The adverb 'Navečer' (in the evening) is typical.",
+      "lang": "Croatian"
+    },
+    {
+      "text": "Dođi ovamo i pomozi mi.",
+      "answer": "Croatian",
+      "explanation": "The imperative 'Dođi' and 'pomozi'.",
+      "lang": "Croatian"
+    },
+    {
+      "text": "Njegov auto je vrlo brz.",
+      "answer": "Croatian",
+      "explanation": "The word 'vrlo' (very) and 'brz' (fast).",
+      "lang": "Croatian"
+    },
+    {
+      "text": "Lijepo se provedite na odmoru.",
+      "answer": "Croatian",
+      "explanation": "The Ijekavian 'Lijepo' and 'odmoru' (vacation).",
+      "lang": "Croatian"
+    },
+    {
+      "text": "Govorite li srpski? Ja još uvek učim.",
+      "answer": "Serbian",
+      "explanation": "The phrase 'još uvek' (still) is more common in Serbian than Croatian 'još'.",
+      "lang": "Serbian"
+    },
+    {
+      "text": "Mnogo vam hvala na vašoj pomoći.",
+      "answer": "Serbian",
+      "explanation": "Serbian frequently uses 'mnogo' (much/a lot) where Croatian uses 'puno'.",
+      "lang": "Serbian"
+    },
+    {
+      "text": "Gde se nalazi najbliža apoteka?",
+      "answer": "Serbian",
+      "explanation": "The Ekavian 'Gde' and the word 'apoteka' (pharmacy) are standard Serbian.",
+      "lang": "Serbian"
+    },
+    {
+      "text": "Danas je vreme veoma lepo i sunčano.",
+      "answer": "Serbian",
+      "explanation": "The Ekavian 'vreme' and 'lepo' identify this as Serbian (Latin script).",
+      "lang": "Serbian"
+    },
+    {
+      "text": "Želeo bih da naručim šolju kafe.",
+      "answer": "Serbian",
+      "explanation": "The Ekavian 'želeo' and the word 'šolju' (cup) are Serbian markers.",
+      "lang": "Serbian"
+    },
+    {
+      "text": "Moja sestra živi u Beogradu godinama.",
+      "answer": "Serbian",
+      "explanation": "The city 'Beograd' and the locative 'u Beogradu'.",
+      "lang": "Serbian"
+    },
+    {
+      "text": "Volim da čitam knjige na srpskom jeziku.",
+      "answer": "Serbian",
+      "explanation": "Serbian prefers the 'da + present tense' construction over the infinitive.",
+      "lang": "Serbian"
+    },
+    {
+      "text": "Sva ljudska bića se rađaju slobodna.",
+      "answer": "Serbian",
+      "explanation": "While identical to Croatian, the context of other clues usually distinguishes them.",
+      "lang": "Serbian"
+    },
+    {
+      "text": "Možete li da mi pokažete put na mapi?",
+      "answer": "Serbian",
+      "explanation": "The use of 'da mi pokažete' (that you show me) and 'mapa'.",
+      "lang": "Serbian"
+    },
+    {
+      "text": "Sutra će padati kiša, ne zaboravite kišobran.",
+      "answer": "Serbian",
+      "explanation": "Serbian uses 'kišobran' like Croatian, but usually in Ekavian context.",
+      "lang": "Serbian"
+    },
+    {
+      "text": "Drago mi je da smo se upoznali.",
+      "answer": "Serbian",
+      "explanation": "Serbian prefers 'da' as a conjunction where Croatian often uses 'što'.",
+      "lang": "Serbian"
+    },
+    {
+      "text": "To je moja omiljena boja.",
+      "answer": "Serbian",
+      "explanation": "Identical to Croatian, but standard in Serbian Latinica as well.",
+      "lang": "Serbian"
+    },
+    {
+      "text": "Moramo da idemo u prodavnicu po hleb.",
+      "answer": "Serbian",
+      "explanation": "The word 'prodavnicu' (shop) and 'hleb' (bread) are Serbian identifiers.",
+      "lang": "Serbian"
+    },
+    {
+      "text": "Koji je danas datum?",
+      "answer": "Serbian",
+      "explanation": "Standard South Slavic, but part of the Serbian set.",
+      "lang": "Serbian"
+    },
+    {
+      "text": "Srbija ima prelepu prirodu i planine.",
+      "answer": "Serbian",
+      "explanation": "The word 'Srbija' and 'prelepu' (beautiful - Ekavian).",
+      "lang": "Serbian"
+    },
+    {
+      "text": "Znate li gde se nalazi stanica?",
+      "answer": "Serbian",
+      "explanation": "The Ekavian 'gde' and the word 'stanica' (station) differentiate it from Croatian.",
+      "lang": "Serbian"
+    },
+    {
+      "text": "Uveče volim da gledam televiziju.",
+      "answer": "Serbian",
+      "explanation": "The adverb 'Uveče' and the 'da + present' construction.",
+      "lang": "Serbian"
+    },
+    {
+      "text": "Dođi ovamo i pomozi mi.",
+      "answer": "Serbian",
+      "explanation": "Standard South Slavic imperative.",
+      "lang": "Serbian"
+    },
+    {
+      "text": "Njegov auto je veoma brz.",
+      "answer": "Serbian",
+      "explanation": "Serbian uses 'veoma' or 'mnogo' more frequently than 'vrlo'.",
+      "lang": "Serbian"
+    },
+    {
+      "text": "Lepo se provedite na odmoru.",
+      "answer": "Serbian",
+      "explanation": "The Ekavian 'Lepo' is the key marker here.",
+      "lang": "Serbian"
     }
   ]
 }

@@ -1,17 +1,5 @@
-const LANGUAGE_ABBREV = {
-  'Spanish': 'sp',
-  'Portuguese': 'pt',
-  'Catalan': 'ca',
-  'French': 'fr',
-  'Italian': 'it',
-  'German': 'de',
-  'Russian': 'ru',
-  'Ukrainian': 'uk',
-  'Belarusian': 'be',
-  'Swedish': 'sv',
-  'Norwegian': 'no',
-  'Dutch': 'nl'
-};
+// Color palette - used in order for each language in a quiz
+const GENERAL_COLORS = ['sp', 'pt', 'ca', 'fr', 'it', 'de', 'ru', 'uk', 'be', 'sv', 'no', 'nl'];
 
 // Calculate binomial coefficient C(n, k)
 function binomialCoefficient(n, k) {
@@ -57,6 +45,12 @@ function initializeQuiz(quizData) {
   g.LANGS = quizData.languages;
   g.KEYS = g.LANGS.map((_, i) => String.fromCharCode(65 + i));
 
+  // Create language to color index mapping based on position in this quiz
+  g.langColorIndex = {};
+  g.LANGS.forEach((lang, idx) => {
+    g.langColorIndex[lang] = idx;
+  });
+
   g.langScores = {};
   g.langCounts = {};
   g.LANGS.forEach(lang => {
@@ -73,8 +67,8 @@ function initializeQuiz(quizData) {
   tagsContainer.innerHTML = '';
   g.LANGS.forEach((lang, idx) => {
     const tag = document.createElement('span');
-    const abbrev = LANGUAGE_ABBREV[lang] || lang.substring(0, 2).toLowerCase();
-    tag.className = 'tag tag-' + abbrev;
+    const colorClass = GENERAL_COLORS[idx % GENERAL_COLORS.length];
+    tag.className = 'tag tag-' + colorClass;
     tag.textContent = lang;
     tagsContainer.appendChild(tag);
   });
@@ -239,12 +233,12 @@ function displayResults(score, total, quizData, breakdown) {
 
   // Breakdown
   const bd = document.getElementById('breakdown');
-  bd.innerHTML = quizData.languages.map(l => {
-    const abbrev = LANGUAGE_ABBREV[l] || l.substring(0, 2).toLowerCase();
+  bd.innerHTML = quizData.languages.map((l, idx) => {
+    const colorClass = GENERAL_COLORS[idx % GENERAL_COLORS.length];
     const data = breakdown[l] || { correct: 0, total: 0 };
     return `
       <div class="breakdown-item">
-        <div class="breakdown-count ${abbrev}">${data.correct} / ${data.total}</div>
+        <div class="breakdown-count ${colorClass}">${data.correct} / ${data.total}</div>
         <div class="breakdown-label">${l}</div>
       </div>
     `;
