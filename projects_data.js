@@ -53,6 +53,13 @@ window.PROJECTS = [
         date: "March 2026"
     },
     {
+        title: "Once Upon a Time",
+        href: "once_upon_a_time/index.html",
+        image: "images/once_upon_a_time.png",
+        description: "A game where you have to complete the story based on the deck of cards. Played by multiple people.",
+        date: "March 2026"
+    },
+    {
         title: "@maps.az",
         href: "https://pcwu2022.github.io/maps.az/",
         image: "images/maps.png",
