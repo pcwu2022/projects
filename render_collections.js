@@ -31,7 +31,10 @@
         meta.className = 'flex items-center justify-between text-xs text-stone-400';
         var date = document.createElement('div');
         date.textContent = p.date || 'Unknown date';
+        // var tag = document.createElement('div');
+        // tag.textContent = p.tag || 'No-AI';
         meta.appendChild(date);
+        // meta.appendChild(tag);
 
         body.appendChild(title);
         body.appendChild(desc);
