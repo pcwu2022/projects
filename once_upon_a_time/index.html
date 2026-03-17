@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Once Upon a Time - Storyteller's Deck</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=IM+Fell+English:ital@0;1&family=Pirata+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="top-nav">
+                <a href="help.html" class="help-link" title="Learn how to play and use this app">📜 How to Play / FAQ</a>
+            </div>
+            <h1 id="game-title">Once Upon a Time</h1>
+            <div class="controls">
+                <select id="theme-selector" title="Choose a different setting for your story">
+                    <option value="data/fantasy.json">Fantasy Realm</option>
+                    <option value="data/space_wars.json">Space Odyssey</option>
+                    <option value="data/ancient_egypt.json">Sands of Egypt</option>
+                </select>
+                <button id="restart-btn" class="btn-secondary" title="Start a brand new story from scratch">New Story</button>
+            </div>
+        </header>
+
+        <main>
+            <section id="hand-display" class="card-area">
+                <div class="section-label">Your Hand</div>
+                <div id="word-cards" class="card-grid">
+                    <!-- Word cards will be injected here -->
+                </div>
+            </section>
+
+            <section id="ending-display" class="card-area">
+                <div class="section-label">Your Fate</div>
+                <div id="ending-card" class="card-grid">
+                    <!-- Ending card will be injected here -->
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div id="deck-status">Deck: <span id="deck-count">0</span> cards left</div>
+            <div class="action-bar">
+                <button id="draw-btn" class="btn-primary" title="Draw a new story element card">Draw Card</button>
+                <button id="end-game-btn" class="btn-primary" disabled title="Only available when your hand is empty">End the Story</button>
+            </div>
+            <div class="footer-info">Created by <a href="https://pcwu2022.github.io">Po-Chun Wu</a></div>
+        </footer>
+    </div>
+
+    <div id="notification-overlay" class="hidden">
+        <div class="notification-content">
+            <h2 id="notification-title">The End</h2>
+            <p id="notification-message"></p>
+            <button id="close-notification" class="btn-secondary">Continue</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

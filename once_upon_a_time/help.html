@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Play - Once Upon a Time</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=IM+Fell+English:ital@0;1&family=Pirata+One&display=swap" rel="stylesheet">
+    <style>
+        .help-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: rgba(244, 228, 188, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            border: 3px solid var(--accent-color);
+            color: var(--text-color);
+            box-shadow: var(--shadow);
+        }
+        h2 { font-family: var(--heading-font); color: var(--primary-color); margin-top: 30px; font-size: 2.5rem; }
+        h3 { font-family: var(--card-font); margin-top: 20px; color: #5d2e0d; border-bottom: 1px solid var(--accent-color); padding-bottom: 5px; }
+        p, li { font-size: 1.1rem; margin-bottom: 15px; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: var(--primary-color); font-weight: bold; text-decoration: none; }
+        .back-link:hover { color: var(--accent-color); }
+        .highlight { font-weight: bold; color: #8b4513; }
+    </style>
+</head>
+<body class="help-body">
+    <div class="help-container">
+        <a href="index.html" class="back-link">← Back to the Story</a>
+        <h1>Scroll of Knowledge</h1>
+        
+        <section>
+            <h2>How to Play</h2>
+            <p>Once Upon a Time is a game of collaborative storytelling. While this app manages your personal deck, the story happens in your imagination (and conversation with friends!).</p>
+            <ol>
+                <li><span class="highlight">The Storyteller:</span> One person starts as the Storyteller. They begin narrating a fairy tale using the elements on their cards.</li>
+                <li><span class="highlight">Playing Cards:</span> When you mention an element from a card in your hand (e.g., "The King was angry"), click that card to play it.</li>
+                <li><span class="highlight">Interruptions:</span> If another player mentions something on ONE OF YOUR cards, or if you have a special Interrupt card (represented here by any word you can find a way to connect), you can interrupt and become the new Storyteller!</li>
+                <li><span class="highlight">Winning:</span> Your goal is to play all your Storytelling cards and then use your "Happy Ever After" ending card to finish the tale.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Group Play (Multi-Device)</h2>
+            <p>Playing with friends is easy even without a central server!</p>
+            <div class="faq-item">
+                <h3>How do we play together?</h3>
+                <p>Each player should open this website on their own device (phone, tablet, or laptop). Each person's hand is private to their device.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Should we use the same theme?</h3>
+                <p>Yes! To keep the story consistent, all players should select the same theme (e.g., all players choose "Fantasy Realm").</p>
+            </div>
+            <div class="faq-item">
+                <h3>How do we sync the decks?</h3>
+                <p>Since this is a static site for a physical-style game, you don't need to sync. Just agree on who starts. If someone "interrupts", they just start narrating from where the last person left off, using their own cards.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>Can I draw more cards?</h3>
+                <p>Yes. If you get stuck or get interrupted, use the "Draw Card" button. In the official rules, being interrupted usually requires you to draw a card.</p>
+            </div>
+            <div class="faq-item">
+                <h3>When can I click "End the Story"?</h3>
+                <p>The button becomes active only when you have <span class="highlight">zero</span> storytelling cards left in your hand. This is your moment of glory!</p>
+            </div>
+            <div class="faq-item">
+                <h3>Does the game save my progress?</h3>
+                <p>Yes! Your hand and deck are saved to your browser's local storage. You can close the tab and return later to finish your epic saga.</p>
+            </div>
+        </section>
+
+        <footer style="margin-top: 40px; text-align: center; font-style: italic; opacity: 0.8;">
+            May your tales be legendary.
+        </footer>
+    </div>
+</body>
+</html>
