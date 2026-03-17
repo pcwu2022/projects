@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Once Upon a Time - The Story Continues</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=IM+Fell+English:ital@0;1&family=Pirata+One&display=swap" rel="stylesheet">
+</head>
+<body class="game-body">
+    <div class="app-container">
+        <header>
+            <div class="top-nav">
+                <a href="index.html" class="help-link" title="Return to theme selection">🏰 Gallery</a>
+                <a href="help.html" class="help-link" title="Learn how to play">📜 How to Play</a>
+            </div>
+            <h1 id="game-title">Once Upon a Time</h1>
+            
+            <div class="action-bar top-actions">
+                <button id="draw-btn" class="btn-primary" title="Draw a new story element card">Draw Card</button>
+                <div id="deck-status">Deck: <span id="deck-count">0</span></div>
+                <button id="end-game-btn" class="btn-primary" disabled title="Only available when your hand is empty">End the Story</button>
+            </div>
+        </header>
+
+        <main>
+            <section id="hand-display" class="card-area">
+                <div class="section-label">Your Hand</div>
+                <div id="word-cards" class="card-grid">
+                    <!-- Word cards will be injected here -->
+                </div>
+            </section>
+
+            <section id="ending-display" class="card-area">
+                <div class="section-label">Your Fate</div>
+                <div id="ending-card" class="card-grid">
+                    <!-- Ending card will be injected here -->
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-info">Created by <a href="https://pcwu2022.github.io">Po-Chun Wu</a></div>
+        </footer>
+    </div>
+
+    <!-- Immersive Ending Screen -->
+    <div id="ending-overlay" class="modal hidden">
+        <div class="modal-content ending-content">
+            <div id="ending-image" class="intro-image"></div>
+            <h2>The End of the Tale</h2>
+            <div class="ending-text-block">
+                <p id="ending-phrase"></p>
+            </div>
+            <div class="intro-actions">
+                <button id="back-to-home" class="btn-primary">Return to Gate</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

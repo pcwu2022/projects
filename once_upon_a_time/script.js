@@ -9,53 +9,38 @@ let gameState = {
 };
 
 // DOM Elements
-const themeSelector = document.getElementById('theme-selector');
-const restartBtn = document.getElementById('restart-btn');
 const drawBtn = document.getElementById('draw-btn');
 const endGameBtn = document.getElementById('end-game-btn');
 const wordCardsContainer = document.getElementById('word-cards');
 const endingCardContainer = document.getElementById('ending-card');
 const deckCountEl = document.getElementById('deck-count');
-const notificationOverlay = document.getElementById('notification-overlay');
-const closeNotificationBtn = document.getElementById('close-notification');
-const notificationMessage = document.getElementById('notification-message');
+const gameTitleEl = document.getElementById('game-title');
 
 // Initialize Game
 async function init() {
     loadFromLocalStorage();
     
-    themeSelector.addEventListener('change', () => {
-        if (confirm('Start a new story with this theme? Progress will be lost.')) {
-            startGame();
-        } else {
-            // Revert selector if cancelled
-            themeSelector.value = gameState.themeFile || themeSelector.options[0].value;
-        }
-    });
-
-    restartBtn.addEventListener('click', () => {
-        if (confirm('Restart the story?')) {
-            startGame();
-        }
-    });
-
     drawBtn.addEventListener('click', drawCard);
     endGameBtn.addEventListener('click', endGame);
-    closeNotificationBtn.addEventListener('click', () => {
-        notificationOverlay.classList.add('hidden');
-        if (gameState.isGameOver) startGame();
+    
+    document.getElementById('back-to-home').addEventListener('click', () => {
+        window.location.href = 'index.html?restart=true';
     });
 
-    if (!gameState.theme) {
-        startGame();
+    const selectedFile = localStorage.getItem('selected_theme_file');
+    
+    if (!gameState.theme && selectedFile) {
+        await startGame(selectedFile);
+    } else if (!gameState.theme) {
+        // No theme selected, go back to landing
+        window.location.href = 'index.html';
     } else {
         render();
     }
 }
 
 // Start/Restart Game
-async function startGame() {
-    const themeFile = themeSelector.value;
+async function startGame(themeFile) {
     try {
         const response = await fetch(themeFile);
         const data = await response.json();
@@ -63,6 +48,8 @@ async function startGame() {
         gameState = {
             theme: data.theme,
             themeFile: themeFile,
+            description: data.description,
+            image: data.image,
             wordDeck: shuffle([...data.words]),
             endingDeck: shuffle([...data.endings]),
             hand: [],
@@ -106,12 +93,31 @@ function playCard(index) {
 function endGame() {
     if (gameState.hand.length === 0) {
         gameState.isGameOver = true;
-        showNotification("The End", gameState.endingCard);
+        saveToLocalStorage();
+        
+        const overlay = document.getElementById('ending-overlay');
+        const img = document.getElementById('ending-image');
+        const phrase = document.getElementById('ending-phrase');
+        
+        img.style.backgroundImage = `url(${gameState.image})`;
+        phrase.textContent = gameState.endingCard;
+        overlay.classList.remove('hidden');
     }
 }
 
 // Rendering
 function render() {
+    // Update Title & Background
+    if (gameState.theme) {
+        gameTitleEl.textContent = gameState.theme;
+        if (gameState.image) {
+            document.body.style.backgroundImage = `url(${gameState.image})`;
+            document.body.style.backgroundSize = 'cover';
+            document.body.style.backgroundAttachment = 'fixed';
+            document.body.style.backgroundPosition = 'center';
+        }
+    }
+
     // Render Hand
     wordCardsContainer.innerHTML = '';
     gameState.hand.forEach((word, index) => {
@@ -175,7 +181,6 @@ function loadFromLocalStorage() {
     const saved = localStorage.getItem('onceUponATime_state');
     if (saved) {
         gameState = JSON.parse(saved);
-        themeSelector.value = gameState.themeFile;
     }
 }
 

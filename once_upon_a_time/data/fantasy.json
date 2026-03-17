@@ -1,5 +1,7 @@
 {
-  "theme": "Fantasy",
+  "theme": "Fantasy Realm",
+  "description": "In a world where islands float above a sea of clouds and magic hums in the very air, a single spark can ignite an eternal legend. Tell your tale of knights, dragons, and the secrets hidden within the glowing woods.",
+  "image": "assets/fantasy_intro.png",
   "words": [
     "King", "Queen", "Knight", "Dragon", "Sword", "Shield", "Castle", "Forest", "Mountain", "River", 
     "Village", "Wizard", "Witch", "Elf", "Dwarf", "Orc", "Goblin", "Troll", "Magic", "Spell", 

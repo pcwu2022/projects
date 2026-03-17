@@ -1,5 +1,7 @@
 {
-  "theme": "Ancient Egypt",
+  "theme": "Sands of Egypt",
+  "description": "Where the Nile flows like liquid lapis lazuli through golden dunes, the gods watch from their eternal thrones. Unearth the mysteries of the pyramids and let your story be etched in stone for eternity.",
+  "image": "assets/egypt_intro.png",
   "words": [
     "Pharaoh", "Queen", "Priest", "Scribe", "Soldier", "Farmer", "Merchant", "Slave", "God", "Goddess", 
     "Ra", "Osiris", "Isis", "Anubis", "Horus", "Thoth", "Bastet", "Sobek", "Seth", "Pyramid", 

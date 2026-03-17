@@ -1,5 +1,7 @@
 {
-  "theme": "Space Wars",
+  "theme": "Space Odyssey",
+  "description": "Among the cold diamonds of the deep void, steel behemoths clash and the Force whispers to those who listen. Navigate the nebulae and forge a destiny that spans a thousand suns.",
+  "image": "assets/space_intro.png",
   "words": [
     "Jedi", "Sith", "Empire", "Republic", "Starship", "Fighter", "Cruiser", "Planet", "Moon", "Station", 
     "Galaxy", "Nebula", "Laser", "Blaster", "Droid", "Robot", "Alien", "Human", "Cyborg", "Clone", 
