@@ -9,7 +9,8 @@ const themes = [
     { name: "Zombie Apocalypse", file: "data/zombie.json" },
     { name: "Dystopian Future", file: "data/dystopian.json" },
     { name: "Romantic Comedy", file: "data/romance.json" },
-    { name: "Horror Night", file: "data/horror.json" }
+    { name: "Horror Night", file: "data/horror.json" },
+    { name: "The Crimson Strait", file: "data/strait.json" },
 ];
 
 const themeGallery = document.getElementById('theme-gallery');
