@@ -5,7 +5,10 @@ let gameState = {
     endingDeck: [],
     hand: [],
     endingCard: null,
-    isGameOver: false
+    isGameOver: false,
+    music: '',
+    musicEnabled: true,
+    musicVolume: 0.5
 };
 
 // DOM Elements
@@ -16,14 +19,22 @@ const endingCardContainer = document.getElementById('ending-card');
 const deckCountEl = document.getElementById('deck-count');
 const gameTitleEl = document.getElementById('game-title');
 
+// Music Elements
+const audioElement = document.getElementById('background-music');
+const musicToggleBtn = document.getElementById('music-toggle-btn');
+const volumeSlider = document.getElementById('volume-slider');
+
 // Initialize Game
 async function init() {
     loadFromLocalStorage();
     
     drawBtn.addEventListener('click', drawCard);
     endGameBtn.addEventListener('click', endGame);
+    musicToggleBtn.addEventListener('click', toggleMusic);
+    volumeSlider.addEventListener('input', changeVolume);
     
     document.getElementById('back-to-home').addEventListener('click', () => {
+        stopMusic();
         window.location.href = 'index.html?restart=true';
     });
 
@@ -36,6 +47,9 @@ async function init() {
         window.location.href = 'index.html';
     } else {
         render();
+        if (gameState.music) {
+            playMusic();
+        }
     }
 }
 
@@ -50,6 +64,9 @@ async function startGame(themeFile) {
             themeFile: themeFile,
             description: data.description,
             image: data.image,
+            music: data.music || '',
+            musicEnabled: true,
+            musicVolume: 0.5,
             wordDeck: shuffle([...data.words]),
             endingDeck: shuffle([...data.endings]),
             hand: [],
@@ -67,6 +84,7 @@ async function startGame(themeFile) {
 
         saveToLocalStorage();
         render();
+        playMusic();
     } catch (error) {
         console.error('Failed to load theme:', error);
         alert('Failed to load story elements. Please check your connection.');
@@ -138,6 +156,10 @@ function render() {
     
     // Update Buttons
     endGameBtn.disabled = gameState.hand.length > 0 || gameState.isGameOver;
+    
+    // Update Music UI
+    volumeSlider.value = gameState.musicVolume * 100;
+    updateMusicUI();
 }
 
 function createCard(content, className, onClick) {
@@ -162,6 +184,54 @@ function createCard(content, className, onClick) {
     }
     
     return card;
+}
+
+// Music Controls
+function playMusic() {
+    if (gameState.music && gameState.musicEnabled) {
+        audioElement.src = gameState.music;
+        audioElement.volume = gameState.musicVolume;
+        audioElement.play().catch(error => {
+            console.log('Could not play music:', error);
+        });
+    }
+}
+
+function stopMusic() {
+    audioElement.pause();
+    audioElement.src = '';
+}
+
+function toggleMusic() {
+    gameState.musicEnabled = !gameState.musicEnabled;
+    updateMusicUI();
+    
+    if (gameState.musicEnabled && gameState.music) {
+        audioElement.volume = gameState.musicVolume;
+        audioElement.play().catch(error => {
+            console.log('Could not play music:', error);
+        });
+    } else {
+        audioElement.pause();
+    }
+    
+    saveToLocalStorage();
+}
+
+function changeVolume(event) {
+    gameState.musicVolume = event.target.value / 100;
+    audioElement.volume = gameState.musicVolume;
+    saveToLocalStorage();
+}
+
+function updateMusicUI() {
+    if (gameState.musicEnabled) {
+        musicToggleBtn.textContent = '🔊';
+        musicToggleBtn.classList.remove('muted');
+    } else {
+        musicToggleBtn.textContent = '🔇';
+        musicToggleBtn.classList.add('muted');
+    }
 }
 
 // Helpers

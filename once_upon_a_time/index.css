@@ -157,6 +157,113 @@ select {
     color: #000;
 }
 
+/* Music Controls */
+/* Floating Music Widget */
+.music-widget {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.btn-music-widget {
+    background: linear-gradient(135deg, #8b4513 0%, #5d2e0d 100%);
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 8px 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+.btn-music-widget:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4);
+}
+
+.btn-music-widget.muted {
+    opacity: 0.6;
+}
+
+.music-widget-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.music-widget:hover .music-widget-controls {
+    opacity: 1;
+    max-height: 150px;
+}
+
+.volume-slider-widget {
+    width: 6px;
+    height: 80px;
+    border-radius: 3px;
+    background: rgba(255, 215, 0, 0.3);
+    outline: none;
+    -webkit-appearance: slider-vertical;
+    appearance: slider-vertical;
+    writing-mode: bt-lr;
+}
+
+.volume-slider-widget::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.volume-slider-widget::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 2px 6px rgba(255, 215, 0, 0.5);
+}
+
+.volume-slider-widget::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.volume-slider-widget::-moz-range-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 2px 6px rgba(255, 215, 0, 0.5);
+}
+
+.volume-slider-widget::-moz-range-track {
+    background: transparent;
+    border: none;
+}
+
 .card-area {
     background: rgba(0, 0, 0, 0.2);
     border-radius: 10px;

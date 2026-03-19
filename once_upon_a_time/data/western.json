@@ -42,5 +42,6 @@
     "The marshal caught the outlaw, and safety returned.",
     "They stood together at the town's edge, ready for tomorrow.",
     "And their names were sung throughout the Wild West."
-  ]
+  ],
+  "music": "audio/west.mp3"
 }

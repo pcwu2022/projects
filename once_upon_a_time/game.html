@@ -34,6 +34,8 @@
                 <div id="deck-status">Deck: <span id="deck-count">0</span></div>
                 <button id="end-game-btn" class="btn-primary" disabled title="Only available when your hand is empty">End the Story</button>
             </div>
+
+            <audio id="background-music" loop></audio>
         </header>
 
         <main>
@@ -55,6 +57,14 @@
         <footer>
             <div class="footer-info">Created by <a href="https://pcwu2022.github.io">Po-Chun Wu</a></div>
         </footer>
+    </div>
+
+    <!-- Music Player Widget -->
+    <div class="music-widget">
+        <button id="music-toggle-btn" class="btn-music-widget" title="Toggle background music">🔊</button>
+        <div class="music-widget-controls">
+            <input type="range" id="volume-slider" class="volume-slider-widget" min="0" max="100" value="50" title="Adjust music volume">
+        </div>
     </div>
 
     <!-- Immersive Ending Screen -->
