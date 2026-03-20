@@ -1,3 +1,9 @@
+// Music State (persisted separately from game state)
+let musicState = {
+    enabled: true,
+    volume: 0.2
+};
+
 // Game State
 let gameState = {
     theme: null,
@@ -57,7 +63,12 @@ function playThrowSFX() {
 // Initialize Game
 async function init() {
     initSFX();
+    loadMusicSettings();
     loadFromLocalStorage();
+    
+    // Re-sync music settings after loading game state from localStorage
+    gameState.musicEnabled = musicState.enabled;
+    gameState.musicVolume = musicState.volume;
     
     drawBtn.addEventListener('click', () => {
         playClickSFX();
@@ -108,21 +119,14 @@ async function startGame(themeFile) {
         const response = await fetch(themeFile);
         const data = await response.json();
         
-        // Load volume from lobby, default to 0.5
-        let volumeFromLobby = 0.5;
-        const savedVolume = localStorage.getItem('musicVolume');
-        if (savedVolume !== null) {
-            volumeFromLobby = parseFloat(savedVolume);
-        }
-        
         gameState = {
             theme: data.theme,
             themeFile: themeFile,
             description: data.description,
             image: data.image,
             music: data.music || '',
-            musicEnabled: true,
-            musicVolume: volumeFromLobby,
+            musicEnabled: musicState.enabled,
+            musicVolume: musicState.volume,
             wordDeck: shuffle([...data.words]),
             endingDeck: shuffle([...data.endings]),
             hand: [],
@@ -261,6 +265,7 @@ function stopMusic() {
 
 function toggleMusic() {
     gameState.musicEnabled = !gameState.musicEnabled;
+    musicState.enabled = gameState.musicEnabled;
     updateMusicUI();
     
     if (gameState.musicEnabled && gameState.music) {
@@ -272,12 +277,15 @@ function toggleMusic() {
         audioElement.pause();
     }
     
+    saveMusicSettings();
     saveToLocalStorage();
 }
 
 function changeVolume(event) {
     gameState.musicVolume = event.target.value / 100;
+    musicState.volume = gameState.musicVolume;
     audioElement.volume = gameState.musicVolume;
+    saveMusicSettings();
     saveToLocalStorage();
 }
 
@@ -309,6 +317,31 @@ function loadFromLocalStorage() {
     if (saved) {
         gameState = JSON.parse(saved);
     }
+}
+
+function saveMusicSettings() {
+    localStorage.setItem('musicEnabled', musicState.enabled.toString());
+    localStorage.setItem('musicVolume', musicState.volume.toString());
+}
+
+function loadMusicSettings() {
+    const savedEnabled = localStorage.getItem('musicEnabled');
+    const savedVolume = localStorage.getItem('musicVolume');
+    
+    if (savedEnabled !== null) {
+        musicState.enabled = savedEnabled === 'true';
+    }
+    if (savedVolume !== null) {
+        musicState.volume = parseFloat(savedVolume);
+    }
+    
+    // Sync with gameState
+    gameState.musicEnabled = musicState.enabled;
+    gameState.musicVolume = musicState.volume;
+    
+    // Update UI
+    volumeSlider.value = musicState.volume * 100;
+    updateMusicUI();
 }
 
 function showNotification(title, message) {
