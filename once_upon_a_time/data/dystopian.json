@@ -1,7 +1,7 @@
 {
   "theme": "Dystopian Future",
   "description": "Towering megastructures of cold concrete block out the sun as spotlights sweep endlessly through perpetual twilight. In this suffocating world where every thought is monitored and freedom is a dangerous memory, citizens shuffle through their assigned roles. The regime controls everything—food, information, hope. Yet whispers of rebellion grow in the shadowed corners, where those who dream of freedom prepare to shatter the artificial sky.",
-  "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=800",
+  "image": "https://images.unsplash.com/photo-1599689018034-48e2ead82951?q=80&w=1112&auto=format&fit=crop",
   "words": [
     "Rebel", "Citizen", "Enforcer", "Leader", "Scientist", "Worker", "Spy", "Traitor", "Hero", "Villain",
     "Council", "Party", "Regime", "System", "Machine", "A.I.", "Computer", "Bot", "Drone", "Agent",
@@ -43,5 +43,5 @@
     "They walked away from the tower, never looking back.",
     "And the dystopian world became history, not destiny."
   ],
-  "music": "audio/space.mp3"
+  "music": "audio/dystopian.mp3"
 }

@@ -1,7 +1,7 @@
 {
-  "theme": "Mystery Noir",
-  "description": "Through rain-slicked alleys where streetlights cast long shadows, a haunting jazz saxophone wails into the fog-bound night. Every darkened window hides a secret, every closed door conceals a puzzle, and the truth cuts like broken glass. In smoke-filled offices and dimly-lit bars, detectives and criminals dance an ancient dance of deception. The city breathes with danger, and nothing is ever quite what it seems.",
-  "image": "https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?auto=format&fit=crop&q=80&w=800",
+  "theme": "Detective Mystery",
+  "description": "Step into the dark world of crime and deception. As a detective, you'll investigate cases in shadowy streets and foggy nights, searching for clues and interrogating suspects. Piece together evidence from crime scenes and hidden secrets to uncover the truth. Every word you choose can lead you closer to solving the case—or send you down a twisted path of lies and misdirection. In this noir world, nothing is ever what it seems, and justice hangs in the balance.",
+  "image": "https://images.unsplash.com/photo-1503332132010-d1b77a049ddd?q=80&w=1170&auto=format&fit=crop",
   "words": [
     "Detective", "Client", "Suspect", "Victim", "Killer", "Witness", "Spy", "Informant", "Agent", "Police",
     "Case", "Crime", "Murder", "Theft", "Blackmail", "Secret", "Mystery", "Truth", "Lie", "Clue",
@@ -46,5 +46,5 @@
     "The evidence stood beyond any doubt, condemning the guilty.",
     "And the noir city faded into gray morning as peace returned at last."
   ],
-  "music": "audio/space.mp3"
+  "music": "audio/mystery.mp3"
 }

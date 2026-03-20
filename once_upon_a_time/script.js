@@ -8,7 +8,7 @@ let gameState = {
     isGameOver: false,
     music: '',
     musicEnabled: true,
-    musicVolume: 0.5
+    musicVolume: 0.2
 };
 
 // DOM Elements
@@ -51,6 +51,17 @@ async function init() {
             playMusic();
         }
     }
+    
+    // Handle autoplay policy: if music fails to play on load, resume on first user interaction
+    document.addEventListener('click', resumeAudioPlayback, { once: true });
+}
+
+function resumeAudioPlayback() {
+    if (gameState.musicEnabled && audioElement.paused && audioElement.src) {
+        audioElement.play().catch(() => {
+            console.log('Could not resume music');
+        });
+    }
 }
 
 // Start/Restart Game
@@ -59,6 +70,13 @@ async function startGame(themeFile) {
         const response = await fetch(themeFile);
         const data = await response.json();
         
+        // Load volume from lobby, default to 0.5
+        let volumeFromLobby = 0.5;
+        const savedVolume = localStorage.getItem('musicVolume');
+        if (savedVolume !== null) {
+            volumeFromLobby = parseFloat(savedVolume);
+        }
+        
         gameState = {
             theme: data.theme,
             themeFile: themeFile,
@@ -66,7 +84,7 @@ async function startGame(themeFile) {
             image: data.image,
             music: data.music || '',
             musicEnabled: true,
-            musicVolume: 0.5,
+            musicVolume: volumeFromLobby,
             wordDeck: shuffle([...data.words]),
             endingDeck: shuffle([...data.endings]),
             hand: [],
