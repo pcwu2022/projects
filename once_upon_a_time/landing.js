@@ -26,6 +26,24 @@ const audioElement = document.getElementById('background-music');
 const musicToggleBtn = document.getElementById('music-toggle-btn');
 const volumeSlider = document.getElementById('volume-slider');
 
+// Sound Effects
+let clickSFX = null;
+
+// Initialize SFX
+function initSFX() {
+    clickSFX = new Audio('audio/click.mp3');
+    clickSFX.volume = 0.1;
+}
+
+function playClickSFX() {
+    if (clickSFX) {
+        clickSFX.currentTime = 0;
+        clickSFX.play().catch(() => {
+            console.log('Could not play click sound');
+        });
+    }
+}
+
 // Music State
 let musicState = {
     enabled: true,
@@ -35,6 +53,7 @@ let musicState = {
 let selectedThemeData = null;
 
 async function init() {
+    initSFX();
     loadMusicSettings();
     renderThemeGallery();
     
@@ -43,11 +62,13 @@ async function init() {
     volumeSlider.addEventListener('input', changeVolume);
     
     cancelIntroBtn.addEventListener('click', () => {
+        playClickSFX();
         introModal.classList.add('hidden');
     });
 
     startStoryBtn.addEventListener('click', () => {
         if (selectedThemeData) {
+            playClickSFX();
             localStorage.setItem('selected_theme_file', selectedThemeData.file);
             localStorage.removeItem('onceUponATime_state'); // Clear old game state when starting a fresh one
             // Pass volume to game
@@ -96,7 +117,10 @@ async function renderThemeGallery() {
                 </div>
             `;
             
-            card.addEventListener('click', () => showIntro(data, theme.file));
+            card.addEventListener('click', () => {
+                playClickSFX();
+                showIntro(data, theme.file);
+            });
             themeGallery.appendChild(card);
         } catch (e) {
             console.error("Failed to load theme card data", e);

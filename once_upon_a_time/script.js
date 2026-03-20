@@ -24,16 +24,54 @@ const audioElement = document.getElementById('background-music');
 const musicToggleBtn = document.getElementById('music-toggle-btn');
 const volumeSlider = document.getElementById('volume-slider');
 
+// Sound Effects
+let clickSFX = null;
+let throwSFX = null;
+
+// Initialize SFX
+function initSFX() {
+    clickSFX = new Audio('audio/click.mp3');
+    clickSFX.volume = 0.1;
+    throwSFX = new Audio('audio/throw.mp3');
+    throwSFX.volume = 0.1;
+}
+
+function playClickSFX() {
+    if (clickSFX) {
+        clickSFX.currentTime = 0;
+        clickSFX.play().catch(() => {
+            console.log('Could not play click sound');
+        });
+    }
+}
+
+function playThrowSFX() {
+    if (throwSFX) {
+        throwSFX.currentTime = 0;
+        throwSFX.play().catch(() => {
+            console.log('Could not play throw sound');
+        });
+    }
+}
+
 // Initialize Game
 async function init() {
+    initSFX();
     loadFromLocalStorage();
     
-    drawBtn.addEventListener('click', drawCard);
-    endGameBtn.addEventListener('click', endGame);
+    drawBtn.addEventListener('click', () => {
+        playClickSFX();
+        drawCard();
+    });
+    endGameBtn.addEventListener('click', () => {
+        playClickSFX();
+        endGame();
+    });
     musicToggleBtn.addEventListener('click', toggleMusic);
     volumeSlider.addEventListener('input', changeVolume);
     
     document.getElementById('back-to-home').addEventListener('click', () => {
+        playClickSFX();
         stopMusic();
         window.location.href = 'index.html?restart=true';
     });
@@ -121,6 +159,7 @@ function drawCard() {
 }
 
 function playCard(index) {
+    playThrowSFX();
     gameState.hand.splice(index, 1);
     saveToLocalStorage();
     render();
