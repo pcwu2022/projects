@@ -502,11 +502,13 @@ footer a:hover {
   .left-panel {
     flex: 0 0 auto;
     max-height: none;
+    order: 2;
   }
 
   .map-panel {
     flex: 1;
     min-height: 500px;
+    order: 1;
   }
 }
 
@@ -527,11 +529,19 @@ footer a:hover {
   main.game-container {
     margin: 0.8rem auto;
     padding: 0 0.5rem;
+    gap: 0.8rem;
   }
 
   .left-panel {
     padding: 1rem;
     border-radius: 8px;
+    flex: 0 0 auto;
+    max-height: 40vh;
+  }
+
+  .map-panel {
+    flex: 0 0 45vh;
+    min-height: 45vh;
   }
 
   .station-card {
@@ -603,12 +613,19 @@ footer a:hover {
 
   main.game-container {
     padding: 0;
+    gap: 0.5rem;
   }
 
   .left-panel {
     padding: 0.8rem;
     border-radius: 0;
-    max-height: auto;
+    flex: 0 0 auto;
+    max-height: 35vh;
+  }
+
+  .map-panel {
+    flex: 0 0 40vh;
+    min-height: 40vh;
   }
 
   .station-card {
