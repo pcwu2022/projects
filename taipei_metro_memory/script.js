@@ -1,10 +1,14 @@
 // Game State
 let gameState = {
   guessedStations: new Set(),
+  seconds: 0,
+  wrongGuesses: 0,
+  timerActive: false,
 };
 
 // Constants
 const STORAGE_KEY = 'taipei-metro-guessing-v1';
+let timerInterval = null;
 
 // Flatten all stations from LINES
 let allStations = [];
@@ -121,12 +125,16 @@ function handleGuess() {
   const station = findStation(stationName);
 
   if (!station) {
+    gameState.wrongGuesses++;
+    updateWrongCounterDisplay();
     showFeedback(`找不到車站「${stationName}」`, 'wrong');
     input.value = '';
     return;
   }
 
   if (gameState.guessedStations.has(station.name)) {
+    gameState.wrongGuesses++;
+    updateWrongCounterDisplay();
     showFeedback(`已經猜過「${station.name}」！`, 'wrong');
     input.value = '';
     return;
@@ -143,6 +151,20 @@ function handleGuess() {
   updateGuessedList();
   saveProgress();
   input.focus();
+
+  // Check if all stations are found
+  if (gameState.guessedStations.size === allStations.length) {
+    stopTimer();
+    setTimeout(() => {
+      showFeedback(`🎉 恭喜完成！共用時 ${getTimerFormatted()} 和 ${gameState.wrongGuesses} 次錯誤`, 'correct');
+    }, 500);
+  }
+}
+
+function getTimerFormatted() {
+  const minutes = Math.floor(gameState.seconds / 60);
+  const seconds = gameState.seconds % 60;
+  return `${minutes}:${seconds.toString().padStart(2, '0')}`;
 }
 
 // Show Feedback
@@ -173,6 +195,8 @@ function createFeedbackElement() {
 function saveProgress() {
   const saveData = {
     guessedStations: Array.from(gameState.guessedStations),
+    seconds: gameState.seconds,
+    wrongGuesses: gameState.wrongGuesses,
     timestamp: Date.now(),
   };
   localStorage.setItem(STORAGE_KEY, JSON.stringify(saveData));
@@ -186,6 +210,8 @@ function loadProgress() {
   try {
     const saveData = JSON.parse(data);
     gameState.guessedStations = new Set(saveData.guessedStations);
+    gameState.seconds = saveData.seconds || 0;
+    gameState.wrongGuesses = saveData.wrongGuesses || 0;
     return true;
   } catch (e) {
     console.error('Failed to load progress:', e);
@@ -284,13 +310,50 @@ function updateGuessedList() {
 function resetGame() {
   if (confirm('確定要重新開始嗎？所有進度都會被清除。')) {
     gameState.guessedStations.clear();
+    gameState.seconds = 0;
+    gameState.wrongGuesses = 0;
+    gameState.timerActive = false;
     document.getElementById('stationInput').value = '';
+    
+    // Stop and restart timer
+    stopTimer();
+    startTimer();
+    
     updateStats();
     updateMapMarkers();
     updateAnalysis();
     updateGuessedList();
     localStorage.removeItem(STORAGE_KEY);
   }
+}
+
+// Timer Functions
+function startTimer() {
+  if (gameState.timerActive) return;
+  
+  gameState.timerActive = true;
+  timerInterval = setInterval(() => {
+    gameState.seconds++;
+    updateTimerDisplay();
+  }, 1000);
+}
+
+function stopTimer() {
+  gameState.timerActive = false;
+  if (timerInterval) {
+    clearInterval(timerInterval);
+    timerInterval = null;
+  }
+}
+
+function updateTimerDisplay() {
+  const minutes = Math.floor(gameState.seconds / 60);
+  const seconds = gameState.seconds % 60;
+  document.getElementById('timer').textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+}
+
+function updateWrongCounterDisplay() {
+  document.getElementById('wrong-counter').textContent = gameState.wrongGuesses.toString();
 }
 
 // Zoom Controls
@@ -332,6 +395,15 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     updateStats();
     updateAnalysis();
+  }
+
+  // Initialize timer and counters display
+  updateTimerDisplay();
+  updateWrongCounterDisplay();
+
+  // Start timer only if not all stations have been found
+  if (gameState.guessedStations.size < allStations.length) {
+    startTimer();
   }
 
   // Input & Button Events

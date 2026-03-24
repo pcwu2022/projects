@@ -230,6 +230,37 @@ main.game-container {
   color: #333;
 }
 
+.game-stats-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.stat-box {
+  background: white;
+  border-radius: 6px;
+  padding: 0.8rem;
+  border: 1px solid #e0e0e0;
+  text-align: center;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.stat-value {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #0078d7;
+  font-family: 'Courier New', monospace;
+}
+
 .line-stat {
   display: flex;
   justify-content: space-between;
@@ -526,6 +557,10 @@ footer a:hover {
     font-size: 0.9rem;
   }
 
+  .stat-value {
+    font-size: 1.4rem;
+  }
+
   main.game-container {
     margin: 0.8rem auto;
     padding: 0 0.5rem;
@@ -667,6 +702,10 @@ footer a:hover {
 
   .stat-label {
     font-size: 0.8rem;
+  }
+
+  .stat-value {
+    font-size: 1.2rem;
   }
 
   .instructions {
