@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>台北捷運記憶遊戲</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>台北捷運車站猜猜樂</h1>
+    <div id="header-stats">
+      <span id="score-display">已找到：0</span>
+      <span id="total-display">全部車站：0</span>
+    </div>
+  </header>
+  
+  <main class="game-container">
+    <!-- Left Panel: Input & Stats -->
+    <div class="left-panel">
+      <div class="game-info">
+        <div class="title">台北捷運車站猜猜樂</div>
+        <div class="description">看看你能背出多少台北捷運車站</div>
+        
+        <div class="input-section">
+          <input type="text" id="stationInput" placeholder="台北捷運車站，例如：台北車站" />
+          <button id="guessBtn">🔍</button>
+        </div>
+        
+        <div class="guessed-list">
+          <h3>你的車站</h3>
+          <ol reversed id="guessedStations"></ol>
+        </div>
+        
+        <div class="analysis-section">
+          <h3>路線分析</h3>
+          <div id="analysis"></div>
+        </div>
+        
+        <div id="saved-info">資料已自動儲存於本機瀏覽器</div>
+        
+        <div class="button-group" style="margin-top: 1rem;">
+          <button id="reset-btn" class="btn btn-secondary">重新開始</button>
+        </div>
+        
+        <div class="instructions">
+          <h4>地圖操作</h4>
+          <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.5;">
+            <li><strong>滑鼠滾輪</strong>：放大縮小</li>
+            <li><strong>左鍵拖曳</strong>：移動地圖</li>
+            <li><strong>觸控</strong>：雙指捏合放大，單指拖曳移動</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Right Panel: Interactive Map -->
+    <div class="map-panel">
+      <div class="map-container">
+        <svg id="metro-svg" viewBox="0 0 920 1500">
+          <!-- Map will be rendered here -->
+        </svg>
+      </div>
+      <div class="zoom-controls">
+        <button id="zoom-in" title="放大">🔍+</button>
+        <button id="zoom-default" title="重設">重設</button>
+        <button id="zoom-out" title="縮小">🔍−</button>
+      </div>
+    </div>
+  </main>
+  
+  <footer>
+    <small class="muted">Created by <a style="color:#60a5fa;" href="https://pcwu2022.github.io">Po-Chun Wu</a></small>
+  </footer>
+
+  <script src="lines.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
