@@ -1,6 +1,7 @@
 // Game State
 let gameState = {
   guessedStations: new Set(),
+  guessedOrder: [], // Track order of found stations for sorting
   seconds: 0,
   wrongGuesses: 0,
   timerActive: false,
@@ -76,6 +77,7 @@ function renderMap() {
     circle.setAttribute('fill', '#fff');
     circle.setAttribute('data-id', station.id);
     circle.setAttribute('data-name', station.name);
+    circle.setAttribute('data-line', station.line);
     circle.classList.add('station');
 
     svg.appendChild(circle);
@@ -90,8 +92,9 @@ function updateMapMarkers() {
   const circles = svg.querySelectorAll('.station');
   
   circles.forEach(circle => {
-    const stationName = circle.getAttribute('data-name');
-    const isGuessed = gameState.guessedStations.has(stationName);
+    const stationId = circle.getAttribute('data-id');
+    const stationLine = circle.getAttribute('data-line');
+    const isGuessed = gameState.guessedStations.has(`${stationId}-${stationLine}`);
     
     if (isGuessed) {
       circle.setAttribute('fill', '#0078d7');
@@ -122,9 +125,10 @@ function handleGuess() {
     return;
   }
 
-  const station = findStation(stationName);
+  // Find all stations with this name (may appear on multiple lines)
+  const matchingStations = allStations.filter(st => st.name.toLowerCase() === stationName.toLowerCase());
 
-  if (!station) {
+  if (matchingStations.length === 0) {
     gameState.wrongGuesses++;
     updateWrongCounterDisplay();
     showFeedback(`找不到車站「${stationName}」`, 'wrong');
@@ -132,17 +136,35 @@ function handleGuess() {
     return;
   }
 
-  if (gameState.guessedStations.has(station.name)) {
+  // Check if already guessed on any line
+  const alreadyGuessedCount = matchingStations.filter(st => 
+    gameState.guessedStations.has(`${st.id}-${st.line}`)
+  ).length;
+
+  if (alreadyGuessedCount === matchingStations.length) {
     gameState.wrongGuesses++;
     updateWrongCounterDisplay();
-    showFeedback(`已經猜過「${station.name}」！`, 'wrong');
+    showFeedback(`已經猜過「${stationName}」！`, 'wrong');
     input.value = '';
     return;
   }
 
-  // Correct Guess!
-  gameState.guessedStations.add(station.name);
-  showFeedback(`✓ 正確！${station.name} (${station.line})`, 'correct');
+  // Mark all occurrences as guessed
+  const isFirstGuess = alreadyGuessedCount === 0; // Check if this is a new station
+  matchingStations.forEach(st => {
+    gameState.guessedStations.add(`${st.id}-${st.line}`);
+  });
+
+  // Track the order of found stations
+  if (isFirstGuess) {
+    gameState.guessedOrder.push(matchingStations[0].name);
+  }
+
+  const lineInfo = matchingStations.length > 1 
+    ? `(${matchingStations.map(st => st.line).join('、')}線)`
+    : `(${matchingStations[0].line})`;
+  
+  showFeedback(`✓ 正確！${stationName} ${lineInfo}`, 'correct');
   input.value = '';
 
   updateStats();
@@ -195,6 +217,7 @@ function createFeedbackElement() {
 function saveProgress() {
   const saveData = {
     guessedStations: Array.from(gameState.guessedStations),
+    guessedOrder: gameState.guessedOrder,
     seconds: gameState.seconds,
     wrongGuesses: gameState.wrongGuesses,
     timestamp: Date.now(),
@@ -210,6 +233,7 @@ function loadProgress() {
   try {
     const saveData = JSON.parse(data);
     gameState.guessedStations = new Set(saveData.guessedStations);
+    gameState.guessedOrder = saveData.guessedOrder || [];
     gameState.seconds = saveData.seconds || 0;
     gameState.wrongGuesses = saveData.wrongGuesses || 0;
     return true;
@@ -243,16 +267,27 @@ function updateAnalysis() {
 
   allStations.forEach(station => {
     lineStats[station.line].total++;
-    if (gameState.guessedStations.has(station.name)) {
+    if (gameState.guessedStations.has(`${station.id}-${station.line}`)) {
       lineStats[station.line].guessed++;
     }
   });
 
-  // Sort lines by their order in LINES
-  LINES.forEach(line => {
+  // Create array of lines with their stats and percentages
+  const lineArray = LINES.map(line => {
     const stats = lineStats[line.name];
     const percent = stats.total > 0 ? Math.round((stats.guessed / stats.total) * 100) : 0;
+    return {
+      line: line,
+      stats: stats,
+      percent: percent
+    };
+  });
 
+  // Sort by percentage descending
+  lineArray.sort((a, b) => b.percent - a.percent);
+
+  // Render sorted lines
+  lineArray.forEach(({ line, stats, percent }) => {
     const lineDiv = document.createElement('div');
     lineDiv.className = 'line-stat';
 
@@ -298,8 +333,9 @@ function updateGuessedList() {
   const listElem = document.getElementById('guessedStations');
   listElem.innerHTML = '';
 
-  const sortedGuesses = Array.from(gameState.guessedStations).sort().reverse();
-  sortedGuesses.forEach(stationName => {
+  // Display guessed stations in reverse order (last found first)
+  const reversedGuesses = [...gameState.guessedOrder].reverse();
+  reversedGuesses.forEach(stationName => {
     const li = document.createElement('li');
     li.textContent = stationName;
     listElem.appendChild(li);
@@ -310,6 +346,7 @@ function updateGuessedList() {
 function resetGame() {
   if (confirm('確定要重新開始嗎？所有進度都會被清除。')) {
     gameState.guessedStations.clear();
+    gameState.guessedOrder = [];
     gameState.seconds = 0;
     gameState.wrongGuesses = 0;
     gameState.timerActive = false;

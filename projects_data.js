@@ -84,6 +84,14 @@ window.PROJECTS = [
         date: "September 2025",
         tag: "Vibe-Coded"
     },
+    {
+        title: "Taipei Metro Memory",
+        href: "taipei_metro_memory/index.html",
+        image: "images/taipei_metro_memory.png",
+        description: "A memory game to test how well you know the Taipei Metro system.",
+        date: "March 2026",
+        tag: "Vibe-Coded"
+    },
     { 
         title: "Taipei Metro Level", 
         href: "taipei_metro_level/index.html", 
