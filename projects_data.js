@@ -69,6 +69,14 @@ window.PROJECTS = [
         tag: "Vibe-Coded"
     },
     {
+        title: "Streetlight",
+        href: "https://pcwu2022.github.io/streetlight/",
+        image: "images/streetlight.png",
+        description: "A memory game to test how well you know the streets around you. Data source: cities in Taiwan",
+        date: "June 2026",
+        tag: "Vibe-Coded"
+    },
+    {
         title: "@maps.az",
         href: "https://pcwu2022.github.io/maps.az/",
         image: "images/maps.png",
