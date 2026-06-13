@@ -28,22 +28,6 @@ window.PROJECTS = [
         date: "July 2022",
         tag: "No-AI"
     },
-    {
-        title: "Minesweeper",
-        href: "games/minesweeper.html",
-        image: "images/minesweeper.png",
-        description: "A Minesweeper game built in 2 hours as a programming challenge.",
-        date: "May 2022",
-        tag: "No-AI"
-    },
-    {
-        title: "Snake",
-        href: "games/snake.html",
-        image: "images/snake.png",
-        description: "A game of Snake that can be played through pressing arrows on the keyboard or buttons on the screen. I built this game in 2 hours as a programming challenge, and it was later used to train an AI model using reinforcement learning.",
-        date: "March 2022",
-        tag: "No-AI"
-    },
     // { 
     //     title: "Games", 
     //     href: "games/game.html", 
@@ -61,12 +45,44 @@ window.PROJECTS = [
         tag: "Vibe-Coded"
     },
     {
+        title: "Random Flashcards",
+        href: "https://pcwu2022.github.io/vocabulary_flashcards/",
+        image: "images/vocabulary.png",
+        description: "A vocabulary flashcard app that randomly picks words of your vocabulary level, determined by a small algorithm.",
+        date: "January 2025",
+        tag: "AI-Enhanced"
+    },
+    {
+        title: "SLEK System",
+        href: "https://slek-system.vercel.app/",
+        image: "images/slek.png",
+        description: "A web-based simulation system to help medical students practice diagnosis and treatment.",
+        date: "October 2024",
+        tag: "No-AI"
+    },
+    {
         title: "Acquired Universe",
         href: "https://acquired-universe.vercel.app/",
         image: "images/acquired_universe.png",
         description: "An interactive time-lapse of every company covered on the Acquired podcast and where its listeners are in the world.",
         date: "March 2026",
         tag: "Vibe-Coded"
+    },
+    {
+        title: "Minesweeper",
+        href: "games/minesweeper.html",
+        image: "images/minesweeper.png",
+        description: "A Minesweeper game built in 2 hours as a programming challenge.",
+        date: "May 2022",
+        tag: "No-AI"
+    },
+    {
+        title: "Snake",
+        href: "games/snake.html",
+        image: "images/snake.png",
+        description: "A game of Snake that can be played through pressing arrows on the keyboard or buttons on the screen. I built this game in 2 hours as a programming challenge, and it was later used to train an AI model using reinforcement learning.",
+        date: "March 2022",
+        tag: "No-AI"
     },
     {
         title: "Plonkit Guessr",
@@ -83,14 +99,6 @@ window.PROJECTS = [
         description: "A game to test your language recognition skills. Can you guess the language based on a short text sample?",
         date: "March 2026",
         tag: "Vibe-Coded"
-    },
-    {
-        title: "Random Flashcards",
-        href: "https://pcwu2022.github.io/vocabulary_flashcards/",
-        image: "images/vocabulary.png",
-        description: "A vocabulary flashcard app that randomly picks words of your vocabulary level, determined by a small algorithm.",
-        date: "January 2025",
-        tag: "AI-Enhanced"
     },
     {
         title: "Streetlight",
@@ -133,7 +141,7 @@ window.PROJECTS = [
         tag: "Vibe-Coded"
     },
     {
-        title: "TRA Names",
+        title: "Taiwan Railway Memory Game",
         href: "tra_names/index.html",
         image: "images/tra_names.png",
         description: "How many TRA stations can you name?",
@@ -141,7 +149,7 @@ window.PROJECTS = [
         tag: "Vibe-Coded"
     },
     {
-        title: "Taipei Metro Memory",
+        title: "Taipei Metro Memory Game",
         href: "taipei_metro_memory/index.html",
         image: "images/taipei_metro_memory.png",
         description: "A memory game to test how well you know the Taipei Metro system.",
@@ -163,14 +171,6 @@ window.PROJECTS = [
         description: "How many NTUEE Professors can you name?",
         date: "November 2025",
         tag: "Vibe-Coded"
-    },
-    {
-        title: "SLEK System",
-        href: "https://slek-system.vercel.app/",
-        image: "images/slek.png",
-        description: "A web-based simulation system to help medical students practice diagnosis and treatment.",
-        date: "October 2024",
-        tag: "No-AI"
     },
     {
         title: "Cornway's Game of Life",
