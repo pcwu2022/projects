@@ -62,10 +62,18 @@ window.PROJECTS = [
     },
     {
         title: "Acquired Universe",
-        href: "https://acquired-universe.vercel.app/",
+        href: "https://pcwu2022.github.io/acquired_universe",
         image: "images/acquired_universe.png",
         description: "An interactive time-lapse of every company covered on the Acquired podcast and where its listeners are in the world.",
         date: "March 2026",
+        tag: "Vibe-Coded"
+    },
+    {
+        title: "Urban Radius",
+        href: "https://urban-radius.vercel.app/",
+        image: "images/urban_radius.png",
+        description: "A simulation of a calculation method to define a city's borders based on population distribution.",
+        date: "June 2026",
         tag: "Vibe-Coded"
     },
     {
