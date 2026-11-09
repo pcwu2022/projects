@@ -157,6 +157,22 @@ window.PROJECTS = [
         tag: "Vibe-Coded"
     },
     {
+        title: "Taipei Showdown",
+        href: "https://pcwu2022.github.io/challenges/games/taipei-showdown/index.html",
+        image: "images/taipei_showdown.png",
+        description: "A game inspired by JetLag the game. Playable in Taipei City.",
+        date: "October 2026",
+        tag: "Vibe-Coded"
+    },
+    {
+        title: "Go Big or Go Home",
+        herf: "https://pcwu2022.github.io/bigcity/",
+        image: "images/bigcity.png",
+        description: "A tracker for Hsinchu people to know their direction to Big City.",
+        date: "November 2026",
+        tag: "Vibe-Coded"
+    },
+    {
         title: "@maps.az",
         href: "https://pcwu2022.github.io/maps.az/",
         image: "images/maps.png",
