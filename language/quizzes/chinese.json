@@ -1,128 +1,638 @@
 {
-  "id": "chinese",
-  "name": "The Ultimate Chinese Quiz",
-  "description": "Distinguish between Taiwan and Mainland Chinese usage across Formal, IT, and Internet Slang categories.",
+  "id": "chinese_terms_quiz_v2",
+  "name": "The Ultimate Chinese Quiz (TW vs CN)",
+  "description": "Distinguish between Taiwan and Mainland Chinese usage across Formal, IT, Daily Life, and Internet Slang categories.",
   "languages": ["Taiwan Usage", "Mainland Usage"],
+  "total_questions": 105,
   "questions": [
-    { "text": "這台電腦的內存不夠，跑不動這個程序。", "answer": "Mainland Usage", "explanation": "CN uses 內存 (RAM) and 程序 (Program). TW uses 記憶體 and 程式。", "lang": "Mainland Usage" },
-    { "text": "我的手機螢幕裂掉了，要去修一下。", "answer": "Taiwan Usage", "explanation": "TW uses 螢幕 (Screen). CN uses 屏幕。", "lang": "Taiwan Usage" },
-    { "text": "請把這個文檔保存到U盤裡。", "answer": "Mainland Usage", "explanation": "CN uses 文檔 (Document) and U盤 (Flash drive). TW uses 文件 and 隨身碟。", "lang": "Mainland Usage" },
-    { "text": "這個專案的進度有點落後。", "answer": "Taiwan Usage", "explanation": "TW uses 專案 (Project). CN uses 項目。", "lang": "Taiwan Usage" },
-    { "text": "這部視頻的質量非常高，值得一整天刷屏。", "answer": "Mainland Usage", "explanation": "CN uses 視頻 (Video) and 刷屏 (Spamming the screen).", "lang": "Mainland Usage" },
-    { "text": "他在網路上的評價一直很兩極。", "answer": "Taiwan Usage", "explanation": "TW uses 網路 (Internet). CN uses 網絡。", "lang": "Taiwan Usage" },
-    { "text": "這款軟件的界面設計得很簡潔。", "answer": "Mainland Usage", "explanation": "CN uses 軟件 (Software) and 界面 (Interface).", "lang": "Mainland Usage" },
-    { "text": "我今天打算去吃泡麵當宵夜。", "answer": "Taiwan Usage", "explanation": "TW uses 泡麵 and 宵夜. CN uses 方便麵 and 夜宵。", "lang": "Taiwan Usage" },
-    { "text": "這台打印機的墨盒快用完了。", "answer": "Mainland Usage", "explanation": "CN uses 打印 (Print). TW uses 列印。", "lang": "Mainland Usage" },
-    { "text": "他很有素質，從不隨地吐痰。", "answer": "Mainland Usage", "explanation": "CN uses 素質 to describe personal manners. TW uses 素養。", "lang": "Mainland Usage" },
-    { "text": "請把光標移到屏幕中間。", "answer": "Mainland Usage", "explanation": "CN uses 光標 (Cursor) and 屏幕 (Screen).", "lang": "Mainland Usage" },
-    { "text": "這次的活動策划做得非常到位。", "answer": "Mainland Usage", "explanation": "CN uses 策划 (Planning). TW uses 企劃。", "lang": "Mainland Usage" },
-    { "text": "捷運站就在前面的轉角處。", "answer": "Taiwan Usage", "explanation": "TW uses 捷運 (MRT). CN uses 地鐵。", "lang": "Taiwan Usage" },
-    { "text": "我們需要針對這個問題進行復盤。", "answer": "Mainland Usage", "explanation": "復盤 (Debrief) is a standard CN corporate term.", "lang": "Mainland Usage" },
-    { "text": "這台機車的性能真的很好。", "answer": "Taiwan Usage", "explanation": "TW uses 機車 (Scooter). CN uses 摩托車。", "lang": "Taiwan Usage" },
-    { "text": "這件事的貓膩很多，你要小心。", "answer": "Mainland Usage", "explanation": "貓膩 (Fishy/Secret) is CN slang.", "lang": "Mainland Usage" },
-    { "text": "他的普通話講得很標準。", "answer": "Mainland Usage", "explanation": "CN uses 普通話. TW uses 國語。", "lang": "Mainland Usage" },
-    { "text": "這是一個非常接地氣的品牌。", "answer": "Mainland Usage", "explanation": "接地氣 (Down-to-earth) is a CN slang term.", "lang": "Mainland Usage" },
-    { "text": "我最近在自學信息技術。", "answer": "Mainland Usage", "explanation": "CN uses 信息 (Information). TW uses 訊息。", "lang": "Mainland Usage" },
-    { "text": "這家飯店的服務生態度很好。", "answer": "Taiwan Usage", "explanation": "TW uses 飯店 (Hotel). CN uses 酒店。", "lang": "Taiwan Usage" },
-    { "text": "這顆馬鈴薯看起來很新鮮。", "answer": "Taiwan Usage", "explanation": "TW uses 馬鈴薯. CN uses 土豆。", "lang": "Taiwan Usage" },
-    { "text": "數據顯示，用戶增長率正在放緩。", "answer": "Mainland Usage", "explanation": "CN uses 數據 (Data) and 用戶 (User).", "lang": "Mainland Usage" },
-    { "text": "你可以給我發個短信嗎？", "answer": "Mainland Usage", "explanation": "CN uses 短信 (SMS). TW uses 簡訊。", "lang": "Mainland Usage" },
-    { "text": "今天的公車怎麼還沒來？", "answer": "Taiwan Usage", "explanation": "TW uses 公車. CN uses 公交車。", "lang": "Taiwan Usage" },
-    { "text": "這個邏輯完全跑不通。", "answer": "Mainland Usage", "explanation": "跑不通 (Doesn't work) is CN slang. TW uses 講不通。", "lang": "Mainland Usage" },
-    { "text": "這台相機的像素非常高。", "answer": "Mainland Usage", "explanation": "CN uses 像素 (Pixel). TW uses 畫素。", "lang": "Mainland Usage" },
-    { "text": "我們要優化搜索算法。", "answer": "Mainland Usage", "explanation": "CN uses 搜索 (Search) and 算法 (Algorithm).", "lang": "Mainland Usage" },
-    { "text": "這部電影的票房口碑雙豐收。", "answer": "Mainland Usage", "explanation": "口碑 (Word of mouth) and 雙豐收 (Double harvest) are CN-centric phrasings.", "lang": "Mainland Usage" },
-    { "text": "他的口音聽起來像是在地人。", "answer": "Taiwan Usage", "explanation": "在地人 (Local) is the standard TW term.", "lang": "Taiwan Usage" },
-    { "text": "這件事真是讓人抓狂。", "answer": "Taiwan Usage", "explanation": "抓狂 (To go crazy) is a common TW colloquialism.", "lang": "Taiwan Usage" },
-    { "text": "你有帶錢包嗎？我忘了領錢。", "answer": "Taiwan Usage", "explanation": "TW uses 領錢 (Withdraw). CN uses 取錢。", "lang": "Taiwan Usage" },
-    { "text": "這是一個非常牛逼的技術。", "answer": "Mainland Usage", "explanation": "牛逼 (Awesome) is iconic CN slang.", "lang": "Mainland Usage" },
-    { "text": "你要不要去超商買點東西？", "answer": "Taiwan Usage", "explanation": "TW uses 超商 (Convenience store). CN uses 便利店。", "lang": "Taiwan Usage" },
-    { "text": "他在台北讀大學。", "answer": "Taiwan Usage", "explanation": "TW uses 讀大學 (Study). CN uses 上大學。", "lang": "Taiwan Usage" },
-    { "text": "這是一個硬盤故障。", "answer": "Mainland Usage", "explanation": "CN uses 硬盤 (Hard drive). TW uses 硬碟。", "lang": "Mainland Usage" },
-    { "text": "請查看附件中的文檔。", "answer": "Mainland Usage", "explanation": "CN uses 文檔 (Document). TW uses 文件。", "lang": "Mainland Usage" },
-    { "text": "他在這方面的水準很高。", "answer": "Taiwan Usage", "explanation": "TW uses 水準. CN uses 水平。", "lang": "Taiwan Usage" },
-    { "text": "這部電視的解析度只有1080p。", "answer": "Taiwan Usage", "explanation": "TW uses 解析度 (Resolution). CN uses 分辨率。", "lang": "Taiwan Usage" },
-    { "text": "這家公司主要做集成電路。", "answer": "Mainland Usage", "explanation": "CN uses 集成電路 (IC). TW uses 積體電路。", "lang": "Mainland Usage" },
-    { "text": "請把垃圾扔掉。", "answer": "Mainland Usage", "explanation": "CN uses 扔 (Throw). TW uses 丟。", "lang": "Mainland Usage" },
-    { "text": "他在醫院當志工。", "answer": "Taiwan Usage", "explanation": "TW uses 志工 (Volunteer). CN uses 志願者。", "lang": "Taiwan Usage" },
-    { "text": "這個博主的視頻很有毒。", "answer": "Mainland Usage", "explanation": "有毒 (Addictive/Weirdly good) is CN slang.", "lang": "Mainland Usage" },
-    { "text": "他在辦公室裡摸魚。", "answer": "Mainland Usage", "explanation": "摸魚 (Slacking off) is common CN slang.", "lang": "Mainland Usage" },
-    { "text": "這是一台高清電視。", "answer": "Mainland Usage", "explanation": "CN uses 高清 (HD). TW uses 高畫質。", "lang": "Mainland Usage" },
-    { "text": "請幫我把這份資料打印出來。", "answer": "Mainland Usage", "explanation": "CN uses 打印 (Print). TW uses 列印。", "lang": "Mainland Usage" },
-    { "text": "這個應用程序崩潰了。", "answer": "Mainland Usage", "explanation": "CN uses 應用程序 (App). TW uses 應用程式。", "lang": "Mainland Usage" },
-    { "text": "我的電腦死機了。", "answer": "Mainland Usage", "explanation": "CN uses 死機 (Freeze). TW uses 當機。", "lang": "Mainland Usage" },
-    { "text": "他的口語非常地道。", "answer": "Mainland Usage", "explanation": "CN uses 地道 (Authentic). TW uses 道地。", "lang": "Mainland Usage" },
-    { "text": "這家店的CP值很高。", "answer": "Taiwan Usage", "explanation": "CP值 (Cost-performance) is unique TW slang. CN uses 性價比。", "lang": "Taiwan Usage" },
-    { "text": "他在網上刷存在感。", "answer": "Mainland Usage", "explanation": "刷存在感 (Seeking attention) is CN slang.", "lang": "Mainland Usage" },
-    { "text": "這是一次非常成功的營銷。", "answer": "Mainland Usage", "explanation": "CN uses 營銷 (Marketing). TW uses 行銷。", "lang": "Mainland Usage" },
-    { "text": "這家酒店的設施很齊全。", "answer": "Mainland Usage", "explanation": "CN uses 酒店 (Hotel). TW uses 飯店。", "lang": "Mainland Usage" },
-    { "text": "這是一個非常給力的建議。", "answer": "Mainland Usage", "explanation": "給力 (Awesome) is iconic CN slang.", "lang": "Mainland Usage" },
-    { "text": "這是一台數位相機。", "answer": "Taiwan Usage", "explanation": "TW uses 數位 (Digital). CN uses 數碼。", "lang": "Taiwan Usage" },
-    { "text": "這部電影是好萊塢大片。", "answer": "Mainland Usage", "explanation": "CN uses 大片 (Blockbuster). TW uses 強檔 or 巨作。", "lang": "Mainland Usage" },
-    { "text": "請關注我們的公眾號。", "answer": "Mainland Usage", "explanation": "公眾號 (Official account) is a CN-specific platform term.", "lang": "Mainland Usage" },
-    { "text": "你要吃皮蛋瘦肉粥嗎？", "answer": "Taiwan Usage", "explanation": "While eaten everywhere, the Traditional script with this specific common usage leans TW.", "lang": "Taiwan Usage" },
-    { "text": "這件事我給忘了。", "answer": "Mainland Usage", "explanation": "Using '給' as an auxiliary particle for 'forgetting' is classic CN grammar.", "lang": "Mainland Usage" },
-    { "text": "你有沒有看到我的隨身碟？", "answer": "Taiwan Usage", "explanation": "TW uses 隨身碟 (USB drive). CN uses U盤。", "lang": "Taiwan Usage" },
-    { "text": "他在公司擔任要職。", "answer": "Taiwan Usage", "explanation": "TW uses 擔任 (Hold a post). CN often uses 擔當。", "lang": "Taiwan Usage" },
-    { "text": "這個視頻博主非常有才。", "answer": "Mainland Usage", "explanation": "CN uses 博主 (Blogger). TW uses 網紅 or YouTuber.", "lang": "Mainland Usage" },
-    { "text": "我們去吃份蛋餅當早餐吧。", "answer": "Taiwan Usage", "explanation": "蛋餅 is a quintessential Taiwan breakfast term.", "lang": "Taiwan Usage" },
-    { "text": "這個充電寶的容量很大。", "answer": "Mainland Usage", "explanation": "CN uses 充電寶 (Power bank). TW uses 行動電源。", "lang": "Mainland Usage" },
-    { "text": "他在互聯網公司上班。", "answer": "Mainland Usage", "explanation": "CN uses 互聯網. TW uses 網際網路。", "lang": "Mainland Usage" },
-    { "text": "請點擊下方的鏈接。", "answer": "Mainland Usage", "explanation": "CN uses 點擊 (Click) and 鏈接 (Link).", "lang": "Mainland Usage" },
-    { "text": "我沒帶吸管，怎麼喝飲料？", "answer": "Taiwan Usage", "explanation": "TW uses 吸管. CN uses 管子 or 飲管。", "lang": "Taiwan Usage" },
-    { "text": "他在網上發布了最新動態。", "answer": "Mainland Usage", "explanation": "CN uses 發布 (Publish). TW uses 發佈 (Traditional variant) or 貼文。", "lang": "Mainland Usage" },
-    { "text": "這台筆記本電腦很輕薄。", "answer": "Mainland Usage", "explanation": "CN uses 筆記本電腦. TW uses 筆記型電腦 (筆電).", "lang": "Mainland Usage" },
-    { "text": "這台電視的螢幕解析度很高。", "answer": "Taiwan Usage", "explanation": "TW uses 螢幕 (Screen) and 解析度 (Resolution).", "lang": "Taiwan Usage" },
-    { "text": "這個邏輯完全是個坑。", "answer": "Mainland Usage", "explanation": "坑 (Pit/Trap) as a metaphor for a bad situation is CN slang.", "lang": "Mainland Usage" },
-    { "text": "請把這個軟件卸載掉。", "answer": "Mainland Usage", "explanation": "CN uses 軟件 (Software) and 卸載 (Uninstall).", "lang": "Mainland Usage" },
-    { "text": "這是一個非常走心的設計。", "answer": "Mainland Usage", "explanation": "走心 (Heartfelt) is CN slang.", "lang": "Mainland Usage" },
-    { "text": "他在台北工作，租了一間套房。", "answer": "Taiwan Usage", "explanation": "套房 (Studio) is the standard TW rental term.", "lang": "Taiwan Usage" },
-    { "text": "請幫我把這個文檔發送到我的郵箱。", "answer": "Mainland Usage", "explanation": "CN uses 郵箱 (Email). TW uses 信箱。", "lang": "Mainland Usage" },
-    { "text": "他在網路上搜尋資料。", "answer": "Taiwan Usage", "explanation": "TW uses 搜尋 (Search). CN uses 搜索。", "lang": "Taiwan Usage" },
-    { "text": "這是一個高清圖片。", "answer": "Mainland Usage", "explanation": "CN uses 高清 (HD). TW uses 高畫質。", "lang": "Mainland Usage" },
-    { "text": "他正在進行視頻通話。", "answer": "Mainland Usage", "explanation": "CN uses 視頻 (Video call). TW uses 視訊。", "lang": "Mainland Usage" },
-    { "text": "這是一個系統漏洞。", "answer": "Mainland Usage", "explanation": "CN uses 漏洞 (Bug/Vulnerability).", "lang": "Mainland Usage" },
-    { "text": "他在網路上爆紅。", "answer": "Taiwan Usage", "explanation": "TW uses 爆紅 (Viral). CN uses 火了。", "lang": "Taiwan Usage" },
-    { "text": "這是一個網絡熱詞。", "answer": "Mainland Usage", "explanation": "CN uses 網絡 (Internet) and 熱詞 (Buzzword).", "lang": "Mainland Usage" },
-    { "text": "笑死，這個人真的很有才。", "answer": "Taiwan Usage", "explanation": "笑死 (Hilarious) is a high-frequency TW internet slang starter.", "lang": "Taiwan Usage" },
-    { "text": "這波操作真的太 6 了。", "answer": "Mainland Usage", "explanation": "666 or '太6了' (Amazing) is iconic CN gaming/internet slang.", "lang": "Mainland Usage" },
-    { "text": "他真的是一個 87，這都看不懂。", "answer": "Taiwan Usage", "explanation": "87 (Bái chī/Idiot) is iconic TW internet slang.", "lang": "Taiwan Usage" },
-    { "text": "我整個人都 ㄎㄧㄤ 掉了。", "answer": "Taiwan Usage", "explanation": "ㄎㄧㄤ (Stoned/Wasted/Crazy) is unique TW slang using Bopomofo.", "lang": "Taiwan Usage" },
-    { "text": "yyds，這家店的奶茶真好喝。", "answer": "Mainland Usage", "explanation": "yyds (Yǒngyuǎn de shén / G.O.A.T) is CN pinyin-acronym slang.", "lang": "Mainland Usage" },
-    { "text": "這件事情真的太 ㄒㄩㄥ 了。", "answer": "Taiwan Usage", "explanation": "ㄒㄩㄥ (Epic/Strong) is TW Bopomofo slang.", "lang": "Taiwan Usage" },
-    { "text": "你這是在 凡爾賽 嗎？", "answer": "Mainland Usage", "explanation": "凡爾賽 (Versailles/Humblebrag) is a popular CN internet meme.", "lang": "Mainland Usage" },
-    { "text": "我也沒 ㄘ 到，好難過。", "answer": "Taiwan Usage", "explanation": "ㄘ (Misspelling of 吃/Eat) is a cute/lazy TW internet typing style.", "lang": "Taiwan Usage" },
-    { "text": "他被 破防 了，直接下線。", "answer": "Mainland Usage", "explanation": "破防 (Break defense/Emotionally broken) is CN gaming/social slang.", "lang": "Mainland Usage" },
-    { "text": "這個人真的很 魯，都沒女朋友。", "answer": "Taiwan Usage", "explanation": "魯 (Loser/Single) comes from 'Loser' and is unique to TW.", "lang": "Taiwan Usage" },
-    { "text": "他這種行為就是在 躺平。", "answer": "Mainland Usage", "explanation": "躺平 (Lying flat) is a famous CN social movement/slang term.", "lang": "Mainland Usage" },
-    { "text": "真的是 嚇死寶寶了。", "answer": "Mainland Usage", "explanation": "嚇死寶寶了 (Scared me) is a famous CN internet phrase.", "lang": "Mainland Usage" },
-    { "text": "我覺得 ㄅ ㄒ，這也太扯。", "answer": "Taiwan Usage", "explanation": "ㄅㄒ (Bù xíng/No way) is TW Bopomofo acronym slang.", "lang": "Taiwan Usage" },
-    { "text": "他長得真 帥 O，大家快看。", "answer": "Taiwan Usage", "explanation": "Adding 'O' at the end of adjectives is a common TW 'cute' typing habit.", "lang": "Taiwan Usage" },
-    { "text": "這部片真的太 燃 了。", "answer": "Mainland Usage", "explanation": "燃 (Hype/Exciting) is common CN slang for media.", "lang": "Mainland Usage" },
-    { "text": "你在這裡 刷 什麼呢？", "answer": "Mainland Usage", "explanation": "刷 (To scroll/spam) is high-frequency CN internet usage.", "lang": "Mainland Usage" },
-    { "text": "他被 炎上 了，現在很慘。", "answer": "Taiwan Usage", "explanation": "炎上 (Social media firestorm) is common in TW (via Japanese). CN uses '網暴' or '被黑'。", "lang": "Taiwan Usage" },
-    { "text": "你真的很 歐，抽到五星。", "answer": "Mainland Usage", "explanation": "歐 (Lucky/European) is CN gaming slang (opposite of 酋/African/Unlucky).", "lang": "Mainland Usage" },
-    { "text": "這台機車真的 豪 帥。", "answer": "Taiwan Usage", "explanation": "豪 (Very/Super) is a TW slang replacement for 很.", "lang": "Taiwan Usage" },
-    { "text": "awsl，這隻貓太可愛了。", "answer": "Mainland Usage", "explanation": "awsl (A wǒ sǐ le / Dying from cuteness) is CN pinyin slang.", "lang": "Mainland Usage" },
-    { "text": "他真的 很有事，一直找麻煩。", "answer": "Taiwan Usage", "explanation": "很有事 (Has issues/Troublesome) is common TW slang.", "lang": "Taiwan Usage" },
-    { "text": "這也太 尊 了吧，大神請受我一拜。", "answer": "Mainland Usage", "explanation": "尊 (Respect/Grand) is common in CN fandom culture.", "lang": "Mainland Usage" },
-    { "text": "我今天 沒 ㄈ 到，心情不好。", "answer": "Taiwan Usage", "explanation": "ㄈ (Short for '飯' or 'Feel') is cryptic TW youth slang.", "lang": "Taiwan Usage" },
-    { "text": "他就是個 鍵盤俠。", "answer": "Mainland Usage", "explanation": "鍵盤俠 (Keyboard warrior) is the standard CN term.", "lang": "Mainland Usage" },
-    { "text": "你不要在這裡 帶節奏。", "answer": "Mainland Usage", "explanation": "帶節奏 (Stir up trouble/manipulate opinion) is CN slang.", "lang": "Mainland Usage" },
-    { "text": "這真的太 ㄏㄚˋ 了。", "answer": "Taiwan Usage", "explanation": "ㄏㄚˋ (Hot/Cool) is old-school TW Bopomofo slang.", "lang": "Taiwan Usage" },
-    { "text": "這家店已經 涼了。", "answer": "Mainland Usage", "explanation": "涼了 (Dead/Finished) is CN internet slang for failure.", "lang": "Mainland Usage" },
-    { "text": "他正在進行 擴列。", "answer": "Mainland Usage", "explanation": "擴列 (Expand friend list) is specific to CN social apps like QQ/WeChat.", "lang": "Mainland Usage" },
-    { "text": "你不要一直在那邊 嘴 啦。", "answer": "Taiwan Usage", "explanation": "嘴 (To trash talk) as a verb is very common TW slang.", "lang": "Taiwan Usage" },
-    { "text": "這個人真的很 假掰。", "answer": "Taiwan Usage", "explanation": "假掰 (Fake/Pretentious) is a classic TW Taiwanese-Hokkien derived term.", "lang": "Taiwan Usage" },
-    { "text": "他在 朋友圈 裡發了照片。", "answer": "Mainland Usage", "explanation": "朋友圈 (Moments) is specific to the CN WeChat ecosystem.", "lang": "Mainland Usage" },
-    { "text": "這個影片真的很 ㄎㄧㄤ。", "answer": "Taiwan Usage", "explanation": "ㄎㄧㄤ (Wacky/Absurd) is a hallmark of TW internet culture.", "lang": "Taiwan Usage" },
-    { "text": "他在 吐糟 他的老闆。", "answer": "Mainland Usage", "explanation": "吐糟 (To roast/complain) is very frequent in CN (spelled 吐槽 usually).", "lang": "Mainland Usage" },
-    { "text": "我今天好 累 O，不想動。", "answer": "Taiwan Usage", "explanation": "The 'O' suffix is a TW typing habit.", "lang": "Taiwan Usage" },
-    { "text": "這波操作 6 到飛起。", "answer": "Mainland Usage", "explanation": "6到飛起 (Super amazing) is specific CN internet phrasing.", "lang": "Mainland Usage" },
-    { "text": "他真是一個 奇葩。", "answer": "Mainland Usage", "explanation": "奇葩 (Weirdo) is much more frequent in CN internet culture.", "lang": "Mainland Usage" },
-    { "text": "他這是在 撩妹 嗎？", "answer": "Mainland Usage", "explanation": "撩妹 (Pick up girls) originated/popularized in CN internet culture before spreading.", "lang": "Mainland Usage" },
-    { "text": "你不要在那邊 亂講 啦。", "answer": "Taiwan Usage", "explanation": "Adding '啦' as a final particle is extremely common in TW speech.", "lang": "Taiwan Usage" },
-    { "text": "這件事真的太 瞎 了。", "answer": "Taiwan Usage", "explanation": "瞎 (Ridiculous/Nonsense) is standard TW slang.", "lang": "Taiwan Usage" },
-    { "text": "我已經 棄坑 了，這遊戲太難。", "answer": "Mainland Usage", "explanation": "棄坑 (Abandon a game/hobby) is standard CN fandom slang.", "lang": "Mainland Usage" }
+    {
+      "text": "請幫我把這份文件列印出來。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣習慣使用「列印」，中國大陸則習慣使用「打印」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "這台電腦的內存只有8GB，跑這個程序可能會卡頓。",
+      "answer": "Mainland Usage",
+      "explanation": "中國大陸習慣使用「內存」（RAM）與「程序」（Program）；台灣則稱為「記憶體」與「程式」。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "下班後我們一起去超商買點宵夜吧。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣習慣使用「超商」與「宵夜」；中國大陸對應的用語為「便利店」與「夜宵」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "麻煩把這個文件保存到你的U盤裡。",
+      "answer": "Mainland Usage",
+      "explanation": "中國大陸習慣使用「保存」與「U盤」；台灣則通常說「儲存」與「隨身碟」。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "這個專案的預算已經超出我們原本的企劃了。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣習慣使用「專案」與「企劃」；中國大陸多對應為「項目」與「方案」或「策劃」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "這部視頻的質量非常高，看完立馬被圈粉。",
+      "answer": "Mainland Usage",
+      "explanation": "中國大陸習慣使用「視頻」（影片）、「質量」（品質/畫質）、「立馬」（馬上）與「圈粉」（吸粉）。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "我的手機螢幕剛剛摔破了，要找時間去換面板。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣習慣稱為「螢幕」；中國大陸則多稱為「屏幕」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "這款軟件的UI界面設計得很舒服。",
+      "answer": "Mainland Usage",
+      "explanation": "中國大陸習慣使用「軟件」與「界面」；台灣習慣寫作「軟體」與「介面」。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "中午我想吃便當，你要不要順便幫我帶一杯無糖綠茶？",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣常見餐食稱為「便當」；中國大陸日常多稱「盒飯」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "這家酒店的設施很完善，性價比極高。",
+      "answer": "Mainland Usage",
+      "explanation": "中國大陸將飯店/旅館稱為「酒店」，並常用「性價比」（台灣亦稱CP值）。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "今天搭捷運的時候人好多，差點擠不上車。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣都市軌道交通稱「捷運」；中國大陸稱為「地鐵」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "請大家把這份簡歷發送到我的郵箱。",
+      "answer": "Mainland Usage",
+      "explanation": "中國大陸習慣使用「簡歷」（履歷）與「郵箱」（電子信箱/E-mail）。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "這個遊戲的畫質跟解析度都調整得很好。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣習慣使用「解析度」；中國大陸則使用「分辨率」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "這台車的性能真是yyds，簡直是天花板級別。",
+      "answer": "Mainland Usage",
+      "explanation": "「yyds」（永遠的神）與「天花板」（頂級標竿）均為典型中國大陸網路用語。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "他很喜歡搭公車在城市裡到處晃晃。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣稱公共汽車為「公車」；中國大陸多稱「公交車」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "數據庫出現了嚴重漏洞，工程師正在復盤原因。",
+      "answer": "Mainland Usage",
+      "explanation": "中國大陸使用「數據庫」（資料庫）與「復盤」（檢討/回顧）。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "這顆馬鈴薯放太久發芽了，不能再吃了。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣稱此食材為「馬鈴薯」；中國大陸通常稱為「土豆」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "這款充電寶的容量高達20000毫安時。",
+      "answer": "Mainland Usage",
+      "explanation": "中國大陸稱可攜式充電器為「充電寶」；台灣則稱為「行動電源」。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "老闆說這件事交給你搞定，他很相信你的水準。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣習慣使用「水準」；中國大陸常使用「水平」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "這是在地人才知道的隱藏版美食。",
+      "answer": "Taiwan Usage",
+      "explanation": "「在地人」為台灣特有用語；中國大陸多用「本地人」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "請點擊下方鏈接下載最新版的應用程序。",
+      "answer": "Mainland Usage",
+      "explanation": "中國大陸習慣使用「點擊」（點選）、「鏈接」（連結）與「應用程序」（應用程式/App）。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "笑死，這隻貓咪的舉動也太ㄎㄧㄤ了吧！",
+      "answer": "Taiwan Usage",
+      "explanation": "「笑死」與注音符號轉寫的「ㄎㄧㄤ」（無厘頭/搞笑）為經典台灣網路用語。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "他因為這言論被網友給破防了，直接宣布退出微博。",
+      "answer": "Mainland Usage",
+      "explanation": "「破防」（心理防線被突破/受打擊）為中國大陸網路與遊戲用語。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "這台機車馬力很足，騎起來非常順暢。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣稱燃油機車為「機車」；中國大陸稱為「摩托車」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "今天的打車費用居然這麼貴，肯定是遇到了高峰期。",
+      "answer": "Mainland Usage",
+      "explanation": "中國大陸稱搭計程車為「打車」（台灣說叫車/搭計程車），尖峰時段稱為「高峰期」。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "我剛剛去ATM領錢，發現卡片忘記拿了。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣稱提款為「領錢」；中國大陸多稱為「取錢」或「取款」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "這家互聯網公司最近開出了不少人工智能相關的崗位。",
+      "answer": "Mainland Usage",
+      "explanation": "中國大陸習慣使用「互聯網」（網際網路）與「崗位」（職缺/職務）。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "這件事真的太瞎了，根本完全是在瞎扯。",
+      "answer": "Taiwan Usage",
+      "explanation": "「太瞎了」（荒謬/誇張）為台灣道地的流行口語。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "我們正在優化搜尋引擎的演算法。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣習慣使用「搜尋」與「演算法」；中國大陸寫作「搜索」與「算法」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "大家都在朋友圈曬自己的年終獎金。",
+      "answer": "Mainland Usage",
+      "explanation": "「朋友圈」特指微信（WeChat）的動態功能，為中國大陸特有用語。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "你要不要加一顆鮪魚蛋餅當早餐？",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣稱此魚類為「鮪魚」（中國大陸稱「金槍魚」），且「蛋餅」為台灣特色早餐名稱。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "他這個人說話很接地氣，深受大家喜歡。",
+      "answer": "Mainland Usage",
+      "explanation": "「接地氣」（貼近大眾/親民）源自中國大陸流行用語。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "這款電腦的硬碟空間很大，可以存很多檔案。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣使用「硬碟」與「檔案」；中國大陸則使用「硬盤」與「文檔」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "他真是一個鍵盤俠，只敢在網絡上帶節奏。",
+      "answer": "Mainland Usage",
+      "explanation": "「鍵盤俠」（網民黑粉）與「帶節奏」（煽動輿論）為中國大陸網路用語。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "我們學校的志工團隊每年都會去偏鄉服務。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣稱志願服務者為「志工」；中國大陸多稱為「志願者」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "他在公司裡總是摸魚，老闆一走就開始刷短視頻。",
+      "answer": "Mainland Usage",
+      "explanation": "「摸魚」（偷懶）與「刷短視頻」（看短影音）為中國大陸極常見用法。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "這家餐廳的CP值真的很高，東西好吃又便宜。",
+      "answer": "Taiwan Usage",
+      "explanation": "「CP值」（Cost-Performance ratio）為台灣極具代表性的俗稱；中國大陸多稱「性價比」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "你這是在凡爾賽嗎？明明考很高還說自己沒讀書。",
+      "answer": "Mainland Usage",
+      "explanation": "「凡爾賽」（低調炫耀/假謙虛）為中國大陸爆紅的網路流行語。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "這款積體電路的製造工藝非常複雜。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣稱其為「積體電路」；中國大陸則稱為「集成電路」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "請查看附件中的合同文本。",
+      "answer": "Mainland Usage",
+      "explanation": "中國大陸公務多稱「合同」與「文本」；台灣習慣稱為「合約」與「文本/文件」。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "你在那邊嘴什麼啦！有種出來面對。",
+      "answer": "Taiwan Usage",
+      "explanation": "把「嘴」（頂嘴/嗆人）當作動詞使用，加上句尾助詞「啦」，為典型台灣口語。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "這件事情的貓膩很多，你最好別捲進去。",
+      "answer": "Mainland Usage",
+      "explanation": "「貓膩」（暗藏玄機/不法勾當）為源自北京俚語的中國大陸常見用語。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "高鐵月台上有很多人在排隊候車。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣稱火車/高鐵乘車處為「月台」；中國大陸則稱為「站台」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "這波操作簡直太6了，直接起飛！",
+      "answer": "Mainland Usage",
+      "explanation": "「6」（很厲害/溜）與「起飛」為中國大陸遊戲與網路社群流行語。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "他退伍之後去了一家數位行銷公司上班。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣習慣稱為「數位行銷」；中國大陸多寫作「數碼營銷」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "你發的這個短信我剛剛才收到。",
+      "answer": "Mainland Usage",
+      "explanation": "中國大陸稱手機簡訊為「短信」；台灣稱為「簡訊」。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "我們家那隻狗狗真的很有事，常常對著空氣叫。",
+      "answer": "Taiwan Usage", "explanation": "「很有事」（有問題/古怪）為台灣流行語。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "這個視頻博主分享的旅遊攻略很實用。",
+      "answer": "Mainland Usage",
+      "explanation": "中國大陸稱創作者為「博主」並搭配「視頻」與「攻略」（指南）。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "在台北租套房的租金越來越貴了。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣將獨立衛浴的單間住宅稱為「套房」；中國大陸多稱「一居室」或「單間」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "這真的是太給力了，感謝大家的幫助！",
+      "answer": "Mainland Usage",
+      "explanation": "「給力」（帶勁/有幫助）為經典中國大陸網路流行語。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "這部電視節目在網路上爆紅，吸引很多人討論。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣稱迅速走紅為「爆紅」；中國大陸多用「火了」或「爆火」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "這家連鎖門店的服務質量確實沒得說。",
+      "answer": "Mainland Usage",
+      "explanation": "中國大陸稱實體店面為「門店」，並用「質量」表示服務品質。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "請把這張照片的畫素調高一點。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣習慣稱為「畫素」；中國大陸則稱為「像素」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "他這種行為根本就是在躺平，完全不想努力。",
+      "answer": "Mainland Usage",
+      "explanation": "「躺平」（放棄競爭/順其自然）為中國大陸知名的社會現象用語。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "他每天騎單車去公司上班，順便當作運動。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣習慣稱「腳踏車」或「單車」；中國大陸多稱「自行車」或「單車」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "這家公司主要在做人工智能和大數據分析。",
+      "answer": "Mainland Usage",
+      "explanation": "中國大陸習慣稱為「人工智能」與「大數據」（台灣有時稱巨量資料）。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "我打算買一包泡麵當今天的晚餐。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣稱速食麵為「泡麵」；中國大陸稱為「方便麵」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "這個人真的很奇葩，想法總是很奇怪。",
+      "answer": "Mainland Usage",
+      "explanation": "「奇葩」（怪人/奇特行為）在中國大陸網路語境中被極廣泛使用。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "公車上的博愛座應該讓給有需要的人。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣大眾運輸工具稱為「博愛座」；中國大陸多稱「老弱病殘孕專座」或「優先座」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "我今天在網上買了幾件衣服，走的是快遞發貨。",
+      "answer": "Mainland Usage",
+      "explanation": "中國大陸習慣稱網購寄送為「發貨」與「快遞」。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "這個影片拍得很好看，大家快點去點讚分享！",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣習慣稱影音內容為「影片」；中國大陸稱為「視頻」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "這台筆記本電腦的重量很輕，非常適合出差攜帶。",
+      "answer": "Mainland Usage",
+      "explanation": "中國大陸稱為「筆記本電腦」；台灣習慣簡稱「筆電」或稱為「筆記型電腦」。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "他這個人很假掰，明明不喜歡還要裝作很熱情。",
+      "answer": "Taiwan Usage",
+      "explanation": "「假掰」（虛偽/矯情）為台語（台語/閩南語）衍生而來的台灣在地用語。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "這是一次成功的品牌營銷案例。",
+      "answer": "Mainland Usage",
+      "explanation": "中國大陸習慣稱為「營銷」；台灣則稱為「行銷」。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "我們明天要針對這個主題做簡報。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣職場稱簡報演示為「簡報」；中國大陸多稱為「演示」或「做PPT」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "他的口音聽起來非常地道，完全像當地人。",
+      "answer": "Mainland Usage",
+      "explanation": "中國大陸常用「地道」形容道地；台灣習慣寫作「道地」。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "這家餐廳的洗手邊有提供洗碗精跟消毒酒精。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣習慣稱為「洗碗精」；中國大陸稱為「洗潔精」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "這部微電影的文案非常走心，打動了不少人。",
+      "answer": "Mainland Usage",
+      "explanation": "「走心」（用心/用心感受/入心）為中國大陸常見流行語。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "他大學畢業後選擇去國外讀碩士。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣習慣稱為「讀碩士」；中國大陸多稱為「讀研究生」或「上碩士」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "這個平台的用戶增長速度非常驚人。",
+      "answer": "Mainland Usage",
+      "explanation": "中國大陸稱使用者為「用戶」；台灣有時稱為「使用者」或「用戶」。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "請把這份資料影印三份發給與會人員。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣習慣稱為「影印」；中國大陸稱為「復印」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "這家網紅店每天都有很多人前來打卡拍照。",
+      "answer": "Mainland Usage",
+      "explanation": "「打卡」（指到景點拍照簽到）與「網紅」在中國大陸極度普及並影響全華人圈。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "我的手機電量快沒了，有帶行動電源嗎？",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣稱為「行動電源」；中國大陸稱為「充電寶」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "他因為在遊戲裡掛機，被系統扣除信譽分。",
+      "answer": "Mainland Usage",
+      "explanation": "中國大陸遊戲用語習慣使用「掛機」（AFK/中途離線）與「信譽分」。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "這款手搖飲料我想要點無糖去冰。",
+      "answer": "Taiwan Usage",
+      "explanation": "「手搖飲料」與「去冰/無糖」為台灣極具特色的飲食習慣詞彙。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "這件事搞得大家人心惶惶，真是令人抓狂。",
+      "answer": "Taiwan Usage",
+      "explanation": "「抓狂」（發瘋/崩潰）為台灣極常使用的口語用語。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "他在網絡上發布了個人最新動態。",
+      "answer": "Mainland Usage",
+      "explanation": "中國大陸習慣使用「網絡」與「發布」；台灣寫作「網路」與「發佈」或「貼文」。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "今天晚餐吃鮭魚生魚片跟高麗菜炒肉絲。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣稱此魚類與蔬菜為「鮭魚」（CN: 三文魚）與「高麗菜」（CN: 卷心菜/包菜）。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "這簡直是把散戶當割韭菜，太不公平了。",
+      "answer": "Mainland Usage",
+      "explanation": "「割韭菜」（指市場大戶剝削散戶或消費者）為中國大陸金融與網路流行用語。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "他這個人很魯，到現在連女生的手都沒握過。",
+      "answer": "Taiwan Usage",
+      "explanation": "「魯」（源自英文 Loser，指單身或失敗者）為台灣網路PTT文化產生的用語。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "這部電視劇今晚就要迎來大結局了。",
+      "answer": "Mainland Usage",
+      "explanation": "中國大陸常使用「電視劇」與「大結局」（台灣多稱完結篇）。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "請把光標移動到屏幕中央並按確定。",
+      "answer": "Mainland Usage",
+      "explanation": "中國大陸稱游標為「光標」，稱螢幕為「屏幕」。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "他講話真的很牛逼，大家都被他折服了。",
+      "answer": "Mainland Usage",
+      "explanation": "「牛逼 / 牛B」（形容非常厲害）為最經典的中國大陸俗語/流行語。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "我有買奇異果跟切好的鳳梨，你要吃嗎？",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣稱為「奇異果」（CN: 獼猴桃）與「鳳梨」（CN多稱菠蘿）。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "這台打印機的墨盒好像沒墨水了。",
+      "answer": "Mainland Usage",
+      "explanation": "中國大陸稱為「打印機」與「墨盒」；台灣稱為「印表機」與「墨水匣」。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "大家都不想碰這個燙手山芋，怕會踩坑。",
+      "answer": "Mainland Usage",
+      "explanation": "「踩坑」（指遇到陷阱/出錯）為中國大陸極普遍的口語。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "他今天開車上高速公路遇到了嚴重的塞車。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣習慣稱為「塞車」；中國大陸多稱為「堵車」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "這段舞蹈影片在網路上引起了大量的炎上。",
+      "answer": "Taiwan Usage",
+      "explanation": "「炎上」（指在社群媒體上引發大量負面抨擊）為台灣源自日語的網路用語；中國大陸多用「網暴」或「遭黑」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "這波操作真的太燃了，讓人看得熱血沸騰！",
+      "answer": "Mainland Usage",
+      "explanation": "「燃」（形容劇情或場面讓人熱血沸騰）為中國大陸動漫與娛樂流行語。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "你有沒有看到我的隨身碟？我記得放在桌上。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣稱為「隨身碟」；中國大陸稱為「U盤」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "他因為涉嫌違規，賬號已經被平台封號了。",
+      "answer": "Mainland Usage",
+      "explanation": "中國大陸習慣使用「賬號」與「封號」（台灣多稱封鎖或停權）。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "他明天要搭高鐵去台中參加一場研討會。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣鐵路高港系統稱為「高鐵」；中國大陸則區分為「高鐵」與「動車」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": " awsl！這隻小狗的動作也太融化人了！",
+      "answer": "Mainland Usage",
+      "explanation": "「awsl」（「啊我死了」的拼音縮寫，形容極度可愛）為中國大陸拼音縮寫用語。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "我整個人都 ㄅ ㄒ 了，這到底是在演哪齣？",
+      "answer": "Taiwan Usage",
+      "explanation": "「ㄅㄒ」（注音縮寫「不行」）為台灣年輕世代常用的打字簡寫習慣。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "我們需要重新思考這個產品的商業模式。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣常用「商業模式」；中國大陸亦常用「模式」或「盈利模式」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "這名博主發布的最新攻略引發了全網熱議。",
+      "answer": "Mainland Usage",
+      "explanation": "「全網」（全網際網路）與「熱議」為中國大陸新聞與社群標題常用詞。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "今天中午叫外送吧，我想吃大腸包小腸。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣稱餐點外送為「外送」（CN稱外賣），且「大腸包小腸」為台灣在地美食。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "他在公司裡負責做產品運營。",
+      "answer": "Mainland Usage",
+      "explanation": "中國大陸習慣使用「運營」；台灣習慣稱為「營運」或「營運管理」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "這台電視支援高畫質播放與杜比音效。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣稱高清為「高畫質」；中國大陸稱為「高清」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "他這個人說話太衝了，大家都不想理他。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣口語常用「說話很衝」形容態度不好或言語具攻擊性。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "大家都在討論這部好萊塢大片的票房情況。",
+      "answer": "Mainland Usage",
+      "explanation": "中國大陸稱巨片/強檔電影為「大片」。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "他今天在網路上看到一篇很有意思的文章。",
+      "answer": "Taiwan Usage",
+      "explanation": "台灣習慣使用「網路」；中國大陸習慣使用「網絡」。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "請在手機上下載這個移動應用。",
+      "answer": "Mainland Usage",
+      "explanation": "中國大陸稱行動裝置應用為「移動應用」（Mobile App）；台灣稱為「行動應用」或「手機App」。",
+      "lang": "Mainland Usage"
+    },
+    {
+      "text": "他在這場會議上的表現非常亮眼，值得讚賞。",
+      "answer": "Taiwan Usage",
+      "explanation": "「亮眼」為台灣常用於形容表現傑出或吸引人目光的詞彙。",
+      "lang": "Taiwan Usage"
+    },
+    {
+      "text": "你不要一直在那邊蹭熱度好不好？",
+      "answer": "Mainland Usage",
+      "explanation": "「蹭熱度」（沾光/利用熱門話題吸引關注）為中國大陸網路流行用語。",
+      "lang": "Mainland Usage"
+    }
   ]
 }
