@@ -53,6 +53,14 @@ window.PROJECTS = [
         tag: "No-AI"
     },
     {
+        title: "Trainline Generator",
+        href: "https://pcwu2022.github.io/trainline_generator/web/",
+        image: "images/traingen.png",
+        description: "A python-based optimization algorithm that generates a railway network based on population, demand, and cost.",
+        date: "November 2026",
+        tag: "Vibe-Coded"
+    },
+    {
         title: "Sudoku",
         href: "games/sudoku.html",
         image: "images/sudoku.png",
